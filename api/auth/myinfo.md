@@ -1,0 +1,24 @@
+# `/api/v1/auth/myinfo`
+This API will return the logged in user info.
+
+- Controller: [`App\Http\Controllers\API\V1\Auth\MyInfoController`](../../../src/app/Http/Controllers/API/V1/Auth/MyInfoController.php)
+- Method: `GET`
+- [Requires Authentication](login.md#how-to-use-api-token)
+
+### Params
+Nothing.
+
+### Response
+
+200:
+
+```json
+{
+    "data": <user resource>,
+    "permissions": ["permission 1", "permission 2"]
+}
+```
+
+[User Resource](../resources/user.md)
+
+401: [Authentication error](../authentication-errors.md)

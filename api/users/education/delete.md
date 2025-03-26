@@ -1,0 +1,25 @@
+# `/api/v1/users/{user-id}/education/{education-id}`
+You can delete an education from a user using this API.
+
+- Controller: [`App\Http\Controllers\API\V1\Users\Education\DeleteEducationController`](../../../../src/app/Http/Controllers/API/V1/Users\Education\DeleteEducationController.php)
+- Method: `DELETE`
+- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
+
+### Permissions
+
+- `education.delete`: deleting your own education
+- `education.delete_any`: deleting education from any user
+
+### Params
+
+No parameter.
+
+### Response
+
+204: No content when education gets deleted
+
+401: [Authentication error](../../authentication-errors.md)
+
+403: [Permission error](../../permission-errors.md)
+
+404: [Not-found error](../../not-found-errors.md)
