@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/equipment`
 You can get list of the equipment of a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Equipment\ListGymEquipmentController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Equipment\ListGymEquipmentController.php)
 - Method: `GET`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

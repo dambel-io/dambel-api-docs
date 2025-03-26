@@ -1,7 +1,6 @@
 # `/api/v1/admin/states/{state-id}`
 You can delete a state using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\States\DeleteStateController`](../../../../src/app/Http/Controllers/API/V1/Admin/States/DeleteStateController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

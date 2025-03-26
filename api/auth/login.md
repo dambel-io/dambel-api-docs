@@ -1,7 +1,6 @@
 # `/api/v1/auth/login`
 This API gives user the ability to login and receive an API token.
 
-- Controller: [`App\Http\Controllers\API\V1\Auth\LoginController`](../../../src/app/Http/Controllers/API/V1/Auth/LoginController.php)
 - Method: `POST`
 
 ### Params

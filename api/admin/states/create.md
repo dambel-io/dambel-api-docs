@@ -1,7 +1,6 @@
 # `/api/v1/admin/states/{country}`
 This API creates a new state.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\States\CreateStateController`](../../../../src/app/Http/Controllers/API/V1/Admin/States/CreateStateController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

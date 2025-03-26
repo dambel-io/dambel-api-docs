@@ -1,7 +1,6 @@
 # `/api/v1/admin/majors/{major-id}`
 You can delete a major using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Majors\DeleteMajorController`](../../../../src/app/Http/Controllers/API/V1/Admin/Majors/DeleteMajorController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

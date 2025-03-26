@@ -1,6 +1,5 @@
 # Brand Resource
 
-- [`App\Http\Resources\V1\BrandResource`](../../../src/app/Http/Resources/V1/BrandResource.php)
 
 ```json
 {

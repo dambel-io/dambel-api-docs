@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/education`
 You can get list of the education of a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Education\ListEducationController`](../../../../src/app/Http/Controllers/API/V1/Users\Education\ListEducationController.php)
 - Method: `GET`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

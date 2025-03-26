@@ -1,6 +1,5 @@
 # Championship Resource
 
-- [`App\Http\Resources\V1\EducationResource`](../../../src/app/Http/Resources/V1/EducationResource.php)
 
 ```json
 {

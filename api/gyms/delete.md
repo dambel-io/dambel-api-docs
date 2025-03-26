@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}`
 You can delete a gym using this API (as normal user deleting their own gym and also admin user being able to delete all gyms).
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\DeleteGymController`](../../../src/app/Http/Controllers/API/V1/Gyms/DeleteGymController.php)
 - Method: `DELETE`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

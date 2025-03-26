@@ -1,6 +1,5 @@
 # Gym Working Period Resource
 
-- [`App\Http\Resources\V1\GymWorkingPeriodResource`](../../../src/app/Http/Resources/V1/GymWorkingPeriodResource.php)
 
 ```json
 {

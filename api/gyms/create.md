@@ -1,7 +1,6 @@
 # `/api/v1/gyms`
 This API creates a new gym (can be used by both user to create their own gym and also admin to create gyms for others)
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\CreateGymController`](../../../src/app/Http/Controllers/API/V1/Gyms/CreateGymController.php)
 - Method: `POST`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

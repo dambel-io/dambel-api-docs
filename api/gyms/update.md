@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}`
 Using this API you can update the information of one specific gym.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\UpdateGymController`](../../../src/app/Http/Controllers/API/V1/Gyms/UpdateGymController.php)
 - Method: `PUT`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

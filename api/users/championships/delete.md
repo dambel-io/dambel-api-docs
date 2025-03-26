@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/championships/{championship-id}`
 You can delete a championship from a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Championships\DeleteChampionshipController`](../../../../src/app/Http/Controllers/API/V1/Users\Championships\DeleteChampionshipController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

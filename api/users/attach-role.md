@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/attach-role/{role-id}`
 You can attach a role to a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\AttachRoleToUserController`](../../../src/app/Http/Controllers/API/V1/Users/AttachRoleToUserController.php)
 - Method: `POST`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

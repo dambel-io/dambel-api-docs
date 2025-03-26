@@ -1,7 +1,6 @@
 # `/api/v1/admin/majors`
 This API creates a new major.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Majors\CreateMajorController`](../../../../src/app/Http/Controllers/API/V1/Admin/Majors/CreateMajorController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

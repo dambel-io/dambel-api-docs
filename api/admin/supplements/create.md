@@ -1,7 +1,6 @@
 # `/api/v1/admin/supplements`
 This API creates a new supplement.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Supplements\CreateSupplementController`](../../../../src/app/Http/Controllers/API/V1/Admin/Supplements/CreateSupplementController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

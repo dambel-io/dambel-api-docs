@@ -1,6 +1,5 @@
 # Major Resource
 
-- [`App\Http\Resources\V1\MajorResource`](../../../src/app/Http/Resources/V1/MajorResource.php)
 
 ```json
 {

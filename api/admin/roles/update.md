@@ -1,7 +1,6 @@
 # `/api/v1/admin/roles/{role-id}`
 You can update an existing role using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Roles\UpdateRoleController`](../../../../src/app/Http/Controllers/API/V1/Admin/Roles/UpdateRoleController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

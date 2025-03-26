@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/education/{education-id}`
 You can update an education using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Education\UpdateEducationController`](../../../../src/app/Http/Controllers/API/V1/Users\Education\UpdateEducationController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

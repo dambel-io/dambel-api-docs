@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/subscriptions/manage/{subscription-id}`
 You can update a subscription for a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Subscriptions\Manage\UpdateGymSubscriptionController`](../../../../../src/app/Http/Controllers/API/V1/Gyms/Subscriptions/Manage/UpdateGymSubscriptionController.php)
 - Method: `PUT`
 - [Requires Authentication](../../../auth/login.md#how-to-use-api-token)
 

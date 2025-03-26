@@ -1,7 +1,6 @@
 # `/api/v1/admin/brands/{brand-id}`
 You can delete a brand using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Brands\DeleteBrandController`](../../../../src/app/Http/Controllers/API/V1/Admin/Brands/DeleteBrandController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

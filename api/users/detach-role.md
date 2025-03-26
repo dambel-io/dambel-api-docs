@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/detach-role/{role-id}`
 You can detach a role from a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\DetachRoleFromUserController`](../../../src/app/Http/Controllers/API/V1/Users/DetachRoleFromUserController.php)
 - Method: `DELETE`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

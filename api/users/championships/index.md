@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/championships`
 You can get list of the championships of a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Championships\ListChampionshipController`](../../../../src/app/Http/Controllers/API/V1/Users\Championships\ListChampionshipController.php)
 - Method: `GET`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

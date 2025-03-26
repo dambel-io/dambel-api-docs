@@ -1,7 +1,6 @@
 # `/api/v1/admin/states/{state-id}`
 You can update an existing state using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\States\UpdateStateController`](../../../../src/app/Http/Controllers/API/V1/Admin/States/UpdateStateController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

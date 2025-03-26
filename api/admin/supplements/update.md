@@ -1,7 +1,6 @@
 # `/api/v1/admin/supplements/{supplement-id}`
 You can update an existing supplement using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Supplements\UpdateSupplementController`](../../../../src/app/Http/Controllers/API/V1/Admin/Supplements/UpdateSupplementController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

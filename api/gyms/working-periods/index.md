@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/working-periods`
 You can get list of the working periods of a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\WorkingPeriods\ListWorkingPeriodController`](../../../../src/app/Http/Controllers/API/V1/Gyms/WorkingPeriods\ListWorkingPeriodController.php)
 - Method: `GET`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

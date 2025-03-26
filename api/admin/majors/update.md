@@ -1,7 +1,6 @@
 # `/api/v1/admin/majors/{major-id}`
 You can update an existing major using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Majors\UpdateMajorController`](../../../../src/app/Http/Controllers/API/V1/Admin/Majors/UpdateMajorController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

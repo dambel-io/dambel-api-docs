@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/championships`
 You can create a championship for a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Championships\CreateChampionshipController`](../../../../src/app/Http/Controllers/API/V1/Users\Championships\CreateChampionshipController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

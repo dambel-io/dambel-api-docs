@@ -1,7 +1,6 @@
 # `/api/v1/admin/cities`
 You can get list of the cities by alphabetical order using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Cities\ListCityController`](../../../../src/app/Http/Controllers/API/V1/Admin/Cities/ListCityController.php)
 - Method: `GET`
 
 ### Params

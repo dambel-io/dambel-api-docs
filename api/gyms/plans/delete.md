@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/plans/{plan-id}`
 You can delete a subscription plan from a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Plans\DeleteGymPlanController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Plans\DeleteGymPlanController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

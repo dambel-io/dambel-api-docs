@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}`
 Using this API you can update the information of one specific user.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\UpdateUserController`](../../../src/app/Http/Controllers/API/V1/Users/UpdateUserController.php)
 - Method: `PUT`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

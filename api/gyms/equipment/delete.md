@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/equipment/{gym-equipment-id}`
 You can delete an equipment from a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Equipment\DeleteGymEquipmentController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Equipment\DeleteGymEquipmentController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

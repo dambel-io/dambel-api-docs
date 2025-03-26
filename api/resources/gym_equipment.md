@@ -1,6 +1,5 @@
 # Gym Equipment Resource
 
-- [`App\Http\Resources\V1\GymEquipmentResource`](../../../src/app/Http/Resources/V1/GymEquipmentResource.php)
 
 ```json
 {

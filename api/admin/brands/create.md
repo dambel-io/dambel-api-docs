@@ -1,7 +1,6 @@
 # `/api/v1/admin/brands`
 This API creates a new brand.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Brands\CreateBrandController`](../../../../src/app/Http/Controllers/API/V1/Admin/Brands/CreateBrandController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

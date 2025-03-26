@@ -1,7 +1,6 @@
 # `/api/v1/admin/countries/{country-id}`
 You can update an existing country using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Countries\UpdateCountryController`](../../../../src/app/Http/Controllers/API/V1/Admin/Countries/UpdateCountryController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

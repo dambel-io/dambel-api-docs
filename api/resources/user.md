@@ -1,6 +1,5 @@
 # User Resource
 
-- [`App\Http\Resources\V1\UserResource`](../../../src/app/Http/Resources/V1/UserResource.php)
 
 ```json
 {

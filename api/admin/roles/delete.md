@@ -1,7 +1,6 @@
 # `/api/v1/admin/roles/{role-id}`
 You can delete a role using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Roles\DeleteRoleController`](../../../../src/app/Http/Controllers/API/V1/Admin/Roles/DeleteRoleController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

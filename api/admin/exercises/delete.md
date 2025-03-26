@@ -1,7 +1,6 @@
 # `/api/v1/admin/exercises/{exercise-id}`
 You can delete an exercise using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Exercises\DeleteExerciseController`](../../../../src/app/Http/Controllers/API/V1/Admin/Exercises/DeleteExerciseController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

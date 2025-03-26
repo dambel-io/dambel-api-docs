@@ -1,7 +1,6 @@
 # `/api/v1/admin/equipment/{equipment-id}`
 You can update an existing equipment using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Equipment\UpdateExerciseController`](../../../../src/app/Http/Controllers/API/V1/Admin/Equipment/UpdateExerciseController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

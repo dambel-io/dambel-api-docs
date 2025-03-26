@@ -1,7 +1,6 @@
 # `/api/v1/admin/equipment/{equipment-id}`
 You can delete an equipment using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Equipment\DeleteEquipmentController`](../../../../src/app/Http/Controllers/API/V1/Admin/Equipment/DeleteEquipmentController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

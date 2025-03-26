@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/subscriptions/manage`
 You can create a subscription for a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Subscriptions\Manage\CreateGymSubscriptionController`](../../../../../src/app/Http/Controllers/API/V1/Gyms/Subscriptions/Manage/CreateGymSubscriptionController.php)
 - Method: `POST`
 - [Requires Authentication](../../../auth/login.md#how-to-use-api-token)
 

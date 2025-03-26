@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/subscriptions/checkout/{subscription-id}`
 User or gym owner can checkout the last opened checkin on a subscription.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Subscriptions\CheckOutController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Subscriptions\CheckOutController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

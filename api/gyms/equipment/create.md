@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/equipment`
 You can create an equipment for a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Equipment\CreateGymEquipmentController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Equipment\CreateGymEquipmentController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

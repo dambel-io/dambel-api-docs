@@ -1,7 +1,6 @@
 # `/api/v1/auth/myinfo`
 This API will return the logged in user info.
 
-- Controller: [`App\Http\Controllers\API\V1\Auth\MyInfoController`](../../../src/app/Http/Controllers/API/V1/Auth/MyInfoController.php)
 - Method: `GET`
 - [Requires Authentication](login.md#how-to-use-api-token)
 

@@ -1,7 +1,6 @@
 # `/api/v1/admin/exercises`
 This API creates a new exercise.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Exercises\CreateExerciseController`](../../../../src/app/Http/Controllers/API/V1/Admin/Exercises/CreateExerciseController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

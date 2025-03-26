@@ -1,7 +1,6 @@
 # `/api/v1/admin/countries`
 This API creates a new country.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Countries\CreateCountryController`](../../../../src/app/Http/Controllers/API/V1/Admin/Countries/CreateCountryController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

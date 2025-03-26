@@ -1,7 +1,6 @@
 # `/api/v1/admin/brands/{brand-id}`
 You can update an existing brand using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Brands\UpdateBrandController`](../../../../src/app/Http/Controllers/API/V1/Admin/Brands/UpdateBrandController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

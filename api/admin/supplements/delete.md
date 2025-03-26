@@ -1,7 +1,6 @@
 # `/api/v1/admin/supplements/{supplement-id}`
 You can delete a supplement using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Supplements\DeleteSupplementController`](../../../../src/app/Http/Controllers/API/V1/Admin/Supplements/DeleteSupplementController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

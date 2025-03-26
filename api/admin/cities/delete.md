@@ -1,7 +1,6 @@
 # `/api/v1/admin/cities/{city-id}`
 You can delete a city using this endpoint.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Cities\DeleteCityController`](../../../../src/app/Http/Controllers/API/V1/Admin/Cities/DeleteCityController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

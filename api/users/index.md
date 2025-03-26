@@ -1,7 +1,6 @@
 # `/api/v1/users`
 Using this API you can get list of the users and also search them using filters.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\SearchUserController`](../../../src/app/Http/Controllers/API/V1/Users/SearchUserController.php)
 - Method: `GET`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

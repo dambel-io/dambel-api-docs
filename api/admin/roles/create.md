@@ -1,7 +1,6 @@
 # `/api/v1/admin/roles`
 This API creates a new state.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Roles\CreateRoleController`](../../../../src/app/Http/Controllers/API/V1/Admin/Roles/CreateRoleController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

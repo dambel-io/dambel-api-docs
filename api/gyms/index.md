@@ -1,7 +1,6 @@
 # `/api/v1/gyms`
 Using this API you can get list of the gyms and also search them using filters.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\SearchGymController`](../../../src/app/Http/Controllers/API/V1/Gyms/SearchGymController.php)
 - Method: `GET`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

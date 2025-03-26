@@ -1,7 +1,6 @@
 # `/api/v1/admin/equipment`
 This API creates a new equipment.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Equipment\CreateEquipmentController`](../../../../src/app/Http/Controllers/API/V1/Admin/Equipment/CreateEquipmentController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

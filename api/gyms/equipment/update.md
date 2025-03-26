@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/equipment/{equipment-id}`
 You can update a gym equipment using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Equipment\UpdateGymEquipmentController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Equipment\UpdateGymEquipmentController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

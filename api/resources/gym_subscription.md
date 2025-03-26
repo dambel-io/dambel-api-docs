@@ -1,6 +1,5 @@
 # Gym Subscription Resource
 
-- [`App\Http\Resources\V1\GymSubscriptionResource`](../../../src/app/Http/Resources/V1/GymSubscriptionResource.php)
 
 ```json
 {

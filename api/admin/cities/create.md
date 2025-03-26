@@ -1,7 +1,6 @@
 # `/api/v1/admin/cities/{state}`
 This API creates a new city.
 
-- Controller: [`App\Http\Controllers\API\V1\Admin\Cities\CreateCityController`](../../../../src/app/Http/Controllers/API/V1/Admin/Cities/CreateCityController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

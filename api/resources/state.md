@@ -1,6 +1,5 @@
 # State Resource
 
-- [`App\Http\Resources\V1\StateResource`](../../../src/app/Http/Resources/V1/StateResource.php)
 
 ```json
 {

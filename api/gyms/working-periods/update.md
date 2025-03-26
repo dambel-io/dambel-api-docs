@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/working-periods/{working-period-id}`
 You can update a gym working period using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\WorkingPeriods\UpdateWorkingPeriodController`](../../../../src/app/Http/Controllers/API/V1/Gyms/WorkingPeriods\UpdateWorkingPeriodController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

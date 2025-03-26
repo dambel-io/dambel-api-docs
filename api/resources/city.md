@@ -1,6 +1,5 @@
 # City Resource
 
-- [`App\Http\Resources\V1\CityResource`](../../../src/app/Http/Resources/V1/CityResource.php)
 
 ```json
 {

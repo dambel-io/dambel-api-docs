@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}`
 You can delete a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\DeleteUserController`](../../../src/app/Http/Controllers/API/V1/Users/DeleteUserController.php)
 - Method: `DELETE`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 

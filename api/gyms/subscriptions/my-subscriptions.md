@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/subscriptions/my-subscriptions`
 Users can get their own subscriptions on a specific gym.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Subscriptions\MySubscriptionsController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Subscriptions\MySubscriptionsController.php)
 - Method: `GET`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

@@ -1,7 +1,6 @@
 # `/api/v1/auth/register`
 This API creates a new user.
 
-- Controller: [`App\Http\Controllers\API\V1\Auth\RegisterController`](../../../src/app/Http/Controllers/API/V1/Auth/RegisterController.php)
 - Method: `POST`
 
 ### Params

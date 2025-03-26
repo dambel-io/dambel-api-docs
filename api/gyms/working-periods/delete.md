@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/working-periods/{working-period-id}`
 You can delete a working period from a gym using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\WorkingPeriods\DeleteWorkingPeriodController`](../../../../src/app/Http/Controllers/API/V1/Gyms/WorkingPeriods\DeleteWorkingPeriodController.php)
 - Method: `DELETE`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

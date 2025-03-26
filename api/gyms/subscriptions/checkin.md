@@ -1,7 +1,6 @@
 # `/api/v1/gyms/{gym-id}/subscriptions/checkin/{subscription-id}`
 User or gym owner can make a checkin on a subscription.
 
-- Controller: [`App\Http\Controllers\API\V1\Gyms\Subscriptions\CheckInController`](../../../../src/app/Http/Controllers/API/V1/Gyms/Subscriptions\CheckInController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

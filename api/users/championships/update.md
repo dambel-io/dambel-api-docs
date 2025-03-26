@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/championships/{championship-id}`
 You can update a championship using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Championships\UpdateChampionshipController`](../../../../src/app/Http/Controllers/API/V1/Users\Championships\UpdateChampionshipController.php)
 - Method: `PUT`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

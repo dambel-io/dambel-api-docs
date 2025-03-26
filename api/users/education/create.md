@@ -1,7 +1,6 @@
 # `/api/v1/users/{user-id}/education`
 You can create an education for a user using this API.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\Education\CreateEducationController`](../../../../src/app/Http/Controllers/API/V1/Users\Education\CreateEducationController.php)
 - Method: `POST`
 - [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 

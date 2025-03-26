@@ -1,7 +1,6 @@
 # `/api/v1/users`
 This API creates a new user.
 
-- Controller: [`App\Http\Controllers\API\V1\Users\CreateUserController`](../../../src/app/Http/Controllers/API/V1/Users/CreateUserController.php)
 - Method: `POST`
 - [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
