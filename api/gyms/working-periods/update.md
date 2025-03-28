@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/working-periods/{working-period-id}`
+# `PUT /api/v1/gyms/{gym-id}/working-periods/{working-period-id}`
 You can update a gym working period using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/subscriptions/manage`
+# `GET /api/v1/gyms/{gym-id}/subscriptions/manage`
 You can get list of subscriptions on a gym using this API.
 
-- Method: `GET`
-- [Requires Authentication](../../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

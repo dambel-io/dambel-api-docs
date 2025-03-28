@@ -1,8 +1,6 @@
-# `/api/v1/admin/countries/{country-id}`
+# `PUT /api/v1/admin/countries/{country-id}`
 You can update an existing country using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `countries.update`: to update a country

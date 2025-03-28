@@ -1,7 +1,6 @@
-# `/api/v1/admin/brands`
+# `GET /api/v1/admin/brands`
 You can get list of the brands by alphabetical order using this endpoint.
 
-- Method: `GET`
 
 ### Response
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/supplements/{supplement-id}`
+# `DELETE /api/v1/admin/supplements/{supplement-id}`
 You can delete a supplement using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `supplements.delete`: to delete any supplement

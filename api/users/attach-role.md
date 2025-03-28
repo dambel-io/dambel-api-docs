@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/attach-role/{role-id}`
+# `POST /api/v1/users/{user-id}/attach-role/{role-id}`
 You can attach a role to a user using this API.
 
-- Method: `POST`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `users.attach_role`: to attach role to any user except themselves

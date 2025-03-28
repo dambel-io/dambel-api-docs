@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/equipment/{gym-equipment-id}`
+# `DELETE /api/v1/gyms/{gym-id}/equipment/{gym-equipment-id}`
 You can delete an equipment from a gym using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

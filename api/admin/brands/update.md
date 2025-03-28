@@ -1,8 +1,6 @@
-# `/api/v1/admin/brands/{brand-id}`
+# `PUT /api/v1/admin/brands/{brand-id}`
 You can update an existing brand using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

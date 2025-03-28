@@ -1,8 +1,6 @@
-# `/api/v1/admin/equipment/{equipment-id}`
+# `DELETE /api/v1/admin/equipment/{equipment-id}`
 You can delete an equipment using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `equipment.delete`: to delete any equipment

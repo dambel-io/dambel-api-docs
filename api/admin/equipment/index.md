@@ -1,7 +1,6 @@
-# `/api/v1/admin/equipment`
+# `GET /api/v1/admin/equipment`
 You can get list of the equipment by alphabetical order using this endpoint.
 
-- Method: `GET`
 
 ### Response
 

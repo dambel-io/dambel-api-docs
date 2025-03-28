@@ -1,8 +1,6 @@
-# `/api/v1/admin/states/{state-id}`
+# `DELETE /api/v1/admin/states/{state-id}`
 You can delete a state using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `states.delete`: to delete any state

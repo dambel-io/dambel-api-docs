@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/equipment/{equipment-id}`
+# `PUT /api/v1/gyms/{gym-id}/equipment/{equipment-id}`
 You can update a gym equipment using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

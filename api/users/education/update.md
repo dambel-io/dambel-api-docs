@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/education/{education-id}`
+# `PUT /api/v1/users/{user-id}/education/{education-id}`
 You can update an education using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

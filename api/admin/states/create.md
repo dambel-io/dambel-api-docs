@@ -1,8 +1,6 @@
-# `/api/v1/admin/states/{country}`
+# `POST /api/v1/admin/states/{country}`
 This API creates a new state.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/subscriptions/checkout/{subscription-id}`
+# `POST /api/v1/gyms/{gym-id}/subscriptions/checkout/{subscription-id}`
 User or gym owner can checkout the last opened checkin on a subscription.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Response
 

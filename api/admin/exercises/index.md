@@ -1,7 +1,6 @@
-# `/api/v1/admin/exercises`
+# `GET /api/v1/admin/exercises`
 You can get list of the exercises by alphabetical order using this endpoint.
 
-- Method: `GET`
 
 ### Response
 

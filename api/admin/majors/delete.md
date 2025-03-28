@@ -1,8 +1,6 @@
-# `/api/v1/admin/majors/{major-id}`
+# `DELETE /api/v1/admin/majors/{major-id}`
 You can delete a major using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `majors.delete`: to delete any major

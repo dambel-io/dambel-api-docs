@@ -1,7 +1,6 @@
-# `/api/v1/auth/register`
+# `POST /api/v1/auth/register`
 This API creates a new user.
 
-- Method: `POST`
 
 ### Params
 

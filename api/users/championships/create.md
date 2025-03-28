@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/championships`
+# `POST /api/v1/users/{user-id}/championships`
 You can create a championship for a user using this API.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

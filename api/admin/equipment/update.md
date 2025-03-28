@@ -1,8 +1,6 @@
-# `/api/v1/admin/equipment/{equipment-id}`
+# `PUT /api/v1/admin/equipment/{equipment-id}`
 You can update an existing equipment using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/countries`
+# `POST /api/v1/admin/countries`
 This API creates a new country.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `countries.create`: to create a country

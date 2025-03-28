@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/working-periods`
+# `POST /api/v1/gyms/{gym-id}/working-periods`
 You can create a working period for a gym using this API.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

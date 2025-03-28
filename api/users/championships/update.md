@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/championships/{championship-id}`
+# `PUT /api/v1/users/{user-id}/championships/{championship-id}`
 You can update a championship using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

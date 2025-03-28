@@ -1,8 +1,6 @@
-# `/api/v1/gyms`
+# `POST /api/v1/gyms`
 This API creates a new gym (can be used by both user to create their own gym and also admin to create gyms for others)
 
-- Method: `POST`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `gyms.create`: to create your own gym

@@ -1,7 +1,6 @@
-# `/api/v1/admin/countries`
+# `GET /api/v1/admin/countries`
 You can get list of the countries by alphabetical order using this endpoint.
 
-- Method: `GET`
 
 ### Response
 

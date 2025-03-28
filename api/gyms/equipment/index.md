@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/equipment`
+# `GET /api/v1/gyms/{gym-id}/equipment`
 You can get list of the equipment of a gym using this API.
 
-- Method: `GET`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

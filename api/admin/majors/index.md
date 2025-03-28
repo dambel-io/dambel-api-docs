@@ -1,7 +1,6 @@
-# `/api/v1/admin/majors`
+# `GET /api/v1/admin/majors`
 You can get list of the majors using this endpoint.
 
-- Method: `GET`
 
 ### Response
 

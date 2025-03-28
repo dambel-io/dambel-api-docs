@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}`
+# `PUT /api/v1/gyms/{gym-id}`
 Using this API you can update the information of one specific gym.
 
-- Method: `PUT`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `gyms.update`: to update your own gym

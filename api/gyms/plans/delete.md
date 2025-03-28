@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/plans/{plan-id}`
+# `DELETE /api/v1/gyms/{gym-id}/plans/{plan-id}`
 You can delete a subscription plan from a gym using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

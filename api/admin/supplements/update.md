@@ -1,8 +1,6 @@
-# `/api/v1/admin/supplements/{supplement-id}`
+# `PUT /api/v1/admin/supplements/{supplement-id}`
 You can update an existing supplement using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

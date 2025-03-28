@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/subscriptions/subscribe/{plan-id}`
+# `POST /api/v1/gyms/{gym-id}/subscriptions/subscribe/{plan-id}`
 You can subscribe the user into a gym plan using this API.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Response
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/brands`
+# `POST /api/v1/admin/brands`
 This API creates a new brand.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

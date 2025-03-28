@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/plans`
+# `POST /api/v1/gyms/{gym-id}/plans`
 You can create a subscription plan for a gym using this API.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/exercises`
+# `POST /api/v1/admin/exercises`
 This API creates a new exercise.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/equipment`
+# `POST /api/v1/admin/equipment`
 This API creates a new equipment.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}`
+# `DELETE /api/v1/users/{user-id}`
 You can delete a user using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `users.delete_any`: to delete any user

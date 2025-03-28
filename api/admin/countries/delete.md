@@ -1,8 +1,6 @@
-# `/api/v1/admin/countries/{country-id}`
+# `DELETE /api/v1/admin/countries/{country-id}`
 You can delete a country using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `countries.delete`: to delete any country

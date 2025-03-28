@@ -1,8 +1,6 @@
-# `/api/v1/admin/exercises/{exercise-id}`
+# `PUT /api/v1/admin/exercises/{exercise-id}`
 You can update an existing exercise using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

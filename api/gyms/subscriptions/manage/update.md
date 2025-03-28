@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/subscriptions/manage/{subscription-id}`
+# `PUT /api/v1/gyms/{gym-id}/subscriptions/manage/{subscription-id}`
 You can update a subscription for a gym using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

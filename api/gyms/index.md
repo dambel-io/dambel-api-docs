@@ -1,8 +1,6 @@
-# `/api/v1/gyms`
+# `GET /api/v1/gyms`
 Using this API you can get list of the gyms and also search them using filters.
 
-- Method: `GET`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

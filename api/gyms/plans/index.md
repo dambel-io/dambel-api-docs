@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/plans`
+# `GET /api/v1/gyms/{gym-id}/plans`
 You can get list of the subscription plans of a gym using this API.
 
-- Method: `GET`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

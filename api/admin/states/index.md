@@ -1,7 +1,6 @@
-# `/api/v1/admin/states`
+# `GET /api/v1/admin/states`
 You can get list of the states by alphabetical order using this endpoint.
 
-- Method: `GET`
 
 ### Params
 

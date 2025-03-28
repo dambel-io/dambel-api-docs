@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/education/{education-id}`
+# `DELETE /api/v1/users/{user-id}/education/{education-id}`
 You can delete an education from a user using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/majors/{major-id}`
+# `PUT /api/v1/admin/majors/{major-id}`
 You can update an existing major using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `majors.update`: to update a major

@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/subscriptions/checkin/{subscription-id}`
+# `POST /api/v1/gyms/{gym-id}/subscriptions/checkin/{subscription-id}`
 User or gym owner can make a checkin on a subscription.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Params
 

@@ -1,8 +1,6 @@
-# `/api/v1/admin/majors`
+# `POST /api/v1/admin/majors`
 This API creates a new major.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `majors.create`: to create a country

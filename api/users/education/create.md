@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/education`
+# `POST /api/v1/users/{user-id}/education`
 You can create an education for a user using this API.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

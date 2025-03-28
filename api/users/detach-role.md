@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/detach-role/{role-id}`
+# `DELETE /api/v1/users/{user-id}/detach-role/{role-id}`
 You can detach a role from a user using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `users.detach_role`: to attach role from any user except themselves

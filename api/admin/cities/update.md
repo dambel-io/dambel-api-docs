@@ -1,8 +1,6 @@
-# `/api/v1/admin/cities/{city-id}`
+# `PUT /api/v1/admin/cities/{city-id}`
 You can update an existing city using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `cities.update`: to update a city

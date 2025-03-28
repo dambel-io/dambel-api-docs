@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/equipment`
+# `POST /api/v1/gyms/{gym-id}/equipment`
 You can create an equipment for a gym using this API.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

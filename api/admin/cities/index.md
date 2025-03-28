@@ -1,7 +1,6 @@
-# `/api/v1/admin/cities`
+# `GET /api/v1/admin/cities`
 You can get list of the cities by alphabetical order using this endpoint.
 
-- Method: `GET`
 
 ### Params
 

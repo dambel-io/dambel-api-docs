@@ -1,8 +1,6 @@
-# `/api/v1/admin/exercises/{exercise-id}`
+# `DELETE /api/v1/admin/exercises/{exercise-id}`
 You can delete an exercise using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `exercises.delete`: to delete any exercise

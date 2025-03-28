@@ -1,8 +1,6 @@
-# `/api/v1/auth/myinfo`
+# `GET /api/v1/auth/myinfo`
 This API will return the logged in user info.
 
-- Method: `GET`
-- [Requires Authentication](login.md#how-to-use-api-token)
 
 ### Params
 Nothing.

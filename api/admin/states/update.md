@@ -1,8 +1,6 @@
-# `/api/v1/admin/states/{state-id}`
+# `PUT /api/v1/admin/states/{state-id}`
 You can update an existing state using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `states.update`: to update a state

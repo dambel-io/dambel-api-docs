@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/subscriptions/delete-checkin/{subscription-id}/{checkin-id}`
+# `DELETE /api/v1/gyms/{gym-id}/subscriptions/delete-checkin/{subscription-id}/{checkin-id}`
 You can delete a checkin on a gym subscription for a gym using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

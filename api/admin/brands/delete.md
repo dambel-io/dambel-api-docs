@@ -1,8 +1,6 @@
-# `/api/v1/admin/brands/{brand-id}`
+# `DELETE /api/v1/admin/brands/{brand-id}`
 You can delete a brand using this endpoint.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `brands.delete`: to delete any brand

@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}`
+# `PUT /api/v1/users/{user-id}`
 Using this API you can update the information of one specific user.
 
-- Method: `PUT`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `users.update_any`: to update any user as an admin

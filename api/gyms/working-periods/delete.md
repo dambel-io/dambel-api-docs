@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/working-periods/{working-period-id}`
+# `DELETE /api/v1/gyms/{gym-id}/working-periods/{working-period-id}`
 You can delete a working period from a gym using this API.
 
-- Method: `DELETE`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

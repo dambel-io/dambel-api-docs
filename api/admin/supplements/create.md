@@ -1,8 +1,6 @@
-# `/api/v1/admin/supplements`
+# `POST /api/v1/admin/supplements`
 This API creates a new supplement.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

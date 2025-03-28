@@ -1,8 +1,6 @@
-# `/api/v1/admin/cities/{state}`
+# `POST /api/v1/admin/cities/{state}`
 This API creates a new city.
 
-- Method: `POST`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

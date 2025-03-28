@@ -1,8 +1,6 @@
-# `/api/v1/users/{user-id}/education`
+# `GET /api/v1/users/{user-id}/education`
 You can get list of the education of a user using this API.
 
-- Method: `GET`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Params
 

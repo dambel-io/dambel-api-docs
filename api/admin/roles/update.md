@@ -1,8 +1,6 @@
-# `/api/v1/admin/roles/{role-id}`
+# `PUT /api/v1/admin/roles/{role-id}`
 You can update an existing role using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `roles.update`: to update a role

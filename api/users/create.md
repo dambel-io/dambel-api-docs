@@ -1,8 +1,6 @@
-# `/api/v1/users`
+# `POST /api/v1/users`
 This API creates a new user.
 
-- Method: `POST`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `users.create`: to create users

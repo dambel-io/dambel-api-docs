@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}`
+# `DELETE /api/v1/gyms/{gym-id}`
 You can delete a gym using this API (as normal user deleting their own gym and also admin user being able to delete all gyms).
 
-- Method: `DELETE`
-- [Requires Authentication](../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 - `gyms.delete`: to delete your own gym

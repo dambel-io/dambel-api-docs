@@ -1,8 +1,6 @@
-# `/api/v1/gyms/{gym-id}/plans/{plan-id}`
+# `PUT /api/v1/gyms/{gym-id}/plans/{plan-id}`
 You can update a gym plan using this API.
 
-- Method: `PUT`
-- [Requires Authentication](../../auth/login.md#how-to-use-api-token)
 
 ### Permissions
 

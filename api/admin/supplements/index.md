@@ -1,7 +1,6 @@
-# `/api/v1/admin/supplements`
+# `GET /api/v1/admin/supplements`
 You can get list of the supplements using this endpoint.
 
-- Method: `GET`
 
 ### Response
 
