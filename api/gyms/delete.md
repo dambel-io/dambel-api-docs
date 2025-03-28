@@ -2,20 +2,24 @@
 You can delete a gym using this API (as normal user deleting their own gym and also admin user being able to delete all gyms).
 
 
-### Permissions
+## Permissions
 - `gyms.delete`: to delete your own gym
 - `gyms.delete_any`: to delete someone else's gym
 
-### Params
+## Params
 
 - `id`: ID of the gym in the route
 
-### Response
+## Response
 
-204: No content when gyms gets deleted
+### 204 No Content
+ No content when gyms gets deleted
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)
 
-404: [Not-found error](../not-found-errors.md)
+### 404 Not Found
+ [Not-found error](../not-found-errors.md)

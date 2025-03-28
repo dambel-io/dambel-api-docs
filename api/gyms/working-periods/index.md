@@ -2,17 +2,18 @@
 You can get list of the working periods of a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gyms.view_any`: is needed if you are trying to read list of working periods for an inactive gym
 
-### Params
+## Params
 
 No parameter.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [<working period resource>, ...],

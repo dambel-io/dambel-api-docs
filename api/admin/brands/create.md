@@ -2,19 +2,20 @@
 This API creates a new brand.
 
 
-### Permissions
+## Permissions
 
 - `brands.create`: to create a brand
 
-### Params
+## Params
 
 - `name`: Name of the brand (required|maxlength:255)
 - `link`: A link to website of the brand (optional|maxlength:255)
 - `description`: An optional description for the brand
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "brand": {<brand resource>},
@@ -23,8 +24,11 @@ This API creates a new brand.
 
 [Brand Resource](../../resources/brand.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

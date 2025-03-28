@@ -2,11 +2,11 @@
 You can update an existing equipment using this API.
 
 
-### Permissions
+## Permissions
 
 - `equipment.update`: to update an equipment
 
-### Params
+## Params
 
 - `name`: Name of the equipment (required|maxlength:255)
 - `link`: A link to a youtube video or something as a tutorial for the equipment (maxlength:255)
@@ -15,9 +15,10 @@ You can update an existing equipment using this API.
 All of the parameters are optional. If you don't pass them, they won't get updated.
 You still can set them to null if you want.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "equipment": {<equipment resource>},
@@ -26,8 +27,11 @@ You still can set them to null if you want.
 
 [Exercise Resource](../../resources/equipment.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

@@ -2,12 +2,12 @@
 Using this API you can update the information of one specific gym.
 
 
-### Permissions
+## Permissions
 - `gyms.update`: to update your own gym
 - `gyms.update_any`: to update any gym as an admin
 - `gyms.transfer_ownership`: to transfer the gym ownership
 
-### Params
+## Params
 
 - `name`: Name of the gym (required|maxlength:255)
 - `address`: Address of the gym (required|maxlength:255)
@@ -24,9 +24,10 @@ Using this API you can update the information of one specific gym.
 All of the parameters are optional. If you don't pass them, they won't get updated.
 You still can set them to null if you want.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "gym": {<gym resource>},
@@ -35,8 +36,11 @@ You still can set them to null if you want.
 
 [Gym Resource](../resources/gym.md)
 
-422: [Validation error](../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../validation-errors.md)
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)

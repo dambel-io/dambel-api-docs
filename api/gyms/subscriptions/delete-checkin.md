@@ -2,17 +2,21 @@
 You can delete a checkin on a gym subscription for a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_subscription_checkins.delete`: deleting checkins for your own gyms
 - `gym_subscription_checkins.delete_any`: deleting checkins for any gym
 
-### Response
+## Response
 
-204: Deleted successfully
+### 204 No Content
+ Deleted successfully
 
-404: Invalid gym id, subscription id, or checkin id passed
+### 404 Not Found
+ Invalid gym id, subscription id, or checkin id passed
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

@@ -2,16 +2,17 @@
 This API creates a new user.
 
 
-### Params
+## Params
 
 - `email`: User email
 - `password`: User password
 - `expiration`: Token expiration. Should be an integer as seconds. It's **optional** and if you don't pass it, token will never expire
 - `token_name`: An **optional** name for the token. If you don't set it, the user agent value will be used as the token name instead
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "user": {<user resource>},
@@ -30,6 +31,8 @@ This API creates a new user.
 }
 ```
 
-422: [Validation error](../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../validation-errors.md)
 
-429: [Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)
+### 429 Too Many Requests
+ [Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)

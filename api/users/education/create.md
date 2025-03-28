@@ -2,12 +2,12 @@
 You can create an education for a user using this API.
 
 
-### Permissions
+## Permissions
 
 - `education.create`: creating education for yourself
 - `education.create_any`: creating education for any user
 
-### Params
+## Params
 
 - `school`: Name of the school (maxlength 255)
 - `field`: Field of the education (maxlength 255)
@@ -15,17 +15,21 @@ You can create an education for a user using this API.
 - `start_date`: Start date of the education (required date format)
 - `end_date`: End date of the education (nullable date format)
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 <education resource>
 ```
 
 [Education Resource](../../resources/education.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

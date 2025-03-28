@@ -2,11 +2,11 @@
 This API creates a new gym (can be used by both user to create their own gym and also admin to create gyms for others)
 
 
-### Permissions
+## Permissions
 - `gyms.create`: to create your own gym
 - `gyms.create_any`: to create gym for another user as an admin
 
-### Params
+## Params
 
 - `name`: Name of the gym (required|maxlength:255)
 - `address`: Address of the gym (required|maxlength:255)
@@ -19,9 +19,10 @@ This API creates a new gym (can be used by both user to create their own gym and
 - `city_id`: numeric
 - `major_ids`: can be a list of IDs separated by `,`. If you want to detach all of the majors, you can pass `0` as the value
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "gym": {<gym resource>},
@@ -30,8 +31,11 @@ This API creates a new gym (can be used by both user to create their own gym and
 
 [Gym Resource](../resources/gym.md)
 
-422: [Validation error](../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../validation-errors.md)
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)

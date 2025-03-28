@@ -2,17 +2,21 @@
 You can delete a subscription for a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_subscriptions.delete`: deleting subscriptions for your own gyms
 - `gym_subscriptions.delete_any`: deleting subscriptions for any gym
 
-### Response
+## Response
 
-204: Deleted successfully
+### 204 No Content
+ Deleted successfully
 
-404: Invalid gym id or subscription id passed
+### 404 Not Found
+ Invalid gym id or subscription id passed
 
-401: [Authentication error](../../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../../authentication-errors.md)
 
-403: [Permission error](../../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../../permission-errors.md)

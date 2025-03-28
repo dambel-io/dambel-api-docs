@@ -2,21 +2,25 @@
 You can delete a working period from a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_working_periods.delete`: deleting working periods from their own gyms
 - `gym_working_periods.delete_any`: deleting working period of any gym
 
-### Params
+## Params
 
 No parameter.
 
-### Response
+## Response
 
-204: No content when working period gets deleted
+### 204 No Content
+ No content when working period gets deleted
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)
 
-404: [Not-found error](../../not-found-errors.md)
+### 404 Not Found
+ [Not-found error](../../not-found-errors.md)

@@ -2,13 +2,14 @@
 You can get list of the states by alphabetical order using this endpoint.
 
 
-### Params
+## Params
 
 - `country_id`: You can filter by country to get states in a specific country
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [

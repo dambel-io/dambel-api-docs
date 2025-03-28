@@ -2,12 +2,13 @@
 You can get list of the roles using this API.
 
 
-### Permissions
+## Permissions
 - `roles.view_any`: to update your own gym
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [

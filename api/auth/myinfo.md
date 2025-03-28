@@ -2,12 +2,13 @@
 This API will return the logged in user info.
 
 
-### Params
+## Params
 Nothing.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 
 ```json
 {
@@ -18,4 +19,5 @@ Nothing.
 
 [User Resource](../resources/user.md)
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)

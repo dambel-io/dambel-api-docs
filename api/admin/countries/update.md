@@ -2,16 +2,17 @@
 You can update an existing country using this API.
 
 
-### Permissions
+## Permissions
 - `countries.update`: to update a country
 
-### Params
+## Params
 
 - `name`: Name of the country (required|maxlength:255)
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "country": {<country resource>},
@@ -20,8 +21,11 @@ You can update an existing country using this API.
 
 [Country Resource](../../resources/country.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

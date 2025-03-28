@@ -2,15 +2,19 @@
 You can delete a role using this endpoint.
 
 
-### Permissions
+## Permissions
 - `roles.delete`: to delete any role
 
-### Response
+## Response
 
-204: No content when state gets deleted
+### 204 No Content
+ No content when state gets deleted
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)
 
-404: [Not-found error](../../not-found-errors.md)
+### 404 Not Found
+ [Not-found error](../../not-found-errors.md)

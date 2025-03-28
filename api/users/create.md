@@ -2,10 +2,10 @@
 This API creates a new user.
 
 
-### Permissions
+## Permissions
 - `users.create`: to create users
 
-### Params
+## Params
 
 - `first_name`: First name of the user (required|maxlength:255)
 - `last_name`: First name of the user (required|maxlength:255)
@@ -13,9 +13,10 @@ This API creates a new user.
 - `phone`: Phone number of the user (required|maxlength:255|unique)
 - `password`: Required parameter to set password of the user. Will be hashed and saved
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "user": {<user resource>},
@@ -24,10 +25,13 @@ This API creates a new user.
 
 [User Resource](../resources/user.md)
 
-422: [Validation error](../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../validation-errors.md)
 
 409: Email/Phone already in use
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)

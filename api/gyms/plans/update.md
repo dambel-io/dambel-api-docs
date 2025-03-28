@@ -2,12 +2,12 @@
 You can update a gym plan using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_plans.update`: update gym plans of their own gyms
 - `gym_plans.update_any`: update gym plans for any gym
 
-### Params
+## Params
 
 - `title`: Title of the plan (maxlength 255)
 - `description`: An optional description for the plan (maxlength 2000)
@@ -21,17 +21,21 @@ NOTE: Either one of `duration_days` and `sessions_count` can be null
 All of the parameters are optional. If you don't pass them, they won't get updated.
 You still can set them to null if you want.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 <gym plan resource>
 ```
 
 [Gym Plan Resource](../../resources/gym_plan.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

@@ -2,29 +2,34 @@
 You can create a subscription for a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_subscriptions.create`: creating subscriptions for your own gyms
 - `gym_subscriptions.create_any`: creating subscriptions for any gym
 
-### Params
+## Params
 
 - `gym_plan_id`: ID of the gym plan
 - `user_id`: ID of the user
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 <gym subscription resource>
 ```
 
 [Gym Subscription Resource](../../../resources/gym_subscription.md)
 
-404: Invalid gym id or gym plan id passed
+### 404 Not Found
+ Invalid gym id or gym plan id passed
 
-422: [Validation error](../../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../../validation-errors.md)
 
-401: [Authentication error](../../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../../authentication-errors.md)
 
-403: [Permission error](../../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../../permission-errors.md)

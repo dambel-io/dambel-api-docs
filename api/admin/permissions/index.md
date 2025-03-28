@@ -2,9 +2,10 @@
 You can get list of the permissions using this API.
 
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [

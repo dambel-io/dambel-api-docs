@@ -2,12 +2,12 @@
 You can create a subscription plan for a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_plans.create`: creating plans for your own gyms
 - `gym_plans.create_any`: creating plans for any gym
 
-### Params
+## Params
 
 - `title`: Title of the plan (maxlength 255)
 - `description`: An optional description for the plan (maxlength 2000)
@@ -18,17 +18,21 @@ You can create a subscription plan for a gym using this API.
 
 NOTE: Either one of `duration_days` and `sessions_count` can be null
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 <gym plan resource>
 ```
 
 [Gym Plan Resource](../../resources/gym_plan.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

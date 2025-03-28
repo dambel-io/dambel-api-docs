@@ -2,13 +2,14 @@
 You can get list of the cities by alphabetical order using this endpoint.
 
 
-### Params
+## Params
 
 - `state_id`: You can filter by country to get cities in a specific state
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [

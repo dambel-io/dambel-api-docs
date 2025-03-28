@@ -2,19 +2,20 @@
 This API creates a new equipment.
 
 
-### Permissions
+## Permissions
 
 - `equipment.create`: to create an equipment
 
-### Params
+## Params
 
 - `name`: Name of the equipment (required|maxlength:255)
 - `link`: A link to a youtube video or something as a tutorial for the equipment (optional|maxlength:255)
 - `description`: An optional description for the equipment
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "equipment": {<equipment resource>},
@@ -23,8 +24,11 @@ This API creates a new equipment.
 
 [Equipment Resource](../../resources/equipment.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

@@ -2,19 +2,20 @@
 This API creates a new supplement.
 
 
-### Permissions
+## Permissions
 
 - `supplements.create`: to create a supplement
 
-### Params
+## Params
 
 - `title`: Name of the supplement (required|maxlength:255)
 - `link`: A link to a wiki page for the supplement (optional|maxlength:255)
 - `description`: An optional description for the supplement
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "supplement": {<supplement resource>},
@@ -23,8 +24,11 @@ This API creates a new supplement.
 
 [Supplement Resource](../../resources/supplement.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

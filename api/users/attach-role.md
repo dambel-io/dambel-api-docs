@@ -2,12 +2,13 @@
 You can attach a role to a user using this API.
 
 
-### Permissions
+## Permissions
 - `users.attach_role`: to attach role to any user except themselves
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 
 ```json
 {
@@ -15,7 +16,8 @@ You can attach a role to a user using this API.
 }
 ```
 
-400:
+### 400 Bad Request
+
 
 ```json
 {
@@ -23,8 +25,11 @@ You can attach a role to a user using this API.
 }
 ```
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)
 
-404: role or user not found ([Not-found error](../not-found-errors.md))
+### 404 Not Found
+ role or user not found ([Not-found error](../not-found-errors.md))

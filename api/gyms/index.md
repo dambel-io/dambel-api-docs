@@ -2,11 +2,11 @@
 Using this API you can get list of the gyms and also search them using filters.
 
 
-### Permissions
+## Permissions
 
 - `gyms.view_any`: to view all of the gyms including inactive ones as an admin. If you don't have this permission, you only get active gyms in the response
 
-### Params
+## Params
 
 - `city_id`: specify the city (can be more than one ID separated by `,`)
 - `state_id`: specify the state (can be more than one ID separated by `,`)
@@ -21,9 +21,10 @@ Using this API you can get list of the gyms and also search them using filters.
 
 The gyms are sorted by the newest (if you don't specify lat and lng)
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [

@@ -2,12 +2,12 @@
 You can update a gym working period using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_working_periods.update`: update working periods of their own gyms
 - `gym_working_periods.update_any`: update working periods for any gym
 
-### Params
+## Params
 
 - `day`: should be one of these: `saturday`, `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`
 - `gender`: can be `men`, `women`, or `genderless`
@@ -21,17 +21,21 @@ You can update a gym working period using this API.
 All of the parameters are optional. If you don't pass them, they won't get updated.
 You still can set them to null if you want.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 <working period resource>
 ```
 
 [Working Period Resource](../../resources/gym_working_period.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

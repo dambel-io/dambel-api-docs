@@ -2,10 +2,10 @@
 Using this API you can update the information of one specific user.
 
 
-### Permissions
+## Permissions
 - `users.update_any`: to update any user as an admin
 
-### Params
+## Params
 
 - `first_name`: First name of the user (required|maxlength:255)
 - `last_name`: First name of the user (required|maxlength:255)
@@ -16,9 +16,10 @@ Using this API you can update the information of one specific user.
 All of the parameters are optional. If you don't pass them, they won't get updated.
 You still can set them to null if you want. The required ones won't be able to be set to null
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "user": {<user resource>},
@@ -27,12 +28,16 @@ You still can set them to null if you want. The required ones won't be able to b
 
 [User Resource](../resources/user.md)
 
-404: wrong user id passed
+### 404 Not Found
+ wrong user id passed
 
-422: [Validation error](../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../validation-errors.md)
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)
 
 409: newly set email/phone is already in use

@@ -2,18 +2,19 @@
 This API creates a new city.
 
 
-### Permissions
+## Permissions
 
 - `cities.create`: to create a city
 
-### Params
+## Params
 
 - `name`: Name of the city (required|maxlength:255)
 - ID of the state in the route
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "city": {<city resource>},
@@ -22,8 +23,11 @@ This API creates a new city.
 
 [City Resource](../../resources/city.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

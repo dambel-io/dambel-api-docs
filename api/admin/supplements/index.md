@@ -2,9 +2,10 @@
 You can get list of the supplements using this endpoint.
 
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [

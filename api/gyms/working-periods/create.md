@@ -2,12 +2,12 @@
 You can create a working period for a gym using this API.
 
 
-### Permissions
+## Permissions
 
 - `gym_working_periods.create`: creating working periods for your own gyms
 - `gym_working_periods.create_any`: creating working periods for any gym
 
-### Params
+## Params
 
 - `day`: should be one of these: `saturday`, `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`
 - `gender`: can be `men`, `women`, or `genderless`
@@ -18,17 +18,21 @@ You can create a working period for a gym using this API.
 - `exception_start_date`: the start date of the exception
 - `exception_end_date`: the end date of the exception
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 <working period resource>
 ```
 
 [Working Period Resource](../../resources/gym_working_period.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

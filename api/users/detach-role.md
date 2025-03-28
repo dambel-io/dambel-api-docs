@@ -2,12 +2,13 @@
 You can detach a role from a user using this API.
 
 
-### Permissions
+## Permissions
 - `users.detach_role`: to attach role from any user except themselves
 
-### Response
+## Response
 
-204:
+### 204 No Content
+
 
 ```json
 {
@@ -15,7 +16,8 @@ You can detach a role from a user using this API.
 }
 ```
 
-400:
+### 400 Bad Request
+
 
 ```json
 {
@@ -23,8 +25,11 @@ You can detach a role from a user using this API.
 }
 ```
 
-401: [Authentication error](../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../authentication-errors.md)
 
-403: [Permission error](../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../permission-errors.md)
 
-404: role or user not found ([Not-found error](../not-found-errors.md))
+### 404 Not Found
+ role or user not found ([Not-found error](../not-found-errors.md))

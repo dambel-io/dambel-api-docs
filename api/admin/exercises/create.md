@@ -2,19 +2,20 @@
 This API creates a new exercise.
 
 
-### Permissions
+## Permissions
 
 - `exercises.create`: to create an exercise
 
-### Params
+## Params
 
 - `name`: Name of the exercise (required|maxlength:255)
 - `link`: A link to a youtube video or something as a tutorial for the exercise (optional|maxlength:255)
 - `description`: An optional description for the exercise
 
-### Response
+## Response
 
-201:
+### 201 Created
+:
 ```json
 {
     "exercise": {<exercise resource>},
@@ -23,8 +24,11 @@ This API creates a new exercise.
 
 [Exercise Resource](../../resources/exercise.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

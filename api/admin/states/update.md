@@ -2,16 +2,17 @@
 You can update an existing state using this API.
 
 
-### Permissions
+## Permissions
 - `states.update`: to update a state
 
-### Params
+## Params
 
 - `name`: Name of the state (required|maxlength:255)
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "state": {<state resource>},
@@ -20,8 +21,11 @@ You can update an existing state using this API.
 
 [State Resource](../../resources/state.md)
 
-422: [Validation error](../../validation-errors.md)
+### 422 Unprocessable Entity
+ [Validation error](../../validation-errors.md)
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)

@@ -2,21 +2,25 @@
 You can delete an education from a user using this API.
 
 
-### Permissions
+## Permissions
 
 - `education.delete`: deleting your own education
 - `education.delete_any`: deleting education from any user
 
-### Params
+## Params
 
 No parameter.
 
-### Response
+## Response
 
-204: No content when education gets deleted
+### 204 No Content
+ No content when education gets deleted
 
-401: [Authentication error](../../authentication-errors.md)
+### 401 Unauthorized
+ [Authentication error](../../authentication-errors.md)
 
-403: [Permission error](../../permission-errors.md)
+### 403 Forbidden
+ [Permission error](../../permission-errors.md)
 
-404: [Not-found error](../../not-found-errors.md)
+### 404 Not Found
+ [Not-found error](../../not-found-errors.md)

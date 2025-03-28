@@ -2,11 +2,11 @@
 Using this API you can get list of the users and also search them using filters.
 
 
-### Permissions
+## Permissions
 
 - `users.view_any`: to view all of the users
 
-### Params
+## Params
 
 - `page`: page number
 - `search`: search by a text in user's name, email, and phone
@@ -18,9 +18,10 @@ Using this API you can get list of the users and also search them using filters.
 
 The users are sorted by the newest.
 
-### Response
+## Response
 
-200:
+### 200 OK
+
 ```json
 {
     "data": [
