@@ -61,6 +61,12 @@
                 - `/{education-id}`
                     - [delete](users/education/delete.md)
                     - [update](users/education/update.md)
+            - [`/training-services`](users/training-services/index.md)
+                - [index](users/training-services/index.md)
+                - [create](users/training-services/create.md)
+                - `/{training-service-id}`
+                    - [delete](users/training-services/delete.md)
+                    - [update](users/training-services/update.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)
