@@ -123,6 +123,7 @@
             - `/{supplement-id}`
                 - [delete](admin/supplements/delete.md)
                 - [update](admin/supplements/update.md)
+
 - [Validation errors](validation-errors.md)
 - [Authentication errors](authentication-errors.md)
 - [Server errors](server-errors.md)
