@@ -23,3 +23,12 @@ No parameter.
 [Working Period Resource](../../resources/gym_working_period.md)
 
 > NOTE: the list is sorted based on the weekday and opening time
+
+### 401 Unauthorized
+[Authentication error](../../authentication-errors.md)
+
+### 403 Forbidden
+[Permission error](../../permission-errors.md)
+
+### 404 Not Found
+[Not-found error](../../not-found-errors.md)

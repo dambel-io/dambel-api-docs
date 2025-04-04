@@ -21,3 +21,12 @@ No parameter.
 ```
 
 [Gym Plan Resource](../../resources/gym_plan.md)
+
+### 401 Unauthorized
+[Authentication error](../../authentication-errors.md)
+
+### 403 Forbidden
+[Permission error](../../permission-errors.md)
+
+### 404 Not Found
+[Not-found error](../../not-found-errors.md)

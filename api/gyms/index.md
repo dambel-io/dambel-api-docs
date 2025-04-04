@@ -42,3 +42,12 @@ The gyms are sorted by the newest (if you don't specify lat and lng)
 
 [Pagination Data](../pagination-data.md) (per page: 30)
 > NOTE: If you specify the location in the parameters, as the result is already limited to a specific radius, the pagination will be removed and all of the data will be returned in one page
+
+### 401 Unauthorized
+[Authentication error](../authentication-errors.md)
+
+### 403 Forbidden
+[Permission error](../permission-errors.md)
+
+### 404 Not Found
+[Not-found error](../not-found-errors.md)

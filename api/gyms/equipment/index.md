@@ -21,3 +21,12 @@ No parameter.
 ```
 
 [Gym Equipment Resource](../../resources/gym_equipment.md)
+
+### 401 Unauthorized
+[Authentication error](../../authentication-errors.md)
+
+### 403 Forbidden
+[Permission error](../../permission-errors.md)
+
+### 404 Not Found
+[Not-found error](../../not-found-errors.md)
