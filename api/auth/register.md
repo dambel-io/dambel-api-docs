@@ -32,7 +32,7 @@ This API creates a new user.
 ```
 
 ### 422 Unprocessable Entity
- [Validation error](../validation-errors.md)
+[Validation error](../validation-errors.md)
 
 ### 429 Too Many Requests
- [Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)
+[Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)

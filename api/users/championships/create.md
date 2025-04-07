@@ -24,10 +24,10 @@ You can create a championship for a user using this API.
 [Championship Resource](../../resources/championship.md)
 
 ### 422 Unprocessable Entity
- [Validation error](../../validation-errors.md)
+[Validation error](../../validation-errors.md)
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)
 
 ### 403 Forbidden
- [Permission error](../../permission-errors.md)
+[Permission error](../../permission-errors.md)

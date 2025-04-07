@@ -20,4 +20,4 @@ Nothing.
 [User Resource](../resources/user.md)
 
 ### 401 Unauthorized
- [Authentication error](../authentication-errors.md)
+[Authentication error](../authentication-errors.md)

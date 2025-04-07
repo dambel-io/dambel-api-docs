@@ -26,10 +26,10 @@ You can detach a role from a user using this API.
 ```
 
 ### 401 Unauthorized
- [Authentication error](../authentication-errors.md)
+[Authentication error](../authentication-errors.md)
 
 ### 403 Forbidden
- [Permission error](../permission-errors.md)
+[Permission error](../permission-errors.md)
 
 ### 404 Not Found
  role or user not found ([Not-found error](../not-found-errors.md))

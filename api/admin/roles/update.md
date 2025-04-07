@@ -21,13 +21,13 @@ You can update an existing role using this API.
 [Role Resource](../../resources/role.md)
 
 ### 422 Unprocessable Entity
- [Validation error](../../validation-errors.md)
+[Validation error](../../validation-errors.md)
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)
 
 ### 403 Forbidden
- [Permission error](../../permission-errors.md)
+[Permission error](../../permission-errors.md)
 
 ### 404 Not Found
- [Not found error](../../not-found-errors.md)
+[Not found error](../../not-found-errors.md)

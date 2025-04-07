@@ -1,10 +1,9 @@
-# `DELETE /api/v1/gyms/{gym-id}`
-You can delete a gym using this API (as normal user deleting their own gym and also admin user being able to delete all gyms).
+# `DELETE /api/v1/media/{media-id}`
+You can delete an attached media of any element using this API.
 
 
 ## Permissions
-- `gyms.delete`: to delete your own gym
-- `gyms.delete_any`: to delete someone else's gym
+You need to have **update** permission of the **imagable**.
 
 ## Params
 
@@ -13,7 +12,7 @@ You can delete a gym using this API (as normal user deleting their own gym and a
 ## Response
 
 ### 204 No Content
- No content when gyms gets deleted
+No content when media gets deleted
 
 ### 401 Unauthorized
 [Authentication error](../authentication-errors.md)

@@ -22,4 +22,4 @@ User or gym owner can checkout the last opened checkin on a subscription.
  attempting to checkout on a subscription that user has not permission to or gym is inactive ([Permission error](../../permission-errors.md))
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)

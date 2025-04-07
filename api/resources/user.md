@@ -9,8 +9,11 @@
     "first_name": "John",
     "last_name": "Doe",
     "created_at": "1970-01-01 00:00:00",
-    "roles": [<role resource>, ...]
+    "roles": [<role resource>, ...],
+    "media": [<media resource>, ...]
 }
 ```
 
 [Role Resource](role.md)
+
+[Media Resource](media.md)

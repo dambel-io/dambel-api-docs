@@ -26,7 +26,7 @@ User or gym owner can make a checkin on a subscription.
  attempting to checkin on a subscription that user has not permission to or gym is inactive ([Permission error](../../permission-errors.md))
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)
 
 ### 422 Unprocessable Entity
- [Validation error](../../validation-errors.md)
+[Validation error](../../validation-errors.md)

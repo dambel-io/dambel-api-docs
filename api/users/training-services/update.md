@@ -27,10 +27,10 @@ You still can set them to null if you want.
 [Training Service Resource](../../resources/training_service.md)
 
 ### 422 Unprocessable Entity
- [Validation error](../../validation-errors.md)
+[Validation error](../../validation-errors.md)
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)
 
 ### 403 Forbidden
- [Permission error](../../permission-errors.md)
+[Permission error](../../permission-errors.md)

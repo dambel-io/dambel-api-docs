@@ -17,9 +17,12 @@
     "city": <city resource>,
     "majors": [<major resource>, <major resource>, ...],
     "working_periods": [<working period resource>, ...],
-    "working_status": <explained below>
+    "working_status": <explained below>,
+    "media": [<media resource>, ...]
 }
 ```
+
+[Media Resource](media.md)
 
 [City Resource](city.md)
 

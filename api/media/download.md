@@ -1,14 +1,14 @@
-# `DELETE /api/v1/users/{user-id}`
-You can delete a user using this API.
+# `GET /api/v1/media/{media-id}`
+You can download a media using this API.
 
 
 ## Permissions
-- `users.delete_any`: to delete any user
+You need to have **view** permission of the **imagable**.
 
 ## Response
 
-### 204 No Content
- No content when user gets deleted
+### 200 OK
+The media file will be returned.
 
 ### 401 Unauthorized
 [Authentication error](../authentication-errors.md)

@@ -28,10 +28,10 @@ You still can set them to null if you want.
 [Exercise Resource](../../resources/equipment.md)
 
 ### 422 Unprocessable Entity
- [Validation error](../../validation-errors.md)
+[Validation error](../../validation-errors.md)
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)
 
 ### 403 Forbidden
- [Permission error](../../permission-errors.md)
+[Permission error](../../permission-errors.md)

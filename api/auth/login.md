@@ -28,10 +28,10 @@ This API gives user the ability to login and receive an API token.
 ```
 
 ### 422 Unprocessable Entity
- [Validation error](../validation-errors.md)
+[Validation error](../validation-errors.md)
 
 ### 429 Too Many Requests
- [Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)
+[Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)
 
 ## How to use API token?
 After you did the login and received the token, you should save it in the client side (for example in a cookie or local storage),

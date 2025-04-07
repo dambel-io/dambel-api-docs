@@ -16,7 +16,7 @@ You can delete a subscription for a gym using this API.
  Invalid gym id or subscription id passed
 
 ### 401 Unauthorized
- [Authentication error](../../../authentication-errors.md)
+[Authentication error](../../../authentication-errors.md)
 
 ### 403 Forbidden
- [Permission error](../../../permission-errors.md)
+[Permission error](../../../permission-errors.md)

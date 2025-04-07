@@ -16,4 +16,4 @@ You can subscribe the user into a gym plan using this API.
  if gym or gym plan ID is wrong or is inactive
 
 ### 401 Unauthorized
- [Authentication error](../../authentication-errors.md)
+[Authentication error](../../authentication-errors.md)

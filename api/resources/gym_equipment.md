@@ -8,6 +8,9 @@
     "equipment": <equipment resource>,
     "brand": <brand resource>,
     "count": 5,
-    "description": "some description"
+    "description": "some description",
+    "media": [<media resource>, ...]
 }
 ```
+
+[Media Resource](media.md)

@@ -73,6 +73,11 @@
                 - `/{training-service-id}`
                     - [delete](users/training-services/delete.md)
                     - [update](users/training-services/update.md)
+    - `/media`
+        - [create](media/create.md)
+        - `/{media-id}`
+            - [delete](media/delete.md)
+            - [get](media/download.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)
