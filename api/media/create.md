@@ -13,6 +13,9 @@ You need to have **update** permission of the **imagable**.
   - `gym_equipment`
   - `post`
   - `user`
+  - `education`
+  - `gym_buffet_item`
+  - `training_service`
 - `imagable_id`: Id of the element
 - `file`: The media file
 

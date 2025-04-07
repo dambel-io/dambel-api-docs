@@ -7,6 +7,9 @@
     "user_id": 123,
     "title": "...",
     "description": "...",
-    "price": 123
+    "price": 123,
+    "media": [<media resource>, ...]
 }
 ```
+
+[Media Resource](media.md)

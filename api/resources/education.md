@@ -9,6 +9,9 @@
     "field": "...",
     "description": "...",
     "start_date": "...",
-    "end_date": "..."
+    "end_date": "...",
+    "media": [<media resource>, ...]
 }
 ```
+
+[Media Resource](media.md)
