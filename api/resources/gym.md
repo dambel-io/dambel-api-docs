@@ -70,3 +70,7 @@ The value of all of `current`, `next`, and `last` keys would be something like t
 ```
 
 Only one of these three keys will be there. The json shown above includes all of them just as an example.
+
+### Crowd count
+This number is calculated based on [subscription check ins/outs](../gyms/subscriptions/checkin.md).
+If `show_corwd` is set to false, `null` will be returned.
