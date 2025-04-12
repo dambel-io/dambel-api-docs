@@ -8,7 +8,9 @@
     "title": "...",
     "description": "...",
     "price": 123,
-    "media": [<media resource>, ...]
+    "media": [<media resource>, ...],
+    "rating_count": 123,
+    "rating_average": 4.5
 }
 ```
 

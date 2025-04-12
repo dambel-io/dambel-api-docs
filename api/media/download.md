@@ -3,7 +3,7 @@ You can download a media using this API.
 
 
 ## Permissions
-You need to have **view** permission of the **imagable**.
+You need to have **view** permission of the **attachable**.
 
 ## Response
 

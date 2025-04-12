@@ -78,6 +78,13 @@
         - `/{media-id}`
             - [delete](media/delete.md)
             - [get](media/download.md)
+    - `/ratings`
+        - [index](ratings/index.md)
+        - [create](ratings/create.md)
+        - [`/all`](ratings/all.md)
+        - `/{rating-id}`
+            - [delete](ratings/delete.md)
+            - [update](ratings/update.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)

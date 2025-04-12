@@ -3,11 +3,11 @@ You can attach an media to an element using this API.
 
 
 ## Permissions
-You need to have **update** permission of the **imagable**.
+You need to have **update** permission of the **attachable**.
 
 ## Params
 
-- `imagable_type`: Type of the element that you are attaching the media to. These are available items:
+- `attachable_type`: Type of the element that you are attaching the media to. These are available items:
   - `championship`
   - `gym`
   - `gym_equipment`
@@ -16,7 +16,7 @@ You need to have **update** permission of the **imagable**.
   - `education`
   - `gym_buffet_item`
   - `training_service`
-- `imagable_id`: Id of the element
+- `attachable_id`: Id of the element
 - `file`: The media file
 
 ## Response

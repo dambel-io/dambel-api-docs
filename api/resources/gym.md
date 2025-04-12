@@ -18,7 +18,9 @@
     "majors": [<major resource>, <major resource>, ...],
     "working_periods": [<working period resource>, ...],
     "working_status": <explained below>,
-    "media": [<media resource>, ...]
+    "media": [<media resource>, ...],
+    "rating_count": 123,
+    "rating_average": 4.5
 }
 ```
 

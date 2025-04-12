@@ -3,11 +3,7 @@ You can delete an attached media of any element using this API.
 
 
 ## Permissions
-You need to have **update** permission of the **imagable**.
-
-## Params
-
-- `id`: ID of the gym in the route
+You need to have **update** permission of the **attachable**.
 
 ## Response
 
