@@ -47,6 +47,8 @@
                     - `/{gym-subscription-id}`
                         - [update](gyms/subscriptions/manage/update.md)
                         - [delete](gyms/subscriptions/manage/delete.md)
+            - `/data`
+                - [`/peak-hours`](gyms/data/peak-hours.md)
     - [`/users`](users/index.md)
         - [index](users/index.md)
         - [create](users/create.md)
