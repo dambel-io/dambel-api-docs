@@ -88,6 +88,12 @@
         - `/{rating-id}`
             - [delete](ratings/delete.md)
             - [update](ratings/update.md)
+    - `/posts`
+        - [index](posts/index.md)
+        - [create](posts/create.md)
+        - `/{post-id}`
+            - [delete](posts/delete.md)
+            - [update](posts/update.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)
