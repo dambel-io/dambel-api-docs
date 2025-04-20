@@ -15,6 +15,7 @@ You can create comment using this API.
   - `trainingService`
 - `commentable_id`: Id of the element
 - `content`: Required content of the comment (max length 255)
+- `parent_comment_id`: If the comment is in reply to another comment, its id can be sent here
 
 ## Response
 
