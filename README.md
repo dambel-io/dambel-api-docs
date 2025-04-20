@@ -94,6 +94,12 @@
         - `/{post-id}`
             - [delete](posts/delete.md)
             - [update](posts/update.md)
+    - `/comments`
+        - [index](comments/index.md)
+        - [create](comments/create.md)
+        - `/{comment-id}`
+            - [delete](comments/delete.md)
+            - [update](comments/update.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)
