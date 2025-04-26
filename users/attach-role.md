@@ -8,7 +8,6 @@ You can attach a role to a user using this API.
 ## Response
 
 ### 201 Created
-:
 
 ```json
 {

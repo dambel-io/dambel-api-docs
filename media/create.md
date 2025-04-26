@@ -22,7 +22,6 @@ You need to have **update** permission of the **attachable**.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "media": {<media resource>},

@@ -18,7 +18,6 @@ You can create an education for a user using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <education resource>
 ```

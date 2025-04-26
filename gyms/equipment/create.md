@@ -17,7 +17,6 @@ You can create an equipment for a gym using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <gym equipment resource>
 ```

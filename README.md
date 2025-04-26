@@ -100,6 +100,13 @@
         - `/{comment-id}`
             - [delete](comments/delete.md)
             - [update](comments/update.md)
+    - [`/payments`](payments/index.md)
+        - [index](payments/index.md)
+        - [`/deposit`](payments/deposit.md)
+        - [`/balance`](payments/balance.md)
+        - [`/prices`](payments/prices.md)
+        - [`/withdrawal`](payments/withdrawal.md)
+        - [`/buy-premium`](payments/buy-premium.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)

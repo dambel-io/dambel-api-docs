@@ -13,7 +13,6 @@ You can update comments using this API.
 ## Response
 
 ### 200 OK
-:
 ```json
 {
     "comment": {<comment resource>},

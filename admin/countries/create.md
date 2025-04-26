@@ -12,7 +12,6 @@ This API creates a new country.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "country": {<country resource>},

@@ -15,7 +15,6 @@ This API creates a new supplement.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "supplement": {<supplement resource>},

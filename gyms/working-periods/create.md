@@ -21,7 +21,6 @@ You can create a working period for a gym using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <working period resource>
 ```

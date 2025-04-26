@@ -22,7 +22,6 @@ This API creates a new gym (can be used by both user to create their own gym and
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "gym": {<gym resource>},

@@ -16,7 +16,6 @@ You can create a buffet item for a gym using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <gym buffet item resource>
 ```

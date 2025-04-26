@@ -13,7 +13,6 @@ You can update your previous rating using this API.
 ## Response
 
 ### 200 OK
-:
 ```json
 {
     "rating": {<rating resource>},

@@ -16,7 +16,6 @@ You can create a training service for a user using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <training service resource>
 ```

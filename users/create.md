@@ -16,7 +16,6 @@ This API creates a new user.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "user": {<user resource>},

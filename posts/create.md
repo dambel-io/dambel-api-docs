@@ -19,7 +19,6 @@ You can create post using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "post": {<post resource>},

@@ -15,7 +15,6 @@ This API creates a new brand.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "brand": {<brand resource>},

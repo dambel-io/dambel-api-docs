@@ -15,7 +15,6 @@ You can create a subscription for a gym using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <gym subscription resource>
 ```

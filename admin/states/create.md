@@ -14,7 +14,6 @@ This API creates a new state.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "state": {<state resource>},

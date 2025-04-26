@@ -20,7 +20,6 @@ You can create comment using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "comment": {<comment resource>},

@@ -15,7 +15,6 @@ This API creates a new equipment.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "equipment": {<equipment resource>},

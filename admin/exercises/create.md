@@ -15,7 +15,6 @@ This API creates a new exercise.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "exercise": {<exercise resource>},

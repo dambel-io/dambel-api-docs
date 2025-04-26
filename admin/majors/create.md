@@ -12,7 +12,6 @@ This API creates a new major.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "major": {<major resource>},

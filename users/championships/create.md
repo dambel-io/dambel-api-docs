@@ -16,7 +16,6 @@ You can create a championship for a user using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 <championship resource>
 ```

@@ -9,7 +9,6 @@ User or gym owner can make a checkin on a subscription.
 ## Response
 
 ### 201 Created
-:
 ```json
 <gym subscription checkin resource>
 ```

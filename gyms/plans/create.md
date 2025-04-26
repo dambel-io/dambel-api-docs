@@ -21,7 +21,6 @@ NOTE: Either one of `duration_days` and `sessions_count` can be null
 ## Response
 
 ### 201 Created
-:
 ```json
 <gym plan resource>
 ```

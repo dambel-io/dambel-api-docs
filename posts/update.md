@@ -16,7 +16,6 @@ You can update posts using this API.
 ## Response
 
 ### 200 OK
-:
 ```json
 {
     "post": {<post resource>},

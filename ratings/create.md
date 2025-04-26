@@ -18,7 +18,6 @@ You can rate an element using this API.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "rating": {<rating resource>},

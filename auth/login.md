@@ -12,7 +12,6 @@ This API gives user the ability to login and receive an API token.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "token": "<the API token will be set here>"

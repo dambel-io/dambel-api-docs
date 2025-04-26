@@ -14,7 +14,6 @@ This API creates a new city.
 ## Response
 
 ### 201 Created
-:
 ```json
 {
     "city": {<city resource>},
