@@ -175,3 +175,4 @@
 - [Not-found errors](_globals/not-found-errors.md)
 - [Permission errors](_globals/permission-errors.md)
 - [Pagination data](_globals/pagination-data.md)
+- [Broadcasting](_globals/broadcasting.md)
