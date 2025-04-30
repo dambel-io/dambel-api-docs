@@ -5,7 +5,7 @@ This API creates a new user.
 ## Params
 
 - `email`: User email
-- `phone`: User phone number
+- `phone`: User phone number (optional)
 - `first_name`: First name of the user
 - `last_name`: Last name of the user
 - `password`: User password
