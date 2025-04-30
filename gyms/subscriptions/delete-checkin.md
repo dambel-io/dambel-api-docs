@@ -16,7 +16,7 @@ You can delete a checkin on a gym subscription for a gym using this API.
  Invalid gym id, subscription id, or checkin id passed
 
 ### 401 Unauthorized
-[Authentication error](../../authentication-errors.md)
+[Authentication error](../../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../../permission-errors.md)
+[Permission error](../../_globals/permission-errors.md)

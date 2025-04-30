@@ -32,13 +32,13 @@ You can get list of subscriptions on a gym using this API.
 }
 ```
 
-[Gym Subscription Resource](../../../resources/gym_subscription.md)
+[Gym Subscription Resource](../gym_subscription.md)
 
 ### 404 Not Found
  Invalid gym id or gym plan id passed
 
 ### 401 Unauthorized
-[Authentication error](../../../authentication-errors.md)
+[Authentication error](../../../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../../../permission-errors.md)
+[Permission error](../../../_globals/permission-errors.md)

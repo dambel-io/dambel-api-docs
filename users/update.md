@@ -26,18 +26,18 @@ You still can set them to null if you want. The required ones won't be able to b
 }
 ```
 
-[User Resource](../resources/user.md)
+[User Resource](user_resource.md)
 
 ### 404 Not Found
  wrong user id passed
 
 ### 422 Unprocessable Entity
-[Validation error](../validation-errors.md)
+[Validation error](../_globals/validation-errors.md)
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../permission-errors.md)
+[Permission error](../_globals/permission-errors.md)
 
 409: newly set email/phone is already in use

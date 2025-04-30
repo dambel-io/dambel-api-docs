@@ -9,5 +9,5 @@
 }
 ```
 
-[Permission Resource](permission.md)
+[Permission Resource](../permissions/permission_resource.md)
 

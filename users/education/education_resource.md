@@ -5,11 +5,13 @@
 {
     "id": 123,
     "user_id": 123,
-    "title": "...",
+    "school": "...",
+    "field": "...",
     "description": "...",
-    "date": "...",
+    "start_date": "...",
+    "end_date": "...",
     "media": [<media resource>, ...]
 }
 ```
 
-[Media Resource](media.md)
+[Media Resource](../../media/media_resource.md)

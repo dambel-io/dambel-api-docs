@@ -20,4 +20,4 @@ You can get general data for premium plan prices and commission rates in the pla
 ```
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)

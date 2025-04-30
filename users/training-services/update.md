@@ -24,13 +24,13 @@ You still can set them to null if you want.
 <training service resource>
 ```
 
-[Training Service Resource](../../resources/training_service.md)
+[Training Service Resource](training_service_resource.md)
 
 ### 422 Unprocessable Entity
-[Validation error](../../validation-errors.md)
+[Validation error](../../_globals/validation-errors.md)
 
 ### 401 Unauthorized
-[Authentication error](../../authentication-errors.md)
+[Authentication error](../../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../../permission-errors.md)
+[Permission error](../../_globals/permission-errors.md)

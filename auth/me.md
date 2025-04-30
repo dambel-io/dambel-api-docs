@@ -1,4 +1,4 @@
-# `GET /api/v1/auth/myinfo`
+# `GET /api/v1/auth/me`
 This API will return the logged in user info.
 
 
@@ -17,7 +17,7 @@ Nothing.
 }
 ```
 
-[User Resource](../resources/user.md)
+[User Resource](../users/user_resource.md)
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)

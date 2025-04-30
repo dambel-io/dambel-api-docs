@@ -15,8 +15,8 @@
 }
 ```
 
-[Role Resource](role.md)
+[Role Resource](../admin/roles/role.md)
 
-[Media Resource](media.md)
+[Media Resource](../media/media_resource.md)
 
-[User Premium Subscription Resource](user_premium_subscription.md)
+[User Premium Subscription Resource](../payments/user_premium_subscription_resource.md)

@@ -20,7 +20,7 @@ When request is created successfully.
 Insufficient balance.
 
 ### 422 Unprocessable Entity
-[Validation error](../validation-errors.md)
+[Validation error](../_globals/validation-errors.md)
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)

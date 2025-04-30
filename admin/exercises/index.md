@@ -17,4 +17,4 @@ You can get list of the exercises by alphabetical order using this endpoint.
 }
 ```
 
-[Exercise Resource](../../resources/exercise.md)
+[Exercise Resource](exercise_resource.md)

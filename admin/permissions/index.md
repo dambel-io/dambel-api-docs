@@ -17,4 +17,4 @@ You can get list of the permissions using this API.
 }
 ```
 
-[Permission Resource](../../resources/permission.md)
+[Permission Resource](permission_resource.md)

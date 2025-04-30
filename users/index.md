@@ -35,6 +35,6 @@ The users are sorted by the newest.
 }
 ```
 
-[User Resource](../resources/user.md)
+[User Resource](user_resource.md)
 
-[Pagination Data](../pagination-data.md) (per page: 30)
+[Pagination Data](../_globals/pagination-data.md) (per page: 30)

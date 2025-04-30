@@ -9,7 +9,7 @@ Users can get list of their own payments and transactions and admins can get lis
 
 ## Params
 
-- `type`: [see available types](../resources/payment.md#type). Multiple options can be used separated by `,`
+- `type`: [see available types](payment_resource.md#type). Multiple options can be used separated by `,`
 - `payable_type`: Multiple options can be used separated by `,`
 - `payable_id`: Multiple options can be used separated by `,`
 - `user_id`: Multiple options can be used separated by `,`
@@ -39,9 +39,9 @@ Users can get list of their own payments and transactions and admins can get lis
 }
 ```
 
-[Payment Resource](../resources/payment.md)
+[Payment Resource](payment_resource.md)
 
-[Pagination Data](../pagination-data.md) (per page: 30)
+[Pagination Data](../_globals/pagination-data.md) (per page: 30)
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)

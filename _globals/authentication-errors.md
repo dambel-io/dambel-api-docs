@@ -9,4 +9,4 @@ When you try to access an API that requires authentication but you have not pass
 
 ## How to authenticate?
 
-Here is [how to use API tokens](auth/login.md#how-to-use-api-token).
+Here is [how to use API tokens](../auth/login.md#how-to-use-api-token).

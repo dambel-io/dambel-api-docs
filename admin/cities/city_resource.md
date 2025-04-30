@@ -9,4 +9,4 @@
 }
 ```
 
-[State Resource](state.md)
+[State Resource](../states/state_resource.md)

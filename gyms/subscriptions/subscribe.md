@@ -9,7 +9,7 @@ You can subscribe the user into a gym plan using this API.
 <gym subscription resource>
 ```
 
-[Gym Subscription Resource](../../resources/gym_subscription.md)
+[Gym Subscription Resource](gym_subscription.md)
 
 ### 400 Bad Request
 When the account balance is not enough to pay for the subscription.
@@ -18,4 +18,4 @@ When the account balance is not enough to pay for the subscription.
  if gym or gym plan ID is wrong or is inactive
 
 ### 401 Unauthorized
-[Authentication error](../../authentication-errors.md)
+[Authentication error](../../_globals/authentication-errors.md)

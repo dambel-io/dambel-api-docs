@@ -9,4 +9,4 @@
 }
 ```
 
-[Country Resource](country.md)
+[Country Resource](../countries/country_resource.md)

@@ -38,16 +38,16 @@ The gyms are sorted by the newest (if you don't specify lat and lng)
 }
 ```
 
-[Gym Resource](../resources/gym.md)
+[Gym Resource](gym_resource.md)
 
-[Pagination Data](../pagination-data.md) (per page: 30)
+[Pagination Data](../_globals/pagination-data.md) (per page: 30)
 > NOTE: If you specify the location in the parameters, as the result is already limited to a specific radius, the pagination will be removed and all of the data will be returned in one page
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../permission-errors.md)
+[Permission error](../_globals/permission-errors.md)
 
 ### 404 Not Found
-[Not-found error](../not-found-errors.md)
+[Not-found error](../_globals/not-found-errors.md)

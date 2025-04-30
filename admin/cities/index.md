@@ -21,4 +21,4 @@ You can get list of the cities by alphabetical order using this endpoint.
 }
 ```
 
-[City Resource](../../resources/city.md)
+[City Resource](city_resource.md)

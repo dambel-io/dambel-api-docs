@@ -17,4 +17,4 @@ You can get list of the countries by alphabetical order using this endpoint.
 }
 ```
 
-[Country Resource](../../resources/country.md)
+[Country Resource](country_resource.md)

@@ -16,7 +16,7 @@ Use [`/prices`](prices.md) to get plan names and discount rates.
 <user premium subscription resource>
 ```
 
-[User Premium Subscription Resource](../resources/user_premium_subscription.md)
+[User Premium Subscription Resource](user_premium_subscription_resource.md)
 
 ### 400 Bad Request
 When an unexpected error happens during the payment process.
@@ -34,7 +34,7 @@ When an unexpected error happens during the payment process.
 ```
 
 ### 422 Unprocessable Entity
-[Validation error](../validation-errors.md)
+[Validation error](../_globals/validation-errors.md)
 
 ### 404 Not Found
 ```json
@@ -52,4 +52,4 @@ When there is an unexpected error:
 ```
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)

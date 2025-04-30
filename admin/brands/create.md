@@ -21,13 +21,13 @@ This API creates a new brand.
 }
 ```
 
-[Brand Resource](../../resources/brand.md)
+[Brand Resource](brand_resource.md)
 
 ### 422 Unprocessable Entity
-[Validation error](../../validation-errors.md)
+[Validation error](../../_globals/validation-errors.md)
 
 ### 401 Unauthorized
-[Authentication error](../../authentication-errors.md)
+[Authentication error](../../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../../permission-errors.md)
+[Permission error](../../_globals/permission-errors.md)

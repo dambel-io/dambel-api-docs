@@ -16,13 +16,13 @@ No parameter.
 }
 ```
 
-[Championship Resource](../../resources/championship.md)
+[Championship Resource](championship_resource.md)
 
 ### 401 Unauthorized
-[Authentication error](../../authentication-errors.md)
+[Authentication error](../../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../../permission-errors.md)
+[Permission error](../../_globals/permission-errors.md)
 
 ### 404 Not Found
-[Not-found error](../../not-found-errors.md)
+[Not-found error](../../_globals/not-found-errors.md)

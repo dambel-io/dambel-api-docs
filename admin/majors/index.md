@@ -17,4 +17,4 @@ You can get list of the majors using this endpoint.
 }
 ```
 
-[Major Resource](../../resources/major.md)
+[Major Resource](major_resource.md)

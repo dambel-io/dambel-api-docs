@@ -17,4 +17,4 @@ You can get list of the supplements using this endpoint.
 }
 ```
 
-[Supplement Resource](../../resources/supplement.md)
+[Supplement Resource](supplement_resource.md)

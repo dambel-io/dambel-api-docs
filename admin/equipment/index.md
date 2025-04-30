@@ -17,4 +17,4 @@ You can get list of the equipment by alphabetical order using this endpoint.
 }
 ```
 
-[Equipment Resource](../../resources/equipment.md)
+[Equipment Resource](equipment_resource.md)

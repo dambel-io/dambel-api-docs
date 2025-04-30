@@ -20,4 +20,4 @@ You can get list of the roles using this API.
 }
 ```
 
-[Role Resource](../../resources/role.md)
+[Role Resource](role.md)

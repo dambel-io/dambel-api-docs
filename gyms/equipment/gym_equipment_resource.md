@@ -13,4 +13,4 @@
 }
 ```
 
-[Media Resource](media.md)
+[Media Resource](../../media/media_resource.md)

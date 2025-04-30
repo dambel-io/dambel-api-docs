@@ -5,9 +5,10 @@ This API creates a new user.
 ## Params
 
 - `email`: User email
+- `phone`: User phone number
+- `first_name`: First name of the user
+- `last_name`: Last name of the user
 - `password`: User password
-- `expiration`: Token expiration. Should be an integer as seconds. It's **optional** and if you don't pass it, token will never expire
-- `token_name`: An **optional** name for the token. If you don't set it, the user agent value will be used as the token name instead
 
 ## Response
 
@@ -19,7 +20,7 @@ This API creates a new user.
 }
 ```
 
-[User Resource](../resources/user.md)
+[User Resource](../users/user_resource.md)
 
 [How to use API token?](login.md#how-to-use-api-token)
 
@@ -31,7 +32,7 @@ This API creates a new user.
 ```
 
 ### 422 Unprocessable Entity
-[Validation error](../validation-errors.md)
+[Validation error](../_globals/validation-errors.md)
 
 ### 429 Too Many Requests
-[Rate-limit error](../rate-limit-errors.md) (10 requests per minute is allowed)
+[Rate-limit error](../_globals/rate-limit-errors.md) (10 requests per minute is allowed)

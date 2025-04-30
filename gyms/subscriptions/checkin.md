@@ -13,7 +13,7 @@ User or gym owner can make a checkin on a subscription.
 <gym subscription checkin resource>
 ```
 
-[Gym Subscription Checkin Resource](../../resources/gym_subscription_checkin.md)
+[Gym Subscription Checkin Resource](gym_subscription_checkin_resource.md)
 
 ### 404 Not Found
  if gym or gym subscription ID is wrong or is inactive
@@ -22,10 +22,10 @@ User or gym owner can make a checkin on a subscription.
  if there is an already open checkin that is not checked out yet
 
 ### 403 Forbidden
- attempting to checkin on a subscription that user has not permission to or gym is inactive ([Permission error](../../permission-errors.md))
+ attempting to checkin on a subscription that user has not permission to or gym is inactive ([Permission error](../../_globals/permission-errors.md))
 
 ### 401 Unauthorized
-[Authentication error](../../authentication-errors.md)
+[Authentication error](../../_globals/authentication-errors.md)
 
 ### 422 Unprocessable Entity
-[Validation error](../../validation-errors.md)
+[Validation error](../../_globals/validation-errors.md)

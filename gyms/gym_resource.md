@@ -24,13 +24,13 @@
 }
 ```
 
-[Media Resource](media.md)
+[Media Resource](../media/media_resource.md)
 
-[City Resource](city.md)
+[City Resource](../admin/cities/city_resource.md)
 
-[Major Resource](major.md)
+[Major Resource](../admin/majors/major_resource.md)
 
-[Working Period Resource](gym_working_period.md)
+[Working Period Resource](working-periods/gym_working_period_resource.md)
 
 ### Working status
 The `working_status` field can give you some information about the current working status of the gym at that day and time.
@@ -72,5 +72,5 @@ The value of all of `current`, `next`, and `last` keys would be something like t
 Only one of these three keys will be there. The json shown above includes all of them just as an example.
 
 ### Crowd count
-This number is calculated based on [subscription check ins/outs](../gyms/subscriptions/checkin.md).
+This number is calculated based on [subscription check ins/outs](subscriptions/checkin.md).
 If `show_corwd` is set to false, `null` will be returned.

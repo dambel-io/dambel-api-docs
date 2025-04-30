@@ -21,4 +21,4 @@ You can get list of the states by alphabetical order using this endpoint.
 }
 ```
 
-[State Resource](../../resources/state.md)
+[State Resource](state_resource.md)

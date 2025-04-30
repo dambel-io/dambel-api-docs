@@ -32,15 +32,15 @@ You can search the comments using this API. This can be used for both admin mana
 }
 ```
 
-[Comment Resource](../resources/comment.md)
+[Comment Resource](comment_resource.md)
 
-[Pagination Data](../pagination-data.md) (per page: 50)
+[Pagination Data](../_globals/pagination-data.md) (per page: 50)
 
 ### 401 Unauthorized
-[Authentication error](../authentication-errors.md)
+[Authentication error](../_globals/authentication-errors.md)
 
 ### 403 Forbidden
-[Permission error](../permission-errors.md)
+[Permission error](../_globals/permission-errors.md)
 
 ### 404 Not Found
-[Not-found error](../not-found-errors.md)
+[Not-found error](../_globals/not-found-errors.md)

@@ -17,4 +17,4 @@ You can get list of the brands by alphabetical order using this endpoint.
 }
 ```
 
-[Brand Resource](../../resources/brand.md)
+[Brand Resource](brand_resource.md)

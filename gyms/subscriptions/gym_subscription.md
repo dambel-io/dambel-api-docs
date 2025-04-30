@@ -12,6 +12,6 @@
 }
 ```
 
-[Gym Plan Resource](gym_plan.md)
+[Gym Plan Resource](../plans/gym_plan_resource.md)
 
-[Gym Subscription Checkin Resource](gym_subscription_checkin.md)
+[Gym Subscription Checkin Resource](gym_subscription_checkin_resource.md)
