@@ -15,7 +15,7 @@
 }
 ```
 
-[Role Resource](../admin/roles/role.md)
+[Role Resource](../admin/roles/role_resource.md)
 
 [Media Resource](../media/media_resource.md)
 

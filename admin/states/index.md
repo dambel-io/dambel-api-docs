@@ -2,6 +2,10 @@
 You can get list of the states by alphabetical order using this endpoint.
 
 
+## Permissions
+
+- `states.view_all`: to access states
+
 ## Params
 
 - `country_id`: You can filter by country to get states in a specific country

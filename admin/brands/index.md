@@ -2,6 +2,10 @@
 You can get list of the brands by alphabetical order using this endpoint.
 
 
+## Permissions
+
+- `brands.view_all`: to access brands
+
 ## Response
 
 ### 200 OK

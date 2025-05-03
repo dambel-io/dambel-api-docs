@@ -4,6 +4,7 @@ You can update an existing supplement using this API.
 
 ## Permissions
 
+- `supplements.view_all`: to access supplements
 - `supplements.update`: to update a city
 
 ## Params

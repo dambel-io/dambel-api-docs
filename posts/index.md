@@ -5,7 +5,7 @@ You can search the posts using this API. This can be used for both admin managem
 ## Permissions
 
 - `posts.view`: view your own posts and posts on any public profile
-- `posts.view_any`: view all of the posts even in draft mode on any profile
+- `posts.view_all`: view all of the posts even in draft mode on any profile
 
 ## Params
 

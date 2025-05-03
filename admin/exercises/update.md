@@ -4,6 +4,7 @@ You can update an existing exercise using this API.
 
 ## Permissions
 
+- `exercises.view_all`: to access exercises
 - `exercises.update`: to update a exercise
 
 ## Params

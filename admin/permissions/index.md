@@ -2,6 +2,10 @@
 You can get list of the permissions using this API.
 
 
+## Permissions
+
+- `permissions.view_any`: to access permissions
+
 ## Response
 
 ### 200 OK

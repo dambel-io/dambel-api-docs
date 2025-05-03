@@ -3,6 +3,8 @@ You can delete a supplement using this endpoint.
 
 
 ## Permissions
+
+- `supplements.view_all`: to access supplements
 - `supplements.delete`: to delete any supplement
 
 ## Params

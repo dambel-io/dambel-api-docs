@@ -3,6 +3,8 @@ You can delete a state using this endpoint.
 
 
 ## Permissions
+
+- `states.view_all`: to access states
 - `states.delete`: to delete any state
 
 ## Params

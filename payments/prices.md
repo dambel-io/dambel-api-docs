@@ -2,6 +2,11 @@
 You can get general data for premium plan prices and commission rates in the platform using this API.
 
 
+## Permissions
+
+- `payments.view_own`: To access the payment system
+- `payments.view_prices`: To view the prices
+
 ## Response
 
 ### 200 OK

@@ -4,6 +4,7 @@ You can update an existing equipment using this API.
 
 ## Permissions
 
+- `equipment.view_all`: to access equipment
 - `equipment.update`: to update an equipment
 
 ## Params

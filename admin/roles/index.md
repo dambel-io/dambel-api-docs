@@ -3,7 +3,8 @@ You can get list of the roles using this API.
 
 
 ## Permissions
-- `roles.view_any`: to update your own gym
+
+- `roles.view_all`: to access roles
 
 ## Response
 
@@ -20,4 +21,4 @@ You can get list of the roles using this API.
 }
 ```
 
-[Role Resource](role.md)
+[Role Resource](role_resource.md)

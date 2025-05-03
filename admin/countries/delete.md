@@ -3,6 +3,8 @@ You can delete a country using this endpoint.
 
 
 ## Permissions
+
+- `countries.view_all`: to access countries
 - `countries.delete`: to delete any country
 
 ## Params

@@ -3,6 +3,8 @@ You can update an existing city using this API.
 
 
 ## Permissions
+
+- `cities.view_all`: to access cities
 - `cities.update`: to update a city
 
 ## Params

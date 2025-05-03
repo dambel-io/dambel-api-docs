@@ -3,6 +3,8 @@ You can update an existing role using this API.
 
 
 ## Permissions
+
+- `roles.view_all`: to access roles
 - `roles.update`: to update a role
 
 ## Params
@@ -18,7 +20,7 @@ You can update an existing role using this API.
 <role resource>
 ```
 
-[Role Resource](role.md)
+[Role Resource](role_resource.md)
 
 ### 422 Unprocessable Entity
 [Validation error](../../_globals/validation-errors.md)

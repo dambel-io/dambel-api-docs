@@ -4,7 +4,7 @@ You can get all of the ratings as an admin.
 
 ## Permissions
 
-- `ratings.view_any`: to view all of the ratings in the system in addition to your own
+- `ratings.view_all`: to view all of the ratings in the system in addition to your own
 
 ## Params
 

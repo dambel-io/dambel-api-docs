@@ -4,8 +4,8 @@ Users can get list of their own payments and transactions and admins can get lis
 
 ## Permissions
 
-- `payments.view_any`: To view all of the payments
-- Normal users can always get list of their own records using this API
+- `payments.view_all`: To view all of the payments
+- `payments.view_own`: To view only their own payments
 
 ## Params
 

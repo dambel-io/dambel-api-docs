@@ -4,6 +4,7 @@ This API creates a new state.
 
 ## Permissions
 
+- `roles.view_all`: to access roles
 - `roles.create`: to create a role
 
 ## Params
@@ -18,7 +19,7 @@ This API creates a new state.
 <role resource>
 ```
 
-[Role Resource](role.md)
+[Role Resource](role_resource.md)
 
 ### 422 Unprocessable Entity
 [Validation error](../../_globals/validation-errors.md)

@@ -3,6 +3,8 @@ You can delete a major using this endpoint.
 
 
 ## Permissions
+
+- `majors.view_all`: to access majors
 - `majors.delete`: to delete any major
 
 ## Params

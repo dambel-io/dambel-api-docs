@@ -4,6 +4,7 @@ You can update an existing brand using this API.
 
 ## Permissions
 
+- `brands.view_all`: to access brands
 - `brands.update`: to update a city
 
 ## Params

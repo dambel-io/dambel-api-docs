@@ -4,6 +4,7 @@ This API creates a new exercise.
 
 ## Permissions
 
+- `exercises.view_all`: to access exercises
 - `exercises.create`: to create an exercise
 
 ## Params

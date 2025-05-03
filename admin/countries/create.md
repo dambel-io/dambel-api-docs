@@ -3,6 +3,8 @@ This API creates a new country.
 
 
 ## Permissions
+
+- `countries.view_all`: to access countries
 - `countries.create`: to create a country
 
 ## Params

@@ -4,6 +4,7 @@ This API creates a new supplement.
 
 ## Permissions
 
+- `supplements.view_all`: to access supplements
 - `supplements.create`: to create a supplement
 
 ## Params

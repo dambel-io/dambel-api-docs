@@ -3,6 +3,8 @@ You can update an existing major using this API.
 
 
 ## Permissions
+
+- `majors.view_all`: to access majors
 - `majors.update`: to update a major
 
 ## Params

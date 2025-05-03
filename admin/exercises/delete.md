@@ -3,6 +3,8 @@ You can delete an exercise using this endpoint.
 
 
 ## Permissions
+
+- `exercises.view_all`: to access exercises
 - `exercises.delete`: to delete any exercise
 
 ## Params

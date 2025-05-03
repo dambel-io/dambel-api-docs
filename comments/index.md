@@ -5,7 +5,7 @@ You can search the comments using this API. This can be used for both admin mana
 ## Permissions
 
 - `comments.view`: view your own comments and comments on any public commentable
-- `comments.view_any`: view all of the comments even in draft mode on any profile
+- `comments.view_all`: view all of the comments even in draft mode on any profile
 
 ## Params
 

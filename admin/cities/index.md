@@ -2,6 +2,10 @@
 You can get list of the cities by alphabetical order using this endpoint.
 
 
+## Permissions
+
+- `cities.view_all`: to access cities
+
 ## Params
 
 - `state_id`: You can filter by country to get cities in a specific state

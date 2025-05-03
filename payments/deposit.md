@@ -4,7 +4,8 @@ You can deposit some money into your account using this API.
 
 ## Permissions
 
-No specific permission is required. All users can deposit money into their own account.
+- `payments.view_own`: To access the payment system
+- `payments.deposit`: To be able to deposit money into their own account
 
 ## Params
 

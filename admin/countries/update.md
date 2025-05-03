@@ -3,6 +3,8 @@ You can update an existing country using this API.
 
 
 ## Permissions
+
+- `countries.view_all`: to access countries
 - `countries.update`: to update a country
 
 ## Params

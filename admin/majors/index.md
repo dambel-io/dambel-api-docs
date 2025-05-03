@@ -2,6 +2,10 @@
 You can get list of the majors using this endpoint.
 
 
+## Permissions
+
+- `majors.view_all`: to access majors
+
 ## Response
 
 ### 200 OK

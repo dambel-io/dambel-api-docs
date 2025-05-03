@@ -3,6 +3,8 @@ You can delete a brand using this endpoint.
 
 
 ## Permissions
+
+- `brands.view_all`: to access brands
 - `brands.delete`: to delete any brand
 
 ## Params

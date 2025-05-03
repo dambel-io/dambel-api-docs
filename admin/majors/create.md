@@ -3,6 +3,8 @@ This API creates a new major.
 
 
 ## Permissions
+
+- `majors.view_all`: to access majors
 - `majors.create`: to create a country
 
 ## Params

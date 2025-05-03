@@ -4,7 +4,7 @@ Using this API you can get list of the users and also search them using filters.
 
 ## Permissions
 
-- `users.view_any`: to view all of the users
+- `users.view_all`: to view all of the users
 
 ## Params
 

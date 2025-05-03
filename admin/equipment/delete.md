@@ -3,6 +3,8 @@ You can delete an equipment using this endpoint.
 
 
 ## Permissions
+
+- `equipment.view_all`: to access equipment
 - `equipment.delete`: to delete any equipment
 
 ## Params

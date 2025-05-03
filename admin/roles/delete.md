@@ -3,6 +3,8 @@ You can delete a role using this endpoint.
 
 
 ## Permissions
+
+- `roles.view_all`: to access roles
 - `roles.delete`: to delete any role
 
 ## Response

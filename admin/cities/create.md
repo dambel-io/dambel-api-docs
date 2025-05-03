@@ -4,6 +4,7 @@ This API creates a new city.
 
 ## Permissions
 
+- `cities.view_all`: to access cities
 - `cities.create`: to create a city
 
 ## Params

@@ -4,7 +4,8 @@ You can make a withdrawal request using this API.
 
 ## Permissions
 
-No specific permission is required.
+- `payments.view_own`: To access the payment system
+- `payments.withdraw`: To request a withdrawal
 
 ## Params
 

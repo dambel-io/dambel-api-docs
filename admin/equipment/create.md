@@ -4,6 +4,7 @@ This API creates a new equipment.
 
 ## Permissions
 
+- `equipment.view_all`: to access equipment
 - `equipment.create`: to create an equipment
 
 ## Params

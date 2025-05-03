@@ -4,6 +4,7 @@ This API creates a new state.
 
 ## Permissions
 
+- `states.view_all`: to access states
 - `states.create`: to create a state
 
 ## Params

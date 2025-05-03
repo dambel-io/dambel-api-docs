@@ -2,6 +2,11 @@
 Users can purchase a premium account using this API.
 
 
+## Permissions
+
+- `payments.view_own`: To access the payment system
+- `payments.buy_premium`: To be able to buy premium account
+
 ## Params
 
 - `plan`: Name of the plan

@@ -4,6 +4,7 @@ This API creates a new brand.
 
 ## Permissions
 
+- `brands.view_all`: to access brands
 - `brands.create`: to create a brand
 
 ## Params

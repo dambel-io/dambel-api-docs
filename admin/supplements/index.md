@@ -2,6 +2,10 @@
 You can get list of the supplements using this endpoint.
 
 
+## Permissions
+
+- `supplements.view_all`: to access supplements
+
 ## Response
 
 ### 200 OK

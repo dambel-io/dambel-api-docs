@@ -3,6 +3,8 @@ You can delete a city using this endpoint.
 
 
 ## Permissions
+
+- `cities.view_all`: to access cities
 - `cities.delete`: to delete any city
 
 ## Params

@@ -4,7 +4,7 @@ Using this API you can get list of the gyms and also search them using filters.
 
 ## Permissions
 
-- `gyms.view_any`: to view all of the gyms including inactive ones as an admin. If you don't have this permission, you only get active gyms in the response
+- `gyms.view_all`: to view all of the gyms including inactive ones as an admin. If you don't have this permission, you only get active gyms in the response
 
 ## Params
 

@@ -3,6 +3,8 @@ You can update an existing state using this API.
 
 
 ## Permissions
+
+- `states.view_all`: to access states
 - `states.update`: to update a state
 
 ## Params
