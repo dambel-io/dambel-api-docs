@@ -8,6 +8,8 @@
     "title": "...",
     "description": "...",
     "price": 123,
+    "discount": 0,
+    "discounted_price": 123,
     "media": [<media resource>, ...]
 }
 ```

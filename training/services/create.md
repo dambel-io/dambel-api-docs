@@ -1,25 +1,23 @@
-# `PUT /api/v1/users/{user-id}/training-services/{training-service-id}`
-You can update a training service using this API.
+# `POST /api/v1/training/services/{user-id}`
+You can create a training service for a user using this API.
 
 
 ## Permissions
 
-- `training_services.update`: update your own training services
-- `training_services.update_any`: update training services for any user
+- `training_services.create`: creating training services for yourself
+- `training_services.create_any`: creating training services for any user
 
 ## Params
 
 - `title`: Title of the training service (maxlength 255)
 - `description`: An optional description for the training service (maxlength 2000)
 - `price`: Price of the training service (required integer)
-
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want.
+- `discount`: Discount percentage (nullable float, default 0)
+- Id of the user in the route
 
 ## Response
 
-### 200 OK
-
+### 201 Created
 ```json
 <training service resource>
 ```

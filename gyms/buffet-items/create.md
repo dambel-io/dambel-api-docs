@@ -12,6 +12,7 @@ You can create a buffet item for a gym using this API.
 - `title`: Title of the item (maxlength 255)
 - `description`: An optional description for the item (maxlength 2000)
 - `price`: Price of the item (required integer)
+- `discount`: Discount percentage (nullable float, default 0)
 
 ## Response
 

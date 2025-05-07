@@ -12,6 +12,7 @@ You can update a buffet item using this API.
 - `title`: Title of the item (maxlength 255)
 - `description`: An optional description for the item (maxlength 2000)
 - `price`: Price of the item (required integer)
+- `discount`: Discount percentage (nullable float, default 0)
 
 All of the parameters are optional. If you don't pass them, they won't get updated.
 You still can set them to null if you want.

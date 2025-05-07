@@ -9,6 +9,8 @@
     "first_name": "John",
     "last_name": "Doe",
     "created_at": "1970-01-01 00:00:00",
+    "referral_code": "XFER543D4...",
+    "referrer_user_id": null,
     "roles": [<role resource>, ...],
     "media": [<media resource>, ...],
     "current_subscription": <user premium subscription resource>

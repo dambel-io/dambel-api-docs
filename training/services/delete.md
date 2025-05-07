@@ -1,4 +1,4 @@
-# `DELETE /api/v1/users/{user-id}/training-services/{training-service-id}`
+# `DELETE /api/v1/training/services/{training-service-id}`
 You can delete a training service from a user using this API.
 
 

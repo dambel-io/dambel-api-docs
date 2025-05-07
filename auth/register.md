@@ -9,6 +9,7 @@ This API creates a new user.
 - `first_name`: First name of the user
 - `last_name`: Last name of the user
 - `password`: User password
+- `referral_code`: Optional referral code
 
 ## Response
 

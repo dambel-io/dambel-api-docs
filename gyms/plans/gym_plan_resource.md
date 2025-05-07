@@ -8,6 +8,8 @@
     "title": "Basic",
     "description": "Some description",
     "price": 150000,
+    "discount": 0,
+    "discounted_price": 150000,
     "duration_days": 30,
     "sessions_count": 20,
     "is_active": true

@@ -12,6 +12,7 @@ You can update a gym plan using this API.
 - `title`: Title of the plan (maxlength 255)
 - `description`: An optional description for the plan (maxlength 2000)
 - `price`: Price of the plan (required integer)
+- `discount`: Discount percentage (nullable float, default 0)
 - `duration_days`: Number of the days that the subscription expires after (optional integer)
 - `sessions_count`: Number of the session available in the plan (optional integer)
 - `is_active`: A boolean to set active status of plan

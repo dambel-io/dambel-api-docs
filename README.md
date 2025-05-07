@@ -70,12 +70,13 @@
                 - `/{education-id}`
                     - [delete](users/education/delete.md)
                     - [update](users/education/update.md)
-            - [`/training-services`](users/training-services/index.md)
-                - [index](users/training-services/index.md)
-                - [create](users/training-services/create.md)
-                - `/{training-service-id}`
-                    - [delete](users/training-services/delete.md)
-                    - [update](users/training-services/update.md)
+    - `/training`
+        - [`/services`](training/services/index.md)
+            - [index](training/services/index.md)
+            - [create `/{user-id}`](training/services/create.md)
+            - `/{training-service-id}`
+                - [delete](training/services/delete.md)
+                - [update](training/services/update.md) 
     - `/media`
         - [create](media/create.md)
         - `/{media-id}`
@@ -107,6 +108,7 @@
         - [`/prices`](payments/prices.md)
         - [`/withdrawal`](payments/withdrawal.md)
         - [`/buy-premium`](payments/buy-premium.md)
+        - [`/boost`](payments/boost.md)
     - [`/notifications`](notifications/index.md)
         - [index](notifications/index.md)
         - [`/mark-read/{notification-id?}`](notifications/mark-read.md)

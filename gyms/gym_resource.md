@@ -18,6 +18,7 @@
     "majors": [<major resource>, <major resource>, ...],
     "working_periods": [<working period resource>, ...],
     "working_status": <explained below>,
+    "boost": <null|marketing boost resource>,
     "media": [<media resource>, ...],
     "rating_count": 123,
     "rating_average": 4.5
@@ -31,6 +32,8 @@
 [Major Resource](../admin/majors/major_resource.md)
 
 [Working Period Resource](working-periods/gym_working_period_resource.md)
+
+[Marketing Boost Resource](../payments/marketing_boost_resource.md)
 
 ### Working status
 The `working_status` field can give you some information about the current working status of the gym at that day and time.

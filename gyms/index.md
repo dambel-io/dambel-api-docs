@@ -21,6 +21,8 @@ Using this API you can get list of the gyms and also search them using filters.
 
 The gyms are sorted by the newest (if you don't specify lat and lng)
 
+> Note: The results are firstly sorted based on marketing boosts, the `sort` logic will be applied on the second level
+
 ## Response
 
 ### 200 OK

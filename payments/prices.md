@@ -17,8 +17,21 @@ You can get general data for premium plan prices and commission rates in the pla
     "premium_plans": {
         "plus": {
             "monthly_price": 50000,
+            "discount": 0,
             "yearly_price_discount": 0.85,
             "role": "user_plus"
+        }
+    },
+    "boosts": {
+        "basic": {
+            "price": 60000,
+            "duration": 7,
+            "level": 1
+        },
+        "pro": {
+            "price": 150000,
+            "duration": 14,
+            "level": 2
         }
     }
 }
