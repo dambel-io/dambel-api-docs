@@ -24,7 +24,7 @@ Use [`/prices`](prices.md) to get plans and prices.
 <marketing boost resource>
 ```
 
-[Marketing Boost Resource](marketing_boost.md)
+[Marketing Boost Resource](marketing_boost_resource.md)
 
 ### 400 Bad Request
 When an unexpected error happens during the payment process.
