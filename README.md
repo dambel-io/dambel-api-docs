@@ -169,6 +169,9 @@
                 - [delete](admin/supplements/delete.md)
                 - [update](admin/supplements/update.md)
 
+- [Pagination data](_globals/pagination-data.md)
+- [Broadcasting](_globals/broadcasting.md)
+- [Localization](_globals/localization.md)
 - [Validation errors](_globals/validation-errors.md)
 - [Authentication errors](_globals/authentication-errors.md)
 - [Server errors](_globals/server-errors.md)
@@ -176,5 +179,3 @@
 - [Method-not-allowed errors](_globals/method-not-allowed-errors.md)
 - [Not-found errors](_globals/not-found-errors.md)
 - [Permission errors](_globals/permission-errors.md)
-- [Pagination data](_globals/pagination-data.md)
-- [Broadcasting](_globals/broadcasting.md)
