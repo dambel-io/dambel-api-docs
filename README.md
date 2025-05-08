@@ -104,6 +104,7 @@
     - [`/payments`](payments/index.md)
         - [index](payments/index.md)
         - [`/deposit`](payments/deposit.md)
+        - [`/verify-deposit`](payments/verify-deposit.md)
         - [`/balance`](payments/balance.md)
         - [`/prices`](payments/prices.md)
         - [`/withdrawal`](payments/withdrawal.md)
