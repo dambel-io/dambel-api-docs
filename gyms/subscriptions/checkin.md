@@ -2,6 +2,10 @@
 User or gym owner can make a checkin on a subscription.
 
 
+## Permissions
+
+- `gym_subscriptions.checkin`: for gym admin to do the checkin for user
+
 ## Params
 
 - `notes`: An optional note on the checkin

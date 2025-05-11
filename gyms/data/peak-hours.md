@@ -4,7 +4,8 @@ You can get peak hours graph data for a gym in a specific weekday in a specific 
 
 ## Permissions
 
-- `gyms.view_all`: to view data reports for all of the gyms if you are not the owner of the gym
+- `gyms.view_own_data_reports`: to view data reports for your own gym
+- `gyms.view_all_data_reports`: to view data reports for all of the gyms
 
 ## Params
 

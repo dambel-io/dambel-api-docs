@@ -36,6 +36,12 @@
                 - `/{buffet-item-id}`
                     - [delete](gyms/buffet-items/delete.md)
                     - [update](gyms/buffet-items/update.md)
+            - [`/admins`](gyms/admins/index.md)
+                - [index](gyms/admins/index.md)
+                - [create](gyms/admins/create.md)
+                - `/{admin-id}`
+                    - [delete](gyms/admins/delete.md)
+                    - [update](gyms/admins/update.md)
             - `/subscriptions`
                 - [`/subscribe/{plan-id}`](gyms/subscriptions/subscribe.md)
                 - [`/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
