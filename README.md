@@ -119,6 +119,12 @@
     - [`/notifications`](notifications/index.md)
         - [index](notifications/index.md)
         - [`/mark-read/{notification-id?}`](notifications/mark-read.md)
+    - [`/reports`](reports/index.md)
+        - [index](reports/index.md)
+        - [create](reports/create.md)
+        - `/{report-id}`
+            - [delete](reports/delete.md)
+            - [update](reports/update.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)

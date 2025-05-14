@@ -23,3 +23,4 @@ These are the available notification types in the system:
 - `Gyms\Subscriptions\GymSubscriptionCheckInNotification`: User/Gym owner will be notified when a checkin is done by Gym owner/User on their subscription
 - `Gyms\Subscriptions\NewGymSubscriptionNotification`: Gym owner will be notified when a new subscription is purchased on their gym
 - `Gyms\Subscriptions\GymSubscriptionCheckOutNotification`: User/Gym owner will be notified when a checkout is done by Gym owner/User on their subscription
+- `Reports\NewReportNotification`: Report related admins will receive this notification when a new report is created and needs their review
