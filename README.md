@@ -125,6 +125,18 @@
         - `/{report-id}`
             - [delete](reports/delete.md)
             - [update](reports/update.md)
+    - [`/chats`](chats/index.md)
+        - [index](chats/index.md)
+        - [create](chats/create.md)
+        - `/{chat-id}`
+            - [delete](chats/delete.md)
+            - [update](chats/update.md)
+            - [`/messages`](chats/messages/index.md)
+                - [index](chats/messages/index.md)
+                - [create](chats/messages/create.md)
+                - `/{message-id}`
+                    - [delete](chats/messages/delete.md)
+                    - [update](chats/messages/update.md)
     - `/admin`
         - [`/roles`](admin/roles/index.md)
             - [index](admin/roles/index.md)

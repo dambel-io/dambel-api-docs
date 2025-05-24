@@ -27,4 +27,12 @@ window.Echo = new Echo({
 
 ## Channels
 
-- `private-App.Models.User.{id}`: Users will receive their new [notifications](../notifications/notification_resource.md) on this channel
+- `private-App.Models.User.{id}`: Users will receive:
+    - [Notifications](../notifications/notification_resource.md)
+    - `ChatAdded`
+    - `ChatRemoved`
+    - `ChatUpdated`
+- `private-App.Models.Chats.Chat.{id}`: Users will changes on a specific chat using this channel:
+    - `MessageSent`
+    - `MessageUpdated`
+    - `MessageDeleted`
