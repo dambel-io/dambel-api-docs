@@ -26,3 +26,5 @@ These are the available notification types in the system:
 - `Reports\NewReportNotification`: Report related admins will receive this notification when a new report is created and needs their review
 - `Chats/NewMessageNotification`: User will be notified when they have a new message in the chat
 - `Chats/YouAreAddedToChatNotification`: User will be notified when they are added to a new chat
+- `Training\Trainees\NewTraineeNotification`: Trainee/Trainer will receive a notification if the trainee record is created from the opposite side or by admin (they both get notified then)
+- `Training\Trainees\TraineeDeliveredNotification`: Trainee will receive this notification once trainer changes the status of the trainne record to delivered

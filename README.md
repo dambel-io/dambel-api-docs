@@ -82,7 +82,12 @@
             - [create `/{user-id}`](training/services/create.md)
             - `/{training-service-id}`
                 - [delete](training/services/delete.md)
-                - [update](training/services/update.md) 
+                - [update](training/services/update.md)
+        - [`/trainees`](training/trainees/index.md)
+            - [index](training/trainees/index.md)
+            - [create](training/trainees/create.md)
+            - `/{trainee-id}`
+                - [update](training/trainees/update.md)
     - `/media`
         - [create](media/create.md)
         - `/{media-id}`
