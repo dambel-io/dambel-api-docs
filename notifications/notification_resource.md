@@ -28,3 +28,5 @@ These are the available notification types in the system:
 - `Chats/YouAreAddedToChatNotification`: User will be notified when they are added to a new chat
 - `Training\Trainees\NewTraineeNotification`: Trainee/Trainer will receive a notification if the trainee record is created from the opposite side or by admin (they both get notified then)
 - `Training\Trainees\TraineeDeliveredNotification`: Trainee will receive this notification once trainer changes the status of the trainne record to delivered
+- `Training\DietPlans\DietPlanCreatedNotification`: Trainee will receive this once trainer creates a diet plan for them
+- `Training\DietPlans\DietPlanUpdatedNotification`: Trainee will receive this once diet plan or its meals are updated by trainer

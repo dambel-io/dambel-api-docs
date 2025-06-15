@@ -88,6 +88,18 @@
             - [create](training/trainees/create.md)
             - `/{trainee-id}`
                 - [update](training/trainees/update.md)
+        - [`/diet-plans`](training/diet-plans/index.md)
+            - [index](training/diet-plans/index.md)
+            - [create](training/diet-plans/create.md)
+            - `/{diet-plan-id}`
+                - [delete](training/diet-plans/delete.md)
+                - [update](training/diet-plans/update.md)
+                - `/meals`
+                    - [index](training/diet-plans/meals/index.md)
+                    - [create](training/diet-plans/meals/create.md)
+                    - `/{meal-id}`
+                        - [delete](training/diet-plans/meals/delete.md)
+                        - [update](training/diet-plans/meals/update.md)
     - `/media`
         - [create](media/create.md)
         - `/{media-id}`
