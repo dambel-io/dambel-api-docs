@@ -100,6 +100,18 @@
                     - `/{meal-id}`
                         - [delete](training/diet-plans/meals/delete.md)
                         - [update](training/diet-plans/meals/update.md)
+        - [`/workout-plans`](training/workout-plans/index.md)
+            - [index](training/workout-plans/index.md)
+            - [create](training/workout-plans/create.md)
+            - `/{workout-plan-id}`
+                - [delete](training/workout-plans/delete.md)
+                - [update](training/workout-plans/update.md)
+                - `/sessions`
+                    - [index](training/workout-plans/sessions/index.md)
+                    - [create](training/workout-plans/sessions/create.md)
+                    - `/{session-id}`
+                        - [delete](training/workout-plans/sessions/delete.md)
+                        - [update](training/workout-plans/sessions/update.md)
     - `/media`
         - [create](media/create.md)
         - `/{media-id}`
