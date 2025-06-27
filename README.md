@@ -112,6 +112,12 @@
                     - `/{session-id}`
                         - [delete](training/workout-plans/sessions/delete.md)
                         - [update](training/workout-plans/sessions/update.md)
+                        - `/exercises`
+                            - [index](training/workout-plans/sessions/exercises/index.md)
+                            - [create](training/workout-plans/sessions/exercises/create.md)
+                            - `/{exercise-id}`
+                                - [delete](training/workout-plans/sessions/exercises/delete.md)
+                                - [update](training/workout-plans/sessions/exercises/update.md)
     - `/media`
         - [create](media/create.md)
         - `/{media-id}`
