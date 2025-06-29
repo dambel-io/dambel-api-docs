@@ -100,6 +100,12 @@
                     - `/{meal-id}`
                         - [delete](training/diet-plans/meals/delete.md)
                         - [update](training/diet-plans/meals/update.md)
+                - `/supplements`
+                    - [index](training/diet-plans/supplements/index.md)
+                    - [create](training/diet-plans/supplements/create.md)
+                    - `/{supplement-id}`
+                        - [delete](training/diet-plans/supplements/delete.md)
+                        - [update](training/diet-plans/supplements/update.md)
         - [`/workout-plans`](training/workout-plans/index.md)
             - [index](training/workout-plans/index.md)
             - [create](training/workout-plans/create.md)
@@ -118,6 +124,57 @@
                             - `/{exercise-id}`
                                 - [delete](training/workout-plans/sessions/exercises/delete.md)
                                 - [update](training/workout-plans/sessions/exercises/update.md)
+    - `/tracker`
+        - `/data`
+            - [`/average-sleep-duration`](tracker/data/average-sleep-duration.md)
+        - `/wakeups`
+            - [index](tracker/wakeups/index.md)
+            - [create](tracker/wakeups/create.md)
+            - `/{tracker-wakeup-id}`
+                - [delete](tracker/wakeups/delete.md)
+                - [update](tracker/wakeups/update.md)
+        - `/sleeps`
+            - [index](tracker/sleeps/index.md)
+            - [create](tracker/sleeps/create.md)
+            - `/{tracker-sleep-id}`
+                - [delete](tracker/sleeps/delete.md)
+                - [update](tracker/sleeps/update.md)
+        - `/weights`
+            - [index](tracker/weights/index.md)
+            - [create](tracker/weights/create.md)
+            - `/{tracker-weight-id}`
+                - [delete](tracker/weights/delete.md)
+                - [update](tracker/weights/update.md)
+        - `/supplements`
+            - [index](tracker/supplements/index.md)
+            - [create](tracker/supplements/create.md)
+            - `/{tracker-supplement-id}`
+                - [delete](tracker/supplements/delete.md)
+                - [update](tracker/supplements/update.md)
+        - `/waters`
+            - [index](tracker/waters/index.md)
+            - [create](tracker/waters/create.md)
+            - `/{tracker-water-id}`
+                - [delete](tracker/waters/delete.md)
+                - [update](tracker/waters/update.md)
+        - `/meals`
+            - [index](tracker/meals/index.md)
+            - [create](tracker/meals/create.md)
+            - `/{tracker-meal-id}`
+                - [delete](tracker/meals/delete.md)
+                - [update](tracker/meals/update.md)
+        - `/workouts`
+            - [index](tracker/workouts/index.md)
+            - [create](tracker/workouts/create.md)
+            - `/{tracker-workout-id}`
+                - [delete](tracker/workouts/delete.md)
+                - [update](tracker/workouts/update.md)
+                - `/sets`
+                    - [index](tracker/workouts/sets/index.md)
+                    - [create](tracker/workouts/sets/create.md)
+                    - `/{tracker-workout-set-id}`
+                        - [delete](tracker/workouts/sets/delete.md)
+                        - [update](tracker/workouts/sets/update.md)
     - `/media`
         - [create](media/create.md)
         - `/{media-id}`
