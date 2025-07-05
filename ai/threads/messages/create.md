@@ -14,7 +14,10 @@ You can create an AI thread message using this API.
 
 ### 201 Created
 ```json
-<ai thread message resource>
+{
+    "createdMessage": <ai thread message resource>,
+    "responseMessage": <ai thread message resource>
+}
 ```
 
 [Ai Thread Message Resource](ai_thread_message_resource.md)
