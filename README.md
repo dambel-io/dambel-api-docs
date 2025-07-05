@@ -124,6 +124,17 @@
                             - `/{exercise-id}`
                                 - [delete](training/workout-plans/sessions/exercises/delete.md)
                                 - [update](training/workout-plans/sessions/exercises/update.md)
+    - `/ai`
+        - `/threads`
+            - [index](ai/threads/index.md)
+            - [create](ai/threads/create.md)
+            - `/{thread-id}`
+                - [delete](ai/threads/delete.md)
+                - `/messages`
+                    - [index](ai/threads/messages/index.md)
+                        - [create](ai/threads/messages/create.md)
+                        - `/{message-id}`
+                            - [delete](ai/threads/messages/delete.md)
     - `/tracker`
         - `/data`
             - [`/average-sleep-duration`](tracker/data/average-sleep-duration.md)
