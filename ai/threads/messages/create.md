@@ -9,6 +9,7 @@ You can create an AI thread message using this API.
 ## Params
 
 - `content`: Content of the message (max 5000 characters)
+- `state`: You can optionally pass the state data as JSON. State data can be the current form structure and values, currently selected filters in a search page, or some chart and data analyze data. It can be any JSON. It will be created as a separate system prompt
 
 ## Response
 
@@ -21,6 +22,8 @@ You can create an AI thread message using this API.
 ```
 
 [Ai Thread Message Resource](ai_thread_message_resource.md)
+
+> NOTE: In responseMessage.function_calls you might find `updateStateData` which you can use its arguments to update the initially provided state data (e.g. updating for data)
 
 ### 422 Unprocessable Entity
 [Validation error](../../../_globals/validation-errors.md)
