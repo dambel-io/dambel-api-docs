@@ -7,7 +7,7 @@
     "thread_id": 123,
     "content": "...",
     "role": "user",
-    "function_calls": "<json string>",
+    "updated_state": "<json string>",
     "created_at": "2020-01-01 00:00:00"
 }
 ```

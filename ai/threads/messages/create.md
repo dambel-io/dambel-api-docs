@@ -23,7 +23,7 @@ You can create an AI thread message using this API.
 
 [Ai Thread Message Resource](ai_thread_message_resource.md)
 
-> NOTE: In responseMessage.function_calls you might find `updateStateData` which you can use its arguments to update the initially provided state data (e.g. updating for data)
+> NOTE: In responseMessage.updated_state you might find the updated state data that you had initially sent
 
 ### 422 Unprocessable Entity
 [Validation error](../../../_globals/validation-errors.md)
