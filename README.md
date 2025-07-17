@@ -26,7 +26,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ---
 
 ## Usage Tips
-- **All endpoints are under `/v1`**
+- **All endpoints are under `/api/v1`**
 - **Click endpoint names** to view detailed documentation, including parameters, permissions, request/response examples, and error handling.
 - **Resource endpoints** are grouped for clarity. Nested resources are indented.
 - **Refer to [Global Schemas & Errors](#global-schemas--errors)** for shared response formats and error types.
