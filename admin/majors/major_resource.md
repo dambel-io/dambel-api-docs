@@ -1,9 +1,24 @@
 # Major Resource
 
+Represents a major in the system.
 
-```json
+
+---
+
+## Schema
+| Field     | Type    | Description         |
+|-----------|---------|---------------------|
+| `id`      | integer | Major ID            |
+| `title`   | string  | Major name          |
+
+---
+
+## Example
+```
 {
-    "id": 123,
-    "title": "Bodybuilding"
+  "id": 123,
+  "title": "Bodybuilding"
 }
 ```
+
+---

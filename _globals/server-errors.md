@@ -1,10 +1,16 @@
-# Server errors
-When some internal server error happens, you will receive `500` with this response:
+# Server Errors
+
+Describes the structure of server error responses (HTTP 500) returned by the API.
+
+---
+
+## Error Response
+When an internal server error occurs, the API returns a `500` status code with the following response:
 
 ```json
 {
-    "error": "Server error"
+  "error": "Server error"
 }
 ```
 
-> NOTE: This ONLY happens in production environment. In local and development environments, the PHP errors will be thrown in the normal way
+> **Note:** This only occurs in the production environment. In local and development environments, PHP errors are shown in the default way.

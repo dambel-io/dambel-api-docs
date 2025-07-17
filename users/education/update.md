@@ -1,38 +1,44 @@
 # `PUT /api/v1/users/{user-id}/education/{education-id}`
-You can update an education using this API.
 
+Update an education record for a user.
+
+
+---
 
 ## Permissions
+| Permission             | Description                                 |
+|------------------------|---------------------------------------------|
+| `education.update`     | Update your own education                   |
+| `education.update_any` | Update education for any user               |
 
-- `education.update`: update your own education
-- `education.update_any`: update education for any user
+---
 
-## Params
+## Request Body Parameters
+| Name          | Type    | Required | Description                        |
+|---------------|---------|----------|------------------------------------|
+| `school`      | string  | No       | Name of the school (max 255)       |
+| `field`       | string  | No       | Field of education (max 255)       |
+| `description` | string  | No       | Optional description (max 2000)    |
+| `start_date`  | string  | No       | Start date (date format)           |
+| `end_date`    | string  | No       | End date (nullable, date format)   |
 
-- `school`: Name of the school (maxlength 255)
-- `field`: Field of the education (maxlength 255)
-- `description`: An optional description for the education (maxlength 2000)
-- `start_date`: Start date of the education (required date format)
-- `end_date`: End date of the education (nullable date format)
+*All parameters are optional. If omitted, they will not be updated.*
 
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want.
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 <education resource>
 ```
+- [Education Resource](education_resource.md)
 
-[Education Resource](education_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

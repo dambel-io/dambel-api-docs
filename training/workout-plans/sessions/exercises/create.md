@@ -1,37 +1,43 @@
 # `POST /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises`
-You can create a exercise for a workout plan using this API.
 
+Create an exercise for a workout plan session.
+
+
+---
 
 ## Permissions
+| Permission                        | Description                                 |
+|------------------------------------|---------------------------------------------|
+| `workout_plan_exercises.create`    | Create exercises for your workout plans     |
+| `workout_plans.update`             | Update your own workout plans               |
 
-- `workout_plan_exercises.create`: to create exercises for your workout plans
-- `workout_plans.update`: to be able to update your own workout plans
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                                 |
+|----------------|---------|----------|---------------------------------------------|
+| `exercise_id`  | int     | Yes      | ID of the exercise                          |
+| `super_set_id` | int     | No       | Parent exercise ID for supersets            |
+| `set_count`    | int     | Yes      | Number of sets                              |
+| `rep_count`    | int     | Yes      | Number of reps per set                      |
+| `description`  | string  | No       | Description (max 2000, optional)            |
 
-- `exercise_id`: Id of the exercise
-- `super_set_id`: Id of the parent exercise if you want to define a super set
-- `set_count`: Count of the sets
-- `rep_count`: Count of the reps per each set
-- `description`: An optional description for the exercise (maxlength 2000)
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <workout plan exercise resource>
 ```
+- [Workout Plan Exercise Resource](workout_plan_exercise_resource.md)
 
-[Workout Plan Exercise Resource](workout_plan_exercise_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../../../_globals/authentication-errors.md)
+- **404 Not Found:** [Not-found error](../../../../_globals/not-found-errors.md)
+- **403 Forbidden:** [Permission error](../../../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../../../_globals/authentication-errors.md)
-
-### 404 Not Found
-[Not-found error](../../../../_globals/not-found-errors.md)
-
-### 403 Forbidden
-[Permission error](../../../../_globals/permission-errors.md)
+---

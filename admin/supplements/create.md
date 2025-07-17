@@ -1,34 +1,42 @@
 # `POST /api/v1/admin/supplements`
-This API creates a new supplement.
 
+Create a new supplement.
+
+
+---
 
 ## Permissions
+| Permission               | Description         |
+|--------------------------|---------------------|
+| `supplements.view_all`   | Access supplements  |
+| `supplements.create`     | Create supplement   |
 
-- `supplements.view_all`: to access supplements
-- `supplements.create`: to create a supplement
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                        |
+|----------------|---------|----------|------------------------------------|
+| `title`        | string  | Yes      | Name of the supplement (max 255)   |
+| `link`         | string  | No       | Wiki link (max 255, optional)      |
+| `description`  | string  | No       | Description (optional)             |
 
-- `title`: Name of the supplement (required|maxlength:255)
-- `link`: A link to a wiki page for the supplement (optional|maxlength:255)
-- `description`: An optional description for the supplement
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 {
-    "supplement": {<supplement resource>},
+  "supplement": {<supplement resource>}
 }
 ```
+- [Supplement Resource](supplement_resource.md)
 
-[Supplement Resource](supplement_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

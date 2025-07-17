@@ -1,32 +1,40 @@
 # `POST /api/v1/admin/majors`
-This API creates a new major.
 
+Create a new major.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `majors.view_all`     | Access majors       |
+| `majors.create`       | Create major        |
 
-- `majors.view_all`: to access majors
-- `majors.create`: to create a country
+---
 
-## Params
+## Request Body Parameters
+| Name     | Type    | Required | Description                        |
+|----------|---------|----------|------------------------------------|
+| `title`  | string  | Yes      | Name of the major (max 255)        |
 
-- `title`: Name of the major (required|maxlength:255)
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 {
-    "major": {<major resource>},
+  "major": {<major resource>}
 }
 ```
+- [Major Resource](major_resource.md)
 
-[Major Resource](major_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

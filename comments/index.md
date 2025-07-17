@@ -1,46 +1,87 @@
-# `GET /api/v1/comments`
-You can search the comments using this API. This can be used for both admin management and also getting comments for a specific profile using filters.
+# GET /api/v1/comments
 
+Retrieves a list of comments, with support for filtering by resource type, item, user, and content. Useful for both admin management and fetching comments for a specific profile.
+
+
+---
 
 ## Permissions
+| Permission         | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `comments.view`    | View your own comments and comments on any public commentable                |
+| `comments.view_all`| View all comments, including drafts, on any profile (admin only)             |
 
-- `comments.view`: view your own comments and comments on any public commentable
-- `comments.view_all`: view all of the comments even in draft mode on any profile
+---
 
-## Params
+## Query Parameters
 
-- `type`: The commentable type (`App\Models\Gym`, `App\Models\Post`). Can be multiple using `,` separator
-- `item_id`: Id of the commentable. Can be multiple using `,` separator
-- `user_id`: Id of the user. Can be multiple using `,` separator
-- `search`: Search the comments based on content
-- `order`: Order of the results. `ASC` or `DESC`. Default is `DESC` so they are sorted by newest
+| Name     | Type   | Required | Description                                                                 | Example                |
+|----------|--------|----------|-----------------------------------------------------------------------------|------------------------|
+| type     | string | No       | The commentable type (`App\Models\Gym`, `App\Models\Post`). Comma-separated for multiple types | "App\\Models\\Gym,App\\Models\\Post" |
+| item_id  | int    | No       | ID of the commentable. Comma-separated for multiple IDs                      | "1,2,3"               |
+| user_id  | int    | No       | ID of the user. Comma-separated for multiple IDs                             | "5,6"                 |
+| search   | string | No       | Search term for comment content                                             | "great"               |
+| order    | string | No       | Order of results: `ASC` or `DESC` (default: `DESC`)                         | "DESC"                 |
+
+---
 
 ## Response
 
 ### 200 OK
+Returns a paginated list of comment resources.
 
+#### Schema
 ```json
 {
-    "data": [
-        {<comment resource>},
-        {<comment resource>},
-        {<comment resource>},
-        {<comment resource>}
-    ],
-    "links": {<pagination data>},
-    "meta": {<pagination data>},
+  "data": [
+    { /* Comment Resource */ }
+  ],
+  "links": { /* Pagination Data */ },
+  "meta": { /* Pagination Data */ }
 }
 ```
 
-[Comment Resource](comment_resource.md)
+#### Example
+```json
+{
+  "data": [
+    {
+      "id": 123,
+      "user_id": 456,
+      "commentable_type": "App\\Models\\Gyms\\Gym",
+      "commentable_id": 42,
+      "content": "Great gym!",
+      "parent_comment_id": null,
+      "created_at": "2025-01-01 00:00:00",
+      "updated_at": "2025-01-01 00:03:00"
+    }
+  ],
+  "links": {
+    "first": "https://api.example.com/api/v1/comments?page=1",
+    "last": "https://api.example.com/api/v1/comments?page=10",
+    "prev": null,
+    "next": "https://api.example.com/api/v1/comments?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 10,
+    "path": "https://api.example.com/api/v1/comments",
+    "per_page": 50,
+    "to": 50,
+    "total": 500
+  }
+}
+```
 
-[Pagination Data](../_globals/pagination-data.md) (per page: 50)
+For a full schema, see [Comment Resource](comment_resource.md) and [Pagination Data](../_globals/pagination-data.md).
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+### Error Responses
 
-### 404 Not Found
-[Not-found error](../_globals/not-found-errors.md)
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../_globals/not-found-errors.md) |

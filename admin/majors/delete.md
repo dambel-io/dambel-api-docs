@@ -1,29 +1,36 @@
 # `DELETE /api/v1/admin/majors/{major-id}`
-You can delete a major using this endpoint.
 
+Delete a major. Optionally transfer attached data to another major.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `majors.view_all`     | Access majors       |
+| `majors.delete`       | Delete major        |
 
-- `majors.view_all`: to access majors
-- `majors.delete`: to delete any major
+---
 
-## Params
+## Request Body Parameters
+| Name             | Type    | Required | Description                                                      |
+|------------------|---------|----------|------------------------------------------------------------------|
+| `replacement_id` | integer | No       | ID of another major to transfer attached data (optional)          |
 
-- `replacement_id`: In case the major you are deleting has some data attached to it, you transfer the data to another major by providing it's ID in this optional parameter
+---
 
 ## Response
 
 ### 204 No Content
- No content when major gets deleted
+No content is returned when the major is deleted successfully.
 
-### 400 Bad Request
- When major has data and `replacement_id` is not provided or is not valid. Number of the attached items is returned in `attached_data`.
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+## Error Responses
+- **400 Bad Request:** When major has data and `replacement_id` is not provided or is not valid. Number of attached items is returned in `attached_data`.
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+- **404 Not Found:** [Not-found error](../../_globals/not-found-errors.md)
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+---

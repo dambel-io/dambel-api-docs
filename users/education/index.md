@@ -1,28 +1,33 @@
 # `GET /api/v1/users/{user-id}/education`
-You can get list of the education of a user using this API.
+
+Retrieve a list of education records for a user.
 
 
-## Params
+---
 
-No parameter.
+## Permissions
+| Permission           | Description                                 |
+|----------------------|---------------------------------------------|
+| `education.view`     | View your own education records             |
+| `education.view_any` | View education records for any user         |
+
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [<education resource>, ...],
+  "data": [<education resource>, ...]
 }
 ```
+- [Education Resource](education_resource.md)
 
-[Education Resource](education_resource.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+## Error Responses
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+- **404 Not Found:** [Not-found error](../../_globals/not-found-errors.md)
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+---

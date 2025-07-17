@@ -1,24 +1,27 @@
 # `GET /api/v1/admin/countries`
-You can get list of the countries by alphabetical order using this endpoint.
 
+Retrieve a list of countries in alphabetical order.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `countries.view_all`  | Access countries    |
 
-- `countries.view_all`: to access countries
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<country resource>},
-        {<country resource>},
-        {<country resource>},
-        {<country resource>}
-    ],
+  "data": [
+    {<country resource>}, ...
+  ]
 }
 ```
+- [Country Resource](country_resource.md)
 
-[Country Resource](country_resource.md)
+---

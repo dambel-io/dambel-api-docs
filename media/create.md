@@ -1,40 +1,66 @@
-# `POST /api/v1/media`
-You can attach an media to an element using this API.
+# POST /api/v1/media
 
+Attach a media file to a specified element (e.g., gym, post, user).
+
+
+---
 
 ## Permissions
-You need to have **update** permission of the **attachable**.
+You must have **update** permission for the target attachable resource.
 
-## Params
+---
 
-- `attachable_type`: Type of the element that you are attaching the media to. These are available items:
-  - `championship`
-  - `gym`
-  - `gym_equipment`
-  - `post`
-  - `user`
-  - `education`
-  - `gym_buffet_item`
-  - `training_service`
-- `attachable_id`: Id of the element
-- `file`: The media file
+## Request Body Parameters
+| Name            | Type    | Required | Description                                                      | Example         |
+|-----------------|---------|----------|------------------------------------------------------------------|-----------------|
+| attachable_type | string  | Yes      | Type of the element to attach media to (see below)               | "gym"          |
+| attachable_id   | int     | Yes      | ID of the element                                                | 42              |
+| file            | file    | Yes      | The media file to upload                                         | (binary file)   |
+
+**Available `attachable_type` values:**
+- `championship`
+- `gym`
+- `gym_equipment`
+- `post`
+- `user`
+- `education`
+- `gym_buffet_item`
+- `training_service`
+
+---
+
+## Request Example (multipart/form-data)
+```
+POST /api/v1/media
+Authorization: Bearer {token}
+Content-Type: multipart/form-data
+
+attachable_type=gym
+attachable_id=42
+file=@photo.jpg
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created media resource.
+
+#### Example
 ```json
 {
-    "media": {<media resource>},
+  "media": { /* media resource */ }
 }
 ```
 
-[Media Resource](media_resource.md)
+For a full schema, see [Media Resource](media_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |

@@ -1,9 +1,13 @@
 # Localization
-Messages and errors and validation errors can be translated to the language that you want.
-To set the language, you can use this header:
+
+API messages, errors, and validation errors can be translated to your preferred language.
+
+---
+
+## How to Set Language
+Set the `Accept-Language` header in your API requests to specify the desired language:
 
 ```
 Accept-Language: en
 Accept-Language: fa
-...
 ```

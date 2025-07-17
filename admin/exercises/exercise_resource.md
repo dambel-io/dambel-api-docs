@@ -1,11 +1,28 @@
 # Exercise Resource
 
+Represents an exercise in the system.
 
-```json
+
+---
+
+## Schema
+| Field         | Type    | Description                |
+|-------------- |---------|----------------------------|
+| `id`          | integer | Exercise ID                |
+| `title`       | string  | Exercise name              |
+| `description` | string  | Description                |
+| `link`        | string  | Tutorial link (nullable)   |
+
+---
+
+## Example
+```
 {
-    "id": 123,
-    "title": "...",
-    "description": "...",
-    "link": "...",
+  "id": 123,
+  "title": "...",
+  "description": "...",
+  "link": "..."
 }
 ```
+
+---

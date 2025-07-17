@@ -1,32 +1,51 @@
-# `GET /api/v1/gyms/{gym-id}/equipment`
-You can get list of the equipment of a gym using this API.
+# GET /api/v1/gyms/{gym-id}/equipment
 
+Retrieves a list of equipment assigned to a specific gym.
+
+
+---
 
 ## Permissions
+| Permission      | Description                                             |
+|-----------------|---------------------------------------------------------|
+| `gyms.view_all` | Required to view equipment for an inactive gym          |
 
-- `gyms.view_all`: is needed if you are trying to read list of equipment for an inactive gym
+---
 
-## Params
+## URL Parameters
+| Name    | Type | Required | Description                | Example |
+|---------|------|----------|----------------------------|---------|
+| gym-id  | int  | Yes      | ID of the gym              | 123     |
 
-No parameter.
+---
+
+## Request Example
+```
+GET /api/v1/gyms/123/equipment
+Authorization: Bearer {token}
+```
+
+---
 
 ## Response
 
 ### 200 OK
+Returns a list of gym equipment resources.
 
+#### Example
 ```json
 {
-    "data": [<gym equipment resource>, ...],
+  "data": [ { /* gym equipment resource */ }, ... ]
 }
 ```
 
-[Gym Equipment Resource](gym_equipment_resource.md)
+For a full schema, see [Gym Equipment Resource](gym_equipment_resource.md).
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |

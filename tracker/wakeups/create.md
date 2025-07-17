@@ -1,4 +1,4 @@
-# `POST /api/v1/tracker/wakeups`
+# POST /api/v1/tracker/wakeups
 You can record a wakeup in the tracker system using this API.
 
 

@@ -1,43 +1,47 @@
 # `PUT /api/v1/users/{user-id}`
-Using this API you can update the information of one specific user.
 
+Update the information of a specific user.
+
+
+---
 
 ## Permissions
-- `users.update_any`: to update any user as an admin
+| Permission         | Description                        |
+|--------------------|------------------------------------|
+| `users.update_any` | Update any user as an admin        |
 
-## Params
+---
 
-- `first_name`: First name of the user (required|maxlength:255)
-- `last_name`: First name of the user (required|maxlength:255)
-- `email`: Email of the user (required|maxlength:255|unique)
-- `phone`: Phone number of the user (required|maxlength:255|unique)
-- `password`: Optional parameter to set a new password for the user. Will be hashed and saved
+## Request Body Parameters
+| Name         | Type    | Required | Description                                             |
+|--------------|---------|----------|---------------------------------------------------------|
+| `first_name` | string  | No       | First name (max 255)                                    |
+| `last_name`  | string  | No       | Last name (max 255)                                     |
+| `email`      | string  | No       | Email (max 255, unique)                                 |
+| `phone`      | string  | No       | Phone number (max 255, unique)                          |
+| `password`   | string  | No       | New password (will be hashed and saved)                 |
 
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want. The required ones won't be able to be set to null
+*All parameters are optional. If omitted, they will not be updated. Required fields cannot be set to null.*
+
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "user": {<user resource>},
+  "user": {<user resource>}
 }
 ```
+- [User Resource](user_resource.md)
 
-[User Resource](user_resource.md)
+---
 
-### 404 Not Found
- wrong user id passed
+## Error Responses
+- **404 Not Found:** Wrong user ID passed
+- **409 Conflict:** Newly set email/phone is already in use
+- **422 Unprocessable Entity:** [Validation error](../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
-
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
-
-409: newly set email/phone is already in use
+---

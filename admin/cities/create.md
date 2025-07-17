@@ -1,33 +1,42 @@
 # `POST /api/v1/admin/cities/{state}`
-This API creates a new city.
 
+Create a new city in a given state.
+
+
+---
 
 ## Permissions
+| Permission         | Description         |
+|--------------------|---------------------|
+| `cities.view_all`  | Access cities       |
+| `cities.create`    | Create a city       |
 
-- `cities.view_all`: to access cities
-- `cities.create`: to create a city
+---
 
-## Params
+## Request Body Parameters
+| Name     | Type    | Required | Description                        |
+|----------|---------|----------|------------------------------------|
+| `name`   | string  | Yes      | Name of the city (max 255)         |
 
-- `name`: Name of the city (required|maxlength:255)
-- ID of the state in the route
+*The state ID is provided in the route.*
+
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 {
-    "city": {<city resource>},
+  "city": {<city resource>}
 }
 ```
+- [City Resource](city_resource.md)
 
-[City Resource](city_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

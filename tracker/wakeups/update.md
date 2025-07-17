@@ -1,4 +1,4 @@
-# `PUT /api/v1/tracker/wakeups/{tracker-wakeup-id}`
+# PUT /api/v1/tracker/wakeups/{tracker-wakeup-id}
 You can update a wakeup record in the tracker system using this API.
 
 

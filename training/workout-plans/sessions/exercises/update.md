@@ -1,37 +1,45 @@
 # `PUT /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises/{exercise-id}`
-You can update a exercise from a workout plan using this API.
 
+Update an exercise in a workout plan session.
+
+
+---
 
 ## Permissions
+| Permission                        | Description                                 |
+|------------------------------------|---------------------------------------------|
+| `workout_plan_exercises.update`    | Update exercises for your workout plans     |
+| `workout_plans.update`             | Update your own workout plans               |
 
-- `workout_plan_exercises.update`: to update exercises for your workout plans
-- `workout_plans.update`: to be able to update your own workout plans
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                                 |
+|----------------|---------|----------|---------------------------------------------|
+| `exercise_id`  | int     | No       | ID of the exercise                          |
+| `super_set_id` | int     | No       | Parent exercise ID for supersets            |
+| `set_count`    | int     | No       | Number of sets                              |
+| `rep_count`    | int     | No       | Number of reps per set                      |
+| `description`  | string  | No       | Description (max 2000, optional)            |
 
-- `exercise_id`: Id of the exercise
-- `super_set_id`: Id of the parent exercise if you want to define a super set
-- `set_count`: Count of the sets
-- `rep_count`: Count of the reps per each set
-- `description`: An optional description for the exercise (maxlength 2000)
+*All parameters are optional. If omitted, they will not be updated.*
+
+---
 
 ## Response
 
 ### 200 OK
-```json
+```
 <workout plan exercise resource>
 ```
+- [Workout Plan Exercise Resource](workout_plan_exercise_resource.md)
 
-[Workout Plan Exercise Resource](workout_plan_exercise_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../../../_globals/authentication-errors.md)
+- **404 Not Found:** [Not-found error](../../../../_globals/not-found-errors.md)
+- **403 Forbidden:** [Permission error](../../../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../../../_globals/authentication-errors.md)
-
-### 404 Not Found
-[Not-found error](../../../../_globals/not-found-errors.md)
-
-### 403 Forbidden
-[Permission error](../../../../_globals/permission-errors.md)
+---

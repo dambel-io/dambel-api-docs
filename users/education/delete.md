@@ -1,26 +1,28 @@
 # `DELETE /api/v1/users/{user-id}/education/{education-id}`
-You can delete an education from a user using this API.
 
+Delete an education record from a user.
+
+
+---
 
 ## Permissions
+| Permission             | Description                                 |
+|------------------------|---------------------------------------------|
+| `education.delete`     | Delete your own education                   |
+| `education.delete_any` | Delete education from any user              |
 
-- `education.delete`: deleting your own education
-- `education.delete_any`: deleting education from any user
-
-## Params
-
-No parameter.
+---
 
 ## Response
 
 ### 204 No Content
- No content when education gets deleted
+No content is returned when the education record is deleted successfully.
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+## Error Responses
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+- **404 Not Found:** [Not-found error](../../_globals/not-found-errors.md)
 
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+---

@@ -1,24 +1,27 @@
 # `GET /api/v1/admin/exercises`
-You can get list of the exercises by alphabetical order using this endpoint.
 
+Retrieve a list of exercises in alphabetical order.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `exercises.view_all`  | Access exercises    |
 
-- `exercises.view_all`: to access exercises
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<exercise resource>},
-        {<exercise resource>},
-        {<exercise resource>},
-        {<exercise resource>}
-    ],
+  "data": [
+    {<exercise resource>}, ...
+  ]
 }
 ```
+- [Exercise Resource](exercise_resource.md)
 
-[Exercise Resource](exercise_resource.md)
+---

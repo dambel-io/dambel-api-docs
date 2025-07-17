@@ -1,24 +1,27 @@
 # `GET /api/v1/admin/equipment`
-You can get list of the equipment by alphabetical order using this endpoint.
 
+Retrieve a list of equipment in alphabetical order.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `equipment.view_all`  | Access equipment    |
 
-- `equipment.view_all`: to access equipment
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<equipment resource>},
-        {<equipment resource>},
-        {<equipment resource>},
-        {<equipment resource>}
-    ],
+  "data": [
+    {<equipment resource>}, ...
+  ]
 }
 ```
+- [Equipment Resource](equipment_resource.md)
 
-[Equipment Resource](equipment_resource.md)
+---

@@ -1,41 +1,57 @@
-# `POST /api/v1/auth/login`
-This API gives user the ability to login and receive an API token.
+# POST /api/v1/auth/login
+
+Authenticates a user and returns an API token for subsequent requests.
 
 
-## Params
+---
 
-- `email`: User email
-- `password`: User password
-- `expiration`: Token expiration. Should be an integer as seconds. It's **optional** and if you don't pass it, token will never expire
-- `token_name`: An **optional** name for the token. If you don't set it, the user agent value will be used as the token name instead
+## Request Body Parameters
+| Name        | Type    | Required | Description                                                                 | Example                |
+|-------------|---------|----------|-----------------------------------------------------------------------------|------------------------|
+| email       | string  | Yes      | User email address                                                          | "user@example.com"    |
+| password    | string  | Yes      | User password                                                               | "password123"         |
+| expiration  | int     | No       | Token expiration in seconds (optional; if omitted, token never expires)      | 3600                   |
+| token_name  | string  | No       | Optional name for the token (defaults to user agent if not provided)         | "MyAppToken"          |
+
+---
+
+## Request Example
+```json
+{
+  "email": "user@example.com",
+  "password": "password123",
+  "expiration": 3600,
+  "token_name": "MyAppToken"
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the API token.
+
+#### Example
 ```json
 {
-    "token": "<the API token will be set here>"
+  "token": "<the API token will be set here>"
 }
 ```
 
-### 403 Forbidden
+---
 
-```json
-{
-    "error": "Invalid credentials"
-}
-```
+### Error Responses
+| Status | Description                | Example/Reference                                      |
+|--------|----------------------------|--------------------------------------------------------|
+| 403    | Invalid credentials        | `{ "error": "Invalid credentials" }`                 |
+| 422    | Validation error           | [Validation error](../_globals/validation-errors.md)    |
+| 429    | Too many requests          | [Rate-limit error](../_globals/rate-limit-errors.md)    |
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
-
-### 429 Too Many Requests
-[Rate-limit error](../_globals/rate-limit-errors.md) (10 requests per minute is allowed)
+---
 
 ## How to use API token?
-After you did the login and received the token, you should save it in the client side (for example in a cookie or local storage),
-and then for every next API call you make, you should pass that token too.
-You should pass it as a Bearer token in the **headers** this way:
+After logging in and receiving the token, save it on the client side (e.g., in a cookie or local storage). For every subsequent API call, pass the token as a Bearer token in the headers:
 
 ```
 Authorization: Bearer {token}

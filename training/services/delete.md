@@ -1,26 +1,35 @@
-# `DELETE /api/v1/training/services/{training-service-id}`
-You can delete a training service from a user using this API.
+# `/api/v1/training/services/{training-service-id}`
 
+Delete a training service from a user.
+
+
+---
 
 ## Permissions
+| Permission                 | Description                                         |
+|----------------------------|-----------------------------------------------------|
+| `training_services.delete` | Delete your own training services                   |
+| `training_services.delete_any` | Delete training services from any user           |
 
-- `training_services.delete`: deleting your own training services
-- `training_services.delete_any`: deleting training services from any user
+---
 
-## Params
+## Request Body Parameters
+_None._
 
-No parameter.
+---
 
 ## Response
 
 ### 204 No Content
-No content when training service gets deleted
+No content is returned when the training service is deleted successfully.
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
+| 404    | Not Found          | [Not-found error](../../_globals/not-found-errors.md)           |
 
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+---

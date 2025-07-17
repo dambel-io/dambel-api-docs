@@ -1,18 +1,33 @@
-# `DELETE /api/v1/tracker/weights/{tracker-weight-id}`
-You can delete a weight record in the tracker system using this API.
+# DELETE /api/v1/tracker/weights/{tracker-weight-id}
 
+Delete a weight record in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                 | Description                |
+|----------------------------|----------------------------|
+| `tracker_weights.delete`   | Delete tracker weight      |
 
-- `tracker_weights.delete`: deleting tracker weight
+---
+
+## Request Body Parameters
+_None._
+
+---
 
 ## Response
 
 ### 204 No Content
-Record deleted.
+No content is returned when the weight record is deleted successfully.
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
+
+---

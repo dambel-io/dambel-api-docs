@@ -1,35 +1,45 @@
-# `PUT /api/v1/tracker/workouts/{tracker-workout-id}`
-You can update a workout record in the tracker system using this API.
+# PUT /api/v1/tracker/workouts/{tracker-workout-id}
 
+Update a workout record in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                | Description                |
+|---------------------------|----------------------------|
+| `tracker_workouts.update` | Update tracker workout     |
 
-- `tracker_workouts.update`: updating tracker workout
+---
 
-## Params
+## Request Body Parameters
+| Name                    | Type    | Required | Description                                 |
+|-------------------------|---------|----------|---------------------------------------------|
+| `start`                 | string  | No       | Start datetime of the workout               |
+| `workout_plan_session_id`| int    | No       | ID of the workout plan session (if based on a plan) |
+| `workout_title`         | string  | No       | Optional title for the workout              |
+| `end`                   | string  | No       | End datetime of the workout                 |
+| `notes`                 | string  | No       | Optional notes                              |
 
-- `start`: Start datetime of the workout
-- `workout_plan_session_id`: Id of the workout plan session if it is based on a workout plan
-- `workout_title`: An optional title for the workout
-- `end`: End datetime of the workout
-- `notes`: An optional notes
+*All parameters are optional. If omitted, they will not be updated. You can set them to null if desired.*
 
-> Are parameters are optional. If you don't pass them, they remain as they are.
+---
 
 ## Response
 
 ### 200 OK
-```json
+```
 <tracker workout resource>
 ```
+- See [Tracker Workout Resource](tracker_workout_resource.md)
 
-[Tracker Workout Resource](tracker_workout_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

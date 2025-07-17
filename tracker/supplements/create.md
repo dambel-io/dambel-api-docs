@@ -1,31 +1,41 @@
-# `POST /api/v1/tracker/supplements`
-You can record a supplement in the tracker system using this API.
+# POST /api/v1/tracker/supplements
 
+Record a new supplement in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                      | Description                      |
+|----------------------------------|----------------------------------|
+| `tracker_supplements.create`     | Create tracker supplement record |
 
-- `tracker_supplements.create`: creating tracker supplement
+---
 
-## Params
+## Request Body Parameters
+| Name             | Type    | Required | Description                                 |
+|------------------|---------|----------|---------------------------------------------|
+| `tracked_at`     | string  | Yes      | Datetime for the supplement record          |
+| `supplement_id`  | int     | Yes      | Supplement ID                              |
+| `notes`          | string  | No       | Optional notes                              |
 
-- `tracked_at`: The datetime for the supplement
-- `supplement_id`: Id of the supplement
-- `notes`: An optional notes
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <tracker supplement resource>
 ```
+- See [Tracker Supplement Resource](tracker_supplement_resource.md)
 
-[Tracker Supplement Resource](tracker_supplement_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

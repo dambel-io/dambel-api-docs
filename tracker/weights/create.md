@@ -1,31 +1,41 @@
-# `POST /api/v1/tracker/weights`
-You can record a weight in the tracker system using this API.
+# POST /api/v1/tracker/weights
 
+Record a new weight in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                 | Description                |
+|----------------------------|----------------------------|
+| `tracker_weights.create`   | Create tracker weight      |
 
-- `tracker_weights.create`: creating tracker weight
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type    | Required | Description                                 |
+|--------------|---------|----------|---------------------------------------------|
+| `tracked_at` | string  | Yes      | Datetime for the weight record              |
+| `weight`     | float   | Yes      | Weight in kilograms (kg)                    |
+| `notes`      | string  | No       | Optional notes                              |
 
-- `tracked_at`: The datetime for the weight
-- `weight`: Float value for weight (in KG)
-- `notes`: An optional notes
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <tracker weight resource>
 ```
+- See [Tracker Weight Resource](tracker_weight_resource.md)
 
-[Tracker Weight Resource](tracker_weight_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

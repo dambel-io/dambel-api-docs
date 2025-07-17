@@ -1,28 +1,47 @@
-# `GET /api/v1/gyms/{gym-id}/buffet-items`
-You can get list of the buffet items of a gym using this API.
+# GET /api/v1/gyms/{gym-id}/buffet-items
+
+Retrieves a list of buffet items for a specific gym.
 
 
-## Params
+---
 
-No parameter.
+## Path Parameters
+| Name    | Type | Required | Description           | Example |
+|---------|------|----------|-----------------------|---------|
+| gym-id  | int  | Yes      | ID of the gym         | 123     |
+
+---
 
 ## Response
 
 ### 200 OK
+Returns a list of gym buffet item resources.
 
+#### Example
 ```json
 {
-    "data": [<gym buffet item resource>, ...],
+  "data": [
+    {
+      "id": 1,
+      "gym_id": 123,
+      "title": "Protein Bar",
+      "description": "Tasty bar",
+      "price": 100,
+      "discount": 10.5,
+      "discounted_price": 89.5,
+      "media": []
+    }
+  ]
 }
 ```
 
-[Gym Buffet Item Resource](gym_buffet_item_resource.md)
+For a full schema, see [Gym Buffet Item Resource](gym_buffet_item_resource.md).
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |

@@ -1,38 +1,44 @@
 # `PUT /api/v1/admin/exercises/{exercise-id}`
-You can update an existing exercise using this API.
 
+Update an existing exercise.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `exercises.view_all`  | Access exercises    |
+| `exercises.update`    | Update exercise     |
 
-- `exercises.view_all`: to access exercises
-- `exercises.update`: to update a exercise
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                        |
+|----------------|---------|----------|------------------------------------|
+| `name`         | string  | No       | Name of the exercise (max 255)     |
+| `link`         | string  | No       | Tutorial link (max 255, optional)  |
+| `description`  | string  | No       | Description (optional)             |
 
-- `name`: Name of the exercise (required|maxlength:255)
-- `link`: A link to a youtube video or something as a tutorial for the exercise (maxlength:255)
-- `description`: An optional description for the exercise
+*All parameters are optional. If omitted, they will not be updated.*
 
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want.
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "exercise": {<exercise resource>},
+  "exercise": {<exercise resource>}
 }
 ```
+- [Exercise Resource](exercise_resource.md)
 
-[Exercise Resource](exercise_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

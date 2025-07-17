@@ -1,33 +1,40 @@
 # `PUT /api/v1/admin/cities/{city-id}`
-You can update an existing city using this API.
 
+Update an existing city.
+
+
+---
 
 ## Permissions
+| Permission         | Description         |
+|--------------------|---------------------|
+| `cities.view_all`  | Access cities       |
+| `cities.update`    | Update a city       |
 
-- `cities.view_all`: to access cities
-- `cities.update`: to update a city
+---
 
-## Params
+## Request Body Parameters
+| Name     | Type    | Required | Description                        |
+|----------|---------|----------|------------------------------------|
+| `name`   | string  | Yes      | Name of the city (max 255)         |
 
-- `name`: Name of the city (required|maxlength:255)
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "city": {<city resource>},
+  "city": {<city resource>}
 }
 ```
+- [City Resource](city_resource.md)
 
-[City Resource](city_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

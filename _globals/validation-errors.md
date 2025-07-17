@@ -1,17 +1,22 @@
-# Validation errors
-When you pass some params to an API and there are some validation errors, errors will be returned in this structure in all of the APIs with status code `422`:
+# Validation Errors
+
+Describes the structure of error responses when request parameters fail validation (HTTP 422).
+
+---
+
+## Error Response
+When validation errors occur, the API returns a `422` status code with the following structure:
 
 ```json
 {
-    "errors": {
-        "<field name>": [
-            "error 1",
-            "error 2",
-            "..."
-        ],
-        "email": [
-            "Email field is required",
-        ]
-    }
+  "errors": {
+    "<field name>": [
+      "error 1",
+      "error 2"
+    ],
+    "email": [
+      "Email field is required"
+    ]
+  }
 }
 ```

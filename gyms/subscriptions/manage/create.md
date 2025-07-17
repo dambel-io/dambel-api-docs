@@ -1,34 +1,61 @@
-# `POST /api/v1/gyms/{gym-id}/subscriptions/manage`
-You can create a subscription for a gym using this API.
+# POST /api/v1/gyms/{gym-id}/subscriptions/manage
 
+Creates a new subscription for a user in a specific gym.
+
+
+---
 
 ## Permissions
+| Permission                    | Description                                 |
+|-------------------------------|---------------------------------------------|
+| `gym_subscriptions.create`    | Create subscriptions for your own gyms      |
+| `gym_subscriptions.create_any`| Create subscriptions for any gym            |
 
-- `gym_subscriptions.create`: creating subscriptions for your own gyms
-- `gym_subscriptions.create_any`: creating subscriptions for any gym
+---
 
-## Params
+## URL Parameters
+| Name    | Type | Required | Description                | Example |
+|---------|------|----------|----------------------------|---------|
+| gym-id  | int  | Yes      | ID of the gym              | 123     |
 
-- `gym_plan_id`: ID of the gym plan
-- `user_id`: ID of the user
+---
+
+## Request Body Parameters
+| Name        | Type | Required | Description                | Example |
+|-------------|------|----------|----------------------------|---------|
+| gym_plan_id | int  | Yes      | ID of the gym plan         | 10      |
+| user_id     | int  | Yes      | ID of the user             | 789     |
+
+---
+
+## Request Example
+```json
+{
+  "gym_plan_id": 10,
+  "user_id": 789
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created gym subscription resource.
+
+#### Example
 ```json
-<gym subscription resource>
+{ /* gym subscription resource */ }
 ```
 
-[Gym Subscription Resource](../gym_subscription.md)
+For a full schema, see [Gym Subscription Resource](../gym_subscription.md).
 
-### 404 Not Found
- Invalid gym id or gym plan id passed
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../../_globals/validation-errors.md)
-
-### 401 Unauthorized
-[Authentication error](../../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 404    | Not found (invalid gym or plan) |  |
+| 422    | Validation error           | [Validation error](../../../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../../_globals/permission-errors.md) |

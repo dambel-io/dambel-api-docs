@@ -1,20 +1,27 @@
 # `DELETE /api/v1/users/{user-id}`
-You can delete a user using this API.
 
+Delete a user from the system.
+
+
+---
 
 ## Permissions
-- `users.delete_any`: to delete any user
+| Permission         | Description           |
+|--------------------|----------------------|
+| `users.delete_any` | Delete any user      |
+
+---
 
 ## Response
 
 ### 204 No Content
- No content when user gets deleted
+No content is returned when the user is deleted successfully.
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+## Error Responses
+- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
+- **404 Not Found:** [Not-found error](../_globals/not-found-errors.md)
 
-### 404 Not Found
-[Not-found error](../_globals/not-found-errors.md)
+---

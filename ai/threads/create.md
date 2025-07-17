@@ -1,31 +1,54 @@
-# `POST /api/v1/ai/threads`
-You can create an AI thread using this API.
+# POST /api/v1/ai/threads
 
+Creates a new AI thread.
+
+
+---
 
 ## Permissions
+| Permission        | Description                |
+|-------------------|---------------------------|
+| `ai_threads.create` | Create new threads        |
 
-- `ai_threads.create`: To create threads
+---
 
-## Params
+## Request Body Parameters
+| Name        | Type   | Required | Description                                 | Example         |
+|-------------|--------|----------|---------------------------------------------|-----------------|
+| title       | string | No       | Optional title for the thread               | "My Thread"     |
+| anchor_type | string | No       | Optional anchor type                        | "plan"          |
+| anchor_id   | int    | No       | Optional anchor ID                          | 42              |
 
-- `title`: Optional title
-- `anchor_type`: Optional anchor type
-- `anchor_id`: Optional anchor ID
+---
+
+## Request Example
+```json
+{
+  "title": "My Thread",
+  "anchor_type": "plan",
+  "anchor_id": 42
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created AI thread resource.
+
+#### Example
 ```json
-<ai thread resource>
+{ /* ai thread resource */ }
 ```
 
-[Ai Thread Resource](ai_thread_resource.md)
+For a full schema, see [AI Thread Resource](ai_thread_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |

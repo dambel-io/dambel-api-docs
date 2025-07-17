@@ -1,8 +1,14 @@
-# Permission errors
-Whenever you try to call an API that you do not have needed permissions to perform that action, you will receive `403` with this response:
+# Permission Errors
+
+Describes the structure of error responses when the user lacks required permissions (HTTP 403).
+
+---
+
+## Error Response
+When you call an API without the necessary permissions, you receive a `403` status code with the following response:
 
 ```json
 {
-    "error": "You do not have permission to perform this action"
+  "error": "You do not have permission to perform this action"
 }
 ```

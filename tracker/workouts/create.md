@@ -1,33 +1,43 @@
-# `POST /api/v1/tracker/workouts`
-You can record a workout in the tracker system using this API.
+# POST /api/v1/tracker/workouts
 
+Record a new workout in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                | Description                |
+|---------------------------|----------------------------|
+| `tracker_workouts.create` | Create tracker workout     |
 
-- `tracker_workouts.create`: creating tracker workout
+---
 
-## Params
+## Request Body Parameters
+| Name                    | Type    | Required | Description                                 |
+|-------------------------|---------|----------|---------------------------------------------|
+| `start`                 | string  | Yes      | Start datetime of the workout               |
+| `workout_plan_session_id`| int    | No       | ID of the workout plan session (if based on a plan) |
+| `workout_title`         | string  | No       | Optional title for the workout              |
+| `end`                   | string  | No       | End datetime of the workout                 |
+| `notes`                 | string  | No       | Optional notes                              |
 
-- `start`: Start datetime of the workout
-- `workout_plan_session_id`: Id of the workout plan session if it is based on a workout plan
-- `workout_title`: An optional title for the workout
-- `end`: End datetime of the workout
-- `notes`: An optional notes
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <tracker workout resource>
 ```
+- See [Tracker Workout Resource](tracker_workout_resource.md)
 
-[Tracker Workout Resource](tracker_workout_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

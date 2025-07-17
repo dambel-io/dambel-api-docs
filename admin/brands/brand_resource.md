@@ -1,13 +1,28 @@
 # Brand Resource
 
+Represents a brand in the system.
 
-```json
+
+---
+
+## Schema
+| Field         | Type    | Description                |
+|-------------- |---------|----------------------------|
+| `id`          | integer | Brand ID                   |
+| `title`       | string  | Brand name                 |
+| `description` | string  | Description                |
+| `link`        | string  | Website link (nullable)    |
+
+---
+
+## Example
+```
 {
-    "id": 123,
-    "title": "...",
-    "description": "...",
-    "link": "...",
+  "id": 123,
+  "title": "...",
+  "description": "...",
+  "link": "..."
 }
 ```
 
-> NOTE: link can be null
+---

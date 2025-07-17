@@ -1,25 +1,43 @@
-# `DELETE /api/v1/chats/{chat-id}/messages/{message-id}`
-You can delete a message from a chat using this API.
+# DELETE /api/v1/chats/{chat-id}/messages/{message-id}
 
+Deletes a specific message from a chat.
+
+
+---
 
 ## Permissions
+| Permission           | Description                |
+|----------------------|---------------------------|
+| `chat_messages.delete` | Delete your own messages  |
 
-- `chat_messages.delete`: to delete your own messages
+---
 
-## Params
+## URL Parameters
+| Name       | Type | Required | Description                | Example |
+|------------|------|----------|----------------------------|---------|
+| chat-id    | int  | Yes      | ID of the chat             | 123     |
+| message-id | int  | Yes      | ID of the message to delete| 456     |
 
-No parameter.
+---
+
+## Request Example
+```
+DELETE /api/v1/chats/123/messages/456
+Authorization: Bearer {token}
+```
+
+---
 
 ## Response
 
 ### 204 No Content
-No content when chat message gets deleted
+No content is returned when the message is successfully deleted.
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |

@@ -1,36 +1,46 @@
-# `POST /api/v1/tracker/workouts/{workout-id}/sets`
-You can record a workout set in the tracker system using this API.
+# POST /api/v1/tracker/workouts/{workout-id}/sets
 
+Record a new workout set in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                      | Description                |
+|----------------------------------|----------------------------|
+| `tracker_workout_sets.create`    | Create tracker workout set |
 
-- `tracker_workout_sets.create`: creating tracker workout set
+---
 
-## Params
+## Request Body Parameters
+| Name                    | Type    | Required | Description                                 |
+|-------------------------|---------|----------|---------------------------------------------|
+| `start`                 | string  | Yes      | Start datetime of the workout set           |
+| `workout_plan_exercise_id`| int   | No       | Workout plan exercise ID (if applicable)    |
+| `exercise_id`           | int     | Yes      | Exercise ID                                 |
+| `is_replacement`        | boolean | No       | Whether this set is a replacement           |
+| `rep_count`             | int     | Yes      | Number of repetitions                       |
+| `weight`                | int     | No       | Weight used                                 |
+| `end`                   | string  | No       | End datetime of the workout set             |
+| `notes`                 | string  | No       | Optional notes                              |
 
-- `start`: Start datetime of the workout
-- `workout_plan_exercise_id`: Id of the workout plan exercise if it is based on a workout plan
-- `exercise_id`: Id of the exercise done
-- `is_replacement`: A boolean to specify if this exercise is done instead of something else
-- `rep_count`: Count of the reps
-- `weight`: The weight used
-- `end`: End datetime of the workout
-- `notes`: An optional notes
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <tracker workout set resource>
 ```
+- See [Tracker Workout Set Resource](tracker_workout_set_resource.md)
 
-[Tracker Workout Set Resource](tracker_workout_set_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../../_globals/permission-errors.md)
+---

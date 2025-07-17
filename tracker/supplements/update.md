@@ -1,33 +1,43 @@
-# `PUT /api/v1/tracker/supplements/{tracker-supplement-id}`
-You can update a supplement record in the tracker system using this API.
+# PUT /api/v1/tracker/supplements/{tracker-supplement-id}
 
+Update a supplement record in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                      | Description                      |
+|----------------------------------|----------------------------------|
+| `tracker_supplements.update`     | Update tracker supplement record |
 
-- `tracker_supplements.update`: updating tracker supplement
+---
 
-## Params
+## Request Body Parameters
+| Name             | Type    | Required | Description                                 |
+|------------------|---------|----------|---------------------------------------------|
+| `tracked_at`     | string  | No       | Datetime for the supplement record          |
+| `supplement_id`  | int     | No       | Supplement ID                              |
+| `notes`          | string  | No       | Optional notes                              |
 
-- `tracked_at`: The datetime for the supplement
-- `supplement_id`: Id of the supplement
-- `notes`: An optional notes
+*All parameters are optional. If omitted, they will not be updated. You can set them to null if desired.*
 
-> Are parameters are optional. If you don't pass them, they remain as they are.
+---
 
 ## Response
 
 ### 200 OK
-```json
+```
 <tracker supplement resource>
 ```
+- See [Tracker Supplement Resource](tracker_supplement_resource.md)
 
-[Tracker Supplement Resource](tracker_supplement_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

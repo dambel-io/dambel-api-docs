@@ -1,4 +1,4 @@
-# `DELETE /api/v1/tracker/wakeups/{tracker-wakeup-id}`
+# DELETE /api/v1/tracker/wakeups/{tracker-wakeup-id}
 You can delete a wakeup record in the tracker system using this API.
 
 

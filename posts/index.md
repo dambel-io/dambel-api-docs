@@ -1,45 +1,82 @@
-# `GET /api/v1/posts`
-You can search the posts using this API. This can be used for both admin management and also getting posts for a specific profile using filters.
+# GET /api/v1/posts
 
+Retrieves a list of posts, with support for filtering by profile type, profile ID, search, and order. Useful for both admin management and fetching posts for a specific profile.
+
+
+---
 
 ## Permissions
+| Permission         | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `posts.view`       | View your own posts and posts on any public profile                         |
+| `posts.view_all`   | View all posts, including drafts, on any profile (admin only)                |
 
-- `posts.view`: view your own posts and posts on any public profile
-- `posts.view_all`: view all of the posts even in draft mode on any profile
+---
 
-## Params
+## Query Parameters
+| Name      | Type   | Required | Description                                                                 | Example                |
+|-----------|--------|----------|-----------------------------------------------------------------------------|------------------------|
+| type      | string | No       | Profile type (`App\Models\Gym`, `App\Models\User`). Comma-separated for multiple types | "App\\Models\\Gym,App\\Models\\User" |
+| item_id   | int    | No       | Profile ID(s) to filter by (comma-separated for multiple)                    | "1,2,3"               |
+| search    | string | No       | Search term for post title or content                                       | "workout"             |
+| order     | string | No       | Order of results: `ASC` or `DESC` (default: `DESC`)                         | "DESC"                 |
 
-- `type`: The profile type (`App\Models\Gym`, `App\Models\User`). Can be multiple using `,` separator
-- `item_id`: Id of the profile. Can be multiple using `,` separator
-- `search`: Search the posts based on title and content
-- `order`: Order of the results. `ASC` or `DESC`. Default is `DESC` so they are sorted by newest
+---
 
 ## Response
 
 ### 200 OK
+Returns a paginated list of post resources.
 
+#### Schema
 ```json
 {
-    "data": [
-        {<post resource>},
-        {<post resource>},
-        {<post resource>},
-        {<post resource>}
-    ],
-    "links": {<pagination data>},
-    "meta": {<pagination data>},
+  "data": [
+    { /* Post Resource */ }
+  ],
+  "links": { /* Pagination Data */ },
+  "meta": { /* Pagination Data */ }
 }
 ```
 
-[Post Resource](post_resource.md)
+#### Example
+```json
+{
+  "data": [
+    {
+      "id": 123,
+      "profile_type": "App\\Models\\User",
+      "profile_id": 42,
+      "title": "My Workout",
+      "content": "Today I did squats and deadlifts.",
+      "is_draft": false
+    }
+  ],
+  "links": {
+    "first": "https://api.example.com/api/v1/posts?page=1",
+    "last": "https://api.example.com/api/v1/posts?page=10",
+    "prev": null,
+    "next": "https://api.example.com/api/v1/posts?page=2"
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "last_page": 10,
+    "path": "https://api.example.com/api/v1/posts",
+    "per_page": 50,
+    "to": 50,
+    "total": 500
+  }
+}
+```
 
-[Pagination Data](../_globals/pagination-data.md) (per page: 50)
+For a full schema, see [Post Resource](post_resource.md) and [Pagination Data](../_globals/pagination-data.md).
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../_globals/not-found-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../_globals/not-found-errors.md) |

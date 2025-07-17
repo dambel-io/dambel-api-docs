@@ -1,40 +1,53 @@
 # `GET /api/v1/users`
-Using this API you can get list of the users and also search them using filters.
 
+Retrieve a paginated list of users, with support for advanced filtering and sorting.
+
+
+---
 
 ## Permissions
+| Permission         | Description                |
+|--------------------|----------------------------|
+| `users.view_all`   | View all users             |
 
-- `users.view_all`: to view all of the users
+---
 
-## Params
+## Query Parameters
+| Name           | Type     | Required | Description                                                                                 |
+|----------------|----------|----------|---------------------------------------------------------------------------------------------|
+| `page`         | integer  | No       | Page number for pagination                                                                  |
+| `search`       | string   | No       | Search text in user's name, email, or phone                                                 |
+| `email_status` | string   | No       | Filter by email verification status: `verified` or `not_verified`                           |
+| `phone_status` | string   | No       | Filter by phone verification status: `verified` or `not_verified`                           |
+| `user_id`      | array    | No       | Filter by one or more specific user IDs                                                     |
+| `sort_by`      | string   | No       | Sort by: `name`, `email`, `phone`, `created_at`, `email_verified_at`, `phone_verified_at`   |
+| `sort_order`   | string   | No       | Sort order: `desc` (default) or `asc`                                                       |
 
-- `page`: page number
-- `search`: search by a text in user's name, email, and phone
-- `email_status`: can be `verified` or `not_verified`
-- `phone_status`: can be `verified` or `not_verified`
-- `user_id`: only return one or more specific ids
-- `sort_by`: can be `name`, `email`, `phone`, `created_at`, `email_verified_at`, `phone_verified_at` (default sort is `created_at`)
-- `sort_order`: can be `desc` or `asc` (default order is `desc`)
+*Default sort is by `created_at` (newest first).*
 
-The users are sorted by the newest.
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<user resource>},
-        {<user resource>},
-        {<user resource>},
-        {<user resource>}
-    ],
-    "links": {<pagination data>},
-    "meta": {<pagination data>},
+  "data": [
+    {<user resource>},
+    ...
+  ],
+  "links": {<pagination data>},
+  "meta": {<pagination data>}
 }
 ```
 
-[User Resource](user_resource.md)
+- [User Resource](user_resource.md)
+- [Pagination Data](../_globals/pagination-data.md) (per page: 30)
 
-[Pagination Data](../_globals/pagination-data.md) (per page: 30)
+---
+
+## Error Responses
+- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
+
+---

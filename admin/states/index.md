@@ -1,28 +1,34 @@
 # `GET /api/v1/admin/states`
-You can get list of the states by alphabetical order using this endpoint.
 
+Retrieve a list of states in alphabetical order. Optionally filter by country.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `states.view_all`     | Access states       |
 
-- `states.view_all`: to access states
+---
 
-## Params
+## Query Parameters
+| Name         | Type    | Required | Description                        |
+|--------------|---------|----------|------------------------------------|
+| `country_id` | integer | No       | Filter by country ID               |
 
-- `country_id`: You can filter by country to get states in a specific country
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<state resource>},
-        {<state resource>},
-        {<state resource>},
-        {<state resource>}
-    ],
+  "data": [
+    {<state resource>}, ...
+  ]
 }
 ```
+- [State Resource](state_resource.md)
 
-[State Resource](state_resource.md)
+---

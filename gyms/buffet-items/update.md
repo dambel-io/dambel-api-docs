@@ -1,37 +1,74 @@
-# `PUT /api/v1/gyms/{gym-id}/buffet-items/{buffet-item-id}`
-You can update a buffet item using this API.
+# PUT /api/v1/gyms/{gym-id}/buffet-items/{buffet-item-id}
 
+Updates a buffet item for a gym. All parameters are optional; only provided fields will be updated. You can set fields to null to clear them.
+
+
+---
 
 ## Permissions
+| Permission                    | Description                                         |
+|-------------------------------|-----------------------------------------------------|
+| `gym_buffet_items.update`     | Update buffet items for your own gym                |
+| `gym_buffet_items.update_any` | Update buffet items for any gym (admin only)        |
 
-- `gym_buffet_items.update`: update your own gym buffet items
-- `gym_buffet_items.update_any`: update buffet items for any gym
+---
 
-## Params
+## Path Parameters
+| Name           | Type | Required | Description                | Example |
+|----------------|------|----------|----------------------------|---------|
+| gym-id         | int  | Yes      | ID of the gym              | 123     |
+| buffet-item-id | int  | Yes      | ID of the buffet item      | 5       |
 
-- `title`: Title of the item (maxlength 255)
-- `description`: An optional description for the item (maxlength 2000)
-- `price`: Price of the item (required integer)
-- `discount`: Discount percentage (nullable float, default 0)
+---
 
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want.
+## Request Body Parameters
+| Name        | Type    | Required | Description                                 | Example         |
+|-------------|---------|----------|---------------------------------------------|-----------------|
+| title       | string  | No       | Title of the item (max 255 characters)      | "Protein Bar"  |
+| description | string  | No       | Description for the item (max 2000 chars)   | "Tasty bar"    |
+| price       | int     | No       | Price of the item                           | 100             |
+| discount    | float   | No       | Discount percentage (default 0)             | 10.5            |
+
+---
+
+## Request Example
+```json
+{
+  "title": "Protein Bar",
+  "description": "Tasty bar",
+  "price": 100,
+  "discount": 10.5
+}
+```
+
+---
 
 ## Response
 
 ### 200 OK
+Returns the updated gym buffet item resource.
 
+#### Example
 ```json
-<gym buffet item resource>
+{
+  "id": 1,
+  "gym_id": 123,
+  "title": "Protein Bar",
+  "description": "Tasty bar",
+  "price": 100,
+  "discount": 10.5,
+  "discounted_price": 89.5,
+  "media": []
+}
 ```
 
-[Training Service Resource](gym_buffet_item_resource.md)
+For a full schema, see [Gym Buffet Item Resource](gym_buffet_item_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |

@@ -1,31 +1,41 @@
-# `POST /api/v1/tracker/waters`
-You can record a water in the tracker system using this API.
+# POST /api/v1/tracker/waters
 
+Record a new water intake in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                | Description                |
+|---------------------------|----------------------------|
+| `tracker_waters.create`   | Create tracker water record|
 
-- `tracker_waters.create`: creating tracker water
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type    | Required | Description                                 |
+|--------------|---------|----------|---------------------------------------------|
+| `tracked_at` | string  | Yes      | Datetime for the water intake               |
+| `glass_count`| float   | Yes      | Number of glasses (float)                   |
+| `notes`      | string  | No       | Optional notes                              |
 
-- `tracked_at`: The datetime for the water
-- `glass_count`: Float value for count of glasses
-- `notes`: An optional notes
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <tracker water resource>
 ```
+- See [Tracker Water Resource](tracker_water_resource.md)
 
-[Tracker Water Resource](tracker_water_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

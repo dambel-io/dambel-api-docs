@@ -1,36 +1,46 @@
-# `POST /api/v1/tracker/meals`
-You can record a meal in the tracker system using this API.
+# POST /api/v1/tracker/meals
 
+Record a new meal in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                   | Description                      |
+|------------------------------|----------------------------------|
+| `tracker_meals.create`       | Create tracker meal record       |
 
-- `tracker_meals.create`: creating tracker meal
+---
 
-## Params
+## Request Body Parameters
+| Name             | Type    | Required | Description                                 |
+|------------------|---------|----------|---------------------------------------------|
+| `tracked_at`     | string  | Yes      | Datetime for the meal record                |
+| `diet_plan_meal_id`| int   | No       | Diet plan meal ID (if based on a diet plan) |
+| `notes`          | string  | No       | Optional notes                              |
+| `is_cheat`       | boolean | No       | Whether the meal is a cheat meal (default: false) |
+| `protein`        | int     | No       | Protein in grams (nullable)                 |
+| `carb`           | int     | No       | Carbs in grams (nullable)                   |
+| `fat`            | int     | No       | Fat in grams (nullable)                     |
+| `calories`       | int     | No       | Calories (nullable)                         |
 
-- `tracked_at`: The datetime for the meal
-- `diet_plan_meal_id`: Id of the diet plan meal if it is based on a diet plan
-- `notes`: An optional notes
-- `is_cheat`: A boolean to specify if the meal is a cheat meal (default is false)
-- `protein`: Protein in grams (nullable)
-- `carb`: Carbs in grams (nullable)
-- `fat`: Fat in grams (nullable)
-- `calories`: Calories (nullable)
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <tracker meal resource>
 ```
+- See [Tracker Meal Resource](tracker_meal_resource.md)
 
-[Tracker Meal Resource](tracker_meal_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

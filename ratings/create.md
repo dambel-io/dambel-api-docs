@@ -1,36 +1,63 @@
-# `POST /api/v1/ratings`
-You can rate an element using this API.
+# POST /api/v1/ratings
 
+Creates a new rating for a specified element (gym or training service).
+
+
+---
 
 ## Permissions
+| Permission         | Description                                 |
+|--------------------|---------------------------------------------|
+| view (ratable)     | Must have view permission on the ratable     |
+| `ratings.create`   | Rate an element                             |
 
-- You need to have **view** permission of the **ratable**
-- `ratings.create`: To rate something
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type    | Required | Description                                                                 | Example         |
+|--------------|---------|----------|-----------------------------------------------------------------------------|-----------------|
+| ratable_type | string  | Yes      | Type of the element (`gym` or `training_service`)                            | "gym"          |
+| ratable_id   | int     | Yes      | ID of the element to rate                                                    | 10              |
+| score        | int     | Yes      | Score between 1 and 5                                                        | 5               |
 
-- `ratable_type`: Type of the element that you are rating. These are available items:
-  - `gym`
-  - `training_service`
-- `ratable_id`: Id of the element
-- `score`: The score between 1 and 5
+---
+
+## Request Example
+```json
+{
+  "ratable_type": "gym",
+  "ratable_id": 10,
+  "score": 5
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created rating resource.
+
+#### Example
 ```json
 {
-    "rating": {<rating resource>},
+  "rating": {
+    "id": 123,
+    "user_id": 42,
+    "ratable_type": "App\\Models\\Gym",
+    "ratable_id": 10,
+    "score": 5
+  }
 }
 ```
 
-[Rating Resource](rating_resource.md)
+For a full schema, see [Rating Resource](rating_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |

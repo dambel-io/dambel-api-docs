@@ -1,34 +1,38 @@
 # `POST /api/v1/users/{user-id}/attach-role/{role-id}`
-You can attach a role to a user using this API.
 
+Attach a role to a user.
+
+
+---
 
 ## Permissions
-- `users.attach_role`: to attach role to any user except themselves
+| Permission           | Description                                 |
+|----------------------|---------------------------------------------|
+| `users.attach_role`  | Attach a role to any user except themselves |
+
+---
 
 ## Response
 
 ### 201 Created
-
-```json
+```
 {
-    "message": "Role attached successfully"
+  "message": "Role attached successfully"
 }
 ```
 
-### 400 Bad Request
+---
 
-
-```json
-{
+## Error Responses
+- **400 Bad Request:**
+  - User already has this role
+  ```
+  {
     "error": "User already has this role"
-}
-```
+  }
+  ```
+- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
+- **404 Not Found:** Role or user not found ([Not-found error](../_globals/not-found-errors.md))
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
-
-### 404 Not Found
- role or user not found ([Not-found error](../_globals/not-found-errors.md))
+---

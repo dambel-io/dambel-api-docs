@@ -1,37 +1,42 @@
-# `GET /api/v1/training/services`
-You can get list of the training services of a user using this API.
+# `/api/v1/training/services`
+
+Retrieve a list of training services for a user.
 
 
-## Params
+---
 
-- `user_id`: to specify the user (can assign multiple by separating ids using `,`)
-- `search`: to search based on title and description
-- `page`: specify the data page
-- `sort`: use `asc` to see oldest and `desc` to latest. Default is `desc`
+## Query Parameters
+| Name      | Type    | Required | Description                                                      |
+|-----------|---------|----------|------------------------------------------------------------------|
+| `user_id` | string  | No       | Filter by user IDs (comma-separated for multiple)                |
+| `search`  | string  | No       | Search by title and description                                  |
+| `page`    | int     | No       | Page number for pagination                                       |
+| `sort`    | string  | No       | `asc` for oldest, `desc` for latest (default: `desc`)            |
 
-> Note: The results are firstly sorted based on marketing boosts, the `sort` logic will be applied on the second level
+> **Note:** Results are first sorted by marketing boosts; `sort` applies secondarily.
+
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [<training service resource>, ...],
-    "links": {<pagination data>},
-    "meta": {<pagination data>},
+  "data": [<training service resource>, ...],
+  "links": {<pagination data>},
+  "meta": {<pagination data>}
 }
 ```
+- See [Training Service Resource](training_service_resource.md)
+- See [Pagination Data](../../_globals/pagination-data.md) (per page: 50)
 
-[Training Service Resource](training_service_resource.md)
+---
 
-[Pagination Data](../../_globals/pagination-data.md) (per page: 50)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
+| 404    | Not Found          | [Not-found error](../../_globals/not-found-errors.md)           |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+---

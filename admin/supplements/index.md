@@ -1,24 +1,27 @@
 # `GET /api/v1/admin/supplements`
-You can get list of the supplements using this endpoint.
 
+Retrieve a list of supplements.
+
+
+---
 
 ## Permissions
+| Permission               | Description         |
+|--------------------------|---------------------|
+| `supplements.view_all`   | Access supplements  |
 
-- `supplements.view_all`: to access supplements
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<supplement resource>},
-        {<supplement resource>},
-        {<supplement resource>},
-        {<supplement resource>}
-    ],
+  "data": [
+    {<supplement resource>}, ...
+  ]
 }
 ```
+- [Supplement Resource](supplement_resource.md)
 
-[Supplement Resource](supplement_resource.md)
+---

@@ -1,302 +1,329 @@
 > This repository is auto synced and readonly
-# APIs
+# Dambel API Documentation
 
-- `/v1`
-    - `/auth`
-        - [`/login`](auth/login.md)
-        - [`/register`](auth/register.md)
-        - [`/me`](auth/me.md)
-    - [`/gyms`](gyms/index.md)
-        - [index](gyms/index.md)
-        - [create](gyms/create.md)
-        - `/{gym-id}`
-            - [update](gyms/update.md)
-            - [delete](gyms/delete.md)
-            - [`/working-periods`](gyms/working-periods/index.md)
-                - [index](gyms/working-periods/index.md)
-                - [create](gyms/working-periods/create.md)
-                - `/{working-period-id}`
-                    - [update](gyms/working-periods/update.md)
-                    - [delete](gyms/working-periods/delete.md)
-            - [`/equipment`](gyms/equipment/index.md)
-                - [index](gyms/equipment/index.md)
-                - [create](gyms/equipment/create.md)
-                - `/{gym-equipment-id}`
-                    - [update](gyms/equipment/update.md)
-                    - [delete](gyms/equipment/delete.md)
-            - [`/plans`](gyms/plans/index.md)
-                - [index](gyms/plans/index.md)
-                - [create](gyms/plans/create.md)
-                - `/{plan-id}`
-                    - [delete](gyms/plans/delete.md)
-                    - [update](gyms/plans/update.md)
-            - [`/buffet-items`](gyms/buffet-items/index.md)
-                - [index](gyms/buffet-items/index.md)
-                - [create](gyms/buffet-items/create.md)
-                - `/{buffet-item-id}`
-                    - [delete](gyms/buffet-items/delete.md)
-                    - [update](gyms/buffet-items/update.md)
-            - [`/admins`](gyms/admins/index.md)
-                - [index](gyms/admins/index.md)
-                - [create](gyms/admins/create.md)
-                - `/{admin-id}`
-                    - [delete](gyms/admins/delete.md)
-                    - [update](gyms/admins/update.md)
-            - `/subscriptions`
-                - [`/subscribe/{plan-id}`](gyms/subscriptions/subscribe.md)
-                - [`/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
-                - [`/checkin/{subscription-id}`](gyms/subscriptions/checkin.md)
-                - [`/checkout/{subscription-id}`](gyms/subscriptions/checkout.md)
-                - [`/delete-checkin/{subscription-id}/{checkin-id}`](gyms/subscriptions/delete-checkin.md)
-                - [`/manage`](gyms/subscriptions/manage/index.md)
-                    - [index](gyms/subscriptions/manage/index.md)
-                    - [create](gyms/subscriptions/manage/create.md)
-                    - `/{gym-subscription-id}`
-                        - [update](gyms/subscriptions/manage/update.md)
-                        - [delete](gyms/subscriptions/manage/delete.md)
-            - `/data`
-                - [`/peak-hours`](gyms/data/peak-hours.md)
-    - [`/users`](users/index.md)
-        - [index](users/index.md)
-        - [create](users/create.md)
-        - `/{user-id}`
-            - [delete](users/delete.md)
-            - [update](users/update.md)
-            - [`/attach-role/{role-id}`](users/attach-role.md)
-            - [`/detach-role/{role-id}`](users/detach-role.md)
-            - [`/championships`](users/championships/index.md)
-                - [index](users/championships/index.md)
-                - [create](users/championships/create.md)
-                - `/{championship-id}`
-                    - [delete](users/championships/delete.md)
-                    - [update](users/championships/update.md)
-            - [`/education`](users/education/index.md)
-                - [index](users/education/index.md)
-                - [create](users/education/create.md)
-                - `/{education-id}`
-                    - [delete](users/education/delete.md)
-                    - [update](users/education/update.md)
-    - `/training`
-        - [`/services`](training/services/index.md)
-            - [index](training/services/index.md)
-            - [create `/{user-id}`](training/services/create.md)
-            - `/{training-service-id}`
-                - [delete](training/services/delete.md)
-                - [update](training/services/update.md)
-        - [`/trainees`](training/trainees/index.md)
-            - [index](training/trainees/index.md)
-            - [create](training/trainees/create.md)
-            - `/{trainee-id}`
-                - [update](training/trainees/update.md)
-        - [`/diet-plans`](training/diet-plans/index.md)
-            - [index](training/diet-plans/index.md)
-            - [create](training/diet-plans/create.md)
-            - `/{diet-plan-id}`
-                - [delete](training/diet-plans/delete.md)
-                - [update](training/diet-plans/update.md)
-                - `/meals`
-                    - [index](training/diet-plans/meals/index.md)
-                    - [create](training/diet-plans/meals/create.md)
-                    - `/{meal-id}`
-                        - [delete](training/diet-plans/meals/delete.md)
-                        - [update](training/diet-plans/meals/update.md)
-                - `/supplements`
-                    - [index](training/diet-plans/supplements/index.md)
-                    - [create](training/diet-plans/supplements/create.md)
-                    - `/{supplement-id}`
-                        - [delete](training/diet-plans/supplements/delete.md)
-                        - [update](training/diet-plans/supplements/update.md)
-        - [`/workout-plans`](training/workout-plans/index.md)
-            - [index](training/workout-plans/index.md)
-            - [create](training/workout-plans/create.md)
-            - `/{workout-plan-id}`
-                - [delete](training/workout-plans/delete.md)
-                - [update](training/workout-plans/update.md)
-                - `/sessions`
-                    - [index](training/workout-plans/sessions/index.md)
-                    - [create](training/workout-plans/sessions/create.md)
-                    - `/{session-id}`
-                        - [delete](training/workout-plans/sessions/delete.md)
-                        - [update](training/workout-plans/sessions/update.md)
-                        - `/exercises`
-                            - [index](training/workout-plans/sessions/exercises/index.md)
-                            - [create](training/workout-plans/sessions/exercises/create.md)
-                            - `/{exercise-id}`
-                                - [delete](training/workout-plans/sessions/exercises/delete.md)
-                                - [update](training/workout-plans/sessions/exercises/update.md)
-    - `/ai`
-        - `/threads`
-            - [index](ai/threads/index.md)
-            - [create](ai/threads/create.md)
-            - `/{thread-id}`
-                - [delete](ai/threads/delete.md)
-                - `/messages`
-                    - [index](ai/threads/messages/index.md)
-                        - [create](ai/threads/messages/create.md)
-                        - `/{message-id}`
-                            - [delete](ai/threads/messages/delete.md)
-    - `/tracker`
-        - `/data`
-            - [`/average-sleep-duration`](tracker/data/average-sleep-duration.md)
-        - `/wakeups`
-            - [index](tracker/wakeups/index.md)
-            - [create](tracker/wakeups/create.md)
-            - `/{tracker-wakeup-id}`
-                - [delete](tracker/wakeups/delete.md)
-                - [update](tracker/wakeups/update.md)
-        - `/sleeps`
-            - [index](tracker/sleeps/index.md)
-            - [create](tracker/sleeps/create.md)
-            - `/{tracker-sleep-id}`
-                - [delete](tracker/sleeps/delete.md)
-                - [update](tracker/sleeps/update.md)
-        - `/weights`
-            - [index](tracker/weights/index.md)
-            - [create](tracker/weights/create.md)
-            - `/{tracker-weight-id}`
-                - [delete](tracker/weights/delete.md)
-                - [update](tracker/weights/update.md)
-        - `/supplements`
-            - [index](tracker/supplements/index.md)
-            - [create](tracker/supplements/create.md)
-            - `/{tracker-supplement-id}`
-                - [delete](tracker/supplements/delete.md)
-                - [update](tracker/supplements/update.md)
-        - `/waters`
-            - [index](tracker/waters/index.md)
-            - [create](tracker/waters/create.md)
-            - `/{tracker-water-id}`
-                - [delete](tracker/waters/delete.md)
-                - [update](tracker/waters/update.md)
-        - `/meals`
-            - [index](tracker/meals/index.md)
-            - [create](tracker/meals/create.md)
-            - `/{tracker-meal-id}`
-                - [delete](tracker/meals/delete.md)
-                - [update](tracker/meals/update.md)
-        - `/workouts`
-            - [index](tracker/workouts/index.md)
-            - [create](tracker/workouts/create.md)
-            - `/{tracker-workout-id}`
-                - [delete](tracker/workouts/delete.md)
-                - [update](tracker/workouts/update.md)
-                - `/sets`
-                    - [index](tracker/workouts/sets/index.md)
-                    - [create](tracker/workouts/sets/create.md)
-                    - `/{tracker-workout-set-id}`
-                        - [delete](tracker/workouts/sets/delete.md)
-                        - [update](tracker/workouts/sets/update.md)
-    - `/media`
-        - [create](media/create.md)
-        - `/{media-id}`
-            - [delete](media/delete.md)
-            - [get](media/download.md)
-    - `/ratings`
-        - [index](ratings/index.md)
-        - [create](ratings/create.md)
-        - [`/all`](ratings/all.md)
-        - `/{rating-id}`
-            - [delete](ratings/delete.md)
-            - [update](ratings/update.md)
-    - `/posts`
-        - [index](posts/index.md)
-        - [create](posts/create.md)
-        - `/{post-id}`
-            - [delete](posts/delete.md)
-            - [update](posts/update.md)
-    - `/comments`
-        - [index](comments/index.md)
-        - [create](comments/create.md)
-        - `/{comment-id}`
-            - [delete](comments/delete.md)
-            - [update](comments/update.md)
-    - [`/payments`](payments/index.md)
-        - [index](payments/index.md)
-        - [`/deposit`](payments/deposit.md)
-        - [`/verify-deposit`](payments/verify-deposit.md)
-        - [`/balance`](payments/balance.md)
-        - [`/prices`](payments/prices.md)
-        - [`/withdrawal`](payments/withdrawal.md)
-        - [`/buy-premium`](payments/buy-premium.md)
-        - [`/boost`](payments/boost.md)
-    - [`/notifications`](notifications/index.md)
-        - [index](notifications/index.md)
-        - [`/mark-read/{notification-id?}`](notifications/mark-read.md)
-    - [`/reports`](reports/index.md)
-        - [index](reports/index.md)
-        - [create](reports/create.md)
-        - `/{report-id}`
-            - [delete](reports/delete.md)
-            - [update](reports/update.md)
-    - [`/chats`](chats/index.md)
-        - [index](chats/index.md)
-        - [create](chats/create.md)
-        - `/{chat-id}`
-            - [delete](chats/delete.md)
-            - [update](chats/update.md)
-            - [`/messages`](chats/messages/index.md)
-                - [index](chats/messages/index.md)
-                - [create](chats/messages/create.md)
-                - `/{message-id}`
-                    - [delete](chats/messages/delete.md)
-                    - [update](chats/messages/update.md)
-    - `/admin`
-        - [`/roles`](admin/roles/index.md)
-            - [index](admin/roles/index.md)
-            - [create](admin/roles/create.md)
-            - `/{role-id}`
-                - [delete](admin/roles/delete.md)
-                - [update](admin/roles/update.md)
-        - [`/permissions`](admin/permissions/index.md)
-        - [`/brands`](admin/brands/index.md)
-            - [index](admin/brands/index.md)
-            - [create](admin/brands/create.md)
-            - `/{brand-id}`
-                - [delete](admin/brands/delete.md)
-                - [update](admin/brands/update.md)
-        - [`/countries`](admin/countries/index.md)
-            - [index](admin/countries/index.md)
-            - [create](admin/countries/create.md)
-            - `/{country-id}`
-                - [delete](admin/countries/delete.md)
-                - [update](admin/countries/update.md)
-        - [`/states`](admin/states/index.md)
-            - [index](admin/states/index.md)
-            - [create](admin/states/create.md)
-            - `/{state-id}`
-                - [delete](admin/states/delete.md)
-                - [update](admin/states/update.md)
-        - [`/cities`](admin/cities/index.md)
-            - [index](admin/cities/index.md)
-            - [create](admin/cities/create.md)
-            - `/{city-id}`
-                - [delete](admin/cities/delete.md)
-                - [update](admin/cities/update.md)
-        - [`/majors`](admin/majors/index.md)
-            - [index](admin/majors/index.md)
-            - [create](admin/majors/create.md)
-            - `/{major-id}`
-                - [delete](admin/majors/delete.md)
-                - [update](admin/majors/update.md)
-        - [`/exercises`](admin/exercises/index.md)
-            - [index](admin/exercises/index.md)
-            - [create](admin/exercises/create.md)
-            - `/{exercise-id}`
-                - [delete](admin/exercises/delete.md)
-                - [update](admin/exercises/update.md)
-        - [`/equipment`](admin/equipment/index.md)
-            - [index](admin/equipment/index.md)
-            - [create](admin/equipment/create.md)
-            - `/{equipment-id}`
-                - [delete](admin/equipment/delete.md)
-                - [update](admin/equipment/update.md)
-        - [`/supplements`](admin/supplements/index.md)
-            - [index](admin/supplements/index.md)
-            - [create](admin/supplements/create.md)
-            - `/{supplement-id}`
-                - [delete](admin/supplements/delete.md)
-                - [update](admin/supplements/update.md)
+Welcome to the Dambel API documentation. This guide provides a comprehensive, organized overview of all available API endpoints, grouped by resource and version. Use the navigation below to quickly find the endpoint you need.
 
+---
+
+## Table of Contents
+- [Authentication](#authentication)
+- [Gyms](#gyms)
+- [Users](#users)
+- [Training](#training)
+- [AI](#ai)
+- [Tracker](#tracker)
+- [Media](#media)
+- [Ratings](#ratings)
+- [Posts](#posts)
+- [Comments](#comments)
+- [Payments](#payments)
+- [Notifications](#notifications)
+- [Reports](#reports)
+- [Chats](#chats)
+- [Admin](#admin)
+- [Global Schemas & Errors](#global-schemas--errors)
+
+---
+
+## Usage Tips
+- **All endpoints are under `/v1`**
+- **Click endpoint names** to view detailed documentation, including parameters, permissions, request/response examples, and error handling.
+- **Resource endpoints** are grouped for clarity. Nested resources are indented.
+- **Refer to [Global Schemas & Errors](#global-schemas--errors)** for shared response formats and error types.
+
+---
+
+## Authentication
+- [`POST /v1/auth/login`](auth/login.md)
+- [`POST /v1/auth/register`](auth/register.md)
+- [`GET /v1/auth/me`](auth/me.md)
+
+## Gyms
+<details>
+<summary>Expand Gyms Endpoints</summary>
+
+- [`GET /v1/gyms`](gyms/index.md)
+- [`POST /v1/gyms`](gyms/create.md)
+- `/v1/gyms/{gym-id}`
+    - [`PUT`](gyms/update.md)
+    - [`DELETE`](gyms/delete.md)
+    - [`GET /working-periods`](gyms/working-periods/index.md)
+    - [`POST /working-periods`](gyms/working-periods/create.md)
+    - `/working-periods/{working-period-id}`
+        - [`PUT`](gyms/working-periods/update.md)
+        - [`DELETE`](gyms/working-periods/delete.md)
+    - [`GET /equipment`](gyms/equipment/index.md)
+    - [`POST /equipment`](gyms/equipment/create.md)
+    - `/equipment/{gym-equipment-id}`
+        - [`PUT`](gyms/equipment/update.md)
+        - [`DELETE`](gyms/equipment/delete.md)
+    - [`GET /plans`](gyms/plans/index.md)
+    - [`POST /plans`](gyms/plans/create.md)
+    - `/plans/{plan-id}`
+        - [`PUT`](gyms/plans/update.md)
+        - [`DELETE`](gyms/plans/delete.md)
+    - [`GET /buffet-items`](gyms/buffet-items/index.md)
+    - [`POST /buffet-items`](gyms/buffet-items/create.md)
+    - `/buffet-items/{buffet-item-id}`
+        - [`PUT`](gyms/buffet-items/update.md)
+        - [`DELETE`](gyms/buffet-items/delete.md)
+    - [`GET /admins`](gyms/admins/index.md)
+    - [`POST /admins`](gyms/admins/create.md)
+    - `/admins/{admin-id}`
+        - [`PUT`](gyms/admins/update.md)
+        - [`DELETE`](gyms/admins/delete.md)
+    - [`POST /subscriptions/subscribe/{plan-id}`](gyms/subscriptions/subscribe.md)
+    - [`GET /subscriptions/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
+    - [`POST /subscriptions/checkin/{subscription-id}`](gyms/subscriptions/checkin.md)
+    - [`POST /subscriptions/checkout/{subscription-id}`](gyms/subscriptions/checkout.md)
+    - [`DELETE /subscriptions/delete-checkin/{subscription-id}/{checkin-id}`](gyms/subscriptions/delete-checkin.md)
+    - [`GET /subscriptions/manage`](gyms/subscriptions/manage/index.md)
+    - [`POST /subscriptions/manage`](gyms/subscriptions/manage/create.md)
+    - `/subscriptions/manage/{gym-subscription-id}`
+        - [`PUT`](gyms/subscriptions/manage/update.md)
+        - [`DELETE`](gyms/subscriptions/manage/delete.md)
+    - [`GET /data/peak-hours`](gyms/data/peak-hours.md)
+</details>
+
+## Users
+<details>
+<summary>Expand Users Endpoints</summary>
+
+- [`GET /v1/users`](users/index.md)
+- [`POST /v1/users`](users/create.md)
+- `/v1/users/{user-id}`
+    - [`PUT`](users/update.md)
+    - [`DELETE`](users/delete.md)
+    - [`POST /attach-role/{role-id}`](users/attach-role.md)
+    - [`POST /detach-role/{role-id}`](users/detach-role.md)
+    - [`GET /championships`](users/championships/index.md)
+    - [`POST /championships`](users/championships/create.md)
+    - `/championships/{championship-id}`
+        - [`PUT`](users/championships/update.md)
+        - [`DELETE`](users/championships/delete.md)
+    - [`GET /education`](users/education/index.md)
+    - [`POST /education`](users/education/create.md)
+    - `/education/{education-id}`
+        - [`PUT`](users/education/update.md)
+        - [`DELETE`](users/education/delete.md)
+</details>
+
+## Training
+<details>
+<summary>Expand Training Endpoints</summary>
+
+- [`GET /v1/training/services`](training/services/index.md)
+- [`POST /v1/training/services/{user-id}`](training/services/create.md)
+- `/v1/training/services/{training-service-id}`
+    - [`PUT`](training/services/update.md)
+    - [`DELETE`](training/services/delete.md)
+- [`GET /v1/training/trainees`](training/trainees/index.md)
+- [`POST /v1/training/trainees`](training/trainees/create.md)
+- `/v1/training/trainees/{trainee-id}`
+    - [`PUT`](training/trainees/update.md)
+- [`GET /v1/training/diet-plans`](training/diet-plans/index.md)
+- [`POST /v1/training/diet-plans`](training/diet-plans/create.md)
+- `/v1/training/diet-plans/{diet-plan-id}`
+    - [`PUT`](training/diet-plans/update.md)
+    - [`DELETE`](training/diet-plans/delete.md)
+    - [`GET /meals`](training/diet-plans/meals/index.md)
+    - [`POST /meals`](training/diet-plans/meals/create.md)
+    - `/meals/{meal-id}`
+        - [`PUT`](training/diet-plans/meals/update.md)
+        - [`DELETE`](training/diet-plans/meals/delete.md)
+    - [`GET /supplements`](training/diet-plans/supplements/index.md)
+    - [`POST /supplements`](training/diet-plans/supplements/create.md)
+    - `/supplements/{supplement-id}`
+        - [`PUT`](training/diet-plans/supplements/update.md)
+        - [`DELETE`](training/diet-plans/supplements/delete.md)
+- [`GET /v1/training/workout-plans`](training/workout-plans/index.md)
+- [`POST /v1/training/workout-plans`](training/workout-plans/create.md)
+- `/v1/training/workout-plans/{workout-plan-id}`
+    - [`PUT`](training/workout-plans/update.md)
+    - [`DELETE`](training/workout-plans/delete.md)
+    - [`GET /sessions`](training/workout-plans/sessions/index.md)
+    - [`POST /sessions`](training/workout-plans/sessions/create.md)
+    - `/sessions/{session-id}`
+        - [`PUT`](training/workout-plans/sessions/update.md)
+        - [`DELETE`](training/workout-plans/sessions/delete.md)
+        - [`GET /exercises`](training/workout-plans/sessions/exercises/index.md)
+        - [`POST /exercises`](training/workout-plans/sessions/exercises/create.md)
+        - `/exercises/{exercise-id}`
+            - [`PUT`](training/workout-plans/sessions/exercises/update.md)
+            - [`DELETE`](training/workout-plans/sessions/exercises/delete.md)
+</details>
+
+## AI
+- [`GET /v1/ai/threads`](ai/threads/index.md)
+- [`POST /v1/ai/threads`](ai/threads/create.md)
+- `/v1/ai/threads/{thread-id}`
+    - [`DELETE`](ai/threads/delete.md)
+    - [`GET /messages`](ai/threads/messages/index.md)
+    - [`POST /messages`](ai/threads/messages/create.md)
+    - `/messages/{message-id}`
+        - [`DELETE`](ai/threads/messages/delete.md)
+
+## Tracker
+<details>
+<summary>Expand Tracker Endpoints</summary>
+
+- [`GET /v1/tracker/data/average-sleep-duration`](tracker/data/average-sleep-duration.md)
+- [`GET /v1/tracker/wakeups`](tracker/wakeups/index.md)
+- [`POST /v1/tracker/wakeups`](tracker/wakeups/create.md)
+- `/v1/tracker/wakeups/{tracker-wakeup-id}`
+    - [`PUT`](tracker/wakeups/update.md)
+    - [`DELETE`](tracker/wakeups/delete.md)
+- [`GET /v1/tracker/sleeps`](tracker/sleeps/index.md)
+- [`POST /v1/tracker/sleeps`](tracker/sleeps/create.md)
+- `/v1/tracker/sleeps/{tracker-sleep-id}`
+    - [`PUT`](tracker/sleeps/update.md)
+    - [`DELETE`](tracker/sleeps/delete.md)
+- [`GET /v1/tracker/weights`](tracker/weights/index.md)
+- [`POST /v1/tracker/weights`](tracker/weights/create.md)
+- `/v1/tracker/weights/{tracker-weight-id}`
+    - [`PUT`](tracker/weights/update.md)
+    - [`DELETE`](tracker/weights/delete.md)
+- [`GET /v1/tracker/supplements`](tracker/supplements/index.md)
+- [`POST /v1/tracker/supplements`](tracker/supplements/create.md)
+- `/v1/tracker/supplements/{tracker-supplement-id}`
+    - [`PUT`](tracker/supplements/update.md)
+    - [`DELETE`](tracker/supplements/delete.md)
+- [`GET /v1/tracker/waters`](tracker/waters/index.md)
+- [`POST /v1/tracker/waters`](tracker/waters/create.md)
+- `/v1/tracker/waters/{tracker-water-id}`
+    - [`PUT`](tracker/waters/update.md)
+    - [`DELETE`](tracker/waters/delete.md)
+- [`GET /v1/tracker/meals`](tracker/meals/index.md)
+- [`POST /v1/tracker/meals`](tracker/meals/create.md)
+- `/v1/tracker/meals/{tracker-meal-id}`
+    - [`PUT`](tracker/meals/update.md)
+    - [`DELETE`](tracker/meals/delete.md)
+- [`GET /v1/tracker/workouts`](tracker/workouts/index.md)
+- [`POST /v1/tracker/workouts`](tracker/workouts/create.md)
+- `/v1/tracker/workouts/{tracker-workout-id}`
+    - [`PUT`](tracker/workouts/update.md)
+    - [`DELETE`](tracker/workouts/delete.md)
+    - [`GET /sets`](tracker/workouts/sets/index.md)
+    - [`POST /sets`](tracker/workouts/sets/create.md)
+    - `/sets/{tracker-workout-set-id}`
+        - [`PUT`](tracker/workouts/sets/update.md)
+        - [`DELETE`](tracker/workouts/sets/delete.md)
+</details>
+
+## Media
+- [`POST /v1/media`](media/create.md)
+- `/v1/media/{media-id}`
+    - [`DELETE`](media/delete.md)
+    - [`GET`](media/download.md)
+
+## Ratings
+- [`GET /v1/ratings`](ratings/index.md)
+- [`POST /v1/ratings`](ratings/create.md)
+- [`GET /v1/ratings/all`](ratings/all.md)
+- `/v1/ratings/{rating-id}`
+    - [`PUT`](ratings/update.md)
+    - [`DELETE`](ratings/delete.md)
+
+## Posts
+- [`GET /v1/posts`](posts/index.md)
+- [`POST /v1/posts`](posts/create.md)
+- `/v1/posts/{post-id}`
+    - [`PUT`](posts/update.md)
+    - [`DELETE`](posts/delete.md)
+
+## Comments
+- [`GET /v1/comments`](comments/index.md)
+- [`POST /v1/comments`](comments/create.md)
+- `/v1/comments/{comment-id}`
+    - [`PUT`](comments/update.md)
+    - [`DELETE`](comments/delete.md)
+
+## Payments
+- [`GET /v1/payments`](payments/index.md)
+- [`POST /v1/payments/deposit`](payments/deposit.md)
+- [`POST /v1/payments/verify-deposit`](payments/verify-deposit.md)
+- [`GET /v1/payments/balance`](payments/balance.md)
+- [`GET /v1/payments/prices`](payments/prices.md)
+- [`POST /v1/payments/withdrawal`](payments/withdrawal.md)
+- [`POST /v1/payments/buy-premium`](payments/buy-premium.md)
+- [`POST /v1/payments/boost`](payments/boost.md)
+
+## Notifications
+- [`GET /v1/notifications`](notifications/index.md)
+- [`POST /v1/notifications/mark-read/{notification-id?}`](notifications/mark-read.md)
+
+## Reports
+- [`GET /v1/reports`](reports/index.md)
+- [`POST /v1/reports`](reports/create.md)
+- `/v1/reports/{report-id}`
+    - [`PUT`](reports/update.md)
+    - [`DELETE`](reports/delete.md)
+
+## Chats
+- [`GET /v1/chats`](chats/index.md)
+- [`POST /v1/chats`](chats/create.md)
+- `/v1/chats/{chat-id}`
+    - [`PUT`](chats/update.md)
+    - [`DELETE`](chats/delete.md)
+    - [`GET /messages`](chats/messages/index.md)
+    - [`POST /messages`](chats/messages/create.md)
+    - `/messages/{message-id}`
+        - [`PUT`](chats/messages/update.md)
+        - [`DELETE`](chats/messages/delete.md)
+
+## Admin
+<details>
+<summary>Expand Admin Endpoints</summary>
+
+- [`GET /v1/admin/roles`](admin/roles/index.md)
+- [`POST /v1/admin/roles`](admin/roles/create.md)
+- `/v1/admin/roles/{role-id}`
+    - [`PUT`](admin/roles/update.md)
+    - [`DELETE`](admin/roles/delete.md)
+- [`GET /v1/admin/permissions`](admin/permissions/index.md)
+- [`GET /v1/admin/brands`](admin/brands/index.md)
+- [`POST /v1/admin/brands`](admin/brands/create.md)
+- `/v1/admin/brands/{brand-id}`
+    - [`PUT`](admin/brands/update.md)
+    - [`DELETE`](admin/brands/delete.md)
+- [`GET /v1/admin/countries`](admin/countries/index.md)
+- [`POST /v1/admin/countries`](admin/countries/create.md)
+- `/v1/admin/countries/{country-id}`
+    - [`PUT`](admin/countries/update.md)
+    - [`DELETE`](admin/countries/delete.md)
+- [`GET /v1/admin/states`](admin/states/index.md)
+- [`POST /v1/admin/states`](admin/states/create.md)
+- `/v1/admin/states/{state-id}`
+    - [`PUT`](admin/states/update.md)
+    - [`DELETE`](admin/states/delete.md)
+- [`GET /v1/admin/cities`](admin/cities/index.md)
+- [`POST /v1/admin/cities`](admin/cities/create.md)
+- `/v1/admin/cities/{city-id}`
+    - [`PUT`](admin/cities/update.md)
+    - [`DELETE`](admin/cities/delete.md)
+- [`GET /v1/admin/majors`](admin/majors/index.md)
+- [`POST /v1/admin/majors`](admin/majors/create.md)
+- `/v1/admin/majors/{major-id}`
+    - [`PUT`](admin/majors/update.md)
+    - [`DELETE`](admin/majors/delete.md)
+- [`GET /v1/admin/exercises`](admin/exercises/index.md)
+- [`POST /v1/admin/exercises`](admin/exercises/create.md)
+- `/v1/admin/exercises/{exercise-id}`
+    - [`PUT`](admin/exercises/update.md)
+    - [`DELETE`](admin/exercises/delete.md)
+- [`GET /v1/admin/equipment`](admin/equipment/index.md)
+- [`POST /v1/admin/equipment`](admin/equipment/create.md)
+- `/v1/admin/equipment/{equipment-id}`
+    - [`PUT`](admin/equipment/update.md)
+    - [`DELETE`](admin/equipment/delete.md)
+- [`GET /v1/admin/supplements`](admin/supplements/index.md)
+- [`POST /v1/admin/supplements`](admin/supplements/create.md)
+- `/v1/admin/supplements/{supplement-id}`
+    - [`PUT`](admin/supplements/update.md)
+    - [`DELETE`](admin/supplements/delete.md)
+</details>
+
+## Global Schemas & Errors
 - [Pagination data](_globals/pagination-data.md)
 - [Broadcasting](_globals/broadcasting.md)
 - [Localization](_globals/localization.md)

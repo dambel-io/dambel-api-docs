@@ -1,33 +1,43 @@
-# `PUT /api/v1/tracker/weights/{tracker-weight-id}`
-You can update a weight record in the tracker system using this API.
+# PUT /api/v1/tracker/weights/{tracker-weight-id}
 
+Update a weight record in the tracker system.
+
+
+---
 
 ## Permissions
+| Permission                 | Description                |
+|----------------------------|----------------------------|
+| `tracker_weights.update`   | Update tracker weight      |
 
-- `tracker_weights.update`: updating tracker weight
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type    | Required | Description                                 |
+|--------------|---------|----------|---------------------------------------------|
+| `tracked_at` | string  | No       | Datetime for the weight record              |
+| `weight`     | float   | No       | Weight in kilograms (kg)                    |
+| `notes`      | string  | No       | Optional notes                              |
 
-- `tracked_at`: The datetime for the weight
-- `weight`: Float value for weight (in KG)
-- `notes`: An optional notes
+*All parameters are optional. If omitted, they will not be updated. You can set them to null if desired.*
 
-> Are parameters are optional. If you don't pass them, they remain as they are.
+---
 
 ## Response
 
 ### 200 OK
-```json
+```
 <tracker weight resource>
 ```
+- See [Tracker Weight Resource](tracker_weight_resource.md)
 
-[Tracker Weight Resource](tracker_weight_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

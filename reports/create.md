@@ -1,33 +1,64 @@
-# `POST /api/v1/reports`
-You can create report using this API.
+# POST /api/v1/reports
 
+Creates a new report for a specified element (e.g., gym, user).
+
+
+---
 
 ## Permissions
+| Permission         | Description                        |
+|--------------------|------------------------------------|
+| `reports.create`   | Create a report                    |
 
-- `reports.create`: To create report
+---
 
-## Params
+## Request Body Parameters
+| Name            | Type    | Required | Description                                 | Example         |
+|-----------------|---------|----------|---------------------------------------------|-----------------|
+| reportable_type | string  | Yes      | Type of the element to report (e.g., `gym`) | "gym"          |
+| reportable_id   | int     | Yes      | ID of the element to report                 | 456             |
+| description     | string  | Yes      | Description of the report (max 255 chars)   | "Broken equipment" |
 
-- `reportable_type`: Type of the element that you are adding report to
-- `reportable_id`: Id of the element
-- `description`: Required content of the report (max length 255)
+---
+
+## Request Example
+```json
+{
+  "reportable_type": "gym",
+  "reportable_id": 456,
+  "description": "Broken equipment"
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created report resource.
+
+#### Example
 ```json
 {
-    "report": {<report resource>},
+  "report": {
+    "id": 123,
+    "reportable_type": "App\\Models\\Gym",
+    "reportable_id": 456,
+    "user_id": 789,
+    "description": "Broken equipment",
+    "signed_off": false,
+    "created_at": "2020-01-01 00:00:00"
+  }
 }
 ```
 
-[Report Resource](report_resource.md)
+For a full schema, see [Report Resource](report_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |

@@ -1,37 +1,70 @@
-# `POST /api/v1/gyms/{gym-id}/working-periods`
-You can create a working period for a gym using this API.
+# POST /api/v1/gyms/{gym-id}/working-periods
 
+Creates a new working period for a gym.
+
+
+---
 
 ## Permissions
+| Permission                    | Description                                 |
+|-------------------------------|---------------------------------------------|
+| `gym_working_periods.create`  | Create working periods for your own gyms    |
+| `gym_working_periods.create_any` | Create working periods for any gym         |
 
-- `gym_working_periods.create`: creating working periods for your own gyms
-- `gym_working_periods.create_any`: creating working periods for any gym
+---
 
-## Params
+## URL Parameters
+| Name    | Type | Required | Description                | Example |
+|---------|------|----------|----------------------------|---------|
+| gym-id  | int  | Yes      | ID of the gym              | 123     |
 
-- `day`: should be one of these: `saturday`, `sunday`, `monday`, `tuesday`, `wednesday`, `thursday`, `friday`
-- `gender`: can be `men`, `women`, or `genderless`
-- `opens_at`: the opening time in `H:i` format
-- `closes_at`: the closing time in `H:i` format
-- `description`: an optional description (maxlength 2000)
-- `is_exception`: an optional boolean that specifies if this working period is just for an exceptional date range
-- `exception_start_date`: the start date of the exception
-- `exception_end_date`: the end date of the exception
+---
+
+## Request Body Parameters
+| Name                | Type    | Required | Description                                 | Example         |
+|---------------------|---------|----------|---------------------------------------------|-----------------|
+| day                 | string  | Yes      | Day of the week (`saturday`-`friday`)       | "monday"       |
+| gender              | string  | Yes      | `men`, `women`, or `genderless`             | "women"        |
+| opens_at            | string  | Yes      | Opening time (HH:mm)                        | "07:00"        |
+| closes_at           | string  | Yes      | Closing time (HH:mm)                        | "23:30"        |
+| description         | string  | No       | Description (max 2000 chars, optional)      | "Some desc"    |
+| is_exception        | bool    | No       | Whether this is for an exceptional date      | false           |
+| exception_start_date| string  | No       | Start date of the exception (YYYY-MM-DD)    | null            |
+| exception_end_date  | string  | No       | End date of the exception (YYYY-MM-DD)      | null            |
+
+---
+
+## Request Example
+```json
+{
+  "day": "monday",
+  "gender": "women",
+  "opens_at": "07:00",
+  "closes_at": "23:30",
+  "description": "Some desc",
+  "is_exception": false
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created working period resource.
+
+#### Example
 ```json
-<working period resource>
+{ /* working period resource */ }
 ```
 
-[Working Period Resource](gym_working_period_resource.md)
+For a full schema, see [Working Period Resource](gym_working_period_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |

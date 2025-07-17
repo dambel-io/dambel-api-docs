@@ -1,32 +1,40 @@
 # `POST /api/v1/users/{user-id}/championships`
-You can create a championship for a user using this API.
 
+Create a championship record for a user.
+
+
+---
 
 ## Permissions
+| Permission                  | Description                                 |
+|-----------------------------|---------------------------------------------|
+| `championships.create`      | Create championships for yourself           |
+| `championships.create_any`  | Create championships for any user           |
 
-- `championships.create`: creating championships for yourself
-- `championships.create_any`: creating championships for any user
+---
 
-## Params
+## Request Body Parameters
+| Name          | Type    | Required | Description                        |
+|---------------|---------|----------|------------------------------------|
+| `title`       | string  | Yes      | Title of the championship (max 255)|
+| `description` | string  | No       | Optional description (max 2000)    |
+| `date`        | string  | Yes      | Date of the championship (date)    |
 
-- `title`: Title of the championship (maxlength 255)
-- `description`: An optional description for the championship (maxlength 2000)
-- `date`: Date of the championship (required date format)
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <championship resource>
 ```
+- [Championship Resource](championship_resource.md)
 
-[Championship Resource](championship_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

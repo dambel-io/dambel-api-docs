@@ -1,31 +1,39 @@
 # `POST /api/v1/training/workout-plans`
-You can create a workout plan using this API.
 
+Create a new workout plan for yourself or a trainee.
+
+
+---
 
 ## Permissions
+| Permission             | Description                                 |
+|------------------------|---------------------------------------------|
+| `workout_plans.create` | Create workout plan for yourself or trainee |
 
-- `workout_plans.create`: creating workout plan for yourself or your trainee
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type    | Required | Description                                 |
+|--------------|---------|----------|---------------------------------------------|
+| `title`      | string  | Yes      | Title of the workout plan (max 255)         |
+| `description`| string  | No       | Description (max 2000, optional)            |
+| `trainee_id` | int     | No       | Trainee ID (if creating for a trainee)      |
 
-- `title`: Title of the workout plan (maxlength 255)
-- `description`: An optional description for the workout plan (maxlength 2000)
-- `trainee_id`: Optional trainee id if you want to create the plan for one of your trainees
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <workout plan resource>
 ```
+- [Workout Plan Resource](workout_plan_resource.md)
 
-[Workout Plan Resource](workout_plan_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

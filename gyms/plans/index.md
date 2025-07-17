@@ -1,32 +1,51 @@
-# `GET /api/v1/gyms/{gym-id}/plans`
-You can get list of the subscription plans of a gym using this API.
+# GET /api/v1/gyms/{gym-id}/plans
 
+Retrieves a list of subscription plans for a specific gym.
+
+
+---
 
 ## Permissions
+| Permission      | Description                                             |
+|-----------------|---------------------------------------------------------|
+| `gyms.view_all` | Required to view plans for an inactive gym or inactive plans |
 
-- `gyms.view_all`: is needed if you are trying to read list of plans for an inactive gym or seeing inactive plans
+---
 
-## Params
+## URL Parameters
+| Name    | Type | Required | Description                | Example |
+|---------|------|----------|----------------------------|---------|
+| gym-id  | int  | Yes      | ID of the gym              | 123     |
 
-No parameter.
+---
+
+## Request Example
+```
+GET /api/v1/gyms/123/plans
+Authorization: Bearer {token}
+```
+
+---
 
 ## Response
 
 ### 200 OK
+Returns a list of gym plan resources.
 
+#### Example
 ```json
 {
-    "data": [<gym plan resource>, ...],
+  "data": [ { /* gym plan resource */ }, ... ]
 }
 ```
 
-[Gym Plan Resource](gym_plan_resource.md)
+For a full schema, see [Gym Plan Resource](gym_plan_resource.md).
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not-found error](../../_globals/not-found-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |

@@ -1,36 +1,44 @@
 # `POST /api/v1/users`
-This API creates a new user.
 
+Create a new user in the system.
+
+
+---
 
 ## Permissions
-- `users.create`: to create users
+| Permission      | Description         |
+|-----------------|---------------------|
+| `users.create`  | Create users        |
 
-## Params
+---
 
-- `first_name`: First name of the user (required|maxlength:255)
-- `last_name`: First name of the user (required|maxlength:255)
-- `email`: Email of the user (required|maxlength:255|unique)
-- `phone`: Phone number of the user (required|maxlength:255|unique)
-- `password`: Required parameter to set password of the user. Will be hashed and saved
+## Request Body Parameters
+| Name         | Type    | Required | Description                                 |
+|--------------|---------|----------|---------------------------------------------|
+| `first_name` | string  | Yes      | First name (max 255)                        |
+| `last_name`  | string  | Yes      | Last name (max 255)                         |
+| `email`      | string  | Yes      | Email (max 255, unique)                     |
+| `phone`      | string  | Yes      | Phone number (max 255, unique)              |
+| `password`   | string  | Yes      | Password (will be hashed and saved)         |
+
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 {
-    "user": {<user resource>},
+  "user": {<user resource>}
 }
 ```
+- [User Resource](user_resource.md)
 
-[User Resource](user_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
+## Error Responses
+- **409 Conflict:** Email/Phone already in use
+- **422 Unprocessable Entity:** [Validation error](../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
 
-409: Email/Phone already in use
-
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+---

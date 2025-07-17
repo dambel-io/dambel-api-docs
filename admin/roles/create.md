@@ -1,31 +1,39 @@
 # `POST /api/v1/admin/roles`
-This API creates a new state.
 
+Create a new role.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `roles.view_all`      | Access roles        |
+| `roles.create`        | Create role         |
 
-- `roles.view_all`: to access roles
-- `roles.create`: to create a role
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                        |
+|----------------|---------|----------|------------------------------------|
+| `name`         | string  | Yes      | Name of the role (max 255)         |
+| `permissions`  | array   | No       | List of permission IDs (optional)  |
 
-- `name`: Name of the role (required|maxlength:255)
-- `permissions`: An array containing list of the permissions (optional)
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <role resource>
 ```
+- [Role Resource](role_resource.md)
 
-[Role Resource](role_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

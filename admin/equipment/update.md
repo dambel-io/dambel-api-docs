@@ -1,38 +1,44 @@
 # `PUT /api/v1/admin/equipment/{equipment-id}`
-You can update an existing equipment using this API.
 
+Update an existing equipment item.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `equipment.view_all`  | Access equipment    |
+| `equipment.update`    | Update equipment    |
 
-- `equipment.view_all`: to access equipment
-- `equipment.update`: to update an equipment
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                        |
+|----------------|---------|----------|------------------------------------|
+| `name`         | string  | No       | Name of the equipment (max 255)    |
+| `link`         | string  | No       | Tutorial link (max 255, optional)  |
+| `description`  | string  | No       | Description (optional)             |
 
-- `name`: Name of the equipment (required|maxlength:255)
-- `link`: A link to a youtube video or something as a tutorial for the equipment (maxlength:255)
-- `description`: An optional description for the equipment
+*All parameters are optional. If omitted, they will not be updated.*
 
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want.
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "equipment": {<equipment resource>},
+  "equipment": {<equipment resource>}
 }
 ```
+- [Equipment Resource](equipment_resource.md)
 
-[Exercise Resource](equipment_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

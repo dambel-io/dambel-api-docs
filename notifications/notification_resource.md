@@ -1,32 +1,51 @@
 # Notification Resource
 
+Represents a notification sent to a user, including its type, data, read status, and timestamps.
 
+
+---
+
+## Schema
+| Field      | Type   | Description                                                      |
+|------------|--------|------------------------------------------------------------------|
+| id         | int    | Unique identifier for the notification                           |
+| type       | string | Type of the notification (see Notification Types below)          |
+| data       | object | Notification-specific data payload                               |
+| read_at    | string | Timestamp when the notification was read, or null if unread      |
+| created_at | string | Creation timestamp (ISO 8601 format)                             |
+
+---
+
+## Example
 ```json
 {
-    "id": 123,
-    "type": "...",
-    "data": {...},
-    "read_at": "2025-01-01 00:00:00",
-    "created_at": "2025-01-01 00:00:00",
+  "id": 123,
+  "type": "Comments\\NewCommentNotification",
+  "data": {
+    "comment_id": 456,
+    "content": "Great post!"
+  },
+  "read_at": "2025-01-01 00:00:00",
+  "created_at": "2025-01-01 00:00:00"
 }
 ```
 
+---
+
 ## Notification Types
+The `type` field represents the type of the notification. All types have the `App\Notifications\` prefix. Available types include:
 
-The `type` field represent the type of the notification and all of types have `App\Notifications\` prefix.
-These are the available notification types in the system:
-
-- `Comments\NewCommentNotification`: Users will be notified when a comment is added under their comment/commentable
-- `Payments\UserPremiumSubscriptionPurchasedNotification`: User will be notified when their premium purchase is done and active
-- `Ratings\NewRatingNotification`: Users will be notified when their ratable is rated. They cannot see name of the user who rated, they will only see the score
-- `Users\RoleAssignedNotification`: User will be notified when a new permission role is assigned to their account by another admin
-- `Gyms\Subscriptions\GymSubscriptionCheckInNotification`: User/Gym owner will be notified when a checkin is done by Gym owner/User on their subscription
-- `Gyms\Subscriptions\NewGymSubscriptionNotification`: Gym owner will be notified when a new subscription is purchased on their gym
-- `Gyms\Subscriptions\GymSubscriptionCheckOutNotification`: User/Gym owner will be notified when a checkout is done by Gym owner/User on their subscription
-- `Reports\NewReportNotification`: Report related admins will receive this notification when a new report is created and needs their review
-- `Chats/NewMessageNotification`: User will be notified when they have a new message in the chat
-- `Chats/YouAreAddedToChatNotification`: User will be notified when they are added to a new chat
-- `Training\Trainees\NewTraineeNotification`: Trainee/Trainer will receive a notification if the trainee record is created from the opposite side or by admin (they both get notified then)
-- `Training\Trainees\TraineeDeliveredNotification`: Trainee will receive this notification once trainer changes the status of the trainne record to delivered
-- `Training\DietPlans\DietPlanCreatedNotification`: Trainee will receive this once trainer creates a diet plan for them
-- `Training\DietPlans\DietPlanUpdatedNotification`: Trainee will receive this once diet plan or its meals are updated by trainer
+- `Comments\NewCommentNotification`: Notifies users when a comment is added under their comment/commentable
+- `Payments\UserPremiumSubscriptionPurchasedNotification`: Notifies users when their premium purchase is complete
+- `Ratings\NewRatingNotification`: Notifies users when their ratable is rated (only the score is shown)
+- `Users\RoleAssignedNotification`: Notifies users when a new permission role is assigned to their account
+- `Gyms\Subscriptions\GymSubscriptionCheckInNotification`: Notifies users/gym owners when a check-in is done
+- `Gyms\Subscriptions\NewGymSubscriptionNotification`: Notifies gym owners when a new subscription is purchased
+- `Gyms\Subscriptions\GymSubscriptionCheckOutNotification`: Notifies users/gym owners when a check-out is done
+- `Reports\NewReportNotification`: Notifies admins when a new report is created
+- `Chats\NewMessageNotification`: Notifies users of new chat messages
+- `Chats\YouAreAddedToChatNotification`: Notifies users when they are added to a new chat
+- `Training\Trainees\NewTraineeNotification`: Notifies trainees/trainers when a trainee record is created
+- `Training\Trainees\TraineeDeliveredNotification`: Notifies trainees when their record is marked as delivered
+- `Training\DietPlans\DietPlanCreatedNotification`: Notifies trainees when a diet plan is created
+- `Training\DietPlans\DietPlanUpdatedNotification`: Notifies trainees when a diet plan or its meals are updated

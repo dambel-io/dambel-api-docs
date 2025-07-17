@@ -1,4 +1,4 @@
-# `GET /api/v1/tracker/wakeups`
+# GET /api/v1/tracker/wakeups
 You can get a list of wakeup records in the tracker system.
 
 

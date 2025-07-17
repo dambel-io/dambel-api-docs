@@ -1,12 +1,26 @@
 # City Resource
 
+Represents a city in the system.
 
-```json
+
+---
+
+## Schema
+| Field      | Type    | Description                                 |
+|------------|---------|---------------------------------------------|
+| `id`       | integer | City ID                                     |
+| `name`     | string  | City name                                   |
+| `state`    | object  | [State Resource](../states/state_resource.md)|
+
+---
+
+## Example
+```
 {
-    "id": 123,
-    "name": "...",
-    "state": <state resource>,
+  "id": 123,
+  "name": "...",
+  "state": <state resource>
 }
 ```
 
-[State Resource](../states/state_resource.md)
+---

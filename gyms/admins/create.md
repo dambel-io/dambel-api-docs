@@ -1,32 +1,68 @@
-# `POST /api/v1/gyms/{gym-id}/admins`
-You can create an admin for a gym using this API.
+# POST /api/v1/gyms/{gym-id}/admins
 
+Creates a new admin for a gym.
+
+
+---
 
 ## Permissions
+| Permission             | Description                                         |
+|------------------------|-----------------------------------------------------|
+| `gym_admins.create`    | Create admins for your own gyms                     |
+| `gym_admins.create_any`| Create admins for any gym (admin only)              |
 
-- `gym_admins.create`: creating admins for your own gyms
-- `gym_admins.create_any`: creating admins for any gym
+---
 
-## Params
+## Path Parameters
+| Name    | Type | Required | Description           | Example |
+|---------|------|----------|-----------------------|---------|
+| gym-id  | int  | Yes      | ID of the gym         | 123     |
 
-- `title`: Title of the admin (optional, maxlength 255)
-- `user_id`: Id of the user that you want to give access to
-- `permissions`: List of the permission names as an array
+---
+
+## Request Body Parameters
+| Name        | Type         | Required | Description                                 | Example                |
+|-------------|--------------|----------|---------------------------------------------|------------------------|
+| title       | string       | No       | Title of the admin (max 255 characters)     | "Manager"             |
+| user_id     | int          | Yes      | ID of the user to grant admin access        | 42                     |
+| permissions | string array | Yes      | List of permission names for the admin      | ["edit_gym", "view"]  |
+
+---
+
+## Request Example
+```json
+{
+  "title": "Manager",
+  "user_id": 42,
+  "permissions": ["edit_gym", "view"]
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created gym admin resource.
+
+#### Example
 ```json
-<gym admin resource>
+{
+  "id": 1,
+  "gym_id": 123,
+  "title": "Manager",
+  "user_id": 42,
+  "permissions": ["edit_gym", "view"]
+}
 ```
 
-[Gym admin Resource](gym_admin_resource.md)
+For a full schema, see [Gym Admin Resource](gym_admin_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |

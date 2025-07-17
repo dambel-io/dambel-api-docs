@@ -1,60 +1,63 @@
-# `POST /api/v1/payments/buy-premium`
-Users can purchase a premium account using this API.
+# POST /api/v1/payments/buy-premium
 
+Purchases a premium account for the authenticated user.
+
+
+---
 
 ## Permissions
+| Permission           | Description                        |
+|----------------------|------------------------------------|
+| `payments.view_own`  | Access the payment system          |
+| `payments.buy_premium`| Buy a premium account              |
 
-- `payments.view_own`: To access the payment system
-- `payments.buy_premium`: To be able to buy premium account
+---
 
-## Params
-
-- `plan`: Name of the plan
-- `months_count`: Number of the months. Minimum is 1. If you choose 12 or more, a discount will be applied
+## Request Body Parameters
+| Name         | Type   | Required | Description                                                                 | Example         |
+|--------------|--------|----------|-----------------------------------------------------------------------------|-----------------|
+| plan         | string | Yes      | Name of the premium plan                                                    | "plus"         |
+| months_count | int    | Yes      | Number of months (min 1, 12+ for discount)                                  | 12              |
 
 Use [`/prices`](prices.md) to get plan names and discount rates.
+
+---
+
+## Request Example
+```json
+{
+  "plan": "plus",
+  "months_count": 12
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
-```json
-<user premium subscription resource>
-```
+Returns the created user premium subscription resource.
 
-[User Premium Subscription Resource](user_premium_subscription_resource.md)
-
-### 400 Bad Request
-When an unexpected error happens during the payment process.
-
+#### Example
 ```json
 {
-    "error": "You already have a subscription"
+  "id": 1,
+  "user_id": 42,
+  "plan": "plus",
+  "starts_at": "2025-01-01 00:00:00",
+  "expires_at": "2026-01-01 00:00:00"
 }
 ```
 
-```json
-{
-    "error": "Insufficient balance"
-}
-```
+For a full schema, see [User Premium Subscription Resource](user_premium_subscription_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
+---
 
-### 404 Not Found
-```json
-{
-    "error": "Plan not found"
-}
-```
-
-### 500 Internal Server Error
-When there is an unexpected error:
-```json
-{
-    "error": "Subscription failed"
-}
-```
-
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 400    | Already subscribed/Insufficient balance | N/A                                 |
+| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 404    | Plan not found             | N/A                                            |
+| 500    | Subscription failed        | N/A                                            |
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |

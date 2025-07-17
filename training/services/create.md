@@ -1,34 +1,45 @@
-# `POST /api/v1/training/services/{user-id}`
-You can create a training service for a user using this API.
+# `/api/v1/training/services/{user-id}`
 
+Create a new training service for a user.
+
+
+---
 
 ## Permissions
+| Permission                 | Description                                         |
+|----------------------------|-----------------------------------------------------|
+| `training_services.create` | Create training services for yourself               |
+| `training_services.create_any` | Create training services for any user            |
 
-- `training_services.create`: creating training services for yourself
-- `training_services.create_any`: creating training services for any user
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type    | Required | Description                                 |
+|--------------|---------|----------|---------------------------------------------|
+| `title`      | string  | Yes      | Title of the training service (max 255)     |
+| `description`| string  | No       | Description (max 2000, optional)            |
+| `price`      | int     | Yes      | Price of the training service               |
+| `discount`   | float   | No       | Discount percentage (nullable, default 0)   |
 
-- `title`: Title of the training service (maxlength 255)
-- `description`: An optional description for the training service (maxlength 2000)
-- `price`: Price of the training service (required integer)
-- `discount`: Discount percentage (nullable float, default 0)
-- Id of the user in the route
+*The user ID is specified in the route parameter.*
+
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <training service resource>
 ```
+- See [Training Service Resource](training_service_resource.md)
 
-[Training Service Resource](training_service_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+| Status | Error Type         | Reference                                                      |
+|--------|--------------------|----------------------------------------------------------------|
+| 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

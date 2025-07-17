@@ -1,24 +1,27 @@
 # `GET /api/v1/admin/roles`
-You can get list of the roles using this API.
 
+Retrieve a list of roles.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `roles.view_all`      | Access roles        |
 
-- `roles.view_all`: to access roles
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<role resource>},
-        {<role resource>},
-        {<role resource>},
-        {<role resource>}
-    ],
+  "data": [
+    {<role resource>}, ...
+  ]
 }
 ```
+- [Role Resource](role_resource.md)
 
-[Role Resource](role_resource.md)
+---

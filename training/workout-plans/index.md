@@ -1,36 +1,44 @@
 # `GET /api/v1/training/workout-plans`
-You can get list of your own and trainee's workout plans using this API.
 
+Retrieve a list of your own and your trainees' workout plans.
+
+
+---
 
 ## Permissions
+| Permission             | Description                |
+|------------------------|----------------------------|
+| `workout_plans.view`   | View workout plans         |
 
-- `workout_plans.view`: To view workout plans
+---
 
-## Params
+## Query Parameters
+| Name         | Type    | Required | Description                                                      |
+|--------------|---------|----------|------------------------------------------------------------------|
+| `trainee_id` | string  | No       | Comma-separated trainee IDs to filter                            |
+| `search`     | string  | No       | Search by title or description                                   |
+| `page`       | int     | No       | Page number for pagination                                       |
+| `sort`       | string  | No       | `asc` for oldest, `desc` for latest (default: `desc`)            |
 
-- `trainee_id`: to specify the trainee (can assign multiple by separating ids using `,`)
-- `search`: to search based on title and description
-- `page`: specify the data page
-- `sort`: use `asc` to see oldest and `desc` to latest. Default is `desc`
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [<workout plan resource>, ...],
-    "links": {<pagination data>},
-    "meta": {<pagination data>},
+  "data": [<workout plan resource>, ...],
+  "links": {<pagination data>},
+  "meta": {<pagination data>}
 }
 ```
+- [Workout Plan Resource](workout_plan_resource.md)
+- [Pagination Data](../../_globals/pagination-data.md) (per page: 50)
 
-[Workout Plan Resource](workout_plan_resource.md)
+---
 
-[Pagination Data](../../_globals/pagination-data.md) (per page: 50)
+## Error Responses
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

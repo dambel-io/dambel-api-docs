@@ -1,38 +1,44 @@
 # `PUT /api/v1/admin/brands/{brand-id}`
-You can update an existing brand using this API.
 
+Update an existing brand.
+
+
+---
 
 ## Permissions
+| Permission         | Description         |
+|--------------------|---------------------|
+| `brands.view_all`  | Access brands       |
+| `brands.update`    | Update a brand      |
 
-- `brands.view_all`: to access brands
-- `brands.update`: to update a city
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                        |
+|----------------|---------|----------|------------------------------------|
+| `name`         | string  | No       | Name of the brand (max 255)        |
+| `link`         | string  | No       | Website link (max 255, optional)   |
+| `description`  | string  | No       | Description (optional)             |
 
-- `name`: Name of the brand (required|maxlength:255)
-- `link`: A link to website of the brand (maxlength:255)
-- `description`: An optional description for the brand
+*All parameters are optional. If omitted, they will not be updated.*
 
-All of the parameters are optional. If you don't pass them, they won't get updated.
-You still can set them to null if you want.
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "brand": {<brand resource>},
+  "brand": {<brand resource>}
 }
 ```
+- [Brand Resource](brand_resource.md)
 
-[Brand Resource](brand_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

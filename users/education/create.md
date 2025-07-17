@@ -1,34 +1,42 @@
 # `POST /api/v1/users/{user-id}/education`
-You can create an education for a user using this API.
 
+Create an education record for a user.
+
+
+---
 
 ## Permissions
+| Permission             | Description                                 |
+|------------------------|---------------------------------------------|
+| `education.create`     | Create education for yourself               |
+| `education.create_any` | Create education for any user               |
 
-- `education.create`: creating education for yourself
-- `education.create_any`: creating education for any user
+---
 
-## Params
+## Request Body Parameters
+| Name          | Type    | Required | Description                        |
+|---------------|---------|----------|------------------------------------|
+| `school`      | string  | Yes      | Name of the school (max 255)       |
+| `field`       | string  | Yes      | Field of education (max 255)       |
+| `description` | string  | No       | Optional description (max 2000)    |
+| `start_date`  | string  | Yes      | Start date (date format)           |
+| `end_date`    | string  | No       | End date (nullable, date format)   |
 
-- `school`: Name of the school (maxlength 255)
-- `field`: Field of the education (maxlength 255)
-- `description`: An optional description for the education (maxlength 2000)
-- `start_date`: Start date of the education (required date format)
-- `end_date`: End date of the education (nullable date format)
+---
 
 ## Response
 
 ### 201 Created
-```json
+```
 <education resource>
 ```
+- [Education Resource](education_resource.md)
 
-[Education Resource](education_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

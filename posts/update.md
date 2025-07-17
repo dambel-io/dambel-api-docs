@@ -1,34 +1,71 @@
-# `PUT /api/v1/posts/{post-id}`
-You can update posts using this API.
+# PUT /api/v1/posts/{post-id}
 
+Updates a post by its ID. All parameters are optional; only provided fields will be updated. You can set fields to null to clear them.
+
+
+---
 
 ## Permissions
+| Permission         | Description                                 |
+|--------------------|---------------------------------------------|
+| `posts.update`     | Update your own post                        |
+| `posts.update_any` | Update any post (admin only)                |
 
-- `posts.update`: To update your own post
-- `posts.update_any`: To update any post
+---
 
-## Params
+## Path Parameters
+| Name     | Type | Required | Description           | Example |
+|----------|------|----------|-----------------------|---------|
+| post-id  | int  | Yes      | ID of the post to update| 123     |
 
-- `title`: Required title of the post (max length 255)
-- `content`: Required content of the post (max length 255)
-- `is_draft`: A boolean to draft the post
+---
+
+## Request Body Parameters
+| Name    | Type   | Required | Description                                 | Example         |
+|---------|--------|----------|---------------------------------------------|-----------------|
+| title   | string | No       | Title of the post (max 255 characters)      | "My Workout"   |
+| content | string | No       | Content of the post (max 255 characters)    | "Did squats..."|
+| is_draft| bool   | No       | Whether the post is a draft                 | false           |
+
+---
+
+## Request Example
+```json
+{
+  "title": "My Workout",
+  "content": "Did squats and deadlifts.",
+  "is_draft": false
+}
+```
+
+---
 
 ## Response
 
 ### 200 OK
+Returns the updated post resource.
+
+#### Example
 ```json
 {
-    "post": {<post resource>},
+  "post": {
+    "id": 123,
+    "profile_type": "App\\Models\\User",
+    "profile_id": 42,
+    "title": "My Workout",
+    "content": "Did squats and deadlifts.",
+    "is_draft": false
+  }
 }
 ```
 
-[Post Resource](post_resource.md)
+For a full schema, see [Post Resource](post_resource.md).
 
-### 422 Unprocessable Entity
-[Validation error](../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |

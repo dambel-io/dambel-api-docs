@@ -1,35 +1,60 @@
-# `POST /api/v1/gyms/{gym-id}/subscriptions/checkin/{subscription-id}`
-User or gym owner can make a checkin on a subscription.
+# POST /api/v1/gyms/{gym-id}/subscriptions/checkin/{subscription-id}
 
+Creates a check-in record for a gym subscription.
+
+
+---
 
 ## Permissions
+| Permission                    | Description                                 |
+|-------------------------------|---------------------------------------------|
+| `gym_subscriptions.checkin`   | Gym admin can check in a user               |
 
-- `gym_subscriptions.checkin`: for gym admin to do the checkin for user
+---
 
-## Params
+## URL Parameters
+| Name            | Type | Required | Description                | Example |
+|-----------------|------|----------|----------------------------|---------|
+| gym-id          | int  | Yes      | ID of the gym              | 123     |
+| subscription-id | int  | Yes      | ID of the subscription     | 456     |
 
-- `notes`: An optional note on the checkin
+---
+
+## Request Body Parameters
+| Name  | Type   | Required | Description                | Example      |
+|-------|--------|----------|----------------------------|--------------|
+| notes | string | No       | Optional note for check-in | "Arrived late" |
+
+---
+
+## Request Example
+```json
+{
+  "notes": "Arrived late"
+}
+```
+
+---
 
 ## Response
 
 ### 201 Created
+Returns the created check-in resource.
+
+#### Example
 ```json
-<gym subscription checkin resource>
+{ /* gym subscription check-in resource */ }
 ```
 
-[Gym Subscription Checkin Resource](gym_subscription_checkin_resource.md)
+For a full schema, see [Gym Subscription Check-in Resource](gym_subscription_checkin_resource.md).
 
-### 404 Not Found
- if gym or gym subscription ID is wrong or is inactive
+---
 
-### 400 Bad Request
- if there is an already open checkin that is not checked out yet
-
-### 403 Forbidden
- attempting to checkin on a subscription that user has not permission to or gym is inactive ([Permission error](../../_globals/permission-errors.md))
-
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+### Error Responses
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 404    | Not found (invalid gym or subscription, or inactive) |  |
+| 400    | Already open check-in exists |  |
+| 403    | Forbidden (no permission or gym inactive) | [Permission error](../../_globals/permission-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 422    | Validation error           | [Validation error](../../_globals/validation-errors.md) |

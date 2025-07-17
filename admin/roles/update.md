@@ -1,35 +1,40 @@
 # `PUT /api/v1/admin/roles/{role-id}`
-You can update an existing role using this API.
 
+Update an existing role.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `roles.view_all`      | Access roles        |
+| `roles.update`        | Update role         |
 
-- `roles.view_all`: to access roles
-- `roles.update`: to update a role
+---
 
-## Params
+## Request Body Parameters
+| Name           | Type    | Required | Description                        |
+|----------------|---------|----------|------------------------------------|
+| `name`         | string  | Yes      | Name of the role (max 255)         |
+| `permissions`  | array   | No       | List of permission IDs (optional)  |
 
-- `name`: Name of the role (required|maxlength:255)
-- `permissions`: An array containing list of the permissions (optional)
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 <role resource>
 ```
+- [Role Resource](role_resource.md)
 
-[Role Resource](role_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+- **404 Not Found:** [Not found error](../../_globals/not-found-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
-
-### 404 Not Found
-[Not found error](../../_globals/not-found-errors.md)
+---

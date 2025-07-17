@@ -1,28 +1,34 @@
 # `GET /api/v1/admin/cities`
-You can get list of the cities by alphabetical order using this endpoint.
 
+Retrieve a list of cities in alphabetical order. Optionally filter by state.
+
+
+---
 
 ## Permissions
+| Permission         | Description         |
+|--------------------|---------------------|
+| `cities.view_all`  | Access cities       |
 
-- `cities.view_all`: to access cities
+---
 
-## Params
+## Query Parameters
+| Name        | Type    | Required | Description                        |
+|-------------|---------|----------|------------------------------------|
+| `state_id`  | integer | No       | Filter by state ID                 |
 
-- `state_id`: You can filter by country to get cities in a specific state
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "data": [
-        {<city resource>},
-        {<city resource>},
-        {<city resource>},
-        {<city resource>}
-    ],
+  "data": [
+    {<city resource>}, ...
+  ]
 }
 ```
+- [City Resource](city_resource.md)
 
-[City Resource](city_resource.md)
+---

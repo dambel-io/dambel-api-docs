@@ -1,23 +1,38 @@
-# `DELETE /api/v1/comments/{comment-id}`
-You can delete a comment using this API.
+# DELETE /api/v1/comments/{comment-id}
 
+Deletes a comment by its ID.
+
+
+---
 
 ## Permissions
+| Permission           | Description                                         |
+|----------------------|-----------------------------------------------------|
+| view (commentable)   | Must have view permission on the target resource     |
+| `comments.delete`    | Delete your own comments                            |
+| `comments.delete_any`| Delete any comment (admin or moderator)             |
 
-- You need to have **view** permission of the **commentable**
-- `comments.delete`: To delete your own comments
-- `comments.delete_any`: To delete any comment
+---
+
+## Path Parameters
+
+| Name        | Type | Required | Description                | Example |
+|-------------|------|----------|----------------------------|---------|
+| comment-id  | int  | Yes      | ID of the comment to delete| 123     |
+
+---
 
 ## Response
 
 ### 204 No Content
-No content when comment gets deleted
+Comment was successfully deleted. No response body is returned.
 
-### 401 Unauthorized
-[Authentication error](../_globals/authentication-errors.md)
+---
 
-### 403 Forbidden
-[Permission error](../_globals/permission-errors.md)
+### Error Responses
 
-### 404 Not Found
-[Not-found error](../_globals/not-found-errors.md)
+| Status | Description                | Reference                                      |
+|--------|----------------------------|------------------------------------------------|
+| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../_globals/not-found-errors.md) |

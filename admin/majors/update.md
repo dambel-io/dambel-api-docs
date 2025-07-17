@@ -1,33 +1,40 @@
 # `PUT /api/v1/admin/majors/{major-id}`
-You can update an existing major using this API.
 
+Update an existing major.
+
+
+---
 
 ## Permissions
+| Permission            | Description         |
+|-----------------------|---------------------|
+| `majors.view_all`     | Access majors       |
+| `majors.update`       | Update major        |
 
-- `majors.view_all`: to access majors
-- `majors.update`: to update a major
+---
 
-## Params
+## Request Body Parameters
+| Name     | Type    | Required | Description                        |
+|----------|---------|----------|------------------------------------|
+| `title`  | string  | Yes      | Name of the major (max 255)        |
 
-- `title`: Title of the major (required|maxlength:255)
+---
 
 ## Response
 
 ### 200 OK
-
-```json
+```
 {
-    "major": {<major resource>},
+  "major": {<major resource>}
 }
 ```
+- [Major Resource](major_resource.md)
 
-[Major Resource](major_resource.md)
+---
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+## Error Responses
+- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
+- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
-
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---
