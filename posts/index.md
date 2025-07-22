@@ -49,7 +49,15 @@ Returns a paginated list of post resources.
       "profile_id": 42,
       "title": "My Workout",
       "content": "Today I did squats and deadlifts.",
-      "is_draft": false
+      "is_draft": false,
+      "media": [
+        {
+          "id": 10,
+          "attachable_type": "App\\Models\\Posts\\Post",
+          "attachable_id": 123,
+          "link": "https://example.com/media/10.jpg"
+        }
+      ],
     }
   ],
   "links": {

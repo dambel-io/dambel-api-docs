@@ -14,6 +14,7 @@ Represents a post entity, including its profile association, content, and draft 
 | title         | string  | Title of the post                           |
 | content       | string  | Content of the post                         |
 | is_draft      | bool    | Whether the post is a draft                  |
+| media            | Media Resource[]    | List of media items ([see here](../media/media_resource.md))                               |
 
 ---
 
@@ -25,6 +26,17 @@ Represents a post entity, including its profile association, content, and draft 
   "profile_id": 42,
   "title": "My Workout",
   "content": "Did squats and deadlifts.",
-  "is_draft": false
+  "is_draft": false,
+  "media": [
+    {
+      "id": 10,
+      "attachable_type": "App\\Models\\Posts\\Post",
+      "attachable_id": 123,
+      "link": "https://example.com/media/10.jpg"
+    }
+  ],
 }
 ```
+
+## Related Resources
+- [Media Resource](../media/media_resource.md)

@@ -30,21 +30,22 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - **Click endpoint names** to view detailed documentation, including parameters, permissions, request/response examples, and error handling.
 - **Resource endpoints** are grouped for clarity. Nested resources are indented.
 - **Refer to [Global Schemas & Errors](#global-schemas--errors)** for shared response formats and error types.
+- **Production API is hosted on https://api.dambel.io/api/v1 and Staging is hosted on https://api.staging.dambel.io/api/v1**
 
 ---
 
 ## Authentication
-- [`POST /v1/auth/login`](auth/login.md)
-- [`POST /v1/auth/register`](auth/register.md)
-- [`GET /v1/auth/me`](auth/me.md)
+- [`POST /api/v1/auth/login`](auth/login.md)
+- [`POST /api/v1/auth/register`](auth/register.md)
+- [`GET /api/v1/auth/me`](auth/me.md)
 
 ## Gyms
 <details>
 <summary>Expand Gyms Endpoints</summary>
 
-- [`GET /v1/gyms`](gyms/index.md)
-- [`POST /v1/gyms`](gyms/create.md)
-- `/v1/gyms/{gym-id}`
+- [`GET /api/v1/gyms`](gyms/index.md)
+- [`POST /api/v1/gyms`](gyms/create.md)
+- `/api/v1/gyms/{gym-id}`
     - [`PUT`](gyms/update.md)
     - [`DELETE`](gyms/delete.md)
     - [`GET /working-periods`](gyms/working-periods/index.md)
@@ -89,9 +90,9 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 <details>
 <summary>Expand Users Endpoints</summary>
 
-- [`GET /v1/users`](users/index.md)
-- [`POST /v1/users`](users/create.md)
-- `/v1/users/{user-id}`
+- [`GET /api/v1/users`](users/index.md)
+- [`POST /api/v1/users`](users/create.md)
+- `/api/v1/users/{user-id}`
     - [`PUT`](users/update.md)
     - [`DELETE`](users/delete.md)
     - [`POST /attach-role/{role-id}`](users/attach-role.md)
@@ -112,18 +113,18 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 <details>
 <summary>Expand Training Endpoints</summary>
 
-- [`GET /v1/training/services`](training/services/index.md)
-- [`POST /v1/training/services/{user-id}`](training/services/create.md)
-- `/v1/training/services/{training-service-id}`
+- [`GET /api/v1/training/services`](training/services/index.md)
+- [`POST /api/v1/training/services/{user-id}`](training/services/create.md)
+- `/api/v1/training/services/{training-service-id}`
     - [`PUT`](training/services/update.md)
     - [`DELETE`](training/services/delete.md)
-- [`GET /v1/training/trainees`](training/trainees/index.md)
-- [`POST /v1/training/trainees`](training/trainees/create.md)
-- `/v1/training/trainees/{trainee-id}`
+- [`GET /api/v1/training/trainees`](training/trainees/index.md)
+- [`POST /api/v1/training/trainees`](training/trainees/create.md)
+- `/api/v1/training/trainees/{trainee-id}`
     - [`PUT`](training/trainees/update.md)
-- [`GET /v1/training/diet-plans`](training/diet-plans/index.md)
-- [`POST /v1/training/diet-plans`](training/diet-plans/create.md)
-- `/v1/training/diet-plans/{diet-plan-id}`
+- [`GET /api/v1/training/diet-plans`](training/diet-plans/index.md)
+- [`POST /api/v1/training/diet-plans`](training/diet-plans/create.md)
+- `/api/v1/training/diet-plans/{diet-plan-id}`
     - [`PUT`](training/diet-plans/update.md)
     - [`DELETE`](training/diet-plans/delete.md)
     - [`GET /meals`](training/diet-plans/meals/index.md)
@@ -136,9 +137,9 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/supplements/{supplement-id}`
         - [`PUT`](training/diet-plans/supplements/update.md)
         - [`DELETE`](training/diet-plans/supplements/delete.md)
-- [`GET /v1/training/workout-plans`](training/workout-plans/index.md)
-- [`POST /v1/training/workout-plans`](training/workout-plans/create.md)
-- `/v1/training/workout-plans/{workout-plan-id}`
+- [`GET /api/v1/training/workout-plans`](training/workout-plans/index.md)
+- [`POST /api/v1/training/workout-plans`](training/workout-plans/create.md)
+- `/api/v1/training/workout-plans/{workout-plan-id}`
     - [`PUT`](training/workout-plans/update.md)
     - [`DELETE`](training/workout-plans/delete.md)
     - [`GET /sessions`](training/workout-plans/sessions/index.md)
@@ -154,9 +155,9 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 </details>
 
 ## AI
-- [`GET /v1/ai/threads`](ai/threads/index.md)
-- [`POST /v1/ai/threads`](ai/threads/create.md)
-- `/v1/ai/threads/{thread-id}`
+- [`GET /api/v1/ai/threads`](ai/threads/index.md)
+- [`POST /api/v1/ai/threads`](ai/threads/create.md)
+- `/api/v1/ai/threads/{thread-id}`
     - [`DELETE`](ai/threads/delete.md)
     - [`GET /messages`](ai/threads/messages/index.md)
     - [`POST /messages`](ai/threads/messages/create.md)
@@ -167,40 +168,40 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 <details>
 <summary>Expand Tracker Endpoints</summary>
 
-- [`GET /v1/tracker/data/average-sleep-duration`](tracker/data/average-sleep-duration.md)
-- [`GET /v1/tracker/wakeups`](tracker/wakeups/index.md)
-- [`POST /v1/tracker/wakeups`](tracker/wakeups/create.md)
-- `/v1/tracker/wakeups/{tracker-wakeup-id}`
+- [`GET /api/v1/tracker/data/average-sleep-duration`](tracker/data/average-sleep-duration.md)
+- [`GET /api/v1/tracker/wakeups`](tracker/wakeups/index.md)
+- [`POST /api/v1/tracker/wakeups`](tracker/wakeups/create.md)
+- `/api/v1/tracker/wakeups/{tracker-wakeup-id}`
     - [`PUT`](tracker/wakeups/update.md)
     - [`DELETE`](tracker/wakeups/delete.md)
-- [`GET /v1/tracker/sleeps`](tracker/sleeps/index.md)
-- [`POST /v1/tracker/sleeps`](tracker/sleeps/create.md)
-- `/v1/tracker/sleeps/{tracker-sleep-id}`
+- [`GET /api/v1/tracker/sleeps`](tracker/sleeps/index.md)
+- [`POST /api/v1/tracker/sleeps`](tracker/sleeps/create.md)
+- `/api/v1/tracker/sleeps/{tracker-sleep-id}`
     - [`PUT`](tracker/sleeps/update.md)
     - [`DELETE`](tracker/sleeps/delete.md)
-- [`GET /v1/tracker/weights`](tracker/weights/index.md)
-- [`POST /v1/tracker/weights`](tracker/weights/create.md)
-- `/v1/tracker/weights/{tracker-weight-id}`
+- [`GET /api/v1/tracker/weights`](tracker/weights/index.md)
+- [`POST /api/v1/tracker/weights`](tracker/weights/create.md)
+- `/api/v1/tracker/weights/{tracker-weight-id}`
     - [`PUT`](tracker/weights/update.md)
     - [`DELETE`](tracker/weights/delete.md)
-- [`GET /v1/tracker/supplements`](tracker/supplements/index.md)
-- [`POST /v1/tracker/supplements`](tracker/supplements/create.md)
-- `/v1/tracker/supplements/{tracker-supplement-id}`
+- [`GET /api/v1/tracker/supplements`](tracker/supplements/index.md)
+- [`POST /api/v1/tracker/supplements`](tracker/supplements/create.md)
+- `/api/v1/tracker/supplements/{tracker-supplement-id}`
     - [`PUT`](tracker/supplements/update.md)
     - [`DELETE`](tracker/supplements/delete.md)
-- [`GET /v1/tracker/waters`](tracker/waters/index.md)
-- [`POST /v1/tracker/waters`](tracker/waters/create.md)
-- `/v1/tracker/waters/{tracker-water-id}`
+- [`GET /api/v1/tracker/waters`](tracker/waters/index.md)
+- [`POST /api/v1/tracker/waters`](tracker/waters/create.md)
+- `/api/v1/tracker/waters/{tracker-water-id}`
     - [`PUT`](tracker/waters/update.md)
     - [`DELETE`](tracker/waters/delete.md)
-- [`GET /v1/tracker/meals`](tracker/meals/index.md)
-- [`POST /v1/tracker/meals`](tracker/meals/create.md)
-- `/v1/tracker/meals/{tracker-meal-id}`
+- [`GET /api/v1/tracker/meals`](tracker/meals/index.md)
+- [`POST /api/v1/tracker/meals`](tracker/meals/create.md)
+- `/api/v1/tracker/meals/{tracker-meal-id}`
     - [`PUT`](tracker/meals/update.md)
     - [`DELETE`](tracker/meals/delete.md)
-- [`GET /v1/tracker/workouts`](tracker/workouts/index.md)
-- [`POST /v1/tracker/workouts`](tracker/workouts/create.md)
-- `/v1/tracker/workouts/{tracker-workout-id}`
+- [`GET /api/v1/tracker/workouts`](tracker/workouts/index.md)
+- [`POST /api/v1/tracker/workouts`](tracker/workouts/create.md)
+- `/api/v1/tracker/workouts/{tracker-workout-id}`
     - [`PUT`](tracker/workouts/update.md)
     - [`DELETE`](tracker/workouts/delete.md)
     - [`GET /sets`](tracker/workouts/sets/index.md)
@@ -211,58 +212,58 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 </details>
 
 ## Media
-- [`POST /v1/media`](media/create.md)
-- `/v1/media/{media-id}`
+- [`POST /api/v1/media`](media/create.md)
+- `/api/v1/media/{media-id}`
     - [`DELETE`](media/delete.md)
     - [`GET`](media/download.md)
 
 ## Ratings
-- [`GET /v1/ratings`](ratings/index.md)
-- [`POST /v1/ratings`](ratings/create.md)
-- [`GET /v1/ratings/all`](ratings/all.md)
-- `/v1/ratings/{rating-id}`
+- [`GET /api/v1/ratings`](ratings/index.md)
+- [`POST /api/v1/ratings`](ratings/create.md)
+- [`GET /api/v1/ratings/all`](ratings/all.md)
+- `/api/v1/ratings/{rating-id}`
     - [`PUT`](ratings/update.md)
     - [`DELETE`](ratings/delete.md)
 
 ## Posts
-- [`GET /v1/posts`](posts/index.md)
-- [`POST /v1/posts`](posts/create.md)
-- `/v1/posts/{post-id}`
+- [`GET /api/v1/posts`](posts/index.md)
+- [`POST /api/v1/posts`](posts/create.md)
+- `/api/v1/posts/{post-id}`
     - [`PUT`](posts/update.md)
     - [`DELETE`](posts/delete.md)
 
 ## Comments
-- [`GET /v1/comments`](comments/index.md)
-- [`POST /v1/comments`](comments/create.md)
-- `/v1/comments/{comment-id}`
+- [`GET /api/v1/comments`](comments/index.md)
+- [`POST /api/v1/comments`](comments/create.md)
+- `/api/v1/comments/{comment-id}`
     - [`PUT`](comments/update.md)
     - [`DELETE`](comments/delete.md)
 
 ## Payments
-- [`GET /v1/payments`](payments/index.md)
-- [`POST /v1/payments/deposit`](payments/deposit.md)
-- [`POST /v1/payments/verify-deposit`](payments/verify-deposit.md)
-- [`GET /v1/payments/balance`](payments/balance.md)
-- [`GET /v1/payments/prices`](payments/prices.md)
-- [`POST /v1/payments/withdrawal`](payments/withdrawal.md)
-- [`POST /v1/payments/buy-premium`](payments/buy-premium.md)
-- [`POST /v1/payments/boost`](payments/boost.md)
+- [`GET /api/v1/payments`](payments/index.md)
+- [`POST /api/v1/payments/deposit`](payments/deposit.md)
+- [`POST /api/v1/payments/verify-deposit`](payments/verify-deposit.md)
+- [`GET /api/v1/payments/balance`](payments/balance.md)
+- [`GET /api/v1/payments/prices`](payments/prices.md)
+- [`POST /api/v1/payments/withdrawal`](payments/withdrawal.md)
+- [`POST /api/v1/payments/buy-premium`](payments/buy-premium.md)
+- [`POST /api/v1/payments/boost`](payments/boost.md)
 
 ## Notifications
-- [`GET /v1/notifications`](notifications/index.md)
-- [`POST /v1/notifications/mark-read/{notification-id?}`](notifications/mark-read.md)
+- [`GET /api/v1/notifications`](notifications/index.md)
+- [`POST /api/v1/notifications/mark-read/{notification-id?}`](notifications/mark-read.md)
 
 ## Reports
-- [`GET /v1/reports`](reports/index.md)
-- [`POST /v1/reports`](reports/create.md)
-- `/v1/reports/{report-id}`
+- [`GET /api/v1/reports`](reports/index.md)
+- [`POST /api/v1/reports`](reports/create.md)
+- `/api/v1/reports/{report-id}`
     - [`PUT`](reports/update.md)
     - [`DELETE`](reports/delete.md)
 
 ## Chats
-- [`GET /v1/chats`](chats/index.md)
-- [`POST /v1/chats`](chats/create.md)
-- `/v1/chats/{chat-id}`
+- [`GET /api/v1/chats`](chats/index.md)
+- [`POST /api/v1/chats`](chats/create.md)
+- `/api/v1/chats/{chat-id}`
     - [`PUT`](chats/update.md)
     - [`DELETE`](chats/delete.md)
     - [`GET /messages`](chats/messages/index.md)
@@ -275,50 +276,50 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 <details>
 <summary>Expand Admin Endpoints</summary>
 
-- [`GET /v1/admin/roles`](admin/roles/index.md)
-- [`POST /v1/admin/roles`](admin/roles/create.md)
-- `/v1/admin/roles/{role-id}`
+- [`GET /api/v1/admin/roles`](admin/roles/index.md)
+- [`POST /api/v1/admin/roles`](admin/roles/create.md)
+- `/api/v1/admin/roles/{role-id}`
     - [`PUT`](admin/roles/update.md)
     - [`DELETE`](admin/roles/delete.md)
-- [`GET /v1/admin/permissions`](admin/permissions/index.md)
-- [`GET /v1/admin/brands`](admin/brands/index.md)
-- [`POST /v1/admin/brands`](admin/brands/create.md)
-- `/v1/admin/brands/{brand-id}`
+- [`GET /api/v1/admin/permissions`](admin/permissions/index.md)
+- [`GET /api/v1/admin/brands`](admin/brands/index.md)
+- [`POST /api/v1/admin/brands`](admin/brands/create.md)
+- `/api/v1/admin/brands/{brand-id}`
     - [`PUT`](admin/brands/update.md)
     - [`DELETE`](admin/brands/delete.md)
-- [`GET /v1/admin/countries`](admin/countries/index.md)
-- [`POST /v1/admin/countries`](admin/countries/create.md)
-- `/v1/admin/countries/{country-id}`
+- [`GET /api/v1/admin/countries`](admin/countries/index.md)
+- [`POST /api/v1/admin/countries`](admin/countries/create.md)
+- `/api/v1/admin/countries/{country-id}`
     - [`PUT`](admin/countries/update.md)
     - [`DELETE`](admin/countries/delete.md)
-- [`GET /v1/admin/states`](admin/states/index.md)
-- [`POST /v1/admin/states`](admin/states/create.md)
-- `/v1/admin/states/{state-id}`
+- [`GET /api/v1/admin/states`](admin/states/index.md)
+- [`POST /api/v1/admin/states`](admin/states/create.md)
+- `/api/v1/admin/states/{state-id}`
     - [`PUT`](admin/states/update.md)
     - [`DELETE`](admin/states/delete.md)
-- [`GET /v1/admin/cities`](admin/cities/index.md)
-- [`POST /v1/admin/cities`](admin/cities/create.md)
-- `/v1/admin/cities/{city-id}`
+- [`GET /api/v1/admin/cities`](admin/cities/index.md)
+- [`POST /api/v1/admin/cities`](admin/cities/create.md)
+- `/api/v1/admin/cities/{city-id}`
     - [`PUT`](admin/cities/update.md)
     - [`DELETE`](admin/cities/delete.md)
-- [`GET /v1/admin/majors`](admin/majors/index.md)
-- [`POST /v1/admin/majors`](admin/majors/create.md)
-- `/v1/admin/majors/{major-id}`
+- [`GET /api/v1/admin/majors`](admin/majors/index.md)
+- [`POST /api/v1/admin/majors`](admin/majors/create.md)
+- `/api/v1/admin/majors/{major-id}`
     - [`PUT`](admin/majors/update.md)
     - [`DELETE`](admin/majors/delete.md)
-- [`GET /v1/admin/exercises`](admin/exercises/index.md)
-- [`POST /v1/admin/exercises`](admin/exercises/create.md)
-- `/v1/admin/exercises/{exercise-id}`
+- [`GET /api/v1/admin/exercises`](admin/exercises/index.md)
+- [`POST /api/v1/admin/exercises`](admin/exercises/create.md)
+- `/api/v1/admin/exercises/{exercise-id}`
     - [`PUT`](admin/exercises/update.md)
     - [`DELETE`](admin/exercises/delete.md)
-- [`GET /v1/admin/equipment`](admin/equipment/index.md)
-- [`POST /v1/admin/equipment`](admin/equipment/create.md)
-- `/v1/admin/equipment/{equipment-id}`
+- [`GET /api/v1/admin/equipment`](admin/equipment/index.md)
+- [`POST /api/v1/admin/equipment`](admin/equipment/create.md)
+- `/api/v1/admin/equipment/{equipment-id}`
     - [`PUT`](admin/equipment/update.md)
     - [`DELETE`](admin/equipment/delete.md)
-- [`GET /v1/admin/supplements`](admin/supplements/index.md)
-- [`POST /v1/admin/supplements`](admin/supplements/create.md)
-- `/v1/admin/supplements/{supplement-id}`
+- [`GET /api/v1/admin/supplements`](admin/supplements/index.md)
+- [`POST /api/v1/admin/supplements`](admin/supplements/create.md)
+- `/api/v1/admin/supplements/{supplement-id}`
     - [`PUT`](admin/supplements/update.md)
     - [`DELETE`](admin/supplements/delete.md)
 </details>
