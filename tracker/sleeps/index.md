@@ -26,7 +26,7 @@ Retrieve a list of sleep records in the tracker system.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<tracker sleep resource>, ...],
   "links": {<pagination data>},

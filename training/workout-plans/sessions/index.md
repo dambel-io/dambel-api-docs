@@ -16,7 +16,7 @@ Retrieve a list of sessions for a specific workout plan.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<workout plan session resource>, ...]
 }

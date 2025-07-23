@@ -27,7 +27,7 @@ Update an existing exercise.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "exercise": {<exercise resource>}
 }

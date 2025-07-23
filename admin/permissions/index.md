@@ -15,7 +15,7 @@ Retrieve a list of permissions.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<permission resource>}, ...

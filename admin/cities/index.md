@@ -22,7 +22,7 @@ Retrieve a list of cities in alphabetical order. Optionally filter by state.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<city resource>}, ...

@@ -18,7 +18,7 @@ Retrieve your average sleep duration.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "average_sleep_duration": "07:34"
 }

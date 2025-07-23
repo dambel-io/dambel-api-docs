@@ -16,7 +16,7 @@ Represents an exercise in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "title": "...",

@@ -26,7 +26,7 @@ Retrieve a list of supplement records in the tracker system.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<tracker supplement resource>, ...],
   "links": {<pagination data>},

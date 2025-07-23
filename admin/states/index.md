@@ -22,7 +22,7 @@ Retrieve a list of states in alphabetical order. Optionally filter by country.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<state resource>}, ...

@@ -23,7 +23,7 @@ Represents a user in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "email": "test@example.com",

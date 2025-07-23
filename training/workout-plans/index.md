@@ -25,7 +25,7 @@ Retrieve a list of your own and your trainees' workout plans.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<workout plan resource>, ...],
   "links": {<pagination data>},

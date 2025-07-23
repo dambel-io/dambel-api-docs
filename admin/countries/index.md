@@ -15,7 +15,7 @@ Retrieve a list of countries in alphabetical order.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<country resource>}, ...

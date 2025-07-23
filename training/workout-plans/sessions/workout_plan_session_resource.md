@@ -17,7 +17,7 @@ Represents a session in a workout plan.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "workout_plan_id": 123,

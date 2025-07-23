@@ -19,7 +19,7 @@ Represents a diet plan.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "user_id": 123,

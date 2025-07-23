@@ -23,7 +23,7 @@ Update an existing major.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "major": {<major resource>}
 }

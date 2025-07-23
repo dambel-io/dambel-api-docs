@@ -15,7 +15,7 @@ Retrieve a list of brands in alphabetical order.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<brand resource>}, ...

@@ -18,7 +18,7 @@ Represents a championship record for a user.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "user_id": 123,

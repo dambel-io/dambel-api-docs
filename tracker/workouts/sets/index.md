@@ -15,7 +15,7 @@ Retrieve a list of workout set records for a workout in the tracker system.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<tracker workout set resource>, ...],
   "links": {<pagination data>},

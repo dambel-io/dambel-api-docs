@@ -19,7 +19,7 @@ Represents an exercise in a workout plan session.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "workout_plan_session_id": 123,

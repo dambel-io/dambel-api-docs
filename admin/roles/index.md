@@ -15,7 +15,7 @@ Retrieve a list of roles.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<role resource>}, ...

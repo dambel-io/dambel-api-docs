@@ -15,7 +15,7 @@ Retrieve a list of supplements.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<supplement resource>}, ...

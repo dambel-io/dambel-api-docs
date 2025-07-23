@@ -23,7 +23,7 @@ Update an existing state.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "state": {<state resource>}
 }

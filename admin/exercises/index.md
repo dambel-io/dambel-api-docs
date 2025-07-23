@@ -15,7 +15,7 @@ Retrieve a list of exercises in alphabetical order.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<exercise resource>}, ...

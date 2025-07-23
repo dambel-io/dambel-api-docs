@@ -27,7 +27,7 @@ Update an existing equipment item.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "equipment": {<equipment resource>}
 }

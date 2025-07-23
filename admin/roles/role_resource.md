@@ -15,7 +15,7 @@ Represents a role in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "name": "...",

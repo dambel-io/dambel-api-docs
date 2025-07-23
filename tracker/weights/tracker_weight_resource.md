@@ -17,7 +17,7 @@ Represents a weight record in the tracker system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "user_id": 123,

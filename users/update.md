@@ -28,7 +28,7 @@ Update the information of a specific user.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "user": {<user resource>}
 }

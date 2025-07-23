@@ -23,7 +23,7 @@ Update an existing country.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "country": {<country resource>}
 }

@@ -26,7 +26,7 @@ Retrieve a list of water intake records in the tracker system.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<tracker water resource>, ...],
   "links": {<pagination data>},

@@ -16,7 +16,7 @@ Retrieve a list of championships for a user.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<championship resource>, ...]
 }

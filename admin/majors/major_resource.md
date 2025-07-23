@@ -14,7 +14,7 @@ Represents a major in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "title": "Bodybuilding"

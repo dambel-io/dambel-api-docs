@@ -27,7 +27,7 @@ Update an existing supplement.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "supplement": {<supplement resource>}
 }

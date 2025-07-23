@@ -15,7 +15,7 @@ Retrieve a list of majors.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<major resource>}, ...

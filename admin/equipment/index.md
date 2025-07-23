@@ -15,7 +15,7 @@ Retrieve a list of equipment in alphabetical order.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<equipment resource>}, ...

@@ -16,7 +16,7 @@ Retrieve a list of education records for a user.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<education resource>, ...]
 }

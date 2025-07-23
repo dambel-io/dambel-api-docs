@@ -16,7 +16,7 @@ Represents a supplement in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "title": "...",

@@ -16,7 +16,7 @@ Represents an equipment item in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "title": "...",

@@ -26,7 +26,7 @@ Retrieve a list of weight records in the tracker system.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<tracker weight resource>, ...],
   "links": {<pagination data>},

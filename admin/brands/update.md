@@ -27,7 +27,7 @@ Update an existing brand.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "brand": {<brand resource>}
 }

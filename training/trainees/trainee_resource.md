@@ -18,7 +18,7 @@ Represents a trainee record in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "user_id": 123,

@@ -23,7 +23,7 @@ Represents a training service offered by a user.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "user_id": 123,

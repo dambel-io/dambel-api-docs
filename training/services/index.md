@@ -20,7 +20,7 @@ Retrieve a list of training services for a user.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<training service resource>, ...],
   "links": {<pagination data>},

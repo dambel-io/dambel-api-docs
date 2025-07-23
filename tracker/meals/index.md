@@ -26,7 +26,7 @@ Retrieve a list of meal records in the tracker system.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<tracker meal resource>, ...],
   "links": {<pagination data>},

@@ -23,7 +23,7 @@ Update an existing city.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "city": {<city resource>}
 }

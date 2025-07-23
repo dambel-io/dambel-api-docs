@@ -19,7 +19,7 @@ Represents a workout plan in the system.
 ---
 
 ## Example
-```
+```json
 {
   "id": 123,
   "user_id": 123,

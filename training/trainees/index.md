@@ -28,7 +28,7 @@ Retrieve and search trainees.
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [<trainee resource>, ...],
   "links": {<pagination data>},

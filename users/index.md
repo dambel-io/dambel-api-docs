@@ -30,7 +30,7 @@ Retrieve a paginated list of users, with support for advanced filtering and sort
 ## Response
 
 ### 200 OK
-```
+```json
 {
   "data": [
     {<user resource>},
