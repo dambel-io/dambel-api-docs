@@ -10,7 +10,7 @@ Represents a notification sent to a user, including its type, data, read status,
 |------------|--------|------------------------------------------------------------------|
 | id         | int    | Unique identifier for the notification                           |
 | type       | string | Type of the notification (see Notification Types below)          |
-| data       | object | Notification-specific data payload                               |
+| data       | object | Notification-specific data payload. Always includes a `__text` field with a user-friendly message. |
 | read_at    | string | Timestamp when the notification was read, or null if unread      |
 | created_at | string | Creation timestamp (ISO 8601 format)                             |
 
@@ -23,7 +23,8 @@ Represents a notification sent to a user, including its type, data, read status,
   "type": "Comments\\NewCommentNotification",
   "data": {
     "comment_id": 456,
-    "content": "Great post!"
+    "content": "Great post!",
+    "__text": "A new comment was posted by user #42: \"Great post!\""
   },
   "read_at": "2025-01-01 00:00:00",
   "created_at": "2025-01-01 00:00:00"
@@ -49,3 +50,22 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Training\Trainees\TraineeDeliveredNotification`: Notifies trainees when their record is marked as delivered
 - `Training\DietPlans\DietPlanCreatedNotification`: Notifies trainees when a diet plan is created
 - `Training\DietPlans\DietPlanUpdatedNotification`: Notifies trainees when a diet plan or its meals are updated
+
+---
+
+## Data Field and `__text` Usage
+
+Each notification's `data` object contains notification-specific fields, as well as a `__text` field. The `__text` field provides a ready-to-display, human-readable summary of the notification. **Client applications should use the `__text` field as the default message to show to users.**
+
+- The `__text` value is always present and is consistent with the notification's type and context.
+- Other fields in `data` provide structured information for advanced or custom UI needs.
+- For most use cases, displaying `data.__text` is sufficient for a clear, user-friendly notification experience.
+
+### Example Usage
+
+```js
+// Example: Displaying notification in a client app
+const notification = /* fetched notification object */;
+const message = notification.data.__text;
+showNotification(message); // Display to user
+```
