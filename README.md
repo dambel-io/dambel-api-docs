@@ -40,9 +40,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`GET /api/v1/auth/me`](auth/me.md)
 
 ## Gyms
-<details>
-<summary>Expand Gyms Endpoints</summary>
-
 - [`GET /api/v1/gyms`](gyms/index.md)
 - [`POST /api/v1/gyms`](gyms/create.md)
 - `/api/v1/gyms/{gym-id}`
@@ -84,12 +81,8 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`PUT`](gyms/subscriptions/manage/update.md)
         - [`DELETE`](gyms/subscriptions/manage/delete.md)
     - [`GET /data/peak-hours`](gyms/data/peak-hours.md)
-</details>
 
 ## Users
-<details>
-<summary>Expand Users Endpoints</summary>
-
 - [`GET /api/v1/users`](users/index.md)
 - [`POST /api/v1/users`](users/create.md)
 - `/api/v1/users/{user-id}`
@@ -107,12 +100,8 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/education/{education-id}`
         - [`PUT`](users/education/update.md)
         - [`DELETE`](users/education/delete.md)
-</details>
 
 ## Training
-<details>
-<summary>Expand Training Endpoints</summary>
-
 - [`GET /api/v1/training/services`](training/services/index.md)
 - [`POST /api/v1/training/services/{user-id}`](training/services/create.md)
 - `/api/v1/training/services/{training-service-id}`
@@ -152,7 +141,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - `/exercises/{exercise-id}`
             - [`PUT`](training/workout-plans/sessions/exercises/update.md)
             - [`DELETE`](training/workout-plans/sessions/exercises/delete.md)
-</details>
 
 ## AI
 - [`GET /api/v1/ai/threads`](ai/threads/index.md)
@@ -165,9 +153,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`DELETE`](ai/threads/messages/delete.md)
 
 ## Tracker
-<details>
-<summary>Expand Tracker Endpoints</summary>
-
 - [`GET /api/v1/tracker/data/average-sleep-duration`](tracker/data/average-sleep-duration.md)
 - [`GET /api/v1/tracker/wakeups`](tracker/wakeups/index.md)
 - [`POST /api/v1/tracker/wakeups`](tracker/wakeups/create.md)
@@ -209,7 +194,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/sets/{tracker-workout-set-id}`
         - [`PUT`](tracker/workouts/sets/update.md)
         - [`DELETE`](tracker/workouts/sets/delete.md)
-</details>
 
 ## Media
 - [`POST /api/v1/media`](media/create.md)
@@ -273,9 +257,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`DELETE`](chats/messages/delete.md)
 
 ## Admin
-<details>
-<summary>Expand Admin Endpoints</summary>
-
 - [`GET /api/v1/admin/roles`](admin/roles/index.md)
 - [`POST /api/v1/admin/roles`](admin/roles/create.md)
 - `/api/v1/admin/roles/{role-id}`
@@ -322,7 +303,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/admin/supplements/{supplement-id}`
     - [`PUT`](admin/supplements/update.md)
     - [`DELETE`](admin/supplements/delete.md)
-</details>
 
 ## Global Schemas & Errors
 - [Pagination data](_globals/pagination-data.md)
