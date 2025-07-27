@@ -6,7 +6,7 @@ Creates a new gym. This endpoint can be used by regular users to create their ow
 ---
 
 ## Permissions
-| Role/Permission      | Description                                      |
+| Permission      | Description                                      |
 |---------------------|--------------------------------------------------|
 | `gyms.create`       | Create your own gym                              |
 | `gyms.create_any`   | Create a gym for another user (admin only)       |
