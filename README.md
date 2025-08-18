@@ -55,6 +55,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/equipment/{gym-equipment-id}`
         - [`PUT`](gyms/equipment/update.md)
         - [`DELETE`](gyms/equipment/delete.md)
+    - [`GET /equipment/compare/{workout-plan-id}`](gyms/equipment/compare.md)
     - [`GET /plans`](gyms/plans/index.md)
     - [`POST /plans`](gyms/plans/create.md)
     - `/plans/{plan-id}`
