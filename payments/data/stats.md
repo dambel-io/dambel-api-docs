@@ -1,22 +1,22 @@
-# GET /api/v1/payments
+# GET /api/v1/payments/data/stats
 
-Retrieves a list of payments and transactions. Users can view their own records; admins can view all records in the system.
+Receive total stats of payments and transactions in the given date range and filters.
 
 
 ---
 
 ## Permissions
-| Permission         | Description                        |
-|--------------------|------------------------------------|
-| `payments.view_all`| View all payments                  |
-| `payments.view_own`| View only own payments             |
+| Permission         | Description                              |
+|--------------------|------------------------------------------|
+| `payments.view_all`| View data of all payments in the system  |
+| `payments.view_own`| View only own payment data               |
 
 ---
 
 ## Query Parameters
 | Name         | Type    | Required | Description                                                      | Example                |
 |--------------|---------|----------|------------------------------------------------------------------|------------------------|
-| type         | string  | No       | [See available types](payment_resource.md#type). Comma-separated | "wallet,subscription" |
+| type         | string  | No       | [See available types](../payment_resource.md#type). Comma-separated | "wallet,subscription" |
 | payable_type | string  | No       | Filter by payable type(s), comma-separated                       | "gym,plan"            |
 | payable_id   | int     | No       | Filter by payable ID(s), comma-separated                         | "1,2,3"               |
 | user_id      | int     | No       | Filter by user ID(s), comma-separated                            | "10,20"               |
@@ -26,14 +26,12 @@ Retrieves a list of payments and transactions. Users can view their own records;
 | min_amount   | number  | No       | Minimum amount                                                   | 100                    |
 | max_amount   | number  | No       | Maximum amount                                                   | 1000                   |
 | description  | string  | No       | Search in description                                            | "membership"          |
-| page         | int     | No       | Page number for pagination                                       | 1                      |
-| sort         | string  | No       | Sort order: `desc` or `asc`                                      | "desc"                |
 
 ---
 
 ## Request Example
 ```
-GET /api/v1/payments?type=income&user_id=10&sort=desc&page=1
+GET /api/v1/payments/data/stats?type=income&user_id=10
 Authorization: Bearer {token}
 ```
 
@@ -42,27 +40,25 @@ Authorization: Bearer {token}
 ## Response
 
 ### 200 OK
-Returns a paginated list of payment resources.
+Returns stats for each type of payment record.
 
 #### Example
 ```json
 {
-  "data": [
-    { /* payment resource */ },
-    { /* payment resource */ }
-  ],
-  "links": { /* pagination data */ },
-  "meta": { /* pagination data */ }
+  "total_income": 123,
+  "total_commission": 123,
+  "total_deposit": 123,
+  "total_withdrawal": 123,
+  "total_purchase": 123,
 }
 ```
 
-For a full schema, see [Payment Resource](payment_resource.md).
-
-See [Pagination Data](../_globals/pagination-data.md) (per page: 30).
+Normal users can use this as a overall payment report for their own account, and admins can use it as the whole system cash flow stats.
+For example the total amount of commissions, would be the total income of the application.
 
 ---
 
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |

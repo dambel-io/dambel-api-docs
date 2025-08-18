@@ -232,6 +232,8 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`POST /api/v1/payments/withdrawal`](payments/withdrawal.md)
 - [`POST /api/v1/payments/buy-premium`](payments/buy-premium.md)
 - [`POST /api/v1/payments/boost`](payments/boost.md)
+- [`GET /api/v1/payments/data/stats`](payments/data/stats.md)
+- [`GET /api/v1/payments/data/chart`](payments/data/chart.md)
 
 ## Notifications
 - [`GET /api/v1/notifications`](notifications/index.md)
