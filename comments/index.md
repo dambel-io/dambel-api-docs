@@ -50,6 +50,7 @@ Returns a paginated list of comment resources.
       "user_id": 456,
       "commentable_type": "App\\Models\\Gyms\\Gym",
       "commentable_id": 42,
+      "is_user_commentable_client": false,
       "content": "Great gym!",
       "parent_comment_id": null,
       "created_at": "2025-01-01 00:00:00",

@@ -30,7 +30,6 @@ Updates the information of a specific gym by its ID. All parameters are optional
 | location_lng | float   | No       | Longitude coordinate of the gym                                             | 51.3890           |
 | is_active    | bool    | No       | Whether the gym is active                                                   | true              |
 | show_crowd   | bool    | No       | Whether to display crowd information                                        | false             |
-| cword        | int     | No       | (Unclear, please clarify if needed)                                         | 0                 |
 | description  | string  | No       | Description of the gym (max 2000 characters)                                | "Best gym..."    |
 | user_id      | int     | No       | User ID to assign the gym to (requires `gyms.transfer_ownership` permission)| 42                |
 | city_id      | int     | No       | ID of the city where the gym is located                                     | 5                 |
