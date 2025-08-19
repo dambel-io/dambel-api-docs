@@ -35,6 +35,8 @@ Retrieve a list of your own and your trainees' diet plans.
 - See [Diet Plan Resource](diet_plan_resource.md)
 - See [Pagination Data](../../_globals/pagination-data.md) (per page: 50)
 
+> Note: The current **active** plan is always at the top of the list regardless of the sorting options
+
 ---
 
 ## Error Responses

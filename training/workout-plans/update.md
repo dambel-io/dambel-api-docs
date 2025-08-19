@@ -17,8 +17,11 @@ Update a workout plan.
 |--------------|---------|----------|---------------------------------------------|
 | `title`      | string  | No       | Title of the workout plan (max 255)         |
 | `description`| string  | No       | Description (max 2000, optional)            |
+| `is_active`| boolean  | No       | Set as active plan (optional, default false). It changes all other plans to false if is set to true            |
 
 *All parameters are optional. If omitted, they will not be updated.*
+
+> Note: Current active plan will automatically get deactivated if you set `is_active` to true.
 
 ---
 

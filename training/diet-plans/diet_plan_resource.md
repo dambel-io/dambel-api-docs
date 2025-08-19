@@ -13,6 +13,8 @@ Represents a diet plan.
 | `trainee_id`  | integer | Trainee ID (if applicable)                  |
 | `title`       | string  | Title of the diet plan                      |
 | `description` | string  | Description                                 |
+| `is_active`   | boolean | Is it the current active plan that the athlete is following                  |
+| `created_at` | string  | Description                                 |
 | `created_at`  | string  | Creation timestamp (YYYY-MM-DD HH:MM:SS)    |
 | `meals`       | array   | List of [Diet Plan Meal Resource](meals/diet_plan_meal_resource.md) |
 

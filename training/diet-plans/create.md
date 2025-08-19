@@ -17,7 +17,10 @@ Create a new diet plan.
 |--------------|---------|----------|---------------------------------------------|
 | `title`      | string  | Yes      | Title of the diet plan (max 255)            |
 | `description`| string  | No       | Description (max 2000, optional)            |
+| `is_active`| boolean  | No       | Set as active plan (optional, default false). It changes all other plans to false if is set to true            |
 | `trainee_id` | int     | No       | Trainee ID (if creating for a trainee)      |
+
+> Note: Current active plan will automatically get deactivated if you set `is_active` to true.
 
 ---
 

@@ -35,6 +35,8 @@ Retrieve a list of your own and your trainees' workout plans.
 - [Workout Plan Resource](workout_plan_resource.md)
 - [Pagination Data](../../_globals/pagination-data.md) (per page: 50)
 
+> Note: The current **active** plan is always at the top of the list regardless of the sorting options
+
 ---
 
 ## Error Responses
