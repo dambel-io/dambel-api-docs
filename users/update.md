@@ -19,6 +19,9 @@ Update the information of a specific user.
 | `last_name`  | string  | No       | Last name (max 255)                                     |
 | `email`      | string  | No       | Email (max 255, unique)                                 |
 | `phone`      | string  | No       | Phone number (max 255, unique)                          |
+| `username`   | string  | No       | Username (max 255, unique)                              |
+| `height`     | integer | No       | User's height in CM                                     |
+| `birth_date` | date    | No       | User's birth date                                       |
 | `password`   | string  | No       | New password (will be hashed and saved)                 |
 
 *All parameters are optional. If omitted, they will not be updated. Required fields cannot be set to null.*

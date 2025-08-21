@@ -11,11 +11,14 @@ Represents a user in the system.
 | `id`                     | integer         | User ID                                     |
 | `email`                  | string          | User email address                          |
 | `phone`                  | string          | User phone number                           |
+| `username`               | string          | Username                                    |
 | `first_name`             | string          | First name                                  |
 | `last_name`              | string          | Last name                                   |
 | `created_at`             | string (date)   | Account creation timestamp                  |
 | `referral_code`          | string          | User's referral code                        |
 | `referrer_user_id`       | integer\|null   | Referring user ID, if any                   |
+| `height`                 | integer\|null   | User's height in CM                         |
+| `birth_date`             | string (date)|null| User's birth date                         |
 | `roles`                  | array           | List of [Role Resource](../admin/roles/role_resource.md) |
 | `media`                  | array           | List of [Media Resource](../media/media_resource.md)     |
 | `current_subscription`   | object\|null    | [User Premium Subscription Resource](../payments/user_premium_subscription_resource.md) |
@@ -28,11 +31,14 @@ Represents a user in the system.
   "id": 123,
   "email": "test@example.com",
   "phone": "+12345678",
+  "username": "test_username",
   "first_name": "John",
   "last_name": "Doe",
   "created_at": "1970-01-01 00:00:00",
   "referral_code": "XFER543D4...",
   "referrer_user_id": null,
+  "height": 180,
+  "birth_date": "1990-01-01",
   "roles": [<role resource>, ...],
   "media": [<media resource>, ...],
   "current_subscription": <user premium subscription resource>

@@ -16,7 +16,7 @@ Retrieve a paginated list of users, with support for advanced filtering and sort
 | Name           | Type     | Required | Description                                                                                 |
 |----------------|----------|----------|---------------------------------------------------------------------------------------------|
 | `page`         | integer  | No       | Page number for pagination                                                                  |
-| `search`       | string   | No       | Search text in user's name, email, or phone                                                 |
+| `search`       | string   | No       | Search text in user's name, email, username, or phone                                                 |
 | `email_status` | string   | No       | Filter by email verification status: `verified` or `not_verified`                           |
 | `phone_status` | string   | No       | Filter by phone verification status: `verified` or `not_verified`                           |
 | `user_id`      | array    | No       | Filter by one or more specific user IDs                                                     |

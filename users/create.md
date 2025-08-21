@@ -19,6 +19,9 @@ Create a new user in the system.
 | `last_name`  | string  | Yes      | Last name (max 255)                         |
 | `email`      | string  | Yes      | Email (max 255, unique)                     |
 | `phone`      | string  | Yes      | Phone number (max 255, unique)              |
+| `username`   | string  | Yes      | Username (max 255, unique)                  |
+| `height`     | integer | No       | User's height in CM                         |
+| `birth_date` | date    | No       | User's birth date                           |
 | `password`   | string  | Yes      | Password (will be hashed and saved)         |
 
 ---
