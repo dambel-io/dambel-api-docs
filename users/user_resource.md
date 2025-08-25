@@ -39,11 +39,31 @@ Represents a user in the system.
   "referrer_user_id": null,
   "height": 180,
   "birth_date": "1990-01-01",
+  "referral_score": 5,
   "roles": [<role resource>, ...],
   "media": [<media resource>, ...],
   "current_subscription": <user premium subscription resource>
 }
 ```
+
+---
+
+## Referral Score
+This number is calculated based on the number of people that this user has invited to the platform + half of their score too.
+
+So if we have a tree like this:
+
+- User 1
+    - User 2
+        - User 3
+
+These are gonna be the scores:
+
+- User 1: 1 + 0.5 (half of 1) = 1.5
+- User 2: 1
+- User 3: 0
+
+The depth has no limit.
 
 ---
 

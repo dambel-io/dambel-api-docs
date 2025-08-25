@@ -26,6 +26,7 @@ You must have **update** permission for the target attachable resource.
 - `education`
 - `gym_buffet_item`
 - `training_service`
+- `tracker_meal`
 
 ---
 

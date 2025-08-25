@@ -10,6 +10,7 @@ Creates a new user account and returns the user resource and an API token.
 |--------------|---------|----------|---------------------------------------------|------------------------|
 | email        | string  | Yes      | User email address                          | "user@example.com"    |
 | phone        | string  | No       | User phone number (optional)                | "+1234567890"         |
+| username     | string  | Yes      | Username                                    | "johndoe"             |
 | first_name   | string  | Yes      | First name of the user                      | "John"                |
 | last_name    | string  | Yes      | Last name of the user                       | "Doe"                 |
 | password     | string  | Yes      | User password                               | "password123"         |
@@ -47,6 +48,8 @@ Returns the created user resource and API token.
 For a full schema, see [User Resource](../users/user_resource.md).
 
 See [How to use API token?](login.md#how-to-use-api-token)
+
+When [referral score](../users/user_resource.md#referral-score) of a user increases, they receive premium subscription as a reward. For each 5 points, they receive 7 days of premium subscription.
 
 ---
 

@@ -18,6 +18,8 @@ Represents a meal record in the tracker system.
 | `carb`             | integer | Carbs in grams (nullable)                   |
 | `fat`              | integer | Fat in grams (nullable)                     |
 | `calories`         | integer | Calories (nullable)                         |
+| media            | Media Resource[]    | List of media items ([see here](../../media/media_resource.md))                               |
+
 
 ---
 
@@ -33,7 +35,15 @@ Represents a meal record in the tracker system.
   "protein": 123,
   "carb": 123,
   "fat": 123,
-  "calories": 123
+  "calories": 123,
+  "media": [
+    {
+      "id": 10,
+      "attachable_type": "App\\Models\\Tracker\\Meals\\TrackerMeal",
+      "attachable_id": 123,
+      "link": "https://example.com/media/10.jpg"
+    }
+  ]
 }
 ```
 
