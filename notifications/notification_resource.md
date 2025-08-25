@@ -50,6 +50,10 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Training\Trainees\TraineeDeliveredNotification`: Notifies trainees when their record is marked as delivered
 - `Training\DietPlans\DietPlanCreatedNotification`: Notifies trainees when a diet plan is created
 - `Training\DietPlans\DietPlanUpdatedNotification`: Notifies trainees when a diet plan or its meals are updated
+- `Training\WorkoutPlans\WorkoutPlanUpdatedNotification`: Notifies trainees when a workout plan is updated by the trainer
+- `Training\WorkoutPlans\WorkoutPlanCreatedNotification`: Notifies trainees when a workout plan is created by the trainer
+- `Users\ReferralScoreIncreased`: Notifies users when their referral score is increased
+- `Users\ReferralRewardReceived`: Notifies users when they receive a referral reward
 
 ---
 
