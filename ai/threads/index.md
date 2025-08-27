@@ -16,8 +16,8 @@ Retrieves a list of your AI threads, with support for filtering and pagination.
 | Name        | Type   | Required | Description                                 | Example         |
 |-------------|--------|----------|---------------------------------------------|-----------------|
 | search      | string | No       | Search by title                             | "project"      |
-| anchor_type | string | No       | Filter by anchor type(s), comma-separated   | "plan,post"    |
-| anchor_id   | string | No       | Filter by anchor ID(s), comma-separated     | "1,2,3"        |
+| context_type | string | No       | Filter by context type(s), comma-separated   | "plan,post"    |
+| context_id   | string | No       | Filter by context ID(s), comma-separated     | "1,2,3"        |
 | sort        | string | No       | Sort order: `desc` or `asc` (default `desc`)| "desc"         |
 | page        | int    | No       | Page number for pagination                  | 1               |
 

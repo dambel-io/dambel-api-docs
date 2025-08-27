@@ -16,8 +16,8 @@ Creates a new AI thread.
 | Name        | Type   | Required | Description                                 | Example         |
 |-------------|--------|----------|---------------------------------------------|-----------------|
 | title       | string | No       | Optional title for the thread               | "My Thread"     |
-| anchor_type | string | No       | Optional anchor type                        | "plan"          |
-| anchor_id   | int    | No       | Optional anchor ID                          | 42              |
+| context_type | string | No       | Optional context type                        | "plan"          |
+| context_id   | int    | No       | Optional context ID                          | 42              |
 
 ---
 
@@ -25,8 +25,8 @@ Creates a new AI thread.
 ```json
 {
   "title": "My Thread",
-  "anchor_type": "plan",
-  "anchor_id": 42
+  "context_type": "plan",
+  "context_id": 42
 }
 ```
 
