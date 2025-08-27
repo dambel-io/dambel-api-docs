@@ -82,6 +82,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`PUT`](gyms/subscriptions/manage/update.md)
         - [`DELETE`](gyms/subscriptions/manage/delete.md)
     - [`GET /data/peak-hours`](gyms/data/peak-hours.md)
+    - [`GET /data/search-stats`](gyms/data/search-stats.md)
 
 ## Users
 - [`GET /api/v1/users`](users/index.md)
@@ -108,6 +109,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/training/services/{training-service-id}`
     - [`PUT`](training/services/update.md)
     - [`DELETE`](training/services/delete.md)
+- [`GET /api/v1/training/services/{training-service-id}/data/search-stats`](training/services/data/search-stats.md)
 - [`GET /api/v1/training/trainees`](training/trainees/index.md)
 - [`POST /api/v1/training/trainees`](training/trainees/create.md)
 - `/api/v1/training/trainees/{trainee-id}`
@@ -216,6 +218,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/posts/{post-id}`
     - [`PUT`](posts/update.md)
     - [`DELETE`](posts/delete.md)
+- [`GET /api/v1/posts/{post-id}/data/search-stats`](posts/data/search-stats.md)
 
 ## Comments
 - [`GET /api/v1/comments`](comments/index.md)
