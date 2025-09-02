@@ -17,7 +17,7 @@ Retrieve a list of workout records in the tracker system.
 |---------------------|---------|----------|------------------------------------------------------------------|
 | `start_date`        | string  | No       | Start of the date range (YYYY-MM-DD)                             |
 | `end_date`          | string  | No       | End of the date range (YYYY-MM-DD)                               |
-| `shared_tracker_slug`| string | No       | Slug of a shared tracker record (default: your own data)         |
+| `shared_tracker_id`| string | No       | ID of a shared tracker record (default: your own data)         |
 | `search`            | string  | No       | Search by notes                                                  |
 | `page`              | int     | No       | Page number for pagination                                       |
 

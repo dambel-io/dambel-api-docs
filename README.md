@@ -197,6 +197,11 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/sets/{tracker-workout-set-id}`
         - [`PUT`](tracker/workouts/sets/update.md)
         - [`DELETE`](tracker/workouts/sets/delete.md)
+- [`GET /api/v1/tracker/shares`](tracker/shares/index.md)
+- [`POST /api/v1/tracker/shares`](tracker/shares/create.md)
+- `/api/v1/tracker/shares/{shared-tracker-id}`
+    - [`PUT`](tracker/shares/update.md)
+    - [`DELETE`](tracker/shares/delete.md)
 
 ## Media
 - [`POST /api/v1/media`](media/create.md)

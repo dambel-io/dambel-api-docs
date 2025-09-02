@@ -10,7 +10,7 @@ You can get a list of wakeup records in the tracker system.
 
 - `start_date`: Start of the date range (optional)
 - `end_date`: End of the date range (optional)
-- `shared_tracker_slug`: Optional slug of a shared tracker record. If not set, your own tracker data will be used
+- `shared_tracker_id`: Optional ID of a shared tracker record. If not set, your own tracker data will be used
 - `search`: Search based on notes
 - `page`: Page number for pagination
 
