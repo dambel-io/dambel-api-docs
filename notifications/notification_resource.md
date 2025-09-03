@@ -54,6 +54,15 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Training\WorkoutPlans\WorkoutPlanCreatedNotification`: Notifies trainees when a workout plan is created by the trainer
 - `Users\ReferralScoreIncreased`: Notifies users when their referral score is increased
 - `Users\ReferralRewardReceived`: Notifies users when they receive a referral reward
+- `Tracker\UserAteMealNotification`: Notifies when a user logs a new meal
+- `Tracker\UserDrankWaterNotification`: Notifies when a user logs drinking water (glass count included)
+- `Tracker\UserFinishedWorkoutNotification`: Notifies when a user finishes a workout session
+- `Tracker\UserSharedTrackerWithYouNotification`: Notifies when a user shares their tracker with another user
+- `Tracker\UserSleptNotification`: Notifies when a user logs the time they went to sleep
+- `Tracker\UserStartedWorkoutNotification`: Notifies when a user starts a workout session
+- `Tracker\UserTookSupplementNotification`: Notifies when a user logs taking a supplement
+- `Tracker\UserTrackedWeightNotification`: Notifies when a user tracks their body weight
+- `Tracker\UserWokeUpNotification`: Notifies when a user logs the time they woke up
 
 ---
 
