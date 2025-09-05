@@ -1,4 +1,4 @@
-# PUT /api/v1/tracker/shares/{sharedTracker}
+# PUT /api/v1/tracker/shares/{shared-tracker-id}
 
 Update an existing shared tracker configuration.
 

@@ -13,6 +13,7 @@ Represents a workout set record in the tracker system.
 | `start`                  | string  | Start datetime (YYYY-MM-DD HH:MM:SS)        |
 | `workout_plan_exercise_id`| integer | Workout plan exercise ID (if applicable)    |
 | `exercise_id`            | integer | Exercise ID                                 |
+| `exercise`               | [Exercise Resource](../../../admin/exercises/exercise_resource.md) | Exercise Object (usually null)                                 |
 | `is_replacement`         | boolean | Whether this set is a replacement           |
 | `rep_count`              | integer | Number of repetitions                       |
 | `weight`                 | integer | Weight used                                 |
@@ -29,6 +30,7 @@ Represents a workout set record in the tracker system.
   "start": "2020-01-01 00:00:00",
   "workout_plan_exercise_id": 123,
   "exercise_id": 123,
+  "exercise": null,
   "is_replacement": false,
   "rep_count": 10,
   "weight": 100,

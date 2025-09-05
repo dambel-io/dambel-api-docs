@@ -1,4 +1,4 @@
-# DELETE /api/v1/tracker/shares/{sharedTracker}
+# DELETE /api/v1/tracker/shares/{shared-tracker-id}
 
 Delete an existing shared tracker configuration.
 
