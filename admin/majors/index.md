@@ -3,12 +3,7 @@
 Retrieve a list of majors.
 
 
----
-
-## Permissions
-| Permission            | Description         |
-|-----------------------|---------------------|
-| `majors.view_all`     | Access majors       |
+**No authentication required.**
 
 ---
 

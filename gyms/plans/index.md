@@ -3,6 +3,8 @@
 Retrieves a list of subscription plans for a specific gym.
 
 
+**No authentication required.**
+
 ---
 
 ## Permissions

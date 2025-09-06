@@ -3,12 +3,7 @@
 Retrieve a list of exercises in alphabetical order.
 
 
----
-
-## Permissions
-| Permission            | Description         |
-|-----------------------|---------------------|
-| `exercises.view_all`  | Access exercises    |
+**No authentication required.**
 
 ---
 

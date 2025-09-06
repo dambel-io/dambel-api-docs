@@ -3,6 +3,8 @@
 Retrieves a list of buffet items for a specific gym.
 
 
+**No authentication required.**
+
 ---
 
 ## Path Parameters

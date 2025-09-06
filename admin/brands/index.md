@@ -3,12 +3,7 @@
 Retrieve a list of brands in alphabetical order.
 
 
----
-
-## Permissions
-| Permission         | Description         |
-|--------------------|---------------------|
-| `brands.view_all`  | Access brands       |
+**No authentication required.**
 
 ---
 

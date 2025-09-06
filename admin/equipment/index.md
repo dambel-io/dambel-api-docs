@@ -3,12 +3,7 @@
 Retrieve a list of equipment in alphabetical order.
 
 
----
-
-## Permissions
-| Permission            | Description         |
-|-----------------------|---------------------|
-| `equipment.view_all`  | Access equipment    |
+**No authentication required.**
 
 ---
 

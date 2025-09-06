@@ -3,6 +3,8 @@
 Retrieves a list of gyms, with support for filtering by location, owner, major, and more. Results can be sorted by proximity, marketing boosts, or recency.
 
 
+**No authentication required.**
+
 ---
 
 ## Permissions

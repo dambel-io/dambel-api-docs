@@ -3,12 +3,7 @@
 Retrieve a list of countries in alphabetical order.
 
 
----
-
-## Permissions
-| Permission            | Description         |
-|-----------------------|---------------------|
-| `countries.view_all`  | Access countries    |
+**No authentication required.**
 
 ---
 

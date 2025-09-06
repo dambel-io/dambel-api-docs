@@ -3,6 +3,8 @@
 Retrieves general data for premium plan prices, commission rates, and boost plans in the platform.
 
 
+**No authentication required.**
+
 ---
 
 ## Permissions

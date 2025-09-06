@@ -3,12 +3,7 @@
 Retrieve a list of states in alphabetical order. Optionally filter by country.
 
 
----
-
-## Permissions
-| Permission            | Description         |
-|-----------------------|---------------------|
-| `states.view_all`     | Access states       |
+**No authentication required.**
 
 ---
 

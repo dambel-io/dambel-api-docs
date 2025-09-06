@@ -3,12 +3,7 @@
 Retrieve a list of supplements.
 
 
----
-
-## Permissions
-| Permission               | Description         |
-|--------------------------|---------------------|
-| `supplements.view_all`   | Access supplements  |
+**No authentication required.**
 
 ---
 

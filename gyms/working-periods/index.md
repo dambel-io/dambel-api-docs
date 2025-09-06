@@ -3,6 +3,8 @@
 Retrieves a list of working periods for a specific gym.
 
 
+**No authentication required.**
+
 ---
 
 ## Permissions

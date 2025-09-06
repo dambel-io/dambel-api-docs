@@ -3,12 +3,7 @@
 Retrieve a list of cities in alphabetical order. Optionally filter by state.
 
 
----
-
-## Permissions
-| Permission         | Description         |
-|--------------------|---------------------|
-| `cities.view_all`  | Access cities       |
+**No authentication required.**
 
 ---
 

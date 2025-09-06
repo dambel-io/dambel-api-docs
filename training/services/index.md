@@ -3,6 +3,8 @@
 Retrieve a list of training services for a user.
 
 
+**No authentication required.**
+
 ---
 
 ## Query Parameters
@@ -29,14 +31,5 @@ Retrieve a list of training services for a user.
 ```
 - See [Training Service Resource](training_service_resource.md)
 - See [Pagination Data](../../_globals/pagination-data.md) (per page: 50)
-
----
-
-## Error Responses
-| Status | Error Type         | Reference                                                      |
-|--------|--------------------|----------------------------------------------------------------|
-| 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
-| 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
-| 404    | Not Found          | [Not-found error](../../_globals/not-found-errors.md)           |
 
 ---

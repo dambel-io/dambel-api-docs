@@ -3,6 +3,8 @@
 Retrieves a list of equipment assigned to a specific gym.
 
 
+**No authentication required.**
+
 ---
 
 ## Permissions

@@ -3,10 +3,12 @@
 Downloads a media file by its ID.
 
 
+**No authentication required.**
+
 ---
 
 ## Permissions
-You must have **view** permission for the target attachable resource.
+You must have **view** permission for the target attachable resource (except the ones that are accessible without authentication).
 
 ---
 
