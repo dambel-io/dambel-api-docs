@@ -14,7 +14,7 @@ Represents a diet plan.
 | `title`       | string  | Title of the diet plan                      |
 | `description` | string  | Description                                 |
 | `is_active`   | boolean | Is it the current active plan that the athlete is following                  |
-| `created_at` | string  | Description                                 |
+| `target_daily_water` | float  | Suggested daily water consumption in liters                                 |
 | `created_at`  | string  | Creation timestamp (YYYY-MM-DD HH:MM:SS)    |
 | `meals`       | array   | List of [Diet Plan Meal Resource](meals/diet_plan_meal_resource.md) |
 
@@ -28,6 +28,8 @@ Represents a diet plan.
   "trainee_id": 123,
   "title": "...",
   "description": "...",
+  "is_active": true,
+  "target_daily_water": 3.5,
   "created_at": "2020-01-01 00:00:00",
   "meals": [<diet plan meal resource>]
 }
