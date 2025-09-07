@@ -221,6 +221,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 
 ## Posts
 - [`GET /api/v1/posts`](posts/index.md)
+- [`GET /api/v1/posts/blog`](posts/blog.md)
 - [`POST /api/v1/posts`](posts/create.md)
 - `/api/v1/posts/{post-id}`
     - [`PUT`](posts/update.md)
