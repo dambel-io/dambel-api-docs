@@ -63,3 +63,6 @@ For a full schema, see [AI Thread Message Resource](ai_thread_message_resource.m
 | 401    | Unauthorized               | [Authentication error](../../../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission)  | [Permission error](../../../_globals/permission-errors.md) |
 | 429    | Too many requests (rate limit exceeded) |  |
+
+## AI System
+The AI system uses OpenAI APIs behind the scenes, it handles reading Dambel documentation files, searching web or reading a specific web page, saving memories for each user and access them in other chats, reading data from Dambel's database, and even reporting the conversation whenever necessary. Once it uses every tool that it has, it returns the final response to the message.
