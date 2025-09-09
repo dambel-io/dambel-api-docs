@@ -156,7 +156,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`DELETE`](ai/threads/messages/delete.md)
 
 ## Tracker
-- [`GET /api/v1/tracker/data/average-sleep-duration`](tracker/data/average-sleep-duration.md)
+- [`GET /api/v1/tracker/data/averages`](tracker/data/averages.md)
 - [`GET /api/v1/tracker/data/records`](tracker/data/records.md)
 - [`GET /api/v1/tracker/data/today`](tracker/data/today.md)
 - [`GET /api/v1/tracker/wakeups`](tracker/wakeups/index.md)
