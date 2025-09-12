@@ -6,10 +6,11 @@ Represents a major in the system.
 ---
 
 ## Schema
-| Field     | Type    | Description         |
-|-----------|---------|---------------------|
-| `id`      | integer | Major ID            |
-| `title`   | string  | Major name          |
+| Field             | Type    | Description         |
+|--------------------|---------|---------------------|
+| `id`               | integer | Major ID            |
+| `title`            | string  | Major name          |
+| `translated_title` | string  | Translated major name |
 
 ---
 
@@ -17,7 +18,8 @@ Represents a major in the system.
 ```json
 {
   "id": 123,
-  "title": "Bodybuilding"
+  "title": "Bodybuilding",
+  "translated_title": "..."
 }
 ```
 

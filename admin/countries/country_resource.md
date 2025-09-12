@@ -6,10 +6,11 @@ Represents a country in the system.
 ---
 
 ## Schema
-| Field    | Type    | Description         |
-|----------|---------|---------------------|
-| `id`     | integer | Country ID          |
-| `name`   | string  | Country name        |
+| Field             | Type    | Description         |
+|--------------------|---------|---------------------|
+| `id`               | integer | Country ID          |
+| `name`             | string  | Country name        |
+| `translated_name`  | string  | Translated country name |
 
 ---
 
@@ -17,7 +18,8 @@ Represents a country in the system.
 ```json
 {
   "id": 123,
-  "name": "..."
+  "name": "...",
+  "translated_name": "..."
 }
 ```
 

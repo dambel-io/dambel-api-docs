@@ -6,12 +6,14 @@ Represents an equipment item in the system.
 ---
 
 ## Schema
-| Field         | Type    | Description                |
-|-------------- |---------|----------------------------|
-| `id`          | integer | Equipment ID               |
-| `title`       | string  | Equipment name             |
-| `description` | string  | Description                |
-| `link`        | string  | Tutorial link (nullable)   |
+| Field                  | Type    | Description                |
+|------------------------|---------|----------------------------|
+| `id`                   | integer | Equipment ID               |
+| `title`                | string  | Equipment name             |
+| `translated_title`      | string  | Translated equipment name  |
+| `description`           | string  | Description                |
+| `translated_description`| string  | Translated description     |
+| `link`                  | string  | Tutorial link (nullable)   |
 
 ---
 
@@ -20,7 +22,9 @@ Represents an equipment item in the system.
 {
   "id": 123,
   "title": "...",
+  "translated_title": "...",
   "description": "...",
+  "translated_description": "...",
   "link": "..."
 }
 ```

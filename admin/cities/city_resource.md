@@ -6,11 +6,12 @@ Represents a city in the system.
 ---
 
 ## Schema
-| Field      | Type    | Description                                 |
-|------------|---------|---------------------------------------------|
-| `id`       | integer | City ID                                     |
-| `name`     | string  | City name                                   |
-| `state`    | object  | [State Resource](../states/state_resource.md)|
+| Field              | Type    | Description                                 |
+|--------------------|---------|---------------------------------------------|
+| `id`               | integer | City ID                                     |
+| `name`             | string  | City name                                   |
+| `translated_name`  | string  | Translated city name                        |
+| `state`            | object  | [State Resource](../states/state_resource.md)|
 
 ---
 
@@ -19,6 +20,7 @@ Represents a city in the system.
 {
   "id": 123,
   "name": "...",
+  "translated_name": "...",
   "state": <state resource>
 }
 ```
