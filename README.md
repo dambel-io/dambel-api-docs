@@ -157,6 +157,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 
 ## Tracker
 - [`GET /api/v1/tracker/data/averages`](tracker/data/averages.md)
+- [`GET /api/v1/tracker/data/charts`](tracker/data/charts.md)
 - [`GET /api/v1/tracker/data/records`](tracker/data/records.md)
 - [`GET /api/v1/tracker/data/today`](tracker/data/today.md)
 - [`GET /api/v1/tracker/wakeups`](tracker/wakeups/index.md)
