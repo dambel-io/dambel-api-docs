@@ -52,8 +52,8 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Training\DietPlans\DietPlanUpdatedNotification`: Notifies trainees when a diet plan or its meals are updated
 - `Training\WorkoutPlans\WorkoutPlanUpdatedNotification`: Notifies trainees when a workout plan is updated by the trainer
 - `Training\WorkoutPlans\WorkoutPlanCreatedNotification`: Notifies trainees when a workout plan is created by the trainer
-- `Users\ReferralScoreIncreased`: Notifies users when their referral score is increased
-- `Users\ReferralRewardReceived`: Notifies users when they receive a referral reward
+- `Users\ReferralScoreIncreasedNotification`: Notifies users when their referral score is increased
+- `Users\ReferralRewardReceivedNotification`: Notifies users when they receive a referral reward
 - `Tracker\UserAteMealNotification`: Notifies when a user logs a new meal
 - `Tracker\UserDrankWaterNotification`: Notifies when a user logs drinking water (glass count included)
 - `Tracker\UserFinishedWorkoutNotification`: Notifies when a user finishes a workout session
@@ -63,6 +63,10 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Tracker\UserTookSupplementNotification`: Notifies when a user logs taking a supplement
 - `Tracker\UserTrackedWeightNotification`: Notifies when a user tracks their body weight
 - `Tracker\UserWokeUpNotification`: Notifies when a user logs the time they woke up
+- `Tracker\Reminders\WakeupReminderNotification`: Reminds user to wakeup after 8 hours of sleep
+- `Tracker\Reminders\WorkoutReminderNotification`: Reminds user about today's workout 1 hour after waking up
+- `Tracker\Reminders\SleepReminderNotification`: Reminds user to sleep after 16 hours of being awake
+- `Tracker\Reminders\WeightReminderNotification`: Reminds user to enter their weight 1 after after waking up
 
 ---
 
