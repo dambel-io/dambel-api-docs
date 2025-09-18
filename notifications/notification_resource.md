@@ -67,6 +67,7 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Tracker\Reminders\WorkoutReminderNotification`: Reminds user about today's workout 1 hour after waking up
 - `Tracker\Reminders\SleepReminderNotification`: Reminds user to sleep after 16 hours of being awake
 - `Tracker\Reminders\WeightReminderNotification`: Reminds user to enter their weight 1 after after waking up
+- `Tracker\Reminders\WaterReminderNotification`: Reminds user to drink some water every 3 hours
 
 ---
 
