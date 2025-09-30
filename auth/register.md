@@ -8,11 +8,11 @@ Creates a new user account and returns the user resource and an API token.
 ## Request Body Parameters
 | Name         | Type    | Required | Description                                 | Example                |
 |--------------|---------|----------|---------------------------------------------|------------------------|
-| email        | string  | Yes      | User email address                          | "user@example.com"    |
-| phone        | string  | No       | User phone number (optional)                | "+1234567890"         |
+| phone        | string  | Yes       | User phone number (optional)                | "+1234567890"         |
+| email        | string  | No      | User email address                          | "user@example.com"    |
 | username     | string  | Yes      | Username                                    | "johndoe"             |
-| first_name   | string  | Yes      | First name of the user                      | "John"                |
-| last_name    | string  | Yes      | Last name of the user                       | "Doe"                 |
+| first_name   | string  | No      | First name of the user                      | "John"                |
+| last_name    | string  | No      | Last name of the user                       | "Doe"                 |
 | password     | string  | Yes      | User password                               | "password123"         |
 | referral_code| string  | No       | Optional referral code                      | "REF123"              |
 

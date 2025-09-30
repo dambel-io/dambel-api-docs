@@ -8,7 +8,7 @@ Authenticates a user and returns an API token for subsequent requests.
 ## Request Body Parameters
 | Name        | Type    | Required | Description                                                                 | Example                |
 |-------------|---------|----------|-----------------------------------------------------------------------------|------------------------|
-| email       | string  | Yes      | User email address                                                          | "user@example.com"    |
+| phone       | string  | Yes      | User phone number                                                          | "+989123456789"    |
 | password    | string  | Yes      | User password                                                               | "password123"         |
 | expiration  | int     | No       | Token expiration in seconds (optional; if omitted, token never expires)      | 3600                   |
 | token_name  | string  | No       | Optional name for the token (defaults to user agent if not provided)         | "MyAppToken"          |
@@ -18,7 +18,7 @@ Authenticates a user and returns an API token for subsequent requests.
 ## Request Example
 ```json
 {
-  "email": "user@example.com",
+  "phone": "+989123456789",
   "password": "password123",
   "expiration": 3600,
   "token_name": "MyAppToken"
