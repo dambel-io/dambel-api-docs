@@ -12,6 +12,7 @@ Retrieves a list of posts, with support for filtering by profile type, profile I
 |-----------|--------|----------|-----------------------------------------------------------------------------|------------------------|
 | search    | string | No       | Search term for post title or content                                       | "workout"             |
 | order     | string | No       | Order of results: `ASC` or `DESC` (default: `DESC`)                         | "DESC"                 |
+| per_page     | int | No       | Set the per page count (default: 50)                         | 10                 |
 
 ---
 
