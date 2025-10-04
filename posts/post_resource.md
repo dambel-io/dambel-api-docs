@@ -14,6 +14,8 @@ Represents a post entity, including its profile association, content, and draft 
 | title         | string  | Title of the post                           |
 | content       | string  | Content of the post                         |
 | is_draft      | bool    | Whether the post is a draft                  |
+| created_at      | Datetime    | When the post is created                  |
+| updated_at      | Datetime    | When the post last updated                  |
 | media            | Media Resource[]    | List of media items ([see here](../media/media_resource.md))                               |
 
 ---
@@ -27,6 +29,8 @@ Represents a post entity, including its profile association, content, and draft 
   "title": "My Workout",
   "content": "Did squats and deadlifts.",
   "is_draft": false,
+  "created_at": "2020-01-01 00:00:00",
+  "updated_at": "2020-03-01 00:00:00",
   "media": [
     {
       "id": 10,
