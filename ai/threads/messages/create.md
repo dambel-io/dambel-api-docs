@@ -23,7 +23,7 @@ Creates a new message in a specific AI thread.
 | Name    | Type   | Required | Description                | Example         |
 |---------|--------|----------|----------------------------|-----------------|
 | content | string | Yes      | Content of the message (max 5000 chars) | "Hello!" |
-| state   | object | No       | Optional state data as JSON | { ... }         |
+| context   | object | No       | Optional context data as JSON | { ... }         |
 
 ---
 
@@ -31,7 +31,7 @@ Creates a new message in a specific AI thread.
 ```json
 {
   "content": "Hello!",
-  "state": { "form": { "field": "value" } }
+  "context": { "page": ["gymView", 123], "form": { "field": "value" } }
 }
 ```
 
