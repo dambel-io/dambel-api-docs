@@ -17,7 +17,10 @@ Returns a paginated list of notification resources.
     { /* Notification Resource */ }
   ],
   "links": { /* Pagination Data */ },
-  "meta": { /* Pagination Data */ }
+  "meta": {
+    /* Pagination Data */
+    "unread_count": 123
+  }
 }
 ```
 
@@ -49,7 +52,8 @@ Returns a paginated list of notification resources.
     "path": "https://api.example.com/api/v1/notifications",
     "per_page": 50,
     "to": 50,
-    "total": 250
+    "total": 250,
+    "unread_count": 40
   }
 }
 ```
