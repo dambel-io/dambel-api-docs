@@ -14,9 +14,9 @@ import Echo from 'laravel-echo';
 
 window.Echo = new Echo({
   broadcaster: 'reverb',
-  key: 'your-key',
-  host: 'ws://dambel.io:9080',
-  authEndpoint: '/broadcasting/auth',
+  key: 'application-key',
+  host: 'ws://api.dambel.io:9080',
+  authEndpoint: 'https://api.dambel.io/broadcasting/auth',
   auth: {
     headers: {
       Authorization: `Bearer YOUR_AUTH_TOKEN`
@@ -30,7 +30,11 @@ window.Echo = new Echo({
 ## Channels
 
 - `private-App.Models.User.{id}`: Users receive:
-  - [Notifications](../notifications/notification_resource.md)
-  - `ChatAdded`, `ChatRemoved`, `ChatUpdated`
+  - `Illuminate\Notifications\Events\BroadcastNotificationCreated` (see [Notifications](../notifications/notification_resource.md))
+  - `App\Events\Chats\ChatAdded`
+  - `App\Events\Chats\ChatRemoved`
+  - `App\Events\Chats\ChatUpdated`
 - `private-App.Models.Chats.Chat.{id}`: Users receive chat-specific events:
-  - `MessageSent`, `MessageUpdated`, `MessageDeleted`
+  - `App\Events\Chats\MessageSent`
+  - `App\Events\Chats\MessageUpdated`
+  - `App\Events\Chats\MessageDeleted`
