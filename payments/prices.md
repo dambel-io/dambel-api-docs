@@ -23,10 +23,10 @@ Returns platform pricing and commission data.
 #### Example
 ```json
 {
-  "gym_commission_rate": 0.02,
+  "gym_commission_rate": 0.01,
   "premium_plans": {
     "plus": {
-      "monthly_price": 50000,
+      "monthly_price": 999_000,
       "discount": 0,
       "yearly_price_discount": 0.85,
       "role": "user_plus"
@@ -34,12 +34,12 @@ Returns platform pricing and commission data.
   },
   "boosts": {
     "basic": {
-      "price": 60000,
+      "price": 99000,
       "duration": 7,
       "level": 1
     },
     "pro": {
-      "price": 150000,
+      "price": 190000,
       "duration": 14,
       "level": 2
     }
