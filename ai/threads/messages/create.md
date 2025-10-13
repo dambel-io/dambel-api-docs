@@ -52,7 +52,7 @@ Returns the created message and the AI's response message.
 
 For a full schema, see [AI Thread Message Resource](ai_thread_message_resource.md).
 
-> In `responseMessage.updated_state` you may find the updated state data you initially sent.
+> In `responseMessage.updated_context` you may find the updated context data you initially sent. For example form fields get updated.
 
 ---
 
