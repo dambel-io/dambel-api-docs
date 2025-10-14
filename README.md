@@ -38,6 +38,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`POST /api/v1/auth/login`](auth/login.md)
 - [`POST /api/v1/auth/register`](auth/register.md)
 - [`GET /api/v1/auth/me`](auth/me.md)
+- [`PUT /api/v1/auth/me`](auth/update-me.md)
 
 ## Gyms
 - [`GET /api/v1/gyms`](gyms/index.md)
