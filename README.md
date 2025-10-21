@@ -273,6 +273,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`DELETE`](chats/messages/delete.md)
 
 ## Admin
+- [`GET /api/v1/admin/stats`](admin/stats/index.md)
 - [`GET /api/v1/admin/roles`](admin/roles/index.md)
 - [`POST /api/v1/admin/roles`](admin/roles/create.md)
 - `/api/v1/admin/roles/{role-id}`
