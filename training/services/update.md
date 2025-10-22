@@ -20,6 +20,8 @@ Update a training service.
 | `description`| string  | No       | Description (max 2000, optional)            |
 | `price`      | int     | No       | Price of the training service               |
 | `discount`   | float   | No       | Discount percentage (nullable, default 0)   |
+| `category`   | string  | No       | Category of training service: `diet_plan`, `workout_plan`, `other` |
+| `major_ids`  | array   | No       | Array of major IDs that this training service covers |
 
 *All parameters are optional. If omitted, they will not be updated. You can set them to null if desired.*
 

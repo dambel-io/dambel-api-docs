@@ -20,6 +20,8 @@ Create a new training service for a user.
 | `description`| string  | No       | Description (max 2000, optional)            |
 | `price`      | int     | Yes      | Price of the training service               |
 | `discount`   | float   | No       | Discount percentage (nullable, default 0)   |
+| `category`   | string  | No       | Category of training service: `diet_plan`, `workout_plan`, `other` (default: `other`) |
+| `major_ids`  | array   | No       | Array of major IDs that this training service covers |
 
 *The user ID is specified in the route parameter.*
 

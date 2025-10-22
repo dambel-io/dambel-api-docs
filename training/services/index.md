@@ -8,12 +8,14 @@ Retrieve a list of training services for a user.
 ---
 
 ## Query Parameters
-| Name      | Type    | Required | Description                                                      |
-|-----------|---------|----------|------------------------------------------------------------------|
-| `user_id` | string  | No       | Filter by user IDs (comma-separated for multiple)                |
-| `search`  | string  | No       | Search by title and description                                  |
-| `page`    | int     | No       | Page number for pagination                                       |
-| `sort`    | string  | No       | `asc` for oldest, `desc` for latest (default: `desc`)            |
+| Name       | Type    | Required | Description                                                      |
+|------------|---------|----------|------------------------------------------------------------------|
+| `user_id`  | string  | No       | Filter by user IDs (comma-separated for multiple)                |
+| `category` | string  | No       | Filter by categories (comma-separated): `diet_plan`, `workout_plan`, `other` |
+| `major_ids`| string  | No       | Filter by major IDs (comma-separated for multiple)               |
+| `search`   | string  | No       | Search by title and description                                  |
+| `page`     | int     | No       | Page number for pagination                                       |
+| `sort`     | string  | No       | `asc` for oldest, `desc` for latest (default: `desc`)            |
 
 > **Note:** Results are first sorted by marketing boosts; `sort` applies secondarily.
 

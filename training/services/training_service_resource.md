@@ -14,6 +14,8 @@ Represents a training service offered by a user.
 | `description`      | string  | Description                                 |
 | `price`            | integer | Price of the training service               |
 | `discount`         | float   | Discount percentage                         |
+| `category`         | string  | Category: `diet_plan`, `workout_plan`, `other` |
+| `majors`           | array   | List of [Major Resources](../../admin/majors/major_resource.md) |
 | `discounted_price` | integer | Price after discount                        |
 | `media`            | array   | List of [Media Resource](../../media/media_resource.md) |
 | `rating_count`     | integer | Number of ratings                           |
@@ -31,6 +33,8 @@ Represents a training service offered by a user.
   "description": "...",
   "price": 123,
   "discount": 0,
+  "category": "workout_plan",
+  "majors": [<major resource>, ...],
   "discounted_price": 123,
   "media": [<media resource>, ...],
   "rating_count": 123,
