@@ -27,7 +27,7 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 | page      | int    | No       | Page number for pagination                                                   | 1               |
 | lat       | float  | No       | Latitude for proximity search                                                | 35.6892         |
 | lng       | float  | No       | Longitude for proximity search                                               | 51.3890         |
-| radius    | float  | No       | Radius in kilometers for proximity search (default: 50, min: 10, max: 900000)| 50              |
+| radius    | float  | No       | Radius in kilometers for proximity search (default: 2,000,000, min: 10, max: 2,000,000)| 50              |
 
 Results are sorted by marketing boosts first, then by proximity (if `lat`/`lng` provided), otherwise by newest.
 

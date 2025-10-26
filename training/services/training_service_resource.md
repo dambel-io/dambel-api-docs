@@ -10,6 +10,7 @@ Represents a training service offered by a user.
 |--------------------|---------|---------------------------------------------|
 | `id`               | integer | Training service ID                         |
 | `user_id`          | integer | User ID who offers the service              |
+| `user`          | object | [User Resource](../../users/user_resource.md) (The trainer)              |
 | `title`            | string  | Title of the training service               |
 | `description`      | string  | Description                                 |
 | `price`            | integer | Price of the training service               |
