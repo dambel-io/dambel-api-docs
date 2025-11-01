@@ -13,7 +13,9 @@ Retrieve todays data and targets.
   "consumed_water": 1.2,
   "target_water": 3,
   "last_night_sleep": "07:34:15",
+  "is_sleeping": false,
   "current_weight": 78.5,
+  "current_workout": <TrackerWorkoutResource|null>,
   "planned_workout": <WorkoutPlanSessionResource>,
   "planned_supplements": [<DietPlanSupplementResource>],
   "planned_meals": [<DietPlanMealResource>],
@@ -27,6 +29,7 @@ Retrieve todays data and targets.
 - [Diet Plan Meal Resource](../../training/diet-plans/meals/diet_plan_meal_resource.md)
 - [Tracker Meal Resource](../meals/tracker_meal_resource.md)
 - [Tracker Supplement Resource](../supplements/tracker_supplement_resource.md)
+- [Tracker Workout Resource](../workouts/tracker_workout_resource.md)
 
 ---
 

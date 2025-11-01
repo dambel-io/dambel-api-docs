@@ -17,6 +17,7 @@ Record a new supplement in the tracker system.
 |------------------|---------|----------|---------------------------------------------|
 | `tracked_at`     | string  | Yes      | Datetime for the supplement record          |
 | `supplement_id`  | int     | Yes      | Supplement ID                              |
+| `diet_plan_supplement_id` | int | No | Diet Plan Supplement ID |
 | `notes`          | string  | No       | Optional notes                              |
 
 ---

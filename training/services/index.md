@@ -13,7 +13,7 @@ Retrieve a list of training services for a user.
 | `user_id`  | string  | No       | Filter by user IDs (comma-separated for multiple)                |
 | `category` | string  | No       | Filter by categories (comma-separated): `diet_plan`, `workout_plan`, `other` |
 | `major_ids`| string  | No       | Filter by major IDs (comma-separated for multiple)               |
-| `search`   | string  | No       | Search by title and description                                  |
+| `search`   | string  | No       | Search by title, description, and trainer name                                  |
 | `page`     | int     | No       | Page number for pagination                                       |
 | `sort`     | string  | No       | `asc` for oldest, `desc` for latest (default: `desc`)            |
 
