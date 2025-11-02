@@ -15,6 +15,7 @@ Retrieve todays data and targets.
   "last_night_sleep": "07:34:15",
   "is_sleeping": false,
   "current_weight": 78.5,
+  "done_workouts": [<TrackerWorkoutResource>],
   "current_workout": <TrackerWorkoutResource|null>,
   "planned_workout": <WorkoutPlanSessionResource>,
   "planned_supplements": [<DietPlanSupplementResource>],
