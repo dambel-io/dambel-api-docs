@@ -11,6 +11,7 @@ Represents an exercise in a workout plan session.
 | `id`                    | integer | Exercise ID                                 |
 | `workout_plan_session_id`| integer| Associated session ID                       |
 | `exercise_id`           | integer | Exercise ID                                 |
+| `exercise`           | [Exercise Resource](../../../../admin/exercises/exercise_resource.md) | Exercise data                                 |
 | `super_set_id`          | integer | Parent exercise ID for supersets (nullable) |
 | `set_count`             | int     | Number of sets                              |
 | `rep_count`             | int     | Number of reps per set                      |
