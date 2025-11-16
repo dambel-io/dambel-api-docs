@@ -16,8 +16,8 @@ Create a new shared tracker configuration to share tracker data with another use
 | Name                | Type    | Required | Description                                                                 |
 |---------------------|---------|----------|-----------------------------------------------------------------------------|
 | `viewer_user_id`   | integer | Yes      | ID of the user to share tracker data with                                 |
-| `start_date`       | string  | Yes      | Start date for the sharing period (YYYY-MM-DD format)                     |
-| `end_date`         | string  | Yes      | End date for the sharing period (YYYY-MM-DD format)                       |
+| `start_date`       | string  | No       | Start date for the sharing period (YYYY-MM-DD format) or null             |
+| `end_date`         | string  | No       | End date for the sharing period (YYYY-MM-DD format) or null               |
 | `include_wakeup`   | boolean | No       | Whether to include wakeup data (default: true)                            |
 | `include_weight`   | boolean | No       | Whether to include weight data (default: true)                            |
 | `include_water`    | boolean | No       | Whether to include water intake data (default: true)                      |
@@ -86,5 +86,6 @@ See [Shared Tracker Resource](shared_tracker_resource.md) for the complete respo
 - The `user_id` is automatically set to the authenticated user's ID
 - All `include_*` flags default to `true` if not specified
 - All `notify_*` flags default to `false` if not specified
-- The `end_date` must be after the `start_date`
+- If both `start_date` and `end_date` are provided, `end_date` must be after `start_date`
 - The `viewer_user_id` must reference an existing user
+- When `start_date` and `end_date` are `null`, all tracker data is shared without date restrictions

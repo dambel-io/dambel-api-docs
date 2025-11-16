@@ -23,8 +23,8 @@ Update an existing shared tracker configuration.
 ## Request Body Parameters
 | Name                | Type    | Required | Description                                                                 |
 |---------------------|---------|----------|-----------------------------------------------------------------------------|
-| `start_date`       | string  | No       | Start date for the sharing period (YYYY-MM-DD format)                     |
-| `end_date`         | string  | No       | End date for the sharing period (YYYY-MM-DD format)                       |
+| `start_date`       | string  | No       | Start date for the sharing period (YYYY-MM-DD format) or null             |
+| `end_date`         | string  | No       | End date for the sharing period (YYYY-MM-DD format) or null               |
 | `include_wakeup`   | boolean | No       | Whether to include wakeup data                                             |
 | `include_weight`   | boolean | No       | Whether to include weight data                                             |
 | `include_water`    | boolean | No       | Whether to include water intake data                                       |
@@ -41,7 +41,7 @@ Update an existing shared tracker configuration.
 | `notify_workout`   | boolean | No       | Whether to notify the viewer about new workout data                        |
 | `description`      | string  | No       | Optional description for the shared tracker (max: 2000 characters)        |
 
-**Note:** If both `start_date` and `end_date` are provided, `end_date` must be after `start_date`.
+**Note:** If both `start_date` and `end_date` are provided, `end_date` must be after `start_date`. When dates are set to `null`, date restrictions are removed.
 
 **Note:** The viewer user can only change `notify_*` fields.
 
@@ -101,3 +101,4 @@ See [Shared Tracker Resource](shared_tracker_resource.md) for the complete respo
 - The `user_id` and `viewer_user_id` fields cannot be modified
 - Partial updates are supported - only include the fields you want to change
 - The `end_date` validation rule only applies when both `start_date` and `end_date` are provided
+- Setting dates to `null` removes date restrictions for the shared tracker

@@ -13,8 +13,8 @@ The shared tracker resource represents a shared tracker configuration between tw
 | `user`          | [UserResource](../../users/user_resource.md) | User object                          |
 | `viewer_user_id`   | integer | ID of the user who can view the shared tracker data                       |
 | `viewer_user`          | [UserResource](../../users/user_resource.md) | Viewer user object                          |
-| `start_date`       | string  | Start date for the sharing period (YYYY-MM-DD format)                     |
-| `end_date`         | string  | End date for the sharing period (YYYY-MM-DD format)                       |
+| `start_date`       | string  | Start date for the sharing period (YYYY-MM-DD format) or null             |
+| `end_date`         | string  | End date for the sharing period (YYYY-MM-DD format) or null               |
 | `include_wakeup`   | boolean | Whether wakeup data is included in the shared tracker                     |
 | `include_weight`   | boolean | Whether weight data is included in the shared tracker                     |
 | `include_water`    | boolean | Whether water intake data is included in the shared tracker               |
@@ -32,6 +32,8 @@ The shared tracker resource represents a shared tracker configuration between tw
 | `description`      | string  | Optional description for the shared tracker                               |
 | `created_at`       | string  | Timestamp when the shared tracker was created                             |
 | `updated_at`       | string  | Timestamp when the shared tracker was last updated                        |
+
+**Note:** `start_date` and `end_date` can be `null`, indicating no date restrictions for the shared tracker data.
 
 ---
 
