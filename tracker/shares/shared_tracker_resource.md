@@ -10,7 +10,9 @@ The shared tracker resource represents a shared tracker configuration between tw
 |--------------------|---------|-----------------------------------------------------------------------------|
 | `id`               | integer | Unique identifier for the shared tracker                                   |
 | `user_id`          | integer | ID of the user who is sharing their tracker data                          |
+| `user`          | [UserResource](../../users/user_resource.md) | User object                          |
 | `viewer_user_id`   | integer | ID of the user who can view the shared tracker data                       |
+| `viewer_user`          | [UserResource](../../users/user_resource.md) | Viewer user object                          |
 | `start_date`       | string  | Start date for the sharing period (YYYY-MM-DD format)                     |
 | `end_date`         | string  | End date for the sharing period (YYYY-MM-DD format)                       |
 | `include_wakeup`   | boolean | Whether wakeup data is included in the shared tracker                     |
