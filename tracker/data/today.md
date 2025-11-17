@@ -5,6 +5,13 @@ Retrieve todays data and targets.
 
 ---
 
+## Query Parameters
+| Name                | Type    | Required | Description                                                      |
+|---------------------|---------|----------|------------------------------------------------------------------|
+| `shared_tracker_id` | string  | No       | ID of a shared tracker record (default: your own data)           |
+
+---
+
 ## Response
 
 ### 200 OK

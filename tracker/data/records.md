@@ -9,6 +9,7 @@ Retrieve highest records of your exercises.
 | Name                | Type    | Required | Description                                                       |
 |---------------------|---------|----------|-------------------------------------------------------------------|
 | `by_rep`            | boolean | No       | Set to true if you want to get highest reps instead of the weight |
+| `shared_tracker_id` | string  | No       | ID of a shared tracker record (default: your own data)           |
 
 ---
 
