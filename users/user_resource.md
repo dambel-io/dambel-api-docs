@@ -6,22 +6,25 @@ Represents a user in the system.
 ---
 
 ## Schema
-| Field                    | Type            | Description                                 |
-|--------------------------|-----------------|---------------------------------------------|
-| `id`                     | integer         | User ID                                     |
-| `email`                  | string          | User email address                          |
-| `phone`                  | string          | User phone number                           |
-| `username`               | string          | Username                                    |
-| `first_name`             | string          | First name                                  |
-| `last_name`              | string          | Last name                                   |
-| `created_at`             | string (date)   | Account creation timestamp                  |
-| `referral_code`          | string          | User's referral code                        |
-| `referrer_user_id`       | integer\|null   | Referring user ID, if any                   |
-| `height`                 | integer\|null   | User's height in CM                         |
-| `birth_date`             | string (date)|null| User's birth date                         |
-| `roles`                  | array           | List of [Role Resource](../admin/roles/role_resource.md) |
-| `media`                  | array           | List of [Media Resource](../media/media_resource.md)     |
+| Field                    | Type            | Description                                                                 |
+|--------------------------|-----------------|-----------------------------------------------------------------------------|
+| `id`                     | integer         | User ID                                                                     |
+| `email`                  | string          | User email address *(hidden for limited access)*                           |
+| `phone`                  | string          | User phone number *(hidden for limited access)*                            |
+| `username`               | string          | Username                                                                   |
+| `first_name`             | string          | First name                                                                 |
+| `last_name`              | string          | Last name                                                                  |
+| `created_at`             | string (date)   | Account creation timestamp                                                 |
+| `referral_code`          | string          | User's referral code                                                       |
+| `referrer_user_id`       | integer\|null   | Referring user ID, if any *(hidden for limited access)*                    |
+| `height`                 | integer\|null   | User's height in CM                                                        |
+| `birth_date`             | string (date)\|null| User's birth date                                                       |
+| `referral_score`         | integer         | User's referral score *(hidden for limited access)*                        |
+| `roles`                  | array           | List of [Role Resource](../admin/roles/role_resource.md) *(hidden for limited access)* |
+| `media`                  | array           | List of [Media Resource](../media/media_resource.md)                       |
 | `current_subscription`   | object\|null    | [User Premium Subscription Resource](../payments/user_premium_subscription_resource.md) |
+
+**Note:** Fields marked with *(hidden for limited access)* are only included when the authenticated user has `users.view_all` permission. Users with only `users.view_limited` permission will not see these sensitive fields.
 
 ---
 
