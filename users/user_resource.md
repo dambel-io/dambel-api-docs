@@ -24,7 +24,7 @@ Represents a user in the system.
 | `media`                  | array           | List of [Media Resource](../media/media_resource.md)                       |
 | `current_subscription`   | object\|null    | [User Premium Subscription Resource](../payments/user_premium_subscription_resource.md) |
 
-**Note:** Fields marked with *(hidden for limited access)* are only included when the authenticated user has `users.view_all` permission. Users with only `users.view_limited` permission will not see these sensitive fields.
+**Note:** Fields marked with *(hidden for limited access)* are only included when the authenticated user has `users.view_all` permission or when a user with `users.view_limited` permission is viewing their own profile. Users with only `users.view_limited` permission will not see other users' sensitive fields, but can see their own.
 
 ---
 
