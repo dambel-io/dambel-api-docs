@@ -39,6 +39,10 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`POST /api/v1/auth/register`](auth/register.md)
 - [`GET /api/v1/auth/me`](auth/me.md)
 - [`PUT /api/v1/auth/me`](auth/update-me.md)
+- [`PUT /api/v1/auth/change-password`](auth/change-password.md)
+- [`POST /api/v1/auth/reset-password/request`](auth/reset-password-request.md)
+- [`POST /api/v1/auth/reset-password/reset`](auth/reset-password-reset.md)
+- [`GET /api/v1/auth/verify-email/{user}`](auth/verify-email.md)
 
 ## Gyms
 - [`GET /api/v1/gyms`](gyms/index.md)
