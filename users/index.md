@@ -11,7 +11,7 @@ Retrieve a paginated list of users, with support for advanced filtering and sort
 | `users.view_all`       | View all users with full information                                       |
 | `users.view_limited`   | View users with limited information (requires search parameter)            |
 
-**Note:** Users with `users.view_limited` permission but not `users.view_all` must provide at least one character in the `search` parameter, otherwise the API will return 0 results.
+**Note:** Users with `users.view_limited` permission but not `users.view_all` must provide at least one character in the `search` parameter, or provide `user_id`, otherwise the API will return 0 results.
 
 ---
 
