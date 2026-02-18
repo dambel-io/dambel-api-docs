@@ -8,9 +8,10 @@ Retrieve a list of training services for a user.
 ---
 
 ## Query Parameters
-| Name       | Type    | Required | Description                                                      |
-|------------|---------|----------|------------------------------------------------------------------|
-| `user_id`  | string  | No       | Filter by user IDs (comma-separated for multiple)                |
+| Name        | Type    | Required | Description                                                      |
+|-------------|---------|----------|------------------------------------------------------------------|
+| `service_id`| string  | No       | Filter by training service ID(s); comma-separated for multiple   |
+| `user_id`   | string  | No       | Filter by user IDs (comma-separated for multiple)                |
 | `category` | string  | No       | Filter by categories (comma-separated): `diet_plan`, `workout_plan`, `other` |
 | `major_ids`| string  | No       | Filter by major IDs (comma-separated for multiple)               |
 | `search`   | string  | No       | Search by title, description, and trainer name                                  |
