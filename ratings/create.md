@@ -1,6 +1,6 @@
 # POST /api/v1/ratings
 
-Creates a new rating for a specified element (gym or training service).
+Sets the authenticated user's rating for a specified element (gym or training service). If the user has not rated the element yet, a new rating is created. If they have already rated it, the existing rating is updated with the new score.
 
 
 ---
@@ -36,7 +36,7 @@ Creates a new rating for a specified element (gym or training service).
 ## Response
 
 ### 201 Created
-Returns the created rating resource.
+Returned when a new rating was created. Returns the created rating resource.
 
 #### Example
 ```json
@@ -47,6 +47,26 @@ Returns the created rating resource.
     "ratable_type": "App\\Models\\Gym",
     "ratable_id": 10,
     "score": 5
+  }
+}
+```
+
+For a full schema, see [Rating Resource](rating_resource.md).
+
+---
+
+### 200 OK
+Returned when the user already had a rating for this element and it was updated. Returns the updated rating resource.
+
+#### Example
+```json
+{
+  "rating": {
+    "id": 123,
+    "user_id": 42,
+    "ratable_type": "App\\Models\\Gym",
+    "ratable_id": 10,
+    "score": 4
   }
 }
 ```

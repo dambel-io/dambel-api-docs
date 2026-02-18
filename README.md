@@ -221,9 +221,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`GET /api/v1/ratings`](ratings/index.md)
 - [`POST /api/v1/ratings`](ratings/create.md)
 - [`GET /api/v1/ratings/all`](ratings/all.md)
-- `/api/v1/ratings/{rating-id}`
-    - [`PUT`](ratings/update.md)
-    - [`DELETE`](ratings/delete.md)
+- [`DELETE /api/v1/ratings/{rating-id}`](ratings/delete.md)
 
 ## Posts
 - [`GET /api/v1/posts`](posts/index.md)
