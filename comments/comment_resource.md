@@ -11,6 +11,7 @@ Represents a comment entity, including its content, relationships, and timestamp
 |-------------------|--------|---------------------------------------------------------|
 | id                | int    | Unique identifier for the comment                       |
 | user_id           | int    | ID of the user who created the comment                  |
+| user              | object | The commenter as [User Resource](../users/user_resource.md) |
 | commentable_type  | string | The type of the resource being commented on             |
 | commentable_id    | int    | The ID of the resource being commented on               |
 | is_user_commentable_client    | boolean    | True if the commenter user is client of the commentable (e.g. subscriber of the gym)               |
@@ -27,6 +28,15 @@ Represents a comment entity, including its content, relationships, and timestamp
 {
   "id": 123,
   "user_id": 456,
+  "user": {
+    "id": 456,
+    "username": "johndoe",
+    "first_name": "John",
+    "last_name": "Doe",
+    "created_at": "2024-01-01 00:00:00",
+    "media": [],
+    "current_subscription": null
+  },
   "commentable_type": "App\\Models\\Gyms\\Gym",
   "commentable_id": 42,
   "is_user_commentable_client": false,

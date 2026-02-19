@@ -55,6 +55,7 @@ Returns the created comment resource.
   "comment": {
     "id": 123,
     "user_id": 456,
+    "user": { /* User Resource (commenter) */ },
     "commentable_type": "App\\Models\\Gyms\\Gym",
     "commentable_id": 42,
     "content": "Great gym!",
