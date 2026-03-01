@@ -10,7 +10,7 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 ## Permissions
 | Permission      | Description                                                                 |
 |-----------------|-----------------------------------------------------------------------------|
-| `gyms.view_all` | View all gyms, including inactive ones (admin only). Without this, only active gyms are returned. |
+| `gyms.view_all` | View all gyms, including inactive ones (admin only). Without this permission, only active gyms are returned, except users can always see their own inactive gyms. |
 
 ---
 
