@@ -82,7 +82,7 @@ Returns a success message when the reset code SMS is sent successfully.
 1. The system validates that the provided phone number exists in the database
 2. Generates a 6-digit verification code
 3. Stores the hashed code in the database with a 24-hour expiration
-4. Sends the code via SMS using Kavenegar service
+4. Sends the code via SMS using SMS.ir service
 5. Returns success message (code is never returned in the response for security)
 
 ---

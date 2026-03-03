@@ -90,7 +90,7 @@ When [referral score](../users/user_resource.md#referral-score) of a user increa
 ## How it works
 1. **Step 1**: Client sends user registration data without `confirmation_code`
 2. **Validation**: System validates all input parameters and checks for existing users
-3. **SMS Code**: If validation passes, generates 6-digit code and sends via SMS using Kavenegar service
+3. **SMS Code**: If validation passes, generates 6-digit code and sends via SMS using SMS.ir service
 4. **Step 2**: Client sends same data plus the received `confirmation_code`
 5. **Verification**: System verifies the code (checks validity and expiration - 10 minutes for registration)
 6. **Account Creation**: If code is valid, creates user account and returns API token
