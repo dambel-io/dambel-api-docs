@@ -47,6 +47,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ## Gyms
 - [`GET /api/v1/gyms`](gyms/index.md)
 - [`POST /api/v1/gyms`](gyms/create.md)
+- [`POST /api/v1/gyms/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
 - `/api/v1/gyms/{gym-id}`
     - [`PUT`](gyms/update.md)
     - [`DELETE`](gyms/delete.md)
@@ -77,7 +78,6 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - [`PUT`](gyms/admins/update.md)
         - [`DELETE`](gyms/admins/delete.md)
     - [`POST /subscriptions/subscribe/{plan-id}`](gyms/subscriptions/subscribe.md)
-    - [`GET /subscriptions/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
     - [`POST /subscriptions/checkin/{subscription-id}`](gyms/subscriptions/checkin.md)
     - [`POST /subscriptions/checkout/{subscription-id}`](gyms/subscriptions/checkout.md)
     - [`DELETE /subscriptions/delete-checkin/{subscription-id}/{checkin-id}`](gyms/subscriptions/delete-checkin.md)
