@@ -19,6 +19,7 @@ Represents a gym entity with all its attributes, relationships, and status infor
 | created_at       | string (datetime)   | Creation timestamp                                                                         |
 | updated_at       | string (datetime)   | Last update timestamp                                                                      |
 | show_crowd       | bool                | Whether crowd information is displayed                                                     |
+| user_id          | int                 | User ID of the gym owner                                                                   |
 | crowd            | int\|null           | Current crowd count (null if show_crowd is false)                                          |
 | city             | City Resource       | City where the gym is located ([see here](../admin/cities/city_resource.md))               |
 | majors           | Major Resource[]    | List of majors associated with the gym ([see here](../admin/majors/major_resource.md))     |
@@ -45,6 +46,7 @@ Represents a gym entity with all its attributes, relationships, and status infor
   "created_at": "2023-01-01 10:00:00",
   "updated_at": "2023-01-01 10:00:00",
   "show_crowd": false,
+  "user_id": 5,
   "crowd": null,
   "city": {
     "id": 5,
