@@ -1,4 +1,4 @@
-# GET /api/v1/gyms/{gym-id}/peak-hours
+# GET /api/v1/gyms/{gym-id}/data/peak-hours
 
 Retrieves peak hours graph data for a gym on a specific weekday within a given date range.
 
@@ -31,7 +31,7 @@ Retrieves peak hours graph data for a gym on a specific weekday within a given d
 
 ## Request Example
 ```
-GET /api/v1/gyms/42/peak-hours?weekday=monday&start_date=2024-01-01&end_date=2024-01-31
+GET /api/v1/gyms/42/data/peak-hours?weekday=monday&start_date=2024-01-01&end_date=2024-01-31
 Authorization: Bearer {token}
 ```
 

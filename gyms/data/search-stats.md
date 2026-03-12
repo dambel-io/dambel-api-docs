@@ -1,4 +1,4 @@
-# GET /api/v1/gyms/{gym-id}/search-stats
+# GET /api/v1/gyms/{gym-id}/data/search-stats
 
 Receive chart data of search stats in the given date range and filters for the gym.
 
@@ -31,7 +31,7 @@ Receive chart data of search stats in the given date range and filters for the g
 
 ## Request Example
 ```
-GET /api/v1/gyms/42/search-stats?group=day&start_date=2024-01-01&end_date=2024-01-31
+GET /api/v1/gyms/42/data/search-stats?group=day&start_date=2024-01-01&end_date=2024-01-31
 Authorization: Bearer {token}
 ```
 
