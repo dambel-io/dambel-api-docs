@@ -6,16 +6,17 @@ Represents a workout plan in the system.
 ---
 
 ## Schema
-| Field         | Type    | Description                                 |
-|-------------- |---------|---------------------------------------------|
-| `id`          | integer | Workout plan ID                             |
-| `user_id`     | integer | User ID (creator)                           |
-| `trainee_id`  | integer | Trainee ID                                  |
-| `title`       | string  | Title                                       |
-| `description` | string  | Description                                 |
-| `is_active`   | boolean | Is it the current active plan that the athlete is following |
-| `created_at`  | string  | Creation timestamp                          |
-| `sessions`    | array   | List of [Workout Plan Session Resource](sessions/workout_plan_session_resource.md) |
+| Field         | Type                                                      | Description                                 |
+|-------------- |-----------------------------------------------------------|---------------------------------------------|
+| `id`          | integer                                                   | Workout plan ID                             |
+| `user_id`     | integer                                                   | User ID (creator)                           |
+| `trainee_id`  | integer                                                   | Trainee ID                                  |
+| `trainee`     | [TraineeResource](../trainees/trainee_resource.md)        | Trainee resource (when loaded)              |
+| `title`       | string                                                    | Title                                       |
+| `description` | string                                                    | Description                                 |
+| `is_active`   | boolean                                                   | Is it the current active plan that the athlete is following |
+| `created_at`  | string                                                    | Creation timestamp                          |
+| `sessions`    | array                                                     | List of [Workout Plan Session Resource](sessions/workout_plan_session_resource.md) |
 
 ---
 
@@ -25,6 +26,7 @@ Represents a workout plan in the system.
   "id": 123,
   "user_id": 123,
   "trainee_id": 123,
+  "trainee": <trainee resource>,
   "title": "...",
   "description": "...",
   "created_at": "2020-01-01 00:00:00",

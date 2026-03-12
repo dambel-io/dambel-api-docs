@@ -6,17 +6,18 @@ Represents a diet plan.
 ---
 
 ## Schema
-| Field         | Type    | Description                                 |
-|---------------|---------|---------------------------------------------|
-| `id`          | integer | Diet plan ID                                |
-| `user_id`     | integer | User ID who owns the plan                   |
-| `trainee_id`  | integer | Trainee ID (if applicable)                  |
-| `title`       | string  | Title of the diet plan                      |
-| `description` | string  | Description                                 |
-| `is_active`   | boolean | Is it the current active plan that the athlete is following                  |
-| `target_daily_water` | float  | Suggested daily water consumption in liters                                 |
-| `created_at`  | string  | Creation timestamp (YYYY-MM-DD HH:MM:SS)    |
-| `meals`       | array   | List of [Diet Plan Meal Resource](meals/diet_plan_meal_resource.md) |
+| Field         | Type                                                      | Description                                 |
+|---------------|-----------------------------------------------------------|---------------------------------------------|
+| `id`          | integer                                                   | Diet plan ID                                |
+| `user_id`     | integer                                                   | User ID who owns the plan                   |
+| `trainee_id`  | integer                                                   | Trainee ID (if applicable)                  |
+| `trainee`     | [TraineeResource](../trainees/trainee_resource.md)        | Trainee resource (when loaded)              |
+| `title`       | string                                                    | Title of the diet plan                      |
+| `description` | string                                                    | Description                                 |
+| `is_active`   | boolean                                                   | Is it the current active plan that the athlete is following                  |
+| `target_daily_water` | float                                                | Suggested daily water consumption in liters                                 |
+| `created_at`  | string                                                    | Creation timestamp (YYYY-MM-DD HH:MM:SS)    |
+| `meals`       | array                                                     | List of [Diet Plan Meal Resource](meals/diet_plan_meal_resource.md) |
 
 ---
 
@@ -26,6 +27,7 @@ Represents a diet plan.
   "id": 123,
   "user_id": 123,
   "trainee_id": 123,
+  "trainee": <trainee resource>,
   "title": "...",
   "description": "...",
   "is_active": true,
