@@ -107,6 +107,8 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/education/{education-id}`
         - [`PUT`](users/education/update.md)
         - [`DELETE`](users/education/delete.md)
+- [`POST /api/v1/users/fcm/register-token`](users/fcm/register-token.md)
+- [`POST /api/v1/users/fcm/unregister-token`](users/fcm/unregister-token.md)
 
 ## Training
 - [`GET /api/v1/training/services`](training/services/index.md)
