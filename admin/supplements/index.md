@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/supplements`
+# GET /api/v1/admin/supplements
 
 Retrieve a list of supplements.
 

@@ -1,4 +1,4 @@
-# `POST /api/v1/users/{user-id}/education`
+# POST /api/v1/users/{user-id}/education
 
 Create an education record for a user.
 
@@ -27,16 +27,18 @@ Create an education record for a user.
 ## Response
 
 ### 201 Created
-```
-<education resource>
+```json
+{ /* education resource */ }
 ```
 - [Education Resource](education_resource.md)
 
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

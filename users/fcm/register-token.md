@@ -1,4 +1,4 @@
-# `POST /api/v1/users/fcm/register-token`
+# POST /api/v1/users/fcm/register-token
 
 Register an FCM token for the authenticated user to receive push notifications.
 
@@ -31,8 +31,10 @@ This endpoint requires authentication via Sanctum token.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
+| Status | Description      | Reference                                                       |
+|--------|------------------|-----------------------------------------------------------------|
+| 422    | Validation error | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized     | [Authentication error](../../_globals/authentication-errors.md) |
 
 ---
 

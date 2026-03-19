@@ -1,4 +1,4 @@
-# `/api/v1/training/trainees/{trainee-id}`
+# /api/v1/training/trainees/{trainee-id}
 
 Update a trainee record.
 
@@ -26,8 +26,8 @@ Update a trainee record.
 ## Response
 
 ### 200 OK
-```
-<trainee resource>
+```json
+{ /* trainee resource */ }
 ```
 - See [Trainee Resource](trainee_resource.md)
 

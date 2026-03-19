@@ -1,4 +1,4 @@
-# `GET /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises`
+# GET /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises
 
 Retrieve a list of exercises for a workout plan session.
 
@@ -26,8 +26,10 @@ Retrieve a list of exercises for a workout plan session.
 ---
 
 ## Error Responses
-- **401 Unauthorized:** [Authentication error](../../../../_globals/authentication-errors.md)
-- **404 Not Found:** [Not-found error](../../../../_globals/not-found-errors.md)
-- **403 Forbidden:** [Permission error](../../../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                             |
+|--------|---------------------------|-----------------------------------------------------------------------|
+| 401    | Unauthorized              | [Authentication error](../../../../_globals/authentication-errors.md) |
+| 404    | Not found                 | [Not-found error](../../../../_globals/not-found-errors.md)           |
+| 403    | Forbidden (no permission) | [Permission error](../../../../_globals/permission-errors.md)         |
 
 ---

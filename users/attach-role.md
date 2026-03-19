@@ -1,4 +1,4 @@
-# `POST /api/v1/users/{user-id}/attach-role/{role-id}`
+# POST /api/v1/users/{user-id}/attach-role/{role-id}
 
 Attach a role to a user.
 
@@ -24,15 +24,11 @@ Attach a role to a user.
 ---
 
 ## Error Responses
-- **400 Bad Request:**
-  - User already has this role
-  ```
-  {
-    "error": "User already has this role"
-  }
-  ```
-- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
-- **404 Not Found:** Role or user not found ([Not-found error](../_globals/not-found-errors.md))
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 400    | User already has this role |                                                                |
+| 401    | Unauthorized              | [Authentication error](../_globals/authentication-errors.md)    |
+| 403    | Forbidden (no permission) | [Permission error](../_globals/permission-errors.md)            |
+| 404    | Not found                 | [Not-found error](../_globals/not-found-errors.md)              |
 
 ---

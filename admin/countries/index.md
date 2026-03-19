@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/countries`
+# GET /api/v1/admin/countries
 
 Retrieve a list of countries in alphabetical order.
 

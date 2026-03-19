@@ -38,12 +38,14 @@ Creates a check-in record for a gym subscription.
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created check-in resource.
 
 #### Example
 ```json
-{ /* gym subscription check-in resource */ }
+{
+  "data": { /* gym subscription check-in resource */ }
+}
 ```
 
 For a full schema, see [Gym Subscription Check-in Resource](gym_subscription_checkin_resource.md).

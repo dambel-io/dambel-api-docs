@@ -1,4 +1,4 @@
-# `POST /api/v1/admin/equipment`
+# POST /api/v1/admin/equipment
 
 Create a new equipment item.
 
@@ -24,10 +24,10 @@ Create a new equipment item.
 
 ## Response
 
-### 201 Created
-```
+### 200 OK
+```json
 {
-  "equipment": {<equipment resource>}
+  "data": { /* equipment resource */ }
 }
 ```
 - [Equipment Resource](equipment_resource.md)
@@ -35,8 +35,10 @@ Create a new equipment item.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

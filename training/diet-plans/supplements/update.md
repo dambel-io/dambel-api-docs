@@ -1,4 +1,4 @@
-# `PUT /api/v1/training/diet-plans/{diet-plan-id}/supplements/{supplement-id}`
+# PUT /api/v1/training/diet-plans/{diet-plan-id}/supplements/{supplement-id}
 You can update a supplement from a diet plan using this API.
 
 
@@ -19,7 +19,9 @@ You can update a supplement from a diet plan using this API.
 
 ### 200 OK
 ```json
-<diet plan supplement resource>
+{
+  "data": { /* diet plan supplement resource */ }
+}
 ```
 
 [Diet Plan Supplement Resource](diet_plan_supplement_resource.md)

@@ -1,4 +1,4 @@
-# `GET /api/v1/training/diet-plans/{diet-plan-id}/supplements`
+# GET /api/v1/training/diet-plans/{diet-plan-id}/supplements
 You can create a supplement for a diet plan using this API.
 
 

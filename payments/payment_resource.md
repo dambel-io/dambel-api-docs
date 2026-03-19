@@ -13,7 +13,7 @@ Represents a payment transaction, including its type, amount, status, and associ
 | type          | string  | Type of payment (see below)                      | "deposit"             |
 | amount        | number  | Amount of the payment                            | 100.0                  |
 | description   | string  | Description of the payment                       | "Subscription fee"     |
-| payable_type  | string  | Type of the payable resource (e.g., `App\\Models\\Gym`) | "App\\Models\\Gym"      |
+| payable_type  | string  | Type of the payable resource (e.g., `App\Models\Gym`) | "App\\Models\\Gym"      |
 | payable_id    | int     | ID of the payable resource                       | 456                    |
 | meta          | object  | Additional metadata (if any)                     | { ... }                |
 | is_done       | bool    | Whether the payment is completed                 | true                   |

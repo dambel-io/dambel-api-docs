@@ -1,4 +1,4 @@
-# `/api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}`
+# /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}
 
 Update a session in a specific workout plan.
 
@@ -27,8 +27,10 @@ Update a session in a specific workout plan.
 ## Response
 
 ### 200 OK
-```
-<workout plan session resource>
+```json
+{
+  "data": { /* workout plan session resource */ }
+}
 ```
 - See [Workout Plan Session Resource](workout_plan_session_resource.md)
 

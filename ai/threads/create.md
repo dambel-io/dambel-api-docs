@@ -22,7 +22,7 @@ Creates a new AI thread.
 ## Request Example
 ```json
 {
-  "title": "My Thread",
+  "title": "My Thread"
 }
 ```
 
@@ -30,12 +30,14 @@ Creates a new AI thread.
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created AI thread resource.
 
 #### Example
 ```json
-{ /* ai thread resource */ }
+{
+  "data": { /* ai thread resource */ }
+}
 ```
 
 For a full schema, see [AI Thread Resource](ai_thread_resource.md).

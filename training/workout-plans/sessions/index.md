@@ -1,4 +1,4 @@
-# `/api/v1/training/workout-plans/{workout-plan-id}/sessions`
+# /api/v1/training/workout-plans/{workout-plan-id}/sessions
 
 Retrieve a list of sessions for a specific workout plan.
 

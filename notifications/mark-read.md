@@ -1,4 +1,4 @@
-# PUT /api/v1/mark-read/{notification-id?}
+# PUT /api/v1/notifications/mark-read/{notification-id?}
 
 Marks one or all notifications as read for the authenticated user. If `notification-id` is omitted, all unread notifications will be marked as read.
 

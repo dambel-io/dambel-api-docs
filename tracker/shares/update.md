@@ -52,10 +52,12 @@ Update an existing shared tracker configuration.
 ## Response
 
 ### 200 OK
+```json
+{
+  "data": { /* shared tracker resource */ }
+}
 ```
-<shared tracker resource>
-```
-- See [Shared Tracker Resource](shared_tracker_resource.md)
+See [Shared Tracker Resource](shared_tracker_resource.md).
 
 ---
 
@@ -69,36 +71,11 @@ Update an existing shared tracker configuration.
 
 ---
 
-## Example Request
-
-```bash
-curl -X PUT "https://api.example.com/api/v1/tracker/shares/1" \
-  -H "Authorization: Bearer {token}" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "description": "Updated January fitness tracking data",
-    "include_weight": true,
-    "notify_workout": true
-  }'
-```
-
-## Example Response
-
-```json
-{
-  "data": <shared tracker resource>
-}
-```
-
-See [Shared Tracker Resource](shared_tracker_resource.md) for the complete response structure.
-
----
-
 ## Notes
 
 - Users can only update shared trackers where they are either the owner (`user_id`) or the viewer (`viewer_user_id`)
 - Only the fields provided in the request will be updated
 - The `user_id` and `viewer_user_id` fields cannot be modified
-- Partial updates are supported - only include the fields you want to change
+- Partial updates are supported — only include the fields you want to change
 - The `end_date` validation rule only applies when both `start_date` and `end_date` are provided
 - Setting dates to `null` removes date restrictions for the shared tracker

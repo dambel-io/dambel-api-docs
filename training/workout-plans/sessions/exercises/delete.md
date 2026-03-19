@@ -1,4 +1,4 @@
-# `DELETE /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises/{exercise-id}`
+# DELETE /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises/{exercise-id}
 
 Delete an exercise from a workout plan session.
 
@@ -21,8 +21,10 @@ No content is returned when the exercise is deleted successfully.
 ---
 
 ## Error Responses
-- **401 Unauthorized:** [Authentication error](../../../../_globals/authentication-errors.md)
-- **404 Not Found:** [Not-found error](../../../../_globals/not-found-errors.md)
-- **403 Forbidden:** [Permission error](../../../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                             |
+|--------|---------------------------|-----------------------------------------------------------------------|
+| 401    | Unauthorized              | [Authentication error](../../../../_globals/authentication-errors.md) |
+| 404    | Not found                 | [Not-found error](../../../../_globals/not-found-errors.md)           |
+| 403    | Forbidden (no permission) | [Permission error](../../../../_globals/permission-errors.md)         |
 
 ---

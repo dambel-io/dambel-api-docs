@@ -61,6 +61,6 @@ Returns an object with hour keys and visit counts for the specified weekday.
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 401    | Unauthorized               | [Authentication error](../authentication-errors.md) |
-| 403    | Forbidden (no permission)  | [Permission error](../permission-errors.md) |
-| 404    | Not found                  | [Not-found error](../not-found-errors.md) |
+| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
+| 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |

@@ -39,23 +39,16 @@ Creates a new comment on a specified resource (e.g., gym, post, or training serv
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created comment resource.
-
-#### Schema
-```json
-{
-  "comment": { /* Comment Resource */ }
-}
-```
 
 #### Example
 ```json
 {
-  "comment": {
+  "data": {
     "id": 123,
     "user_id": 456,
-    "user": { /* User Resource (commenter) */ },
+    "user": { /* user resource */ },
     "commentable_type": "App\\Models\\Gyms\\Gym",
     "commentable_id": 42,
     "content": "Great gym!",

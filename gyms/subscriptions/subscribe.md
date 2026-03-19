@@ -23,12 +23,14 @@ Authorization: Bearer {token}
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created gym subscription resource.
 
 #### Example
 ```json
-{ /* gym subscription resource */ }
+{
+  "data": { /* gym subscription resource */ }
+}
 ```
 
 For a full schema, see [Gym Subscription Resource](gym_subscription.md).

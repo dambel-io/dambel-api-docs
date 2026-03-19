@@ -27,8 +27,10 @@ Update a supplement record in the tracker system.
 ## Response
 
 ### 200 OK
-```
-<tracker supplement resource>
+```json
+{
+  "data": { /* tracker supplement resource */ }
+}
 ```
 - See [Tracker Supplement Resource](tracker_supplement_resource.md)
 

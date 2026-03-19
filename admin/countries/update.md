@@ -1,4 +1,4 @@
-# `PUT /api/v1/admin/countries/{country-id}`
+# PUT /api/v1/admin/countries/{country-id}
 
 Update an existing country.
 
@@ -25,7 +25,7 @@ Update an existing country.
 ### 200 OK
 ```json
 {
-  "country": {<country resource>}
+  "data": { /* country resource */ }
 }
 ```
 - [Country Resource](country_resource.md)
@@ -33,8 +33,10 @@ Update an existing country.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

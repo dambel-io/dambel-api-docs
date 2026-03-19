@@ -1,4 +1,4 @@
-# `GET /api/v1/training/diet-plans/{diet-plan-id}/meals`
+# GET /api/v1/training/diet-plans/{diet-plan-id}/meals
 You can create a meal for a diet plan using this API.
 
 

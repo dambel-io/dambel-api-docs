@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/cities`
+# GET /api/v1/admin/cities
 
 Retrieve a list of cities in alphabetical order. Optionally filter by state.
 

@@ -1,4 +1,4 @@
-# `/api/v1/training/diet-plans`
+# /api/v1/training/diet-plans
 
 Retrieve a list of your own and your trainees' diet plans.
 

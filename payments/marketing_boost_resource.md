@@ -9,7 +9,7 @@ Represents a marketing boost applied to a resource (e.g., gym, training service)
 | Field           | Type    | Description                                      | Example                |
 |-----------------|---------|--------------------------------------------------|------------------------|
 | id              | int     | Unique identifier for the boost                  | 123                    |
-| boostable_type  | string  | Type of the boosted resource (e.g., `App\\Models\\Gym`) | "App\\Models\\Gym"      |
+| boostable_type  | string  | Type of the boosted resource (e.g., `App\Models\Gym`) | "App\\Models\\Gym"      |
 | boostable_id    | int     | ID of the boosted resource                       | 123                    |
 | level           | int     | Level of the boost                               | 1                      |
 | starts_at       | string  | Start timestamp (ISO 8601 format)                | "2025-01-01 00:00:00" |

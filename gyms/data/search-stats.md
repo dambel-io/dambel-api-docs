@@ -1,6 +1,6 @@
 # GET /api/v1/gyms/{gym-id}/data/search-stats
 
-Receive chart data of search stats in the given date range and filters for the gym.
+Retrieve chart data of search stats in the given date range and filters for the gym.
 
 
 ---
@@ -14,24 +14,24 @@ Receive chart data of search stats in the given date range and filters for the g
 ---
 
 ## URL Parameters
-| Name    | Type | Required | Description                | Example |
-|---------|------|----------|----------------------------|---------|
-| gym-id  | int  | Yes      | ID of the gym              | 42      |
+| Name   | Type | Required | Description       | Example |
+|--------|------|----------|-------------------|---------|
+| gym-id | int  | Yes      | ID of the gym     | 42      |
 
 ---
 
 ## Query Parameters
-| Name         | Type    | Required | Description                                                      | Example                |
-|--------------|---------|----------|------------------------------------------------------------------|------------------------|
-| start_date   | string  | No       | Start of date range (YYYY-MM-DD)                                 | "2024-01-01"          |
-| end_date     | string  | No       | End of date range (YYYY-MM-DD)                                   | "2024-01-31"          |
-| group_by  | string  | No       | How to group the chart data: "day", "week", "month"                                            | "day"          |
+| Name       | Type   | Required | Description                                         | Example        |
+|------------|--------|----------|-----------------------------------------------------|----------------|
+| start_date | string | No       | Start of date range (YYYY-MM-DD)                    | "2024-01-01"  |
+| end_date   | string | No       | End of date range (YYYY-MM-DD)                      | "2024-01-31"  |
+| group_by   | string | No       | How to group the chart data: `day`, `week`, `month` | "day"         |
 
 ---
 
 ## Request Example
 ```
-GET /api/v1/gyms/42/data/search-stats?group=day&start_date=2024-01-01&end_date=2024-01-31
+GET /api/v1/gyms/42/data/search-stats?group_by=day&start_date=2024-01-01&end_date=2024-01-31
 Authorization: Bearer {token}
 ```
 
@@ -48,7 +48,7 @@ Returns chart data.
   "labels": ["2025-01", "2025-02", "2025-03"],
   "data": {
     "views": [1200, 800, 1000],
-    "clicks": [50, 60, 80],
+    "clicks": [50, 60, 80]
   }
 }
 ```
@@ -56,6 +56,8 @@ Returns chart data.
 ---
 
 ### Error Responses
-| Status | Description                | Reference                                      |
-|--------|----------------------------|------------------------------------------------|
-| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
+| 404    | Not found                 | [Not-found error](../../_globals/not-found-errors.md)           |

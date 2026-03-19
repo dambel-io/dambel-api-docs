@@ -1,4 +1,4 @@
-# `POST /api/v1/admin/countries`
+# POST /api/v1/admin/countries
 
 Create a new country.
 
@@ -22,10 +22,10 @@ Create a new country.
 
 ## Response
 
-### 201 Created
-```
+### 200 OK
+```json
 {
-  "country": {<country resource>}
+  "data": { /* country resource */ }
 }
 ```
 - [Country Resource](country_resource.md)
@@ -33,8 +33,10 @@ Create a new country.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

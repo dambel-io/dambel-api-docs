@@ -1,4 +1,4 @@
-# `GET /api/v1/training/workout-plans`
+# GET /api/v1/training/workout-plans
 
 Retrieve a list of your own and your trainees' workout plans.
 
@@ -40,7 +40,9 @@ Retrieve a list of your own and your trainees' workout plans.
 ---
 
 ## Error Responses
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

@@ -51,20 +51,20 @@ Creates a new gym. This endpoint can be used by regular users to create their ow
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created gym resource.
 
 #### Schema
 ```json
 {
-  "gym": { /* Gym Resource */ }
+  "data": { /* gym resource */ }
 }
 ```
 
 #### Example
 ```json
 {
-  "gym": {
+  "data": {
     "id": 123,
     "name": "Iron Paradise",
     "address": "123 Main St",

@@ -35,10 +35,18 @@ Retrieve a list of shared tracker configurations.
 ## Response
 
 ### 200 OK
+Returns a paginated list of shared tracker resources.
+
+```json
+{
+  "data": [ /* shared tracker resource */ ],
+  "current_page": 1,
+  "per_page": 100,
+  "total": 1
+}
 ```
-<shared tracker resource collection>
-```
-- See [Shared Tracker Resource](shared_tracker_resource.md)
+
+See [Shared Tracker Resource](shared_tracker_resource.md).
 
 ---
 
@@ -47,30 +55,6 @@ Retrieve a list of shared tracker configurations.
 |--------|--------------------|----------------------------------------------------------------|
 | 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
 | 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
-
----
-
-## Example Request
-
-```bash
-curl -X GET "https://api.example.com/api/v1/tracker/shares?user_id=123&include_wakeup=true&search=workout" \
-  -H "Authorization: Bearer {token}"
-```
-
-## Example Response
-
-```json
-{
-  "data": [
-    <shared tracker resource>
-  ],
-  "current_page": 1,
-  "per_page": 100,
-  "total": 1
-}
-```
-
-See [Shared Tracker Resource](shared_tracker_resource.md) for the complete resource structure.
 
 ---
 

@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/brands`
+# GET /api/v1/admin/brands
 
 Retrieve a list of brands in alphabetical order.
 

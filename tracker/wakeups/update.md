@@ -17,7 +17,9 @@ You can update a wakeup record in the tracker system using this API.
 
 ### 200 OK
 ```json
-<tracker wakeup resource>
+{
+  "data": { /* tracker wakeup resource */ }
+}
 ```
 
 [Tracker Wakeup Resource](tracker_wakeup_resource.md)

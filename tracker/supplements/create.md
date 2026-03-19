@@ -24,9 +24,11 @@ Record a new supplement in the tracker system.
 
 ## Response
 
-### 201 Created
-```
-<tracker supplement resource>
+### 200 OK
+```json
+{
+  "data": { /* tracker supplement resource */ }
+}
 ```
 - See [Tracker Supplement Resource](tracker_supplement_resource.md)
 

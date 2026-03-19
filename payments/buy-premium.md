@@ -35,17 +35,19 @@ Use [`/prices`](prices.md) to get plan names and discount rates.
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created user premium subscription resource.
 
 #### Example
 ```json
 {
-  "id": 1,
-  "user_id": 42,
-  "plan": "plus",
-  "starts_at": "2025-01-01 00:00:00",
-  "expires_at": "2026-01-01 00:00:00"
+  "data": {
+    "id": 1,
+    "user_id": 42,
+    "plan": "plus",
+    "starts_at": "2025-01-01 00:00:00",
+    "expires_at": "2026-01-01 00:00:00"
+  }
 }
 ```
 

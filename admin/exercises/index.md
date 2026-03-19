@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/exercises`
+# GET /api/v1/admin/exercises
 
 Retrieve a list of exercises in alphabetical order.
 

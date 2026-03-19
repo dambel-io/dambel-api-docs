@@ -1,4 +1,4 @@
-# `POST /api/v1/training/diet-plans/{diet-plan-id}/meals`
+# POST /api/v1/training/diet-plans/{diet-plan-id}/meals
 You can create a meal for a diet plan using this API.
 
 
@@ -21,9 +21,11 @@ You can create a meal for a diet plan using this API.
 
 ## Response
 
-### 201 Created
+### 200 OK
 ```json
-<diet plan meal resource>
+{
+  "data": { /* diet plan meal resource */ }
+}
 ```
 
 [Diet Plan Meal Resource](diet_plan_meal_resource.md)

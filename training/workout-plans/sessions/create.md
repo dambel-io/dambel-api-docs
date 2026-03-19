@@ -1,4 +1,4 @@
-# `/api/v1/training/workout-plans/{workout-plan-id}/sessions`
+# /api/v1/training/workout-plans/{workout-plan-id}/sessions
 
 Create a new session for a specific workout plan.
 
@@ -24,9 +24,11 @@ Create a new session for a specific workout plan.
 
 ## Response
 
-### 201 Created
-```
-<workout plan session resource>
+### 200 OK
+```json
+{
+  "data": { /* workout plan session resource */ }
+}
 ```
 - See [Workout Plan Session Resource](workout_plan_session_resource.md)
 

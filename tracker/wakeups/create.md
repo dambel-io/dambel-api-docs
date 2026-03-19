@@ -13,9 +13,11 @@ You can record a wakeup in the tracker system using this API.
 
 ## Response
 
-### 201 Created
+### 200 OK
 ```json
-<tracker wakeup resource>
+{
+  "data": { /* tracker wakeup resource */ }
+}
 ```
 
 [Tracker Wakeup Resource](tracker_wakeup_resource.md)

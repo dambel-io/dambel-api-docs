@@ -1,4 +1,4 @@
-# `POST /api/v1/admin/exercises`
+# POST /api/v1/admin/exercises
 
 Create a new exercise.
 
@@ -24,10 +24,10 @@ Create a new exercise.
 
 ## Response
 
-### 201 Created
-```
+### 200 OK
+```json
 {
-  "exercise": {<exercise resource>}
+  "data": { /* exercise resource */ }
 }
 ```
 - [Exercise Resource](exercise_resource.md)
@@ -35,8 +35,10 @@ Create a new exercise.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

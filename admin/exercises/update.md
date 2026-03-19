@@ -1,4 +1,4 @@
-# `PUT /api/v1/admin/exercises/{exercise-id}`
+# PUT /api/v1/admin/exercises/{exercise-id}
 
 Update an existing exercise.
 
@@ -29,7 +29,7 @@ Update an existing exercise.
 ### 200 OK
 ```json
 {
-  "exercise": {<exercise resource>}
+  "data": { /* exercise resource */ }
 }
 ```
 - [Exercise Resource](exercise_resource.md)
@@ -37,8 +37,10 @@ Update an existing exercise.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

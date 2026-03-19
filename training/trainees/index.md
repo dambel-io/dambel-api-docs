@@ -1,4 +1,4 @@
-# `/api/v1/training/trainees`
+# /api/v1/training/trainees
 
 Retrieve and search trainees.
 

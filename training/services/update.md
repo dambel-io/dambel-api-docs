@@ -1,4 +1,4 @@
-# `/api/v1/training/services/{training-service-id}`
+# /api/v1/training/services/{training-service-id}
 
 Update a training service.
 
@@ -30,8 +30,8 @@ Update a training service.
 ## Response
 
 ### 200 OK
-```
-<training service resource>
+```json
+{ /* training service resource */ }
 ```
 - See [Training Service Resource](training_service_resource.md)
 

@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/stats`
+# GET /api/v1/admin/stats
 
 Retrieve admin statistics including counts of users, gyms, and trainers.
 

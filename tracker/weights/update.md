@@ -26,8 +26,10 @@ Update a weight record in the tracker system.
 ## Response
 
 ### 200 OK
-```
-<tracker weight resource>
+```json
+{
+  "data": { /* tracker weight resource */ }
+}
 ```
 - See [Tracker Weight Resource](tracker_weight_resource.md)
 

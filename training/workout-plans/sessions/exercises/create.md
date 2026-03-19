@@ -1,4 +1,4 @@
-# `POST /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises`
+# POST /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}/exercises
 
 Create an exercise for a workout plan session.
 
@@ -26,18 +26,22 @@ Create an exercise for a workout plan session.
 
 ## Response
 
-### 201 Created
-```
-<workout plan exercise resource>
+### 200 OK
+```json
+{
+  "data": { /* workout plan exercise resource */ }
+}
 ```
 - [Workout Plan Exercise Resource](workout_plan_exercise_resource.md)
 
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../../../_globals/authentication-errors.md)
-- **404 Not Found:** [Not-found error](../../../../_globals/not-found-errors.md)
-- **403 Forbidden:** [Permission error](../../../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                             |
+|--------|---------------------------|-----------------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../../../_globals/authentication-errors.md) |
+| 404    | Not found                 | [Not-found error](../../../../_globals/not-found-errors.md)           |
+| 403    | Forbidden (no permission) | [Permission error](../../../../_globals/permission-errors.md)         |
 
 ---

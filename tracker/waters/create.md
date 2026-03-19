@@ -23,9 +23,11 @@ Record a new water intake in the tracker system.
 
 ## Response
 
-### 201 Created
-```
-<tracker water resource>
+### 200 OK
+```json
+{
+  "data": { /* tracker water resource */ }
+}
 ```
 - See [Tracker Water Resource](tracker_water_resource.md)
 

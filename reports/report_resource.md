@@ -9,7 +9,7 @@ Represents a report entity, including its associations, description, status, and
 | Field           | Type    | Description                                      | Example                |
 |-----------------|---------|--------------------------------------------------|------------------------|
 | id              | int     | Unique identifier for the report                 | 123                    |
-| reportable_type | string  | Type of the reportable (e.g., `App\\Models\\Gym`) | "App\\Models\\Gym"      |
+| reportable_type | string  | Type of the reportable (e.g., `App\Models\Gym`) | "App\\Models\\Gym"      |
 | reportable_id   | int     | ID of the reportable item                        | 456                    |
 | user_id         | int     | ID of the user who created the report            | 789                    |
 | description     | string  | Description of the report                        | "Broken equipment"     |

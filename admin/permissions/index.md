@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/permissions`
+# GET /api/v1/admin/permissions
 
 Retrieve a list of permissions.
 

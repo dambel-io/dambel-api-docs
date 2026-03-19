@@ -1,4 +1,4 @@
-# `PUT /api/v1/training/diet-plans/{diet-plan-id}/meals/{meal-id}`
+# PUT /api/v1/training/diet-plans/{diet-plan-id}/meals/{meal-id}
 You can update a meal from a diet plan using this API.
 
 
@@ -23,7 +23,9 @@ You can update a meal from a diet plan using this API.
 
 ### 200 OK
 ```json
-<diet plan meal resource>
+{
+  "data": { /* diet plan meal resource */ }
+}
 ```
 
 [Diet Plan Meal Resource](diet_plan_meal_resource.md)

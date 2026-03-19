@@ -1,4 +1,4 @@
-# `/api/v1/training/diet-plans/{diet-plan-id}`
+# /api/v1/training/diet-plans/{diet-plan-id}
 
 Update a diet plan.
 
@@ -29,8 +29,10 @@ Update a diet plan.
 ## Response
 
 ### 200 OK
-```
-<diet plan resource>
+```json
+{
+  "data": { /* diet plan resource */ }
+}
 ```
 - See [Diet Plan Resource](diet_plan_resource.md)
 

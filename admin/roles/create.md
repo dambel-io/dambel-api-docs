@@ -1,4 +1,4 @@
-# `POST /api/v1/admin/roles`
+# POST /api/v1/admin/roles
 
 Create a new role.
 
@@ -23,17 +23,21 @@ Create a new role.
 
 ## Response
 
-### 201 Created
-```
-<role resource>
+### 200 OK
+```json
+{
+  "data": { /* role resource */ }
+}
 ```
 - [Role Resource](role_resource.md)
 
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

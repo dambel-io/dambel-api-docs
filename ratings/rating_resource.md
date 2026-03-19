@@ -10,7 +10,7 @@ Represents a rating entity, including the user, ratable association, and score.
 |-------------- |---------|---------------------------------------------|
 | id            | int     | Unique identifier for the rating            |
 | user_id       | int     | ID of the user who created the rating       |
-| ratable_type  | string  | Type of the ratable (e.g., `App\\Models\\Gym`) |
+| ratable_type  | string  | Type of the ratable (e.g., `App\Models\Gym`) |
 | ratable_id    | int     | ID of the ratable item                      |
 | score         | int     | Score given (1-5)                           |
 

@@ -1,4 +1,4 @@
-# `POST /api/v1/admin/majors`
+# POST /api/v1/admin/majors
 
 Create a new major.
 
@@ -22,10 +22,10 @@ Create a new major.
 
 ## Response
 
-### 201 Created
-```
+### 200 OK
+```json
 {
-  "major": {<major resource>}
+  "data": { /* major resource */ }
 }
 ```
 - [Major Resource](major_resource.md)
@@ -33,8 +33,10 @@ Create a new major.
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

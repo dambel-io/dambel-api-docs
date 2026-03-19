@@ -40,20 +40,13 @@ Updates the content of an existing comment by its ID.
 ### 200 OK
 Returns the updated comment resource.
 
-#### Schema
-```json
-{
-  "comment": { /* Comment Resource */ }
-}
-```
-
 #### Example
 ```json
 {
-  "comment": {
+  "data": {
     "id": 123,
     "user_id": 456,
-    "user": { /* User Resource (commenter) */ },
+    "user": { /* user resource */ },
     "commentable_type": "App\\Models\\Gyms\\Gym",
     "commentable_id": 42,
     "content": "Updated comment!",

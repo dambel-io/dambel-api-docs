@@ -6,17 +6,17 @@ Represents a post entity, including its profile association, content, and draft 
 ---
 
 ## Schema
-| Field         | Type    | Description                                 |
-|-------------- |---------|---------------------------------------------|
-| id            | int     | Unique identifier for the post              |
-| profile_type  | string  | Type of the profile (e.g., `App\\Models\\User`) |
-| profile_id    | int     | ID of the profile the post belongs to        |
-| title         | string  | Title of the post                           |
-| content       | string  | Content of the post                         |
-| is_draft      | bool    | Whether the post is a draft                  |
-| created_at      | Datetime    | When the post is created                  |
-| updated_at      | Datetime    | When the post last updated                  |
-| media            | Media Resource[]    | List of media items ([see here](../media/media_resource.md))                               |
+| Field        | Type     | Description                                        |
+|--------------|----------|----------------------------------------------------|
+| id           | int      | Unique identifier for the post                     |
+| profile_type | string   | Type of the profile (e.g., `App\Models\User`)      |
+| profile_id   | int      | ID of the profile the post belongs to              |
+| title        | string   | Title of the post                                  |
+| content      | string   | Content of the post                                |
+| is_draft     | bool     | Whether the post is a draft                        |
+| created_at   | datetime | When the post was created                          |
+| updated_at   | datetime | When the post was last updated                     |
+| media        | array    | List of media items ([see here](../media/media_resource.md)) |
 
 ---
 
@@ -38,7 +38,7 @@ Represents a post entity, including its profile association, content, and draft 
       "attachable_id": 123,
       "link": "https://example.com/media/10.jpg"
     }
-  ],
+  ]
 }
 ```
 

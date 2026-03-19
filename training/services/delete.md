@@ -1,4 +1,4 @@
-# `/api/v1/training/services/{training-service-id}`
+# /api/v1/training/services/{training-service-id}
 
 Delete a training service from a user.
 

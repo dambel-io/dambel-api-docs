@@ -28,8 +28,10 @@ Update a workout record in the tracker system.
 ## Response
 
 ### 200 OK
-```
-<tracker workout resource>
+```json
+{
+  "data": { /* tracker workout resource */ }
+}
 ```
 - See [Tracker Workout Resource](tracker_workout_resource.md)
 

@@ -38,10 +38,9 @@ Sets the authenticated user's rating for a specified element (gym or training se
 ### 201 Created
 Returned when a new rating was created. Returns the created rating resource.
 
-#### Example
 ```json
 {
-  "rating": {
+  "data": {
     "id": 123,
     "user_id": 42,
     "ratable_type": "App\\Models\\Gym",
@@ -51,17 +50,14 @@ Returned when a new rating was created. Returns the created rating resource.
 }
 ```
 
-For a full schema, see [Rating Resource](rating_resource.md).
-
 ---
 
 ### 200 OK
-Returned when the user already had a rating for this element and it was updated. Returns the updated rating resource.
+Returned when the user already had a rating and it was updated. Returns the updated rating resource.
 
-#### Example
 ```json
 {
-  "rating": {
+  "data": {
     "id": 123,
     "user_id": 42,
     "ratable_type": "App\\Models\\Gym",
@@ -75,7 +71,7 @@ For a full schema, see [Rating Resource](rating_resource.md).
 
 ---
 
-### Error Responses
+## Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
 | 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |

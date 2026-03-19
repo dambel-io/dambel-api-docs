@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/majors`
+# GET /api/v1/admin/majors
 
 Retrieve a list of majors.
 

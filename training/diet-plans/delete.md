@@ -1,4 +1,4 @@
-# `/api/v1/training/diet-plans/{diet-plan-id}`
+# /api/v1/training/diet-plans/{diet-plan-id}
 
 Delete a diet plan.
 

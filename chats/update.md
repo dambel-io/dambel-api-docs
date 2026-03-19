@@ -43,7 +43,7 @@ Returns the updated chat resource.
 #### Example
 ```json
 {
-  "chat": { /* chat resource */ }
+  "data": { /* chat resource */ }
 }
 ```
 

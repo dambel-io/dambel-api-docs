@@ -25,9 +25,11 @@ Record a new workout in the tracker system.
 
 ## Response
 
-### 201 Created
-```
-<tracker workout resource>
+### 200 OK
+```json
+{
+  "data": { /* tracker workout resource */ }
+}
 ```
 - See [Tracker Workout Resource](tracker_workout_resource.md)
 

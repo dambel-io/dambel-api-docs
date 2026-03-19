@@ -1,4 +1,4 @@
-# `POST /api/v1/training/workout-plans`
+# POST /api/v1/training/workout-plans
 
 Create a new workout plan for yourself or a trainee.
 
@@ -27,16 +27,18 @@ Create a new workout plan for yourself or a trainee.
 ## Response
 
 ### 201 Created
-```
-<workout plan resource>
+```json
+{ /* workout plan resource */ }
 ```
 - [Workout Plan Resource](workout_plan_resource.md)
 
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

@@ -45,13 +45,13 @@ file=@photo.jpg
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created media resource.
 
 #### Example
 ```json
 {
-  "media": { /* media resource */ }
+  "data": { /* media resource */ }
 }
 ```
 

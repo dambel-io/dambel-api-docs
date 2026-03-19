@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/equipment`
+# GET /api/v1/admin/equipment
 
 Retrieve a list of equipment in alphabetical order.
 

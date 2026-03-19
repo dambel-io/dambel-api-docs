@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/states`
+# GET /api/v1/admin/states
 
 Retrieve a list of states in alphabetical order. Optionally filter by country.
 

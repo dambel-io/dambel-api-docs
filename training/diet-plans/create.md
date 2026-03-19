@@ -1,4 +1,4 @@
-# `/api/v1/training/diet-plans`
+# /api/v1/training/diet-plans
 
 Create a new diet plan.
 
@@ -28,8 +28,8 @@ Create a new diet plan.
 ## Response
 
 ### 201 Created
-```
-<diet plan resource>
+```json
+{ /* diet plan resource */ }
 ```
 - See [Diet Plan Resource](diet_plan_resource.md)
 

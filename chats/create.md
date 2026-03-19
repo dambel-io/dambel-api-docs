@@ -30,13 +30,13 @@ Creates a new chat with the specified users.
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created chat resource.
 
 #### Example
 ```json
 {
-  "chat": { /* chat resource */ }
+  "data": { /* chat resource */ }
 }
 ```
 

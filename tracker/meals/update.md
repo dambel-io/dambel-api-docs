@@ -31,8 +31,10 @@ Update a meal record in the tracker system.
 ## Response
 
 ### 200 OK
-```
-<tracker meal resource>
+```json
+{
+  "data": { /* tracker meal resource */ }
+}
 ```
 - See [Tracker Meal Resource](tracker_meal_resource.md)
 

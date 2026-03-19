@@ -7,14 +7,6 @@ Retrieves general data for premium plan prices, commission rates, and boost plan
 
 ---
 
-## Permissions
-| Permission           | Description                        |
-|----------------------|------------------------------------|
-| `payments.view_own`  | Access the payment system          |
-| `payments.view_prices`| View prices and commission rates   |
-
----
-
 ## Response
 
 ### 200 OK
@@ -26,7 +18,7 @@ Returns platform pricing and commission data.
   "gym_commission_rate": 0.01,
   "premium_plans": {
     "plus": {
-      "monthly_price": 999_000,
+      "monthly_price": 999000,
       "discount": 0,
       "yearly_price_discount": 0.85,
       "role": "user_plus"
@@ -46,10 +38,3 @@ Returns platform pricing and commission data.
   }
 }
 ```
-
----
-
-### Error Responses
-| Status | Description                | Reference                                      |
-|--------|----------------------------|------------------------------------------------|
-| 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |

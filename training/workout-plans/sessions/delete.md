@@ -1,4 +1,4 @@
-# `/api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}`
+# /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}
 
 Delete a session from a specific workout plan.
 

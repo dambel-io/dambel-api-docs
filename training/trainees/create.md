@@ -1,4 +1,4 @@
-# `/api/v1/training/trainees`
+# /api/v1/training/trainees
 
 Create a new trainee record.
 
@@ -27,8 +27,8 @@ Trainers can create trainees, and users can create a trainer from their side.
 ## Response
 
 ### 201 Created
-```
-<trainee resource>
+```json
+{ /* trainee resource */ }
 ```
 - See [Trainee Resource](trainee_resource.md)
 

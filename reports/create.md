@@ -34,13 +34,13 @@ Creates a new report for a specified element (e.g., gym, user).
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created report resource.
 
 #### Example
 ```json
 {
-  "report": {
+  "data": {
     "id": 123,
     "reportable_type": "App\\Models\\Gym",
     "reportable_id": 456,

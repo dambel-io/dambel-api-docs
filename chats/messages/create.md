@@ -39,12 +39,14 @@ Sends a message in a specific chat.
 
 ## Response
 
-### 201 Created
+### 200 OK
 Returns the created chat message resource.
 
 #### Example
 ```json
-{ /* chat message resource */ }
+{
+  "data": { /* chat message resource */ }
+}
 ```
 
 For a full schema, see [Chat Message Resource](chat_message_resource.md).

@@ -1,6 +1,6 @@
-# `/api/v1/training/services`
+# GET /api/v1/training/services
 
-Retrieve a list of training services for a user.
+Retrieve a list of training services.
 
 
 **No authentication required.**
@@ -8,15 +8,15 @@ Retrieve a list of training services for a user.
 ---
 
 ## Query Parameters
-| Name        | Type    | Required | Description                                                      |
-|-------------|---------|----------|------------------------------------------------------------------|
-| `service_id`| string  | No       | Filter by training service ID(s); comma-separated for multiple   |
-| `user_id`   | string  | No       | Filter by user IDs (comma-separated for multiple)                |
-| `category` | string  | No       | Filter by categories (comma-separated): `diet_plan`, `workout_plan`, `other` |
-| `major_ids`| string  | No       | Filter by major IDs (comma-separated for multiple)               |
-| `search`   | string  | No       | Search by title, description, and trainer name                                  |
-| `page`     | int     | No       | Page number for pagination                                       |
-| `sort`     | string  | No       | `asc` for oldest, `desc` for latest (default: `desc`)            |
+| Name         | Type   | Required | Description                                                             |
+|--------------|--------|----------|-------------------------------------------------------------------------|
+| `service_id` | string | No       | Filter by training service ID(s); comma-separated for multiple          |
+| `user_id`    | string | No       | Filter by user IDs (comma-separated for multiple)                       |
+| `category`   | string | No       | Filter by categories (comma-separated): `diet_plan`, `workout_plan`, `other` |
+| `major_ids`  | string | No       | Filter by major IDs (comma-separated for multiple)                      |
+| `search`     | string | No       | Search by title, description, and trainer name                          |
+| `page`       | int    | No       | Page number for pagination                                              |
+| `sort`       | string | No       | `asc` for oldest, `desc` for latest (default: `desc`)                   |
 
 > **Note:** Results are first sorted by marketing boosts; `sort` applies secondarily.
 
@@ -25,14 +25,14 @@ Retrieve a list of training services for a user.
 ## Response
 
 ### 200 OK
+Returns a paginated list of training service resources.
+
 ```json
 {
-  "data": [<training service resource>, ...],
-  "links": {<pagination data>},
-  "meta": {<pagination data>}
+  "data": [ { /* training service resource */ }, ... ],
+  "links": { /* pagination data */ },
+  "meta": { /* pagination data */ }
 }
 ```
-- See [Training Service Resource](training_service_resource.md)
-- See [Pagination Data](../../_globals/pagination-data.md) (per page: 50)
 
----
+See [Training Service Resource](training_service_resource.md) and [Pagination Data](../../_globals/pagination-data.md) (per page: 50).

@@ -1,4 +1,4 @@
-# `POST /api/v1/users/{user-id}/championships`
+# POST /api/v1/users/{user-id}/championships
 
 Create a championship record for a user.
 
@@ -25,16 +25,18 @@ Create a championship record for a user.
 ## Response
 
 ### 201 Created
-```
-<championship resource>
+```json
+{ /* championship resource */ }
 ```
 - [Championship Resource](championship_resource.md)
 
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---

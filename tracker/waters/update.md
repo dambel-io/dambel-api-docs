@@ -26,8 +26,10 @@ Update a water intake record in the tracker system.
 ## Response
 
 ### 200 OK
-```
-<tracker water resource>
+```json
+{
+  "data": { /* tracker water resource */ }
+}
 ```
 - See [Tracker Water Resource](tracker_water_resource.md)
 

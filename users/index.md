@@ -1,4 +1,4 @@
-# `GET /api/v1/users`
+# GET /api/v1/users
 
 Retrieve a paginated list of users, with support for advanced filtering and sorting.
 
@@ -52,7 +52,9 @@ Retrieve a paginated list of users, with support for advanced filtering and sort
 ---
 
 ## Error Responses
-- **401 Unauthorized:** [Authentication error](../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../_globals/permission-errors.md)
+| Status | Description               | Reference                                                    |
+|--------|---------------------------|--------------------------------------------------------------|
+| 401    | Unauthorized              | [Authentication error](../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../_globals/permission-errors.md)         |
 
 ---

@@ -23,9 +23,11 @@ Record a new weight in the tracker system.
 
 ## Response
 
-### 201 Created
-```
-<tracker weight resource>
+### 200 OK
+```json
+{
+  "data": { /* tracker weight resource */ }
+}
 ```
 - See [Tracker Weight Resource](tracker_weight_resource.md)
 

@@ -1,4 +1,4 @@
-# `DELETE /api/v1/training/diet-plans/{diet-plan-id}/meals/{meal-id}`
+# DELETE /api/v1/training/diet-plans/{diet-plan-id}/meals/{meal-id}
 You can delete a meal from a diet plan using this API.
 
 

@@ -10,7 +10,7 @@ Represents a user's subscription to a gym plan, including expiration, available 
 |--------------------------|---------|---------------------------------------------|------------------------|
 | id                       | int     | Unique identifier for the subscription      | 123                    |
 | user_id                  | int     | ID of the user                              | 789                    |
-| user.                    | object     | User resource object                              | 789                    |
+| user                     | object  | User resource object                              | { ... }                |
 | gym_plan                 | object  | Gym plan resource object                    | { ... }                |
 | expires_at               | string  | Expiration date (YYYY-MM-DD)                | "2025-01-01"          |
 | available_sessions_count | int     | Number of available sessions                | 16                     |

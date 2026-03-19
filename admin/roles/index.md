@@ -1,4 +1,4 @@
-# `GET /api/v1/admin/roles`
+# GET /api/v1/admin/roles
 
 Retrieve a list of roles.
 

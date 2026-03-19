@@ -25,8 +25,10 @@ Update a sleep record in the tracker system.
 ## Response
 
 ### 200 OK
-```
-<tracker sleep resource>
+```json
+{
+  "data": { /* tracker sleep resource */ }
+}
 ```
 - See [Tracker Sleep Resource](tracker_sleep_resource.md)
 

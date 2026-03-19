@@ -1,4 +1,4 @@
-# `POST /api/v1/training/diet-plans/{diet-plan-id}/supplements`
+# POST /api/v1/training/diet-plans/{diet-plan-id}/supplements
 You can create a supplement for a diet plan using this API.
 
 
@@ -17,9 +17,11 @@ You can create a supplement for a diet plan using this API.
 
 ## Response
 
-### 201 Created
+### 200 OK
 ```json
-<diet plan supplement resource>
+{
+  "data": { /* diet plan supplement resource */ }
+}
 ```
 
 [Diet Plan Supplement Resource](diet_plan_supplement_resource.md)

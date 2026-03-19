@@ -28,9 +28,11 @@ Record a new meal in the tracker system.
 
 ## Response
 
-### 201 Created
-```
-<tracker meal resource>
+### 200 OK
+```json
+{
+  "data": { /* tracker meal resource */ }
+}
 ```
 - See [Tracker Meal Resource](tracker_meal_resource.md)
 

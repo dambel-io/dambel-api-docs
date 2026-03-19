@@ -49,7 +49,7 @@ Returns stats for each type of payment record.
   "total_commission": 123,
   "total_deposit": 123,
   "total_withdrawal": 123,
-  "total_purchase": 123,
+  "total_purchase": 123
 }
 ```
 

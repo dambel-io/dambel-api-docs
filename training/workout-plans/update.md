@@ -1,4 +1,4 @@
-# `PUT /api/v1/training/workout-plans/{workout-plan-id}`
+# PUT /api/v1/training/workout-plans/{workout-plan-id}
 
 Update a workout plan.
 
@@ -28,16 +28,20 @@ Update a workout plan.
 ## Response
 
 ### 200 OK
-```
-<workout plan resource>
+```json
+{
+  "data": { /* workout plan resource */ }
+}
 ```
 - [Workout Plan Resource](workout_plan_resource.md)
 
 ---
 
 ## Error Responses
-- **422 Unprocessable Entity:** [Validation error](../../_globals/validation-errors.md)
-- **401 Unauthorized:** [Authentication error](../../_globals/authentication-errors.md)
-- **403 Forbidden:** [Permission error](../../_globals/permission-errors.md)
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
 ---
