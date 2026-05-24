@@ -16,6 +16,7 @@ This endpoint requires authentication via Sanctum token.
 | `token`       | string | Yes      | FCM registration token               |
 | `device_type` | string | No       | Device type (`ios`, `android`, `web`)|
 | `device_id`   | string | No       | Unique device identifier             |
+| `language`    | string | No       | Device language code (e.g. `en`, `fa`). Push notifications will be sent in this language. |
 
 ---
 
@@ -42,3 +43,5 @@ This endpoint requires authentication via Sanctum token.
 - If the token already exists for the user, it will be updated with the new device information
 - Multiple devices per user are supported
 - Tokens are used for sending push notifications via Firebase Cloud Messaging
+- When `language` is provided, push notification content (title and body) will be sent in that language for the specific device
+- If a user has devices with different languages, each device receives the notification translated to its registered language

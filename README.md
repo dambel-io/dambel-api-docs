@@ -256,6 +256,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ## Notifications
 - [`GET /api/v1/notifications`](notifications/index.md)
 - [`POST /api/v1/notifications/mark-read/{notification-id?}`](notifications/mark-read.md)
+- [`POST /api/v1/notifications/delete/{notification-id}`](notifications/delete.md)
 
 ## Reports
 - [`GET /api/v1/reports`](reports/index.md)
