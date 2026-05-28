@@ -19,6 +19,7 @@ This endpoint requires authentication but does not require any special permissio
 | `username`   | string  | No       | Username (max 255 characters, unique)                   |
 | `height`     | integer | No       | User's height in centimeters                            |
 | `birth_date` | date    | No       | User's birth date (format: YYYY-MM-DD)                  |
+| `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 
 **Notes:**
 - All parameters are optional. If omitted, they will not be updated.
@@ -60,6 +61,7 @@ Returns the updated user resource.
     "email": "john.doe@example.com",
     "username": "johndoe",
     "height": 180,
+    "gender": "male",
     "birth_date": "1990-05-15",
     "created_at": "2023-01-01T00:00:00.000000Z",
     "updated_at": "2023-01-15T10:30:00.000000Z",

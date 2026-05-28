@@ -19,6 +19,7 @@ Represents a user in the system.
 | `referrer_user_id`       | integer\|null   | Referring user ID, if any *(hidden for limited access)*                    |
 | `height`                 | integer\|null   | User's height in CM                                                        |
 | `birth_date`             | string (date)\|null| User's birth date                                                       |
+| `gender`             | string\|null| User's gender (`male`, `female`, `other`)                                                       |
 | `referral_score`         | integer         | User's referral score *(hidden for limited access)*                        |
 | `roles`                  | array           | List of [Role Resource](../admin/roles/role_resource.md) *(hidden for limited access)* |
 | `media`                  | array           | List of [Media Resource](../media/media_resource.md)                       |
@@ -42,6 +43,7 @@ Represents a user in the system.
   "referrer_user_id": null,
   "height": 180,
   "birth_date": "1990-01-01",
+  "gender": "male",
   "referral_score": 5,
   "roles": [<role resource>, ...],
   "media": [<media resource>, ...],

@@ -22,6 +22,7 @@ Create a new user in the system.
 | `username`   | string  | Yes      | Username (max 255, unique)          |
 | `height`     | integer | No       | User's height in CM                 |
 | `birth_date` | date    | No       | User's birth date                   |
+| `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 | `password`   | string  | Yes      | Password (will be hashed)           |
 
 ---

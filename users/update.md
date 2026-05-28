@@ -22,6 +22,7 @@ Update the information of a specific user.
 | `username`   | string  | No       | Username (max 255, unique)              |
 | `height`     | integer | No       | User's height in CM                     |
 | `birth_date` | date    | No       | User's birth date                       |
+| `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 | `password`   | string  | No       | New password (will be hashed)           |
 
 *All parameters are optional. If omitted, they will not be updated.*
