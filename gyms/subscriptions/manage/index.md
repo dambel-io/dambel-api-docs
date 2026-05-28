@@ -21,19 +21,20 @@ Retrieves a list of subscriptions for a specific gym, with filtering and paginat
 ---
 
 ## Query Parameters
-| Name             | Type    | Required | Description                                        | Example         |
-|------------------|---------|----------|----------------------------------------------------|-----------------|
-| page             | int     | No       | Page number for pagination                         | 1               |
-| user_id          | string  | No       | User ID(s), comma-separated                        | "10,20"        |
-| gym_plan_id      | string  | No       | Plan ID(s), comma-separated                        | "1,2,3"        |
-| expires_at_from  | string  | No       | Filter: subscriptions expiring after this date     | "2025-01-01"   |
-| expires_at_to    | string  | No       | Filter: subscriptions expiring before this date    | "2025-12-31"   |
+| Name             | Type    | Required | Description                                                                              | Example         |
+|------------------|---------|----------|------------------------------------------------------------------------------------------|-----------------|
+| page             | int     | No       | Page number for pagination                                                               | 1               |
+| user_name        | string  | No       | Search by subscriber's name, email, username, or phone                                  | "john"          |
+| user_id          | string  | No       | User ID(s), comma-separated                                                              | "10,20"        |
+| gym_plan_id      | string  | No       | Plan ID(s), comma-separated                                                              | "1,2,3"        |
+| expires_at_from  | string  | No       | Filter: subscriptions expiring after this date                                           | "2025-01-01"   |
+| expires_at_to    | string  | No       | Filter: subscriptions expiring before this date                                          | "2025-12-31"   |
 
 ---
 
 ## Request Example
 ```
-GET /api/v1/gyms/123/subscriptions/manage?user_id=10&gym_plan_id=1&page=1
+GET /api/v1/gyms/123/subscriptions/manage?user_name=john&gym_plan_id=1&page=1
 Authorization: Bearer {token}
 ```
 
