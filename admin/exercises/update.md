@@ -19,6 +19,8 @@ Update an existing exercise.
 | `name`         | string  | No       | Name of the exercise (max 255)     |
 | `link`         | string  | No       | Tutorial link (max 255, optional)  |
 | `description`  | string  | No       | Description (optional)             |
+| `major_ids`    | string  | No       | Comma-separated list of major IDs. Use `0` to detach all majors. |
+| `equipment_ids`| string  | No       | Comma-separated list of equipment IDs. Use `0` to detach all equipment. |
 
 *All parameters are optional. If omitted, they will not be updated.*
 

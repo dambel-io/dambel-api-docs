@@ -19,6 +19,9 @@ Update an existing equipment item.
 | `name`         | string  | No       | Name of the equipment (max 255)    |
 | `link`         | string  | No       | Tutorial link (max 255, optional)  |
 | `description`  | string  | No       | Description (optional)             |
+| `brand_ids`    | string  | No       | Comma-separated list of brand IDs. Use `0` to detach all brands. |
+| `major_ids`    | string  | No       | Comma-separated list of major IDs. Use `0` to detach all majors. |
+| `exercise_ids` | string  | No       | Comma-separated list of exercise IDs. Use `0` to detach all exercises. |
 
 *All parameters are optional. If omitted, they will not be updated.*
 
