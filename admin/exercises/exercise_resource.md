@@ -14,6 +14,10 @@ Represents an exercise in the system.
 | `description`           | string  | Description                |
 | `translated_description`| string  | Translated description     |
 | `link`                  | string  | Tutorial link (nullable)   |
+| `equipment_ids`         | array   | IDs of related equipment   |
+| `brand_ids`             | array   | IDs of related brands      |
+| `major_ids`             | array   | IDs of related majors      |
+| `exercise_ids`          | array   | Related exercise IDs (reserved) |
 
 ---
 
@@ -25,7 +29,11 @@ Represents an exercise in the system.
   "translated_title": "...",
   "description": "...",
   "translated_description": "...",
-  "link": "..."
+  "link": "...",
+  "equipment_ids": [],
+  "brand_ids": [],
+  "major_ids": [],
+  "exercise_ids": []
 }
 ```
 

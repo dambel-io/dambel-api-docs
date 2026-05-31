@@ -14,6 +14,10 @@ Represents an equipment item in the system.
 | `description`           | string  | Description                |
 | `translated_description`| string  | Translated description     |
 | `link`                  | string  | Tutorial link (nullable)   |
+| `exercise_ids`          | array   | IDs of related exercises   |
+| `brand_ids`             | array   | IDs of related brands      |
+| `major_ids`             | array   | IDs of related majors      |
+| `equipment_ids`         | array   | Related equipment IDs (reserved) |
 
 ---
 
@@ -25,7 +29,11 @@ Represents an equipment item in the system.
   "translated_title": "...",
   "description": "...",
   "translated_description": "...",
-  "link": "..."
+  "link": "...",
+  "exercise_ids": [],
+  "brand_ids": [],
+  "major_ids": [],
+  "equipment_ids": []
 }
 ```
 
