@@ -37,7 +37,23 @@ Deposit was successfully verified.
 {
   "message": "Deposit successful",
   "payment": {
-    /* payment resource */
+    "id": 123,
+    "user_id": 123,
+    "user": {
+      "id": 123,
+      "username": "jdoe",
+      "first_name": "John",
+      "last_name": "Doe",
+      "created_at": "2025-01-01 00:00:00"
+    },
+    "type": "deposit",
+    "amount": 100.0,
+    "description": "Subscription fee",
+    "payable_type": null,
+    "payable_id": null,
+    "meta": {},
+    "is_done": true,
+    "created_at": "2025-01-01 00:00:00"
   }
 }
 ```

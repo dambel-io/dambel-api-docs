@@ -18,6 +18,7 @@ Represents a payment transaction, including its type, amount, status, and associ
 | meta          | object  | Additional metadata (if any)                     | { ... }                |
 | is_done       | bool    | Whether the payment is completed                 | true                   |
 | created_at    | string  | Creation timestamp (ISO 8601 format)             | "2025-01-01 00:00:00" |
+| user          | object  | Full user object (see [User Resource](../users/user_resource.md))              | { ... }                |
 
 ---
 
@@ -36,6 +37,13 @@ The `type` field can be one of the following:
 {
   "id": 123,
   "user_id": 123,
+  "user": {
+    "id": 123,
+    "username": "jdoe",
+    "first_name": "John",
+    "last_name": "Doe",
+    "created_at": "2025-01-01 00:00:00"
+  },
   "type": "deposit",
   "amount": 100.0,
   "description": "Subscription fee",
