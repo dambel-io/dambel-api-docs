@@ -20,6 +20,7 @@ Creates a new post for a specified profile (gym or user).
 | title        | string | Yes      | Title of the post (max 255 characters)   | "My Workout"   |
 | content      | string | Yes      | Content of the post (max 2000 characters)| "Did squats..."|
 | is_draft     | bool   | No       | Whether the post is a draft              | false           |
+| in_blog      | bool   | No       | Publish the post on the website blog (requires `posts.update_any` permission) | false           |
 
 ---
 
@@ -30,7 +31,8 @@ Creates a new post for a specified profile (gym or user).
   "profile_id": 42,
   "title": "My Workout",
   "content": "Did squats and deadlifts.",
-  "is_draft": false
+  "is_draft": false,
+  "in_blog": false
 }
 ```
 
@@ -50,6 +52,7 @@ Returns the created post resource.
     "title": "My Workout",
     "content": "Did squats and deadlifts.",
     "is_draft": false,
+    "in_blog": false,
     "media": []
   }
 }

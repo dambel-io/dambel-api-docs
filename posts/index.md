@@ -18,6 +18,7 @@ Retrieves a list of posts, with support for filtering by profile type, profile I
 |---------|--------|----------|--------------------------------------------------------------------------------------|---------------------------------------|
 | type    | string | No       | Profile type (`App\Models\Gym`, `App\Models\User`). Comma-separated for multiple    | "App\\Models\\Gym,App\\Models\\User" |
 | item_id | int    | No       | Profile ID(s) to filter by (comma-separated for multiple)                            | "1,2,3"                               |
+| in_blog | bool   | No       | Filter posts by blog publication status (`true` for blog posts, `false` for regular posts) | "true"                         |
 | search  | string | No       | Search term for post title or content                                                | "workout"                             |
 | order   | string | No       | Order of results: `ASC` or `DESC` (default: `DESC`)                                 | "DESC"                                |
 
