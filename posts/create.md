@@ -18,7 +18,7 @@ Creates a new post for a specified profile (gym or user).
 | profile_type | string | Yes      | Type of the profile (`gym` or `user`)    | "user"         |
 | profile_id   | int    | Yes      | ID of the profile to post to             | 42              |
 | title        | string | Yes      | Title of the post (max 255 characters)   | "My Workout"   |
-| content      | string | Yes      | Content of the post (max 2000 characters)| "Did squats..."|
+| content      | string | Yes      | Content of the post (no limit)| "Did squats..."|
 | is_draft     | bool   | No       | Whether the post is a draft              | false           |
 | in_blog      | bool   | No       | Publish the post on the website blog (requires `posts.update_any` permission) | false           |
 

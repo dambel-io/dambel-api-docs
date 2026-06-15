@@ -24,7 +24,7 @@ Updates a post by its ID. All parameters are optional; only provided fields will
 | Name     | Type   | Required | Description                                                                    | Example         |
 |----------|--------|----------|--------------------------------------------------------------------------------|-----------------|
 | title    | string | No       | Title of the post (max 255 characters)                                         | "My Workout"   |
-| content  | string | No       | Content of the post (max 2000 characters)                                      | "Did squats..."|
+| content  | string | No       | Content of the post (no limit)                                      | "Did squats..."|
 | is_draft | bool   | No       | Whether the post is a draft                                                    | false           |
 | in_blog  | bool   | No       | Publish the post on the website blog (requires `posts.update_any` permission)  | false           |
 
