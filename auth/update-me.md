@@ -20,6 +20,7 @@ This endpoint requires authentication but does not require any special permissio
 | `height`     | integer | No       | User's height in centimeters                            |
 | `birth_date` | date    | No       | User's birth date (format: YYYY-MM-DD)                  |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
+| `bank_account_number` | string | No | Bank account number (max 50 characters, nullable)   |
 
 **Notes:**
 - All parameters are optional. If omitted, they will not be updated.

@@ -19,6 +19,7 @@ Update the information of a specific user.
 | `last_name`  | string  | No       | Last name (max 255)                     |
 | `email`      | string  | No       | Email (max 255, unique)                 |
 | `phone`      | string  | No       | Phone number (unique, E.164 format)     |
+| `bank_account_number` | string | No | Bank account number (max 50 characters, nullable) |
 | `username`   | string  | No       | Username (max 255, unique)              |
 | `height`     | integer | No       | User's height in CM                     |
 | `birth_date` | date    | No       | User's birth date                       |

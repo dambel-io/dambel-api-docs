@@ -11,6 +11,7 @@ Represents a user in the system.
 | `id`                     | integer         | User ID                                                                     |
 | `email`                  | string          | User email address *(hidden for limited access)*                           |
 | `phone`                  | string          | User phone number *(hidden for limited access)*                            |
+| `bank_account_number`    | string\|null    | Bank account number *(hidden for limited access)*                          |
 | `username`               | string          | Username                                                                   |
 | `first_name`             | string          | First name                                                                 |
 | `last_name`              | string          | Last name                                                                  |
@@ -35,6 +36,7 @@ Represents a user in the system.
   "id": 123,
   "email": "test@example.com",
   "phone": "+12345678",
+  "bank_account_number": "IR123456789012345678901234",
   "username": "test_username",
   "first_name": "John",
   "last_name": "Doe",
