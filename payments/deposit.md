@@ -48,6 +48,6 @@ Returns a payment gateway link for the user to complete the deposit process.
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 400    | Payment process error      | N/A                                            |
+| 500    | Payment service provider error (`{ "message": "Payment service provider error.", "error": "..." }`) | N/A |
 | 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |

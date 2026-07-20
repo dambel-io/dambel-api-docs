@@ -25,7 +25,7 @@ This endpoint requires authentication via Sanctum token.
 ### 200 OK
 ```
 {
-  "message": "FCM token registered successfully"
+  "message": "FCM token registered successfully."
 }
 ```
 

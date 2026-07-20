@@ -24,12 +24,13 @@ Create a new user in the system.
 | `birth_date` | date    | No       | User's birth date                   |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 | `password`   | string  | Yes      | Password (will be hashed)           |
+| `bank_account_number` | string | No | Bank account number (max 50 characters, nullable) |
 
 ---
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created user resource.
 
 ```json
@@ -45,7 +46,7 @@ See [User Resource](user_resource.md).
 ## Error Responses
 | Status | Description                  | Reference                                                    |
 |--------|------------------------------|--------------------------------------------------------------|
-| 409    | Email or phone already in use|                                                              |
+| 409    | Email, phone, or username already in use |                                                  |
 | 422    | Validation error             | [Validation error](../_globals/validation-errors.md)         |
 | 401    | Unauthorized                 | [Authentication error](../_globals/authentication-errors.md) |
 | 403    | Forbidden                    | [Permission error](../_globals/permission-errors.md)         |

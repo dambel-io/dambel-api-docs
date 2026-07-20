@@ -47,7 +47,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ## Gyms
 - [`GET /api/v1/gyms`](gyms/index.md)
 - [`POST /api/v1/gyms`](gyms/create.md)
-- [`POST /api/v1/gyms/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
+- [`GET /api/v1/gyms/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
 - `/api/v1/gyms/{gym-id}`
     - [`PUT`](gyms/update.md)
     - [`DELETE`](gyms/delete.md)
@@ -244,7 +244,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ## Payments
 - [`GET /api/v1/payments`](payments/index.md)
 - [`POST /api/v1/payments/deposit`](payments/deposit.md)
-- [`POST /api/v1/payments/verify-deposit`](payments/verify-deposit.md)
+- [`GET /api/v1/payments/verify-deposit/{payment-id}`](payments/verify-deposit.md)
 - [`GET /api/v1/payments/balance`](payments/balance.md)
 - [`GET /api/v1/payments/prices`](payments/prices.md)
 - [`POST /api/v1/payments/withdrawal`](payments/withdrawal.md)
@@ -256,8 +256,8 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 
 ## Notifications
 - [`GET /api/v1/notifications`](notifications/index.md)
-- [`POST /api/v1/notifications/mark-read/{notification-id?}`](notifications/mark-read.md)
-- [`POST /api/v1/notifications/delete/{notification-id}`](notifications/delete.md)
+- [`PUT /api/v1/notifications/mark-read/{notification-id?}`](notifications/mark-read.md)
+- [`DELETE /api/v1/notifications/delete/{notification-id}`](notifications/delete.md)
 
 ## Reports
 - [`GET /api/v1/reports`](reports/index.md)
@@ -297,12 +297,12 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - [`PUT`](admin/countries/update.md)
     - [`DELETE`](admin/countries/delete.md)
 - [`GET /api/v1/admin/states`](admin/states/index.md)
-- [`POST /api/v1/admin/states`](admin/states/create.md)
+- [`POST /api/v1/admin/states/{country-id}`](admin/states/create.md)
 - `/api/v1/admin/states/{state-id}`
     - [`PUT`](admin/states/update.md)
     - [`DELETE`](admin/states/delete.md)
 - [`GET /api/v1/admin/cities`](admin/cities/index.md)
-- [`POST /api/v1/admin/cities`](admin/cities/create.md)
+- [`POST /api/v1/admin/cities/{state-id}`](admin/cities/create.md)
 - `/api/v1/admin/cities/{city-id}`
     - [`PUT`](admin/cities/update.md)
     - [`DELETE`](admin/cities/delete.md)

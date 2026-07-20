@@ -5,20 +5,22 @@ Creates a new user account with SMS phone verification. The registration process
 1. **First request** (without confirmation_code): Validates user data and sends a 6-digit verification code via SMS
 2. **Second request** (with confirmation_code): Verifies the code and creates the user account
 
+This endpoint does not require authentication. Rate limited to 10 requests per minute per IP address.
+
 
 ---
 
 ## Request Body Parameters
 | Name         | Type    | Required | Description                                 | Example                |
 |--------------|---------|----------|---------------------------------------------|------------------------|
-| phone        | string  | Yes       | User phone number (optional)                | "+1234567890"         |
+| phone        | string  | Yes      | User phone number (10–15 digits, optional leading `+`) | "+1234567890"         |
 | email        | string  | No      | User email address                          | "user@example.com"    |
-| username     | string  | Yes      | Username                                    | "johndoe"             |
-| first_name   | string  | No      | First name of the user                      | "John"                |
-| last_name    | string  | No      | Last name of the user                       | "Doe"                 |
-| password     | string  | Yes      | User password                               | "password123"         |
-| referral_code| string  | No       | Optional referral code                      | "REF123"              |
-|| confirmation_code  | string | No       | 6-digit SMS verification code (required for account creation)             | "123456"               |
+| username     | string  | Yes      | Username (max 255 characters)               | "johndoe"             |
+| first_name   | string  | No      | First name of the user (max 255 characters) | "John"                |
+| last_name    | string  | No      | Last name of the user (max 255 characters)  | "Doe"                 |
+| password     | string  | Yes      | User password (min 8 characters)            | "password123"         |
+| referral_code| string  | No       | Optional referral code of an existing user  | "REF123"              |
+| confirmation_code  | string | No       | 6-digit SMS verification code (required for account creation) | "123456"               |
 
 ---
 
@@ -105,16 +107,14 @@ When [referral score](../users/user_resource.md#referral-score) of a user increa
 
 ---
 
----
-
 ### Error Responses
-|| Status | Description                              | Example/Reference                                      |
-||--------|------------------------------------------|--------------------------------------------------------|
-|| 409    | Email/phone/username already in use      | `{ "error": "Email address/phone number/username is already in use" }` |
-|| 422    | Validation error                         | [Validation error](../_globals/validation-errors.md)    |
-|| 422    | Invalid or expired verification code     | See below                                              |
-|| 429    | Too many requests                        | [Rate-limit error](../_globals/rate-limit-errors.md)    |
-|| 500    | SMS sending failed                       | See below                                              |
+| Status | Description                              | Example/Reference                                      |
+|--------|------------------------------------------|--------------------------------------------------------|
+| 409    | Email/phone/username already in use      | `{ "error": "Email address/phone number/username is already in use" }` |
+| 422    | Validation error                         | [Validation error](../_globals/validation-errors.md)    |
+| 422    | Invalid or expired verification code     | See below                                              |
+| 429    | Too many requests                        | [Rate-limit error](../_globals/rate-limit-errors.md)    |
+| 500    | SMS sending failed                       | See below                                              |
 
 #### 422 Verification Code Errors
 **Invalid verification code:**
