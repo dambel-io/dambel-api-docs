@@ -21,9 +21,13 @@ This endpoint requires authentication but does not require any special permissio
 | `birth_date` | date    | No       | User's birth date (format: YYYY-MM-DD)                  |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 | `bank_account_number` | string | No | Bank account number (max 50 characters, nullable)   |
+| `trainer_license_image` | null | No | Only `null` is accepted, which clears your trainer license. Any other value is rejected with 422 |
 
 **Notes:**
 - All parameters are optional. If omitted, they will not be updated.
+- Uploading a trainer license is not done here — use [Create Media](../media/create.md) with `attachable_type=user` and `purpose=trainer_license`.
+- `trainer_license_approved` and `trainer_license_rejection_reason` are operator-only and are not accepted on this endpoint; sending them has no effect.
+- Clearing `trainer_license_image` deletes the stored document and resets the approval back to pending.
 - Email and username must be unique across all users.
 - Users can reuse their own current email and username when updating other fields.
 

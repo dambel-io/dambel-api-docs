@@ -29,6 +29,13 @@ Represents a gym entity with all its attributes, relationships, and status infor
 | media            | Media Resource[]    | List of media items ([see here](../media/media_resource.md))                               |
 | rating_count     | int                 | Number of ratings                                                                          |
 | rating_average   | float               | Average rating                                                                             |
+| gym_license_image | string\|null       | **Restricted.** Download link for the license document, or null if none is uploaded        |
+| gym_license_approved | bool\|null      | **Restricted.** `true` approved, `false` rejected, `null` pending review                    |
+| gym_license_rejection_reason | string\|null | **Restricted.** Why the license was rejected                                       |
+
+> **Restricted fields.** The three `gym_license_*` fields are only present for the gym's owner (`user_id`) and for viewers holding `gyms.view_all`. For everyone else — including anonymous callers of the public [GET /api/v1/gyms](index.md) — the keys are **absent from the response entirely**, not null.
+>
+> The license document is stored as a media row with `purpose=gym_license`. Such rows are excluded from the `media` array above and are **not** publicly downloadable: [GET /api/v1/media/{media}/{filename}](../media/download.md) returns `403` for them unless the caller is the gym owner or holds `gyms.view_all`.
 
 ---
 

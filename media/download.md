@@ -10,6 +10,15 @@ Downloads a media file by its ID.
 ## Permissions
 You must have **view** permission for the target attachable resource (except the ones that are accessible without authentication).
 
+**Sensitive media.** A media row uploaded with a `purpose` (see [POST /api/v1/media](create.md)) is a private document and is never served publicly, regardless of what it is attached to. Access is decided per purpose, and any purpose without an explicit rule is denied:
+
+| Purpose           | Who may download                                                  |
+|-------------------|-------------------------------------------------------------------|
+| `trainer_license` | The user the license belongs to, or a holder of `users.view_all`   |
+| `gym_license`     | The gym's owner (`user_id`), or a holder of `gyms.view_all`        |
+
+Anyone else — including anonymous callers — gets `403`.
+
 ---
 
 ## URL Parameters

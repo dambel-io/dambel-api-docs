@@ -11,6 +11,7 @@ Updates the information of a specific gym by its ID. All parameters are optional
 | `gyms.update`           | Update your own gym                                 |
 | `gyms.update_any`       | Update any gym as an admin                          |
 | `gyms.transfer_ownership`| Transfer gym ownership (for `user_id` field)        |
+| `gyms.approve_license`  | Approve or reject the gym license (for `gym_license_approved` / `gym_license_rejection_reason`) |
 
 ---
 
@@ -34,6 +35,11 @@ Updates the information of a specific gym by its ID. All parameters are optional
 | user_id      | int     | No       | User ID to assign the gym to (requires `gyms.transfer_ownership` permission)| 42                |
 | city_id      | int     | No       | ID of the city where the gym is located                                     | 5                 |
 | major_ids    | string  | No       | Comma-separated list of major IDs. Use `0` to detach all majors.            | "1,2,3"          |
+| gym_license_image | null | No | Only `null` is accepted, which clears the license document and resets its approval to pending. To **upload** a license, use [POST /api/v1/media](../media/create.md) with `purpose=gym_license`. Any non-null value is a validation error. | null |
+| gym_license_approved | bool | No | Review outcome: `true` approved, `false` rejected, `null` pending. Requires `gyms.approve_license`. | true |
+| gym_license_rejection_reason | string | No | Why the license was rejected (max 2000 characters). Requires `gyms.approve_license`. | "Document expired." |
+
+> **License review.** `gym_license_approved` and `gym_license_rejection_reason` may only be sent by a user with `gyms.approve_license`; anyone else gets `403`. Setting `gym_license_approved` to `true` or `false` (a change from its previous value) notifies the gym owner. Clearing `gym_license_image` deletes the stored document and resets both review fields to `null`.
 
 ---
 
@@ -110,4 +116,4 @@ For a full schema, see [Gym Resource](gym_resource.md).
 |--------|----------------------------|------------------------------------------------|
 | 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
-| 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |
+| 403    | Forbidden (no permission, including reviewing a license without `gyms.approve_license`) | [Permission error](../_globals/permission-errors.md) |

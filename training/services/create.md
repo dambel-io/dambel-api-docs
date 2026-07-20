@@ -11,6 +11,8 @@ Create a new training service for a user.
 | `training_services.create`     | Create training services for yourself            |
 | `training_services.create_any` | Create training services for any user            |
 
+**Approved trainer license required.** Creating a service for yourself with `training_services.create` also requires `trainer_license_approved` to be `true` on your user record — a missing, pending, or rejected license gets `403`. See [Trainer license](../../users/update.md#trainer-license-review) for the review flow. Holders of `training_services.create_any` (operators) are exempt, since they create services on a trainer's behalf.
+
 ---
 
 ## URL Parameters

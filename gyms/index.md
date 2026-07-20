@@ -10,7 +10,7 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 ## Permissions
 | Permission      | Description                                                                 |
 |-----------------|-----------------------------------------------------------------------------|
-| `gyms.view_all` | View all gyms, including inactive ones (admin only). Without this permission, only active gyms are returned, except users can always see their own inactive gyms. |
+| `gyms.view_all` | View all gyms, including inactive ones (admin only). Without this permission, only active gyms are returned, except users can always see their own inactive gyms. Also required for the `license_status` filter and for seeing the `gym_license_*` fields on gyms you do not own. |
 
 ---
 
@@ -24,6 +24,7 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 | user_id   | int    | No       | Owner user ID(s) to filter by (comma-separated for multiple)                 | "42"           |
 | major_id  | int    | No       | Major ID(s) to filter by (comma-separated for multiple)                      | "1,2"          |
 | word      | string | No       | Search gyms by text                                                          | "fitness"      |
+| license_status | string | No  | Filter by license review state: `approved`, `rejected`, `pending` (comma-separated to combine). **Requires `gyms.view_all` — silently ignored for everyone else**, so the public endpoint cannot be used to probe review state. | "pending,rejected" |
 | page      | int    | No       | Page number for pagination                                                   | 1               |
 | lat       | float  | No       | Latitude for proximity search                                                | 35.6892         |
 | lng       | float  | No       | Longitude for proximity search                                               | 51.3890         |

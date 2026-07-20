@@ -25,8 +25,16 @@ Update the information of a specific user.
 | `birth_date` | date    | No       | User's birth date                       |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 | `password`   | string  | No       | New password (will be hashed)           |
+| `trainer_license_image` | null | No | Only `null` is accepted, which clears the license. Any other value is rejected with 422 — uploads go through [Create Media](../media/create.md) with `purpose=trainer_license` |
+| `trainer_license_approved` | boolean\|null | No | The review decision: `true` approves, `false` rejects, `null` returns the user to pending |
+| `trainer_license_rejection_reason` | string\|null | No | Reason shown to the user when rejected (max 1000) |
 
 *All parameters are optional. If omitted, they will not be updated.*
+
+### Trainer license review
+Setting `trainer_license_approved` to a non-null value that differs from the user's current decision sends them a `TrainerLicenseReviewedNotification` (see [Notifications](../../notifications.md)). Re-sending the same decision is a no-op and notifies nobody.
+
+Clearing `trainer_license_image` deletes the stored document and resets both `trainer_license_approved` and `trainer_license_rejection_reason` to `null`, unless the same request sets them explicitly.
 
 ---
 

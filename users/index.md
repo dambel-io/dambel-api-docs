@@ -23,6 +23,7 @@ Retrieve a paginated list of users, with support for advanced filtering and sort
 | `email_status` | string   | No       | Filter by email verification status: `verified` or `not_verified`                           |
 | `phone_status` | string   | No       | Filter by phone verification status: `verified` or `not_verified`                           |
 | `user_id`      | array    | No       | Filter by one or more specific user IDs                                                     |
+| `trainer_license_status` | string | No | Filter by trainer license state: `pending` (uploaded, awaiting review), `approved`, `rejected`, or `none` (no document uploaded). **Requires `users.view_all`** — silently ignored for limited access users |
 | `sort_by`      | string   | No       | Sort by: `name`, `email`, `phone`, `created_at`, `email_verified_at`, `phone_verified_at`   |
 | `sort_order`   | string   | No       | Sort order: `desc` (default) or `asc`                                                       |
 

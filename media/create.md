@@ -16,6 +16,16 @@ You must have **update** permission for the target attachable resource.
 | attachable_type | string  | Yes      | Type of the element to attach media to (see below)               | "gym"          |
 | attachable_id   | int     | Yes      | ID of the element                                                | 42              |
 | file            | file    | Yes      | The media file to upload                                         | (binary file)   |
+| purpose         | string  | No       | Marks the upload as a sensitive document instead of ordinary gallery media (see below) | "gym_license"   |
+
+**Available `purpose` values:**
+
+| Value             | Attachable       | Meaning                                                                 |
+|-------------------|------------------|-------------------------------------------------------------------------|
+| `trainer_license` | `user`           | The uploader's own trainer license. May only be attached to your own user record. |
+| `gym_license`     | `gym`            | The gym's business license. May only be attached to a gym you are allowed to update. |
+
+> **Sensitive media.** A media row with a `purpose` is never publicly downloadable — [GET /api/v1/media/{media}/{filename}](download.md) applies per-purpose access control to it, and it is excluded from the owning record's public `media` array. Uploading a license also points the owning record's `*_license_image` at the new file, deletes the superseded document, and resets `*_license_approved` to `null` (pending), because a new document has to be reviewed again — this applies to both `trainer_license` (on the user) and `gym_license` (on the gym). Omitting `purpose` (or sending `null`) uploads ordinary, publicly readable gallery media.
 
 **Available `attachable_type` values:**
 - `championship`
