@@ -41,6 +41,7 @@ Trainers can create trainees, and users can create a trainer from their side.
 | 422    | Validation Error   | [Validation error](../../_globals/validation-errors.md)         |
 | 401    | Unauthorized       | [Authentication error](../../_globals/authentication-errors.md) |
 | 403    | Forbidden          | [Permission error](../../_globals/permission-errors.md)         |
+| 403    | The service's trainer does not have an approved license (`trainer_license_approved` is not `true`). Holders of `trainees.create_any` are exempt. |  |
 
 *Note: Payment is not required if creation is from the trainer side.*
 

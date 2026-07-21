@@ -41,5 +41,6 @@ For a full schema, see [Gym Subscription Resource](gym_subscription.md).
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
 | 400    | Insufficient account balance|  |
+| 403    | The gym's license is not approved (`gym_license_approved` is not `true`), so it cannot sell subscriptions |  |
 | 404    | Not found (invalid gym or plan, or inactive) |  |
 | 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |

@@ -3,7 +3,16 @@
 Retrieve a list of training services.
 
 
-**No authentication required.**
+**No authentication required.** A token is honoured when present (optional auth), which is what lets trainers see their own unlisted services and admins see every service.
+
+---
+
+## Permissions
+| Permission                   | Description                                                                                              |
+|------------------------------|----------------------------------------------------------------------------------------------------------|
+| `training_services.view_all` | List every service, including those whose trainer's license is not approved (admin only).                |
+
+> **Visibility:** a service is publicly listed only while its trainer's `trainer_license_approved` is `true`. Services belonging to a trainer whose license is pending (`null`) or rejected (`false`) are hidden from everyone except that trainer and admins, and they cannot be purchased — see [Create Trainee](../trainees/create.md).
 
 ---
 

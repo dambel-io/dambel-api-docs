@@ -10,7 +10,9 @@ Retrieves a list of working periods for a specific gym.
 ## Permissions
 | Permission      | Description                                             |
 |-----------------|---------------------------------------------------------|
-| `gyms.view_all` | Required to view working periods for an inactive gym    |
+| `gyms.view_all` | Required to view working periods for a gym that is inactive or whose license is not approved |
+
+> A gym's public sub-resources are only served while the gym is active **and** its license is approved. The gym owner and holders of `gyms.view_all` are exempt; everyone else gets a 403. See [Gym List](../index.md).
 
 ---
 

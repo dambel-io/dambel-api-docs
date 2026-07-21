@@ -10,7 +10,9 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 ## Permissions
 | Permission      | Description                                                                 |
 |-----------------|-----------------------------------------------------------------------------|
-| `gyms.view_all` | View all gyms, including inactive ones (admin only). Without this permission, only active gyms are returned, except users can always see their own inactive gyms. Also required for the `license_status` filter and for seeing the `gym_license_*` fields on gyms you do not own. |
+| `gyms.view_all` | View all gyms, including hidden ones (admin only). Without this permission, only gyms that are **active and have an approved license** are returned, except users can always see their own gyms in any state. Also required for the `license_status` filter and for seeing the `gym_license_*` fields on gyms you do not own. |
+
+> **Visibility:** a gym is publicly listed only while `is_active` is `true` **and** `gym_license_approved` is `true`. A gym whose license is pending (`null`) or rejected (`false`) is hidden from everyone except its owner and admins, and it cannot sell subscriptions — see [Subscribe](subscriptions/subscribe.md).
 
 ---
 

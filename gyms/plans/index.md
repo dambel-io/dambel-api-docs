@@ -10,7 +10,9 @@ Retrieves a list of subscription plans for a specific gym.
 ## Permissions
 | Permission      | Description                                             |
 |-----------------|---------------------------------------------------------|
-| `gyms.view_all` | Required to view plans for an inactive gym or inactive plans |
+| `gyms.view_all` | Required to view plans for a gym that is inactive or whose license is not approved, or to view inactive plans |
+
+> A gym's public sub-resources are only served while the gym is active **and** its license is approved. The gym owner and holders of `gyms.view_all` are exempt; everyone else gets a 403. See [Gym List](../index.md).
 
 ---
 
