@@ -321,6 +321,11 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/admin/equipment/{equipment-id}`
     - [`PUT`](admin/equipment/update.md)
     - [`DELETE`](admin/equipment/delete.md)
+- [`GET /api/v1/admin/muscle-groups`](admin/muscle_groups/index.md)
+- [`POST /api/v1/admin/muscle-groups`](admin/muscle_groups/create.md)
+- `/api/v1/admin/muscle-groups/{muscle-group-id}`
+    - [`PUT`](admin/muscle_groups/update.md)
+    - [`DELETE`](admin/muscle_groups/delete.md)
 - [`GET /api/v1/admin/supplements`](admin/supplements/index.md)
 - [`POST /api/v1/admin/supplements`](admin/supplements/create.md)
 - `/api/v1/admin/supplements/{supplement-id}`
