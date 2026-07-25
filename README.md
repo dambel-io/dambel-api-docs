@@ -161,6 +161,9 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - [`POST /messages`](ai/threads/messages/create.md)
     - `/messages/{message-id}`
         - [`DELETE`](ai/threads/messages/delete.md)
+        - [`POST /tool-confirmations`](ai/threads/messages/tool-confirmations/create.md)
+        - [`GET /attachments`](ai/threads/messages/attachments/index.md)
+        - [`GET /attachments/{attachment-id}`](ai/threads/messages/attachments/download.md)
 
 ## Tracker
 - [`GET /api/v1/tracker/data/averages`](tracker/data/averages.md)
