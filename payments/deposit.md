@@ -14,17 +14,21 @@ Creates a deposit request for the authenticated user to add funds to their accou
 ---
 
 ## Request Body Parameters
-| Name        | Type    | Required | Description                                 | Example         |
-|-------------|---------|----------|---------------------------------------------|-----------------|
-| amount      | decimal | Yes      | Amount to deposit                           | 250.00          |
-| description | string  | No       | Description for the deposit                 | "Top-up"        |
+| Name        | Type    | Required | Description                                                    | Example         |
+|-------------|---------|----------|----------------------------------------------------------------|-----------------|
+| amount      | decimal | Yes      | Amount to credit, in Tooman. Minimum 1                         | 700000          |
+| description | string  | No       | Description for the deposit (max 2000 characters)              | "Top-up"        |
+
+`amount` is what the user's balance is credited with. The gateway's fee is charged **on top** of
+it, so the figure the user actually pays is `payable_amount` — see
+[the gateway fee](../../payments.md#currency-and-the-gateway-fee).
 
 ---
 
 ## Request Example
 ```json
 {
-  "amount": 250.00,
+  "amount": 700000,
   "description": "Top-up"
 }
 ```
@@ -34,12 +38,23 @@ Creates a deposit request for the authenticated user to add funds to their accou
 ## Response
 
 ### 201 Created
-Returns a payment gateway link for the user to complete the deposit process.
+Returns a payment gateway link for the user to complete the deposit process, along with the
+amounts involved. All amounts are in Tooman, and `amount + gateway_fee == payable_amount`.
+
+| Field          | Type   | Description                                                     |
+|----------------|--------|-----------------------------------------------------------------|
+| link           | string | Gateway URL to redirect the user to                             |
+| amount         | number | Amount the user's balance will be credited with                 |
+| gateway_fee    | number | Gateway fee the user pays on top of `amount`                    |
+| payable_amount | number | Total the user is charged at the gateway                        |
 
 #### Example
 ```json
 {
-  "link": "https://payment-gateway.example.com/redirect/abc123"
+  "link": "https://gateway.zibal.ir/start/123456789",
+  "amount": 700000,
+  "gateway_fee": 7786,
+  "payable_amount": 707786
 }
 ```
 
