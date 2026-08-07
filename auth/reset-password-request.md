@@ -72,7 +72,7 @@ Returns a success message when the reset code SMS is sent successfully.
 #### 500 SMS Send Failure
 ```json
 {
-  "message": "Failed to send SMS. Please try again later."
+  "message": "Failed to send SMS. Please try again."
 }
 ```
 
@@ -82,7 +82,7 @@ Returns a success message when the reset code SMS is sent successfully.
 1. The system validates that the provided phone number exists in the database
 2. Generates a 6-digit verification code
 3. Stores the hashed code in the database with a 24-hour expiration
-4. Sends the code via SMS using SMS.ir service
+4. Sends the code via an SMS.ir verify-send template
 5. Returns success message (code is never returned in the response for security)
 
 ---
@@ -90,8 +90,11 @@ Returns a success message when the reset code SMS is sent successfully.
 ## Security Notes
 - The verification code is sent only via SMS to the registered phone number
 - Codes expire after 24 hours
-- Failed attempts do not reveal whether a phone number exists in the system
+- This endpoint **does not** mask account existence: an unregistered number is rejected with `422` and
+  `"The selected phone is invalid."`, while a registered one returns `200`. Treat it as enumerable and rely on
+  the rate limit below rather than on ambiguity
 - Rate limiting prevents abuse
+- The SMS body is defined by a template in the SMS.ir panel, not by this API — only the code is sent to the gateway
 
 ---
 

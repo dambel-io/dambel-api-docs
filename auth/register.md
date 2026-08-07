@@ -92,7 +92,7 @@ When [referral score](../users/user_resource.md#referral-score) of a user increa
 ## How it works
 1. **Step 1**: Client sends user registration data without `confirmation_code`
 2. **Validation**: System validates all input parameters and checks for existing users
-3. **SMS Code**: If validation passes, generates 6-digit code and sends via SMS using SMS.ir service
+3. **SMS Code**: If validation passes, generates 6-digit code and sends it via an SMS.ir verify-send template
 4. **Step 2**: Client sends same data plus the received `confirmation_code`
 5. **Verification**: System verifies the code (checks validity and expiration - 10 minutes for registration)
 6. **Account Creation**: If code is valid, creates user account and returns API token
@@ -104,6 +104,7 @@ When [referral score](../users/user_resource.md#referral-score) of a user increa
 - Each code can only be used once
 - SMS rate limiting prevents abuse
 - Phone numbers must be unique across all users
+- The SMS body is defined by a template in the SMS.ir panel, not by this API — only the code is sent to the gateway
 
 ---
 
