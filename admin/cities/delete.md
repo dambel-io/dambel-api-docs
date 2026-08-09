@@ -23,7 +23,17 @@ Delete a city. Optionally transfer attached data to another city.
 ## Response
 
 ### 204 No Content
-No content is returned when the city is deleted successfully.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "City deleted successfully."
+}
+```
+
+Localized from `messages.admin.cities.deleted_successfully` (`fa`: “شهر با موفقیت حذف شد.”).
 
 ---
 

@@ -23,7 +23,17 @@ Deletes a gym by its ID. Normal users can delete their own gyms, while admins ca
 ## Response
 
 ### 204 No Content
-Gym was successfully deleted. No response body is returned.
+Gym was successfully deleted. Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Gym deleted successfully."
+}
+```
+
+Localized from `messages.gyms.deleted_successfully` (`fa`: “باشگاه با موفقیت حذف شد.”).
 
 ---
 

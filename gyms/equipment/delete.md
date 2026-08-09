@@ -32,7 +32,17 @@ Authorization: Bearer {token}
 ## Response
 
 ### 204 No Content
-No content is returned when the equipment is successfully deleted.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Gym equipment deleted successfully."
+}
+```
+
+Localized from `messages.gyms.equipment.deleted_successfully` (`fa`: “تجهیزات باشگاه با موفقیت حذف شد.”).
 
 ---
 

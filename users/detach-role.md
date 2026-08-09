@@ -15,7 +15,17 @@ Detach a role from a user.
 ## Response
 
 ### 204 No Content
-No content is returned when the role is successfully detached.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Role detached successfully."
+}
+```
+
+Localized from `messages.users.role_detached_successfully` (`fa`: “نقش با موفقیت حذف شد.”).
 
 ---
 

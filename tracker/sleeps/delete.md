@@ -20,7 +20,17 @@ _None._
 ## Response
 
 ### 204 No Content
-No content is returned when the sleep record is deleted successfully.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Sleep record deleted successfully."
+}
+```
+
+Localized from `messages.tracker.sleeps.deleted_successfully` (`fa`: “ثبت خواب با موفقیت حذف شد.”).
 
 ---
 

@@ -23,7 +23,17 @@ Delete an exercise. Optionally transfer attached data to another exercise.
 ## Response
 
 ### 204 No Content
-No content is returned when the exercise is deleted successfully.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Exercise deleted successfully."
+}
+```
+
+Localized from `messages.admin.exercises.deleted_successfully` (`fa`: “تمرین با موفقیت حذف شد.”).
 
 ---
 

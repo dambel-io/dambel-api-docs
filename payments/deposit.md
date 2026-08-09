@@ -60,6 +60,19 @@ amounts involved. All amounts are in Tooman, and `amount + gateway_fee == payabl
 
 ---
 
+### Double submission
+
+A repeated request with the same `amount` and `description` from the same user **reuses the
+existing unfinalized deposit** rather than creating a second one, for **300 seconds** after the
+first. The response is a `201` carrying that payment's gateway link, so a client that retries —
+because the user double-tapped, or the first response was lost — does not strand a second
+pending payment on the account.
+
+Once the window passes, or once the first deposit is finalized (`is_done`), an identical request
+creates a new payment. A deposit with a different `amount` or `description` is always new.
+
+---
+
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|

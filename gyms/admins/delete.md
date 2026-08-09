@@ -24,7 +24,17 @@ Deletes an admin from a gym by their ID.
 ## Response
 
 ### 204 No Content
-Admin was successfully deleted. No response body is returned.
+Admin was successfully deleted. Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Gym admin deleted successfully."
+}
+```
+
+Localized from `messages.gyms.admins.deleted_successfully` (`fa`: “مدیر باشگاه با موفقیت حذف شد.”).
 
 ---
 

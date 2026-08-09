@@ -28,6 +28,7 @@ This endpoint requires authentication but does not require any special permissio
 - Uploading a trainer license is not done here — use [Create Media](../media/create.md) with `attachable_type=user` and `purpose=trainer_license`.
 - `trainer_license_approved` and `trainer_license_rejection_reason` are operator-only and are not accepted on this endpoint; sending them has no effect.
 - Clearing `trainer_license_image` deletes the stored document and resets the approval back to pending.
+- **`phone` cannot be changed here, and that is deliberate.** A phone number is an authentication factor on this platform — registration and password reset both key on it — so moving it without OTP re-verification would let anyone holding a hijacked session take over the account. Self-service phone change needs an OTP re-verification flow, which does not exist yet. An operator can change it via [`PUT /users/{id}`](../users/update.md).
 - Email and username must be unique across all users.
 - Users can reuse their own current email and username when updating other fields.
 

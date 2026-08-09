@@ -59,3 +59,9 @@ For a full schema, see [Chat Message Resource](chat_message_resource.md).
 | 422    | Validation error           | [Validation error](../../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
+| 404    | `chat_message_id` names a message that is not in this chat | [Not found](../../_globals/not-found-errors.md) |
+
+> **Replying across chats is refused.** `chat_message_id` is validated with `exists:`, which only
+> proves the message exists somewhere on the platform. If it belongs to a different chat the
+> request returns `404` rather than `403` — a `403` would confirm that the other chat's message
+> exists to someone who should not be able to tell.

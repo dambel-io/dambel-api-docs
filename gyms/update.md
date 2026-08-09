@@ -69,14 +69,14 @@ Returns the updated gym resource.
 #### Schema
 ```json
 {
-  "gym": { /* Gym Resource */ }
+  "data": { /* Gym Resource */ }
 }
 ```
 
 #### Example
 ```json
 {
-  "gym": {
+  "data": {
     "id": 123,
     "name": "Iron Paradise",
     "address": "123 Main St",

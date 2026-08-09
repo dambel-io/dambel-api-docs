@@ -23,7 +23,17 @@ Delete a supplement. Optionally transfer attached data to another supplement.
 ## Response
 
 ### 204 No Content
-No content is returned when the supplement is deleted successfully.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Supplement deleted successfully."
+}
+```
+
+Localized from `messages.admin.supplements.deleted_successfully` (`fa`: “مکمل با موفقیت حذف شد.”).
 
 ---
 

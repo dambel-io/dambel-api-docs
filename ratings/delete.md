@@ -24,7 +24,17 @@ Deletes a rating by its ID.
 ## Response
 
 ### 204 No Content
-Rating was successfully deleted. No response body is returned.
+Rating was successfully deleted. Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Rating deleted successfully."
+}
+```
+
+Localized from `messages.ratings.deleted_successfully` (`fa`: “امتیاز با موفقیت حذف شد.”).
 
 ---
 

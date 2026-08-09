@@ -24,7 +24,17 @@ Deletes a buffet item from a gym by its ID.
 ## Response
 
 ### 204 No Content
-Buffet item was successfully deleted. No response body is returned.
+Buffet item was successfully deleted. Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Buffet item deleted successfully."
+}
+```
+
+Localized from `messages.gyms.buffet_items.deleted_successfully` (`fa`: “مورد بوفه با موفقیت حذف شد.”).
 
 ---
 

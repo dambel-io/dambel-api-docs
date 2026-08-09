@@ -11,7 +11,7 @@ Trainers can create trainees, and users can create a trainer from their side.
 | Permission           | Description                                         |
 |----------------------|-----------------------------------------------------|
 | `trainees.create`    | Create trainees/trainers for yourself               |
-| `trainees.create_any`| Create trainees/trainers for any user               |
+| `trainees.create_any`| Create trainees/trainers for any user. Held by `super_admin` and `operator` only — this branch skips the purchase step, so it is not granted to `user` or `user_plus`. |
 
 ---
 

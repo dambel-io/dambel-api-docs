@@ -31,7 +31,17 @@ Authorization: Bearer {token}
 ## Response
 
 ### 204 No Content
-No content is returned when the report is successfully deleted.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Report deleted successfully."
+}
+```
+
+Localized from `messages.reports.deleted_successfully` (`fa`: “گزارش با موفقیت حذف شد.”).
 
 ---
 

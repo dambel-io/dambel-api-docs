@@ -21,7 +21,17 @@ _None._
 ## Response
 
 ### 204 No Content
-No content is returned when the training service is deleted successfully.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
+
+```json
+{
+  "message": "Training service deleted successfully."
+}
+```
+
+Localized from `messages.training.services.deleted_successfully` (`fa`: “سرویس تمرینی با موفقیت حذف شد.”).
 
 ---
 

@@ -16,7 +16,7 @@ Create a new exercise.
 ## Request Body Parameters
 | Name           | Type    | Required | Description                        |
 |----------------|---------|----------|------------------------------------|
-| `name`         | string  | Yes      | Name of the exercise (max 255)     |
+| `title`        | string  | Yes      | Title of the exercise (max 255)    |
 | `link`         | string  | No       | Exercise GIF filename (max 255, optional) |
 | `description`  | string  | No       | Description (optional)             |
 | `category`     | string  | No       | Body-part category (max 255, optional) |

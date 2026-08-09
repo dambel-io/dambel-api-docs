@@ -18,7 +18,7 @@ Update the information of a specific user.
 | `first_name` | string  | No       | First name (max 255)                    |
 | `last_name`  | string  | No       | Last name (max 255)                     |
 | `email`      | string  | No       | Email (max 255, unique)                 |
-| `phone`      | string  | No       | Phone number (unique, E.164 format)     |
+| `phone`      | string  | No       | Phone number (unique, E.164 format). **Operator-only in practice** — there is no self-service equivalent on [`PUT /auth/me`](../auth/update-me.md), because a phone number is an authentication factor and changing it needs OTP re-verification that does not exist yet. |
 | `bank_account_number` | string | No | Bank account number (max 50 characters, nullable) |
 | `username`   | string  | No       | Username (max 255, unique)              |
 | `height`     | integer | No       | User's height in CM                     |

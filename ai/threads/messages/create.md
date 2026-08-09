@@ -82,6 +82,11 @@ For a full schema, see [AI Thread Message Resource](ai_thread_message_resource.m
 | 401    | Unauthorized               | [Authentication error](../../../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission)  | [Permission error](../../../_globals/permission-errors.md) |
 | 429    | AI usage budget exceeded — the user's rolling 24-hour AI spend (USD) reached their tier budget |  |
+| 429    | Rate limit — more than 30 requests per minute to this endpoint | [Rate limit error](../../../_globals/rate-limit-errors.md) |
+
+> **Two distinct 429s.** The budget refusal carries the spend-limit message and is decided
+> per user over a rolling 24-hour window; the rate limit is `throttle:30,1` and is decided per
+> minute. A client should back off on either, but only the second is retryable within the hour.
 
 ## AI System
 The AI system uses OpenAI APIs behind the scenes. It handles reading Dambel documentation files, searching the web or reading a specific web page, saving memories for each user and accessing them in other chats, reading data from Dambel's database, analyzing attached images and PDF documents, and even reporting the conversation whenever necessary. Once it finishes its tool calls, it returns the final response to the message. Usage is metered by USD spend over a rolling 24-hour window, with separate budgets for free and premium users.
