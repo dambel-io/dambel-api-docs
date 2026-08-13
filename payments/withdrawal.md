@@ -36,6 +36,12 @@ Creates a withdrawal request for the authenticated user.
 ### 201 Created
 Withdrawal request was created successfully.
 
+The requested amount is **held immediately**: it is subtracted from
+[`GET /payments/balance`](balance.md) as soon as the row exists, without waiting for an admin to confirm
+the payout. A second withdrawal request, and every purchase path, is therefore measured against the
+reduced figure. The hold is released only if an operator rejects the request
+(see [`PUT /payments/withdrawal/{payment}`](update-withdrawal-status.md)).
+
 ---
 
 ### Error Responses

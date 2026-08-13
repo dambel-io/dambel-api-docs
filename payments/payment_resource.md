@@ -16,9 +16,11 @@ Represents a payment transaction, including its type, amount, status, and associ
 | payable_type  | string  | Type of the payable resource (e.g., `App\Models\Gym`) | "App\\Models\\Gym"      |
 | payable_id    | int     | ID of the payable resource                       | 456                    |
 | meta          | object  | Additional metadata (see below)                  | { ... }                |
-| is_done       | bool    | Whether the payment is completed                 | true                   |
+| is_done       | bool    | Whether the payment is completed. On a `withdrawal` this means the bank transfer happened, and has no effect on the balance | true                   |
+| rejected_at   | string\|null | When a withdrawal was refused by an operator; `null` otherwise. A rejected withdrawal stops holding its amount out of the balance | "2025-01-01 00:00:00" |
 | created_at    | string  | Creation timestamp (ISO 8601 format)             | "2025-01-01 00:00:00" |
 | user          | object  | Full user object (see [User Resource](../users/user_resource.md))              | { ... }                |
+| user_balance  | number  | Current spendable balance of the payment's user, identical to [`GET /payments/balance`](balance.md): verified deposits + income − done purchases and commissions − every withdrawal that is not rejected. A pending withdrawal **does** reduce it, including this record's own amount. Present **only** on `withdrawal`-type records and **only** for viewers with `payments.view_all`; absent otherwise. | 1150.0                 |
 
 ---
 
@@ -82,6 +84,36 @@ verified (see [the gateway fee](../../payments.md#currency-and-the-gateway-fee))
   "payable_id": 456,
   "meta": {},
   "is_done": true,
+  "rejected_at": null,
   "created_at": "2025-01-01 00:00:00"
+}
+```
+
+### Example — withdrawal record, viewed with `payments.view_all`
+
+A pending withdrawal as an admin sees it in the list: `user_balance` is the user's live spendable
+balance, which already has this withdrawal's 50 held out of it — the hold is placed when the
+withdrawal is requested and released only if it is rejected.
+
+```json
+{
+  "id": 124,
+  "user_id": 123,
+  "user": {
+    "id": 123,
+    "username": "jdoe",
+    "first_name": "John",
+    "last_name": "Doe",
+    "created_at": "2025-01-01 00:00:00"
+  },
+  "type": "withdrawal",
+  "amount": 50.0,
+  "description": null,
+  "payable_type": null,
+  "payable_id": null,
+  "meta": null,
+  "is_done": false,
+  "created_at": "2025-01-02 00:00:00",
+  "user_balance": 1150.0
 }
 ```

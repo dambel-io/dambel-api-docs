@@ -21,6 +21,7 @@ Retrieves a list of payments and transactions. Users can view their own records;
 | payable_id   | int     | No       | Filter by payable ID(s), comma-separated                         | "1,2,3"               |
 | user_id      | int     | No       | Filter by user ID(s), comma-separated                            | "10,20"               |
 | is_done      | bool    | No       | Filter by completion status                                      | true                   |
+| is_rejected  | bool    | No       | Filter withdrawals by rejection state                            | true                   |
 | start_date   | string  | No       | Start of date range (YYYY-MM-DD)                                 | "2024-01-01"          |
 | end_date     | string  | No       | End of date range (YYYY-MM-DD)                                   | "2024-01-31"          |
 | min_amount   | number  | No       | Minimum amount                                                   | 100                    |
@@ -58,7 +59,14 @@ Returns a paginated list of payment resources.
 
 For a full schema, see [Payment Resource](payment_resource.md).
 
-See [Pagination Data](../_globals/pagination-data.md) (per page: 30).
+`withdrawal`-type records additionally carry a `user_balance` field when the viewer holds
+`payments.view_all` — the requesting user's current spendable balance, for verifying funds before
+processing the withdrawal. It already excludes this withdrawal's own amount, because a withdrawal
+holds its amount out of the balance from the moment it is requested. It is absent on other record
+types and for viewers without that permission; see
+[Payment Resource](payment_resource.md#schema) for exact semantics.
+
+See [Pagination Data](../_globals/pagination-data.md) (per page: 50).
 
 ---
 

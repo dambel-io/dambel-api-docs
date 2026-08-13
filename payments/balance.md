@@ -27,6 +27,18 @@ Returns the user's current balance.
 
 ---
 
+## How the balance is computed
+
+The returned figure is the **spendable** balance, and it is type-aware — see
+[Payment System § How the balance is computed](../../payments.md#how-the-balance-is-computed) for the
+full table.
+
+The point clients most often get wrong: **pending withdrawal requests are already subtracted here.** A
+withdrawal reduces this number from the moment it is created, not when an admin marks it `is_done`. A
+client that subtracts its own pending withdrawals from this value will double-count them.
+
+---
+
 ### Error Responses
 | Status | Description                | Reference                                                    |
 |--------|----------------------------|--------------------------------------------------------------|

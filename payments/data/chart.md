@@ -21,6 +21,7 @@ Receive chart data of payments and transactions in the given date range and filt
 | payable_id   | int     | No       | Filter by payable ID(s), comma-separated                         | "1,2,3"               |
 | user_id      | int     | No       | Filter by user ID(s), comma-separated                            | "10,20"               |
 | is_done      | bool    | No       | Filter by completion status                                      | true                   |
+| is_rejected  | bool    | No       | Filter withdrawals by rejection state                            | true                   |
 | start_date   | string  | No       | Start of date range (YYYY-MM-DD)                                 | "2024-01-01"          |
 | end_date     | string  | No       | End of date range (YYYY-MM-DD)                                   | "2024-01-31"          |
 | min_amount   | number  | No       | Minimum amount                                                   | 100                    |
