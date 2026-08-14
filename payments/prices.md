@@ -21,7 +21,7 @@ need to compute it: [`POST /payments/deposit`](deposit.md) returns the resolved 
 
 ```json
 {
-  "gym_commission_rate": 0.02,
+  "gym_commission_rate": 0.01,
   "gateway_fee": {
     "rate": 0.01,
     "min": 2000,
