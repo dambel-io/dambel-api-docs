@@ -39,6 +39,10 @@ Authorization: Bearer {token}
 ### 200 OK
 Returns a paginated list of AI thread message resources.
 
+Ordered **newest first**, by `created_at` descending and then by `id` descending. The second key is not cosmetic: `created_at` has one-second resolution, so a user message and the assistant reply it triggers routinely share a timestamp, and `id` is what puts them in the order they were written.
+
+Only `user` and `assistant` messages are returned. The `system` rows the engine writes — the thread's instruction prompt and every tool result — are internal and never listed.
+
 #### Example
 ```json
 {
