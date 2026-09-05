@@ -10,9 +10,9 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 ## Permissions
 | Permission      | Description                                                                 |
 |-----------------|-----------------------------------------------------------------------------|
-| `gyms.view_all` | View all gyms, including hidden ones (admin only). Without this permission, only gyms that are **active and have an approved license** are returned, except users can always see their own gyms in any state. Also required for the `license_status` filter and for seeing the `gym_license_*` fields on gyms you do not own. |
+| `gyms.view_all` | View all gyms, including hidden ones (admin only). Without this permission, only gyms that are **active and have an approved license** are returned, except users can always see their own gyms in any state. Also required for the `license_status` filter and for seeing the `gym_license_*` fields and the `owner` object on gyms you do not own. |
 
-> **Visibility:** a gym is publicly listed only while `is_active` is `true` **and** `gym_license_approved` is `true`. A gym whose license is pending (`null`) or rejected (`false`) is hidden from everyone except its owner and admins, and it cannot sell subscriptions — see [Subscribe](subscriptions/subscribe.md).
+> **Visibility:** a gym is publicly listed only while `is_active` is `true` **and** `gym_license_approved` is `true`. A gym whose license is not approved — `gym_license_approved` is `null` or `false`, **including gyms that never uploaded a document** — is hidden from everyone except its owner and admins, and it cannot sell subscriptions — see [Subscribe](subscriptions/subscribe.md). Note this is broader than the `license_status=pending` filter below, which additionally requires an uploaded document; to list every hidden gym use `license_status=pending,rejected,none`.
 
 ---
 
@@ -25,12 +25,23 @@ Retrieves a list of gyms, with support for filtering by location, owner, major, 
 | gym_id    | int    | No       | Specific gym ID(s) to fetch (comma-separated for multiple)                   | "10,11"        |
 | user_id   | int    | No       | Owner user ID(s) to filter by (comma-separated for multiple)                 | "42"           |
 | major_id  | int    | No       | Major ID(s) to filter by (comma-separated for multiple)                      | "1,2"          |
-| word      | string | No       | Search gyms by text                                                          | "fitness"      |
-| license_status | string | No  | Filter by license review state: `approved`, `rejected`, `pending` (comma-separated to combine). **Requires `gyms.view_all` — silently ignored for everyone else**, so the public endpoint cannot be used to probe review state. | "pending,rejected" |
+| word      | string | No       | Search gyms by text across name, address and description. Max 255 characters. Persian-normalized — see the note below. | "fitness"      |
+| license_status | string | No  | Filter by license review state: `pending` (uploaded, awaiting review), `approved`, `rejected`, or `none` (no document uploaded) — comma-separated to combine. **Requires `gyms.view_all` — silently ignored for everyone else**, so the public endpoint cannot be used to probe review state. | "pending,rejected" |
 | page      | int    | No       | Page number for pagination                                                   | 1               |
 | lat       | float  | No       | Latitude for proximity search                                                | 35.6892         |
 | lng       | float  | No       | Longitude for proximity search                                               | 51.3890         |
 | radius    | float  | No       | Radius in kilometers for proximity search (default: 2,000,000, min: 10, max: 2,000,000)| 50              |
+
+> **`word` matching.** The term and the text it is matched against are both normalized first, so a
+> gym stored with an Arabic keyboard's `ي`/`ك` is found by a search typed with the Persian `ی`/`ک`
+> and vice versa; the same applies to hamza-bearing alefs, teh marbuta, zero-width joiners and
+> non-joiners, the tatweel, Arabic diacritics, and Persian or Arabic-Indic digits (`۲۴` and `24`
+> match each other). Matching is case-insensitive and matches anywhere in the text, not only at the
+> start. **`%` and `_` are literal characters** — `?word=%` returns only gyms whose text actually
+> contains a percent sign, not every gym. A term that normalizes to nothing (whitespace alone) is
+> treated as no filter at all.
+
+> **`license_status` details.** Values are **case-sensitive** and are matched after trimming, so `pending, none` and `pending,none` are equivalent. A value that matches none of the four (`?license_status=typo`, `?license_status=PENDING`) returns an **empty result set**, not the unfiltered list. The four values do **not** partition the gyms: `none` is defined purely on the document's absence, so a gym that has an explicit approval *and* no document on file appears under both `approved` and `none` — do not sum the four counts and expect the table total. Their union does cover every gym.
 
 Results are sorted by marketing boosts first, then by proximity (if `lat`/`lng` provided), otherwise by newest.
 
@@ -110,6 +121,12 @@ Returns a paginated list of gym resources.
 
 For a full schema, see [Gym Resource](gym_resource.md) and [Pagination Data](../_globals/pagination-data.md).
 
+> **`owner`.** Each gym carries an `owner` object — the full [User Resource](../users/user_resource.md)
+> for `user_id` — but only for the gym's own owner and for viewers holding `gyms.view_all`. For every
+> other caller, including anonymous ones, the key is **absent from the object entirely**. The fields
+> inside it are gated again by the User resource's own rule, so `phone` and `email` need
+> `users.view_all` on top.
+
 ---
 
 ### Error Responses
@@ -119,3 +136,4 @@ For a full schema, see [Gym Resource](gym_resource.md) and [Pagination Data](../
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |
 | 404    | Not found                  | [Not-found error](../_globals/not-found-errors.md) |
+| 422    | Validation error — a comma-separated filter (`city_id`, `state_id`, `country_id`, `gym_id`, `user_id`, `major_id`, `license_status`) was sent as an array (`?city_id[]=1`) or exceeded its length bound | [Validation error](../_globals/validation-errors.md) |

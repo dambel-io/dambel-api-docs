@@ -47,6 +47,6 @@ reduced figure. The hold is released only if an operator rejects the request
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 400    | Insufficient balance       | N/A                                            |
+| 400    | Insufficient balance       | [Insufficient-balance error](../_globals/insufficient-balance-errors.md) |
 | 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |

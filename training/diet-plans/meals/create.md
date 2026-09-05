@@ -1,43 +1,79 @@
 # POST /api/v1/training/diet-plans/{diet-plan-id}/meals
-You can create a meal for a diet plan using this API.
 
+Add a meal to a diet plan.
+
+
+---
 
 ## Permissions
+| Permission                | Description                                 |
+|---------------------------|---------------------------------------------|
+| `diet_plan_meals.create`  | Create meals for your diet plans            |
+| `diet_plans.update`       | Update your own or your trainee's diet plans|
 
-- `diet_plan_meals.create`: to create meals for your diet plans
-- `diet_plans.update`: to be able to update your own diet plans
+---
 
-## Params
+## URL Parameters
+| Name           | Type | Required | Description             | Example |
+|----------------|------|----------|-------------------------|---------|
+| `diet-plan-id` | int  | Yes      | ID of the diet plan     | 12      |
 
-- `title`: Title of the training service (maxlength 255)
-- `ingredients`: Ingredietnts (maxlength 2000)
-- `description`: An optional description for the training service (maxlength 2000)
-- `protein`: Protein of the meal in integer (grams)
-- `carb`: Carbs of the meal in integer (grams)
-- `fat`: Fat of the meal in integer (grams)
-- `calories`: Calories of the meal in integer
-- `meal_index`: Index (option per row) of the meal
-- `category_index`: Category (table) of the meal
+---
+
+## Request Body Parameters
+| Name             | Type   | Required | Description                                              |
+|------------------|--------|----------|----------------------------------------------------------|
+| `title`          | string | Yes      | Title of the meal (max 255)                              |
+| `ingredients`    | string | Yes      | Ingredients (max 2000)                                   |
+| `description`    | string | No       | Optional description (max 2000)                          |
+| `protein`        | int    | Yes      | Protein in grams                                         |
+| `carb`           | int    | Yes      | Carbohydrate in grams                                    |
+| `fat`            | int    | Yes      | Fat in grams                                             |
+| `calories`       | int    | Yes      | Calories                                                 |
+| `meal_index`     | int    | Yes      | Index of this option within its category (row position)  |
+| `category_index` | int    | Yes      | Category of the meal (table position)                    |
+
+---
+
+## Request Example
+```json
+POST /api/v1/training/diet-plans/12/meals
+
+{
+  "title": "Chicken and rice",
+  "ingredients": "200g chicken breast, 150g rice",
+  "protein": 45,
+  "carb": 60,
+  "fat": 8,
+  "calories": 520,
+  "meal_index": 1,
+  "category_index": 2
+}
+```
+
+---
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* diet plan meal resource */ }
 }
 ```
+- [Diet Plan Meal Resource](diet_plan_meal_resource.md)
 
-[Diet Plan Meal Resource](diet_plan_meal_resource.md)
+> When the caller is not the plan's owner (a trainer editing a trainee's plan), the owner receives a
+> `DietPlanUpdatedNotification`.
 
-### 422 Unprocessable Entity
-[Validation error](../../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../../_globals/authentication-errors.md)
+## Error Responses
+| Status | Description               | Reference                                                          |
+|--------|---------------------------|--------------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../../_globals/permission-errors.md)         |
+| 404    | Not found                 | [Not-found error](../../../_globals/not-found-errors.md)           |
 
-### 404 Not Found
-[Not-found error](../../../_globals/not-found-errors.md)
-
-### 403 Forbidden
-[Permission error](../../../_globals/permission-errors.md)
+---

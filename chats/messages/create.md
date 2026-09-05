@@ -39,7 +39,7 @@ Sends a message in a specific chat.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created chat message resource.
 
 #### Example

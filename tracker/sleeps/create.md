@@ -22,7 +22,7 @@ Record a new sleep in the tracker system.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* tracker sleep resource */ }

@@ -26,7 +26,7 @@ Create an exercise for a workout plan session.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* workout plan exercise resource */ }

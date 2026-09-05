@@ -14,7 +14,8 @@ Represents a user's subscription to a gym plan, including expiration, available 
 | gym_plan                 | object  | Gym plan resource object                    | { ... }                |
 | expires_at               | string  | Expiration date (YYYY-MM-DD)                | "2025-01-01"          |
 | available_sessions_count | int     | Number of available sessions                | 16                     |
-| checkins                 | array   | List of check-in resources                  | [ { ... }, ... ]       |
+| checkins_count           | int     | Number of check-ins on this subscription    | 14                     |
+| checkins                 | array   | **Deprecated.** List of check-in resources. Use `checkins_count`, or [`GET /gyms/{gym-id}/subscriptions/{subscription-id}/checkins`](checkins/index.md), instead — this array is unbounded and will be removed once no released client reads it. | [ { ... }, ... ] |
 
 ---
 
@@ -26,6 +27,7 @@ Represents a user's subscription to a gym plan, including expiration, available 
   "gym_plan": { /* gym plan resource */ },
   "expires_at": "2025-01-01",
   "available_sessions_count": 16,
+  "checkins_count": 14,
   "checkins": [ { /* gym subscription checkin resource */ } ]
 }
 ```

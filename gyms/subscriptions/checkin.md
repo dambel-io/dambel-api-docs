@@ -38,7 +38,7 @@ Creates a check-in record for a gym subscription.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created check-in resource.
 
 #### Example

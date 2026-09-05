@@ -1,19 +1,50 @@
 # PUT /api/v1/training/diet-plans/{diet-plan-id}/supplements/{supplement-id}
-You can update a supplement from a diet plan using this API.
 
+Update a supplement prescribed on a diet plan.
+
+
+---
 
 ## Permissions
+| Permission                      | Description                                 |
+|---------------------------------|---------------------------------------------|
+| `diet_plan_supplements.update`  | Update supplements of your diet plans       |
+| `diet_plans.update`             | Update your own or your trainee's diet plans|
 
-- `diet_plan_supplements.update`: to update supplements for your diet plans
-- `diet_plans.update`: to be able to update your own diet plans
+---
 
-## Params
+## URL Parameters
+| Name            | Type | Required | Description                                    | Example |
+|-----------------|------|----------|------------------------------------------------|---------|
+| `diet-plan-id`  | int  | Yes      | ID of the diet plan                            | 12      |
+| `supplement-id` | int  | Yes      | ID of the prescribed supplement on that plan   | 34      |
 
-- `supplement_id`: Id of the supplement
-- `amount`: How much to consume (integer)
-- `amount_unit`: A string to define the unit (.e.g. `mg`, `g`, etc.)
-- `description`: An optional description for the training service (maxlength 2000)
-- `after_meal_index`: Index of the meal to define after/with/before which meal should this be consumed
+---
+
+## Request Body Parameters
+| Name               | Type   | Required | Description                                                             |
+|--------------------|--------|----------|-------------------------------------------------------------------------|
+| `supplement_id`    | int    | No       | ID of a supplement in the platform catalog (must exist)                 |
+| `amount`           | int    | No       | How much to consume                                                     |
+| `amount_unit`      | string | No       | Unit of the amount, e.g. `mg`, `g` (max 255)                            |
+| `after_meal_index` | int    | No       | Index of the meal this supplement is taken after/with/before            |
+| `description`      | string | No       | Optional description (max 2000); send `null` to clear it                |
+
+*All parameters are optional. If omitted, they are not updated.*
+
+---
+
+## Request Example
+```json
+PUT /api/v1/training/diet-plans/12/supplements/34
+
+{
+  "amount": 10,
+  "amount_unit": "g"
+}
+```
+
+---
 
 ## Response
 
@@ -23,17 +54,19 @@ You can update a supplement from a diet plan using this API.
   "data": { /* diet plan supplement resource */ }
 }
 ```
+- [Diet Plan Supplement Resource](diet_plan_supplement_resource.md)
 
-[Diet Plan Supplement Resource](diet_plan_supplement_resource.md)
+> When the caller is not the plan's owner (a trainer editing a trainee's plan), the owner receives a
+> `DietPlanUpdatedNotification`.
 
-### 422 Unprocessable Entity
-[Validation error](../../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../../_globals/authentication-errors.md)
+## Error Responses
+| Status | Description                                        | Reference                                                          |
+|--------|----------------------------------------------------|--------------------------------------------------------------------|
+| 422    | Validation error                                   | [Validation error](../../../_globals/validation-errors.md)         |
+| 401    | Unauthorized                                       | [Authentication error](../../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)                          | [Permission error](../../../_globals/permission-errors.md)         |
+| 404    | Not found, or the supplement belongs to another plan | [Not-found error](../../../_globals/not-found-errors.md)         |
 
-### 404 Not Found
-[Not-found error](../../../_globals/not-found-errors.md)
-
-### 403 Forbidden
-[Permission error](../../../_globals/permission-errors.md)
+---

@@ -32,6 +32,8 @@ Update an existing shared tracker configuration.
 | `include_supplement` | boolean | No       | Whether to include supplement data                                         |
 | `include_meal`     | boolean | No       | Whether to include meal data                                               |
 | `include_workout`  | boolean | No       | Whether to include workout data                                            |
+| `include_measurement` | boolean | No    | Whether to include body-measurement data                                   |
+| `include_progress_photo` | boolean | No | Whether to include progress photos — also governs whether the viewer may fetch the image itself |
 | `notify_wakeup`    | boolean | No       | Whether to notify the viewer about new wakeup data                         |
 | `notify_weight`    | boolean | No       | Whether to notify the viewer about new weight data                         |
 | `notify_water`     | boolean | No       | Whether to notify the viewer about new water intake data                   |
@@ -39,6 +41,8 @@ Update an existing shared tracker configuration.
 | `notify_supplement` | boolean | No       | Whether to notify the viewer about new supplement data                     |
 | `notify_meal`      | boolean | No       | Whether to notify the viewer about new meal data                           |
 | `notify_workout`   | boolean | No       | Whether to notify the viewer about new workout data                        |
+| `notify_measurement` | boolean | No     | Reserved. Accepted and stored; no notification is sent for this type yet.  |
+| `notify_progress_photo` | boolean | No  | Reserved. Accepted and stored; no notification is sent for this type yet.  |
 | `description`      | string  | No       | Optional description for the shared tracker (max: 2000 characters)        |
 
 **Note:** If both `start_date` and `end_date` are provided, `end_date` must be after `start_date`. When dates are set to `null`, date restrictions are removed.
@@ -46,6 +50,9 @@ Update an existing shared tracker configuration.
 **Note:** The viewer user can only change `notify_*` fields.
 
 **Note:** The owner user can only change all fields EXCEPT `notify_*` fields.
+
+**Note:** Turning `include_progress_photo` off takes effect immediately for the media URLs too — a
+viewer who had already loaded a progress photo's link gets 403 on the next request.
 
 ---
 

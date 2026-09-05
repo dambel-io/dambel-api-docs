@@ -24,7 +24,7 @@ Create a new supplement.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* supplement resource */ }

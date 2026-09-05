@@ -37,17 +37,23 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ## Authentication
 - [`POST /api/v1/auth/login`](auth/login.md)
 - [`POST /api/v1/auth/register`](auth/register.md)
+- [`POST /api/v1/auth/logout`](auth/logout.md)
 - [`GET /api/v1/auth/me`](auth/me.md)
 - [`PUT /api/v1/auth/me`](auth/update-me.md)
 - [`PUT /api/v1/auth/change-password`](auth/change-password.md)
 - [`POST /api/v1/auth/reset-password/request`](auth/reset-password-request.md)
 - [`POST /api/v1/auth/reset-password/reset`](auth/reset-password-reset.md)
 - [`GET /api/v1/auth/verify-email/{user}`](auth/verify-email.md)
+- [`GET /api/v1/auth/sessions`](auth/sessions-list.md)
+- [`DELETE /api/v1/auth/sessions`](auth/sessions-revoke-others.md)
+- [`DELETE /api/v1/auth/sessions/{token}`](auth/sessions-revoke.md)
 
 ## Gyms
 - [`GET /api/v1/gyms`](gyms/index.md)
 - [`POST /api/v1/gyms`](gyms/create.md)
 - [`GET /api/v1/gyms/my-subscriptions`](gyms/subscriptions/my-subscriptions.md)
+- [`GET /api/v1/gyms/administered`](gyms/admins/administered.md)
+- [`GET /api/v1/gyms/admin-permissions`](gyms/admins/delegatable-permissions.md)
 - `/api/v1/gyms/{gym-id}`
     - [`PUT`](gyms/update.md)
     - [`DELETE`](gyms/delete.md)
@@ -77,10 +83,14 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/admins/{admin-id}`
         - [`PUT`](gyms/admins/update.md)
         - [`DELETE`](gyms/admins/delete.md)
+    - [`POST /checkin-token`](gyms/subscriptions/issue-checkin-token.md)
     - [`POST /subscriptions/subscribe/{plan-id}`](gyms/subscriptions/subscribe.md)
     - [`POST /subscriptions/checkin/{subscription-id}`](gyms/subscriptions/checkin.md)
     - [`POST /subscriptions/checkout/{subscription-id}`](gyms/subscriptions/checkout.md)
+    - [`POST /subscriptions/checkin/{subscription-id}/qr`](gyms/subscriptions/qr-checkin.md)
+    - [`POST /subscriptions/checkout/{subscription-id}/qr`](gyms/subscriptions/qr-checkout.md)
     - [`DELETE /subscriptions/delete-checkin/{subscription-id}/{checkin-id}`](gyms/subscriptions/delete-checkin.md)
+    - [`GET /subscriptions/{subscription-id}/checkins`](gyms/subscriptions/checkins/index.md)
     - [`GET /subscriptions/manage`](gyms/subscriptions/manage/index.md)
     - [`POST /subscriptions/manage`](gyms/subscriptions/manage/create.md)
     - `/subscriptions/manage/{gym-subscription-id}`
@@ -111,6 +121,13 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`POST /api/v1/users/fcm/unregister-token`](users/fcm/unregister-token.md)
 
 ## Training
+- [`GET /api/v1/training/partners/matches`](training/partners/matches.md)
+- [`GET /api/v1/training/partners/profile`](training/partners/profile-show.md)
+- [`PUT /api/v1/training/partners/profile`](training/partners/profile-update.md)
+- [`GET /api/v1/training/partners/requests`](training/partners/requests-index.md)
+- [`POST /api/v1/training/partners/requests`](training/partners/requests-create.md)
+- `/api/v1/training/partners/requests/{request-id}`
+    - [`PUT`](training/partners/requests-respond.md)
 - [`GET /api/v1/training/services`](training/services/index.md)
 - [`POST /api/v1/training/services/{user-id}`](training/services/create.md)
 - `/api/v1/training/services/{training-service-id}`
@@ -153,6 +170,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
             - [`DELETE`](training/workout-plans/sessions/exercises/delete.md)
 
 ## AI
+- [`POST /api/v1/ai/meal-estimations`](ai/meal-estimations.md)
 - [`GET /api/v1/ai/threads`](ai/threads/index.md)
 - [`POST /api/v1/ai/threads`](ai/threads/create.md)
 - `/api/v1/ai/threads/{thread-id}`
@@ -168,7 +186,9 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 ## Tracker
 - [`GET /api/v1/tracker/data/averages`](tracker/data/averages.md)
 - [`GET /api/v1/tracker/data/charts`](tracker/data/charts.md)
+- [`GET /api/v1/tracker/data/muscle-load`](tracker/data/muscle-load.md)
 - [`GET /api/v1/tracker/data/records`](tracker/data/records.md)
+- [`GET /api/v1/tracker/data/streaks`](tracker/data/streaks.md)
 - [`GET /api/v1/tracker/data/today`](tracker/data/today.md)
 - [`GET /api/v1/tracker/wakeups`](tracker/wakeups/index.md)
 - [`POST /api/v1/tracker/wakeups`](tracker/wakeups/create.md)
@@ -185,6 +205,16 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/tracker/weights/{tracker-weight-id}`
     - [`PUT`](tracker/weights/update.md)
     - [`DELETE`](tracker/weights/delete.md)
+- [`GET /api/v1/tracker/measurements`](tracker/measurements/index.md)
+- [`POST /api/v1/tracker/measurements`](tracker/measurements/create.md)
+- `/api/v1/tracker/measurements/{tracker-measurement-id}`
+    - [`PUT`](tracker/measurements/update.md)
+    - [`DELETE`](tracker/measurements/delete.md)
+- [`GET /api/v1/tracker/progress-photos`](tracker/progress-photos/index.md)
+- [`POST /api/v1/tracker/progress-photos`](tracker/progress-photos/create.md)
+- `/api/v1/tracker/progress-photos/{tracker-progress-photo-id}`
+    - [`PUT`](tracker/progress-photos/update.md)
+    - [`DELETE`](tracker/progress-photos/delete.md)
 - [`GET /api/v1/tracker/supplements`](tracker/supplements/index.md)
 - [`POST /api/v1/tracker/supplements`](tracker/supplements/create.md)
 - `/api/v1/tracker/supplements/{tracker-supplement-id}`
@@ -205,11 +235,19 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/tracker/workouts/{tracker-workout-id}`
     - [`PUT`](tracker/workouts/update.md)
     - [`DELETE`](tracker/workouts/delete.md)
+    - [`GET /previous-sets`](tracker/workouts/previous-sets.md)
     - [`GET /sets`](tracker/workouts/sets/index.md)
     - [`POST /sets`](tracker/workouts/sets/create.md)
     - `/sets/{tracker-workout-set-id}`
         - [`PUT`](tracker/workouts/sets/update.md)
         - [`DELETE`](tracker/workouts/sets/delete.md)
+- [`GET /api/v1/tracker/strength-records`](tracker/strength-records/index.md)
+- [`GET /api/v1/tracker/strength-records/leaderboard`](tracker/strength-records/leaderboard.md)
+- [`POST /api/v1/tracker/strength-records`](tracker/strength-records/create.md)
+- `/api/v1/tracker/strength-records/{claim-id}`
+    - [`DELETE`](tracker/strength-records/withdraw.md)
+    - [`POST /verifications`](tracker/strength-records/verification-create.md)
+    - [`DELETE /verifications`](tracker/strength-records/verification-delete.md)
 - [`GET /api/v1/tracker/shares`](tracker/shares/index.md)
 - [`POST /api/v1/tracker/shares`](tracker/shares/create.md)
 - `/api/v1/tracker/shares/{shared-tracker-id}`
@@ -283,6 +321,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 
 ## Admin
 - [`GET /api/v1/admin/stats`](admin/stats/index.md)
+- [`GET /api/v1/admin/service-health`](admin/service-health/index.md)
 - [`GET /api/v1/admin/roles`](admin/roles/index.md)
 - [`POST /api/v1/admin/roles`](admin/roles/create.md)
 - `/api/v1/admin/roles/{role-id}`
@@ -334,6 +373,9 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/admin/supplements/{supplement-id}`
     - [`PUT`](admin/supplements/update.md)
     - [`DELETE`](admin/supplements/delete.md)
+- [`GET /api/v1/admin/ai-translations`](admin/ai-translations/index.md)
+- `/api/v1/admin/ai-translations/{ai-translation-id}`
+    - [`PUT`](admin/ai-translations/update.md)
 
 ## Global Schemas & Errors
 - [Pagination data](_globals/pagination-data.md)
@@ -346,3 +388,4 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [Method-not-allowed errors](_globals/method-not-allowed-errors.md)
 - [Not-found errors](_globals/not-found-errors.md)
 - [Permission errors](_globals/permission-errors.md)
+- [Insufficient-balance errors](_globals/insufficient-balance-errors.md)

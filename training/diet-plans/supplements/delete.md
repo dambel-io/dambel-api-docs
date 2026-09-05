@@ -1,22 +1,58 @@
 # DELETE /api/v1/training/diet-plans/{diet-plan-id}/supplements/{supplement-id}
-You can delete a supplement from a diet plan using this API.
 
+Remove a supplement from a diet plan.
+
+
+---
 
 ## Permissions
+| Permission                      | Description                                 |
+|---------------------------------|---------------------------------------------|
+| `diet_plan_supplements.delete`  | Delete supplements from your diet plans     |
+| `diet_plans.update`             | Update your own or your trainee's diet plans|
 
-- `diet_plan_supplements.delete`: to delete supplements for your diet plans
-- `diet_plans.update`: to be able to update your own diet plans
+---
+
+## URL Parameters
+| Name            | Type | Required | Description                                    | Example |
+|-----------------|------|----------|------------------------------------------------|---------|
+| `diet-plan-id`  | int  | Yes      | ID of the diet plan                            | 12      |
+| `supplement-id` | int  | Yes      | ID of the prescribed supplement on that plan   | 34      |
+
+---
+
+## Request Example
+```
+DELETE /api/v1/training/diet-plans/12/supplements/34
+```
+
+---
 
 ## Response
 
 ### 204 No Content
-Supplement deleted.
+Despite the `204`, this endpoint **does** return a JSON body — a localized confirmation message.
+HTTP defines `204` as bodyless, so some clients and proxies discard it; treat the body as informational,
+not something to depend on.
 
-### 401 Unauthorized
-[Authentication error](../../../_globals/authentication-errors.md)
+```json
+{
+  "message": "Supplement deleted successfully."
+}
+```
 
-### 404 Not Found
-[Not-found error](../../../_globals/not-found-errors.md)
+Localized from `messages.training.diet_plans.supplements.deleted_successfully` (`fa`: “مکمل با موفقیت حذف شد.”).
 
-### 403 Forbidden
-[Permission error](../../../_globals/permission-errors.md)
+> When the caller is not the plan's owner (a trainer editing a trainee's plan), the owner receives a
+> `DietPlanUpdatedNotification`.
+
+---
+
+## Error Responses
+| Status | Description                                        | Reference                                                          |
+|--------|----------------------------------------------------|--------------------------------------------------------------------|
+| 401    | Unauthorized                                       | [Authentication error](../../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)                          | [Permission error](../../../_globals/permission-errors.md)         |
+| 404    | Not found, or the supplement belongs to another plan | [Not-found error](../../../_globals/not-found-errors.md)         |
+
+---

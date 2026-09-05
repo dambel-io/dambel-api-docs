@@ -23,7 +23,7 @@ Authorization: Bearer {token}
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created gym subscription resource.
 
 #### Example
@@ -40,7 +40,7 @@ For a full schema, see [Gym Subscription Resource](gym_subscription.md).
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 400    | Insufficient account balance|  |
+| 400    | Insufficient account balance | [Insufficient-balance error](../../_globals/insufficient-balance-errors.md) |
 | 403    | The gym's license is not approved (`gym_license_approved` is not `true`), so it cannot sell subscriptions |  |
 | 404    | Not found (invalid gym or plan, or inactive) |  |
 | 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |

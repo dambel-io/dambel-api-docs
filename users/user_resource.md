@@ -25,10 +25,15 @@ Represents a user in the system.
 | `height`                 | integer\|null   | User's height in CM                                                        |
 | `birth_date`             | string (date)\|null| User's birth date                                                       |
 | `gender`             | string\|null| User's gender (`male`, `female`, `other`)                                                       |
-| `referral_score`         | integer         | User's referral score *(hidden for limited access)*                        |
+| `is_trainer`             | boolean         | The user's own statement that they coach. Self-identification for client navigation only — **authorizes nothing** |
+| `is_gym_owner`           | boolean         | The user's own statement that they run a gym. Self-identification for client navigation only — **authorizes nothing** |
+| `referral_score`         | number          | User's weighted referral score — a **float**, not an integer *(hidden for limited access)*. See [Referral Score](#referral-score) |
+| `referrals_count`        | integer         | How many users this user directly referred *(hidden for limited access)*    |
 | `roles`                  | array           | List of [Role Resource](../admin/roles/role_resource.md) *(hidden for limited access)* |
 | `media`                  | array           | List of [Media Resource](../media/media_resource.md). Excludes purpose-bearing rows such as the trainer license |
 | `current_subscription`   | object\|null    | [User Premium Subscription Resource](../payments/user_premium_subscription_resource.md) |
+
+**Self-identification flags:** `is_trainer` and `is_gym_owner` say how the user describes themself so the clients can hide sections that do not apply. They are **not** authorization and no policy, permission or route middleware reads them — a user who sets `is_trainer` to `false` keeps every permission, training service and trainee they had. They are visible to every viewer for the same reason: they shape navigation, not access. They are settable only on [`PUT /auth/me`](../auth/update-me.md); [`PUT /users/{id}`](update.md) deliberately ignores them.
 
 **Trainer license:** the document is identity PII. It is never attached to the public `media` array, and `trainer_license_link` points at the standard media download route, which refuses to serve purpose-bearing media to anyone but the subject and holders of `users.view_all`. See [Download Media](../media/download.md).
 
@@ -56,7 +61,10 @@ Represents a user in the system.
   "height": 180,
   "birth_date": "1990-01-01",
   "gender": "male",
-  "referral_score": 5,
+  "is_trainer": false,
+  "is_gym_owner": false,
+  "referral_score": 1.5,
+  "referrals_count": 1,
   "roles": [<role resource>, ...],
   "media": [<media resource>, ...],
   "current_subscription": <user premium subscription resource>
@@ -81,6 +89,25 @@ These are gonna be the scores:
 - User 3: 0
 
 The depth has no limit.
+
+**It is a float, and always a JSON number** — never a quoted string. The value is cached server-side for ten hours;
+the cast that keeps the type stable across a cache hit and a cache miss lives in `UserResource`.
+
+`1 + (referee_score / 2)` summed over direct referrals produces values like `1.5`; the API emits the number
+unrounded. **Current client behaviour is to display it to one decimal place** and not to round server-side values
+themselves. That is not yet a signed-off product rule — it is what the apps do today, recorded here so they stay
+consistent with each other.
+
+### `referral_score` vs. `referrals_count`
+
+`referrals_count` is the plain number of users whose `referrer_user_id` is this user — direct invitations only, no
+weighting and no recursion. `referral_score` weights the whole tree beneath them. A user who invited three people,
+one of whom invited someone else, has `referrals_count: 3` and `referral_score: 3.5`.
+
+The two figures can briefly disagree: `referrals_count` is read live on every request, while `referral_score` is
+cached for ten hours, so a freshly-referred user shows up in the count up to ten hours before the score moves. The
+count is deliberately not put behind the same cache — one indexed `COUNT` on a foreign key is cheaper than a second
+invalidation path is to get right.
 
 ---
 

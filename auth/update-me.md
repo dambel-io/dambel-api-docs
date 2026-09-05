@@ -16,12 +16,14 @@ This endpoint requires authentication but does not require any special permissio
 | `first_name` | string  | No       | First name (max 255 characters)                         |
 | `last_name`  | string  | No       | Last name (max 255 characters)                          |
 | `email`      | string  | No       | Email address (must be valid email format, unique)      |
-| `username`   | string  | No       | Username (max 255 characters, unique)                   |
+| `username`   | string  | No       | Username (max 255 characters, unique; letters, digits, `_` and `.` only — `/^[a-zA-Z0-9_.]+$/`) |
 | `height`     | integer | No       | User's height in centimeters                            |
 | `birth_date` | date    | No       | User's birth date (format: YYYY-MM-DD)                  |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
 | `bank_account_number` | string | No | Bank account number (max 50 characters, nullable)   |
 | `trainer_license_image` | null | No | Only `null` is accepted, which clears your trainer license. Any other value is rejected with 422 |
+| `is_trainer` | boolean | No | Self-identification: the user coaches. Shapes the client's navigation only — authorizes nothing |
+| `is_gym_owner` | boolean | No | Self-identification: the user runs a gym. Shapes the client's navigation only — authorizes nothing |
 
 **Notes:**
 - All parameters are optional. If omitted, they will not be updated.
@@ -29,6 +31,7 @@ This endpoint requires authentication but does not require any special permissio
 - `trainer_license_approved` and `trainer_license_rejection_reason` are operator-only and are not accepted on this endpoint; sending them has no effect.
 - Clearing `trainer_license_image` deletes the stored document and resets the approval back to pending.
 - **`phone` cannot be changed here, and that is deliberate.** A phone number is an authentication factor on this platform — registration and password reset both key on it — so moving it without OTP re-verification would let anyone holding a hijacked session take over the account. Self-service phone change needs an OTP re-verification flow, which does not exist yet. An operator can change it via [`PUT /users/{id}`](../users/update.md).
+- **`is_trainer` and `is_gym_owner` are self-identification, not entitlement.** No policy, permission or route middleware reads them. Setting `is_trainer` to `false` hides the trainer sections in the app and changes no API outcome — the user keeps every permission, training service and trainee they had. They are settable here and **not** on [`PUT /users/{id}`](../users/update.md), because they are the user's own statement about themself; sending them to the operator endpoint has no effect.
 - Email and username must be unique across all users.
 - Users can reuse their own current email and username when updating other fields.
 
@@ -46,7 +49,9 @@ Content-Type: application/json
   "email": "john.doe@example.com",
   "username": "johndoe",
   "height": 180,
-  "birth_date": "1990-05-15"
+  "birth_date": "1990-05-15",
+  "is_trainer": true,
+  "is_gym_owner": false
 }
 ```
 
@@ -69,6 +74,8 @@ Returns the updated user resource.
     "height": 180,
     "gender": "male",
     "birth_date": "1990-05-15",
+    "is_trainer": true,
+    "is_gym_owner": false,
     "created_at": "2023-01-01T00:00:00.000000Z",
     "updated_at": "2023-01-15T10:30:00.000000Z",
     ...

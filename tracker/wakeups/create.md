@@ -1,32 +1,57 @@
 # POST /api/v1/tracker/wakeups
-You can record a wakeup in the tracker system using this API.
 
+Record a wake-up. The record is always attributed to the authenticated user.
+
+
+---
 
 ## Permissions
+| Permission                | Description                 |
+|---------------------------|-----------------------------|
+| `tracker_wakeups.create`  | Create wake-up records      |
 
-- `tracker_wakeups.create`: creating tracker wakeup
+---
 
-## Params
+## Request Body Parameters
+| Name         | Type   | Required | Description                                      |
+|--------------|--------|----------|--------------------------------------------------|
+| `tracked_at` | date   | Yes      | When the wake-up happened                        |
+| `notes`      | string | No       | Optional notes (max 2000)                        |
 
-- `tracked_at`: The datetime for the wakeup
-- `notes`: An optional notes
+---
+
+## Request Example
+```json
+POST /api/v1/tracker/wakeups
+
+{
+  "tracked_at": "2026-08-31 07:15:00",
+  "notes": "Slept well."
+}
+```
+
+---
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* tracker wakeup resource */ }
 }
 ```
+- [Tracker Wakeup Resource](tracker_wakeup_resource.md)
 
-[Tracker Wakeup Resource](tracker_wakeup_resource.md)
+> Viewers of a shared tracker that both includes wake-ups (`include_wakeup`) and asks to be notified
+> about them (`notify_wakeup`), and whose date range covers `tracked_at`, receive a `UserWokeUpNotification`.
 
-### 422 Unprocessable Entity
-[Validation error](../../_globals/validation-errors.md)
+---
 
-### 401 Unauthorized
-[Authentication error](../../_globals/authentication-errors.md)
+## Error Responses
+| Status | Description               | Reference                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| 422    | Validation error          | [Validation error](../../_globals/validation-errors.md)         |
+| 401    | Unauthorized              | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission) | [Permission error](../../_globals/permission-errors.md)         |
 
-### 403 Forbidden
-[Permission error](../../_globals/permission-errors.md)
+---

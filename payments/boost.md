@@ -37,7 +37,7 @@ Use [`/prices`](prices.md) to get available plan names and pricing.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created marketing boost resource.
 
 ```json
@@ -61,7 +61,7 @@ See [Marketing Boost Resource](marketing_boost_resource.md).
 | Status | Description               | Reference                                                    |
 |--------|---------------------------|--------------------------------------------------------------|
 | 400    | Already have a boost      |                                                              |
-| 400    | Insufficient balance      |                                                              |
+| 400    | Insufficient balance      | [Insufficient-balance error](../_globals/insufficient-balance-errors.md) (also under `message`) |
 | 404    | Plan not found            |                                                              |
 | 422    | Validation error          | [Validation error](../_globals/validation-errors.md)         |
 | 401    | Unauthorized              | [Authentication error](../_globals/authentication-errors.md) |

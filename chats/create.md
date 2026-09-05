@@ -30,7 +30,7 @@ Creates a new chat with the specified users.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created chat resource.
 
 #### Example

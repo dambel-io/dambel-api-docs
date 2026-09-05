@@ -24,7 +24,7 @@ Create a new state in a given country.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* state resource */ }

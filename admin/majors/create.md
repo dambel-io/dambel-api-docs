@@ -22,7 +22,7 @@ Create a new major.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* major resource */ }

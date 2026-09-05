@@ -41,8 +41,10 @@ The `type` field represents the type of the notification. All types have the `Ap
 - `Payments\UserPremiumSubscriptionPurchasedNotification`: Notifies users when their premium purchase is complete
 - `Ratings\NewRatingNotification`: Notifies users when their ratable is rated (only the score is shown)
 - `Users\RoleAssignedNotification`: Notifies users when a new permission role is assigned to their account
+- `Users\NewDeviceLoginNotification`: Notifies users when their account is signed in from a device label not seen before (`data.device`, `data.logged_in_at`; `device` is client-supplied text — render it escaped)
 - `Gyms\Subscriptions\GymSubscriptionCheckInNotification`: Notifies users/gym owners when a check-in is done
-- `Gyms\Subscriptions\NewGymSubscriptionNotification`: Notifies gym owners when a new subscription is purchased
+- `Gyms\Subscriptions\NewGymSubscriptionNotification`: Notifies gym owners when a new subscription is purchased in-app, or added manually by a gym admin / operator
+- `Gyms\Subscriptions\GymSubscriptionAddedNotification`: Notifies the subscriber when a gym owner, gym admin or operator enrols them by hand (`POST /gyms/{gym}/subscriptions/manage`)
 - `Gyms\Subscriptions\GymSubscriptionCheckOutNotification`: Notifies users/gym owners when a check-out is done
 - `Reports\NewReportNotification`: Notifies admins when a new report is created
 - `Chats\NewMessageNotification`: Notifies users of new chat messages

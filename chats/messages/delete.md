@@ -51,3 +51,7 @@ Localized from `messages.chats.messages.deleted_successfully` (`fa`: “پیام
 | 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
 | 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |
+
+`{message}` must belong to `{chat}`. A message id from another chat returns **404**, not 403 — a 403 would
+confirm to the caller that the message exists.
+

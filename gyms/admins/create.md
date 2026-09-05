@@ -25,7 +25,7 @@ Creates a new admin for a gym.
 |-------------|--------------|----------|---------------------------------------------|------------------------|
 | title       | string       | No       | Title of the admin (max 255 characters)     | "Manager"             |
 | user_id     | int          | Yes      | ID of the user to grant admin access        | 42                     |
-| permissions | string array | Yes      | List of permission names for the admin      | ["edit_gym", "view"]  |
+| permissions | int array    | Yes      | Permission **IDs** to grant. Each must exist (`exists:permissions,id`). Only the IDs published by [`GET /gyms/admin-permissions`](delegatable-permissions.md) do anything | [17, 23] |
 
 ---
 
@@ -34,9 +34,12 @@ Creates a new admin for a gym.
 {
   "title": "Manager",
   "user_id": 42,
-  "permissions": ["edit_gym", "view"]
+  "permissions": [17, 23]
 }
 ```
+
+Passing an ID outside the delegatable set is accepted and stored, and grants nothing — `Gym::adminCan()` is
+only ever asked about the published names.
 
 ---
 
@@ -52,7 +55,9 @@ Returns the created gym admin resource.
   "gym_id": 123,
   "title": "Manager",
   "user_id": 42,
-  "permissions": ["edit_gym", "view"]
+  "permissions": [17, 23],
+  "permission_names": ["gym_plans.create", "gym_subscriptions.checkin"],
+  "created_at": "2026-08-31T10:00:00.000000Z"
 }
 ```
 

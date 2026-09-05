@@ -19,6 +19,17 @@ Creates a new report for a specified element (e.g., gym, user).
 | reportable_id   | int     | Yes      | ID of the element to report                 | 456             |
 | description     | string  | Yes      | Description of the report (max 255 chars)   | "Broken equipment" |
 
+### Accepted `reportable_type` values
+`user` · `gym` · `comment` · `chat_message` · `training_service` · `ai_thread` · `media` ·
+`strength_record_claim` · `training_partner_profile`
+
+The fully-qualified class name is also accepted for each, for backwards compatibility. The list is
+generated from `App\Repositories\Reports\ReportRepository::REPORTABLE_TYPES`, which the
+`createReport` and `listReports` MCP tools render their own schema enums from, so the two surfaces
+cannot accept different sets.
+
+A `reportable_id` that does not exist is a 422 on that field, not a report filed against nothing.
+
 ---
 
 ## Request Example
@@ -34,7 +45,7 @@ Creates a new report for a specified element (e.g., gym, user).
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created report resource.
 
 #### Example

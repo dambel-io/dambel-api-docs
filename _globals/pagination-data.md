@@ -17,6 +17,12 @@ For more details, see the [Laravel official documentation](https://laravel.com/d
 | total         | int     | Total number of items                       |
 | links         | array   | Pagination navigation links                 |
 
+> **Links carry `page` and nothing else.** They are not a way to re-run a filtered request: none of
+> the caller's own query parameters is echoed back into them, so paging a filtered or searched list
+> means re-sending the filter alongside `page`. This holds for the Scout-backed searches too —
+> `App\Search\ScoutPagination` strips the `query` key Scout's own paginator would otherwise add,
+> so a search's links look exactly like an unfiltered listing's.
+
 ---
 
 ## Example

@@ -37,6 +37,14 @@ You must have **update** permission for the target attachable resource.
 - `gym_buffet_item`
 - `training_service`
 - `tracker_meal`
+- `tracker_progress_photo`
+
+> **`tracker_progress_photo` is share-gated, not public.** Ordinary media without a `purpose` is
+> readable by anyone who may read the record it hangs off, and for most types that is a wide
+> audience. A progress photo's audience is exactly the athlete plus any viewer holding a tracker
+> share with `include_progress_photo = true` whose window covers the entry's `tracked_at` — the
+> same rule that governs the entry itself, applied to the file. See
+> [the progress photo resource](../tracker/progress-photos/tracker_progress_photo_resource.md).
 
 ---
 
@@ -55,7 +63,7 @@ file=@photo.jpg
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created media resource.
 
 #### Example

@@ -43,7 +43,7 @@ amounts involved. All amounts are in Tooman, and `amount + gateway_fee == payabl
 
 | Field          | Type   | Description                                                     |
 |----------------|--------|-----------------------------------------------------------------|
-| link           | string | Gateway URL to redirect the user to                             |
+| link           | string | URL on the API host that forwards the browser to the payment gateway. Open it as-is; it is signed and valid for one hour. |
 | amount         | number | Amount the user's balance will be credited with                 |
 | gateway_fee    | number | Gateway fee the user pays on top of `amount`                    |
 | payable_amount | number | Total the user is charged at the gateway                        |
@@ -51,12 +51,26 @@ amounts involved. All amounts are in Tooman, and `amount + gateway_fee == payabl
 #### Example
 ```json
 {
-  "link": "https://gateway.zibal.ir/start/123456789",
+  "link": "https://api.dambel.io/payments/41/gateway?expires=1789000000&signature=6f1c…",
   "amount": 700000,
   "gateway_fee": 7786,
   "payable_amount": 707786
 }
 ```
+
+---
+
+### Why `link` is not the gateway URL
+
+The gateway requires a `Referer` on the transaction start, and Shaparak matches it
+against the domain registered for the merchant — which is also the callback host.
+An app opening the gateway URL directly through the OS sends no referrer at all, so
+`link` points at a page on the API's own host that forwards the browser onward; the
+navigation then carries our origin.
+
+Clients must treat `link` as opaque and open it unchanged. It is signed, expires one
+hour after the deposit is created, and resolves the gateway URL from the stored
+payment — it can never be pointed somewhere else.
 
 ---
 
@@ -76,6 +90,6 @@ creates a new payment. A deposit with a different `amount` or `description` is a
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 500    | Payment service provider error (`{ "message": "Payment service provider error.", "error": "..." }`) | N/A |
+| 500    | Payment service provider error (`{ "message": "Payment service provider error." }` — the provider's own error text is logged, never returned) | N/A |
 | 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |

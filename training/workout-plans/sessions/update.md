@@ -1,4 +1,4 @@
-# /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}
+# PUT /api/v1/training/workout-plans/{workout-plan-id}/sessions/{session-id}
 
 Update a session in a specific workout plan.
 

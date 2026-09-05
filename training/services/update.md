@@ -1,4 +1,4 @@
-# /api/v1/training/services/{training-service-id}
+# PUT /api/v1/training/services/{training-service-id}
 
 Update a training service.
 
@@ -18,9 +18,9 @@ Update a training service.
 |--------------|---------|----------|---------------------------------------------|
 | `title`      | string  | No       | Title of the training service (max 255)     |
 | `description`| string  | No       | Description (max 2000, optional)            |
-| `price`      | int     | No       | Price of the training service               |
+| `price`      | int     | No       | Price of the training service, in Tooman. Must be 0 or greater. |
 | `discount`   | float   | No       | Discount percentage (nullable, default 0)   |
-| `category`   | string  | No       | Category of training service: `diet_plan`, `workout_plan`, `other` |
+| `category`   | string  | No       | Category of training service. Values come from the `ServiceCategory` enum: `diet_plan`, `workout_plan`, `other` |
 | `major_ids`  | array   | No       | Array of major IDs that this training service covers |
 
 *All parameters are optional. If omitted, they will not be updated. You can set them to null if desired.*

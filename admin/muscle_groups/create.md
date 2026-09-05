@@ -22,7 +22,7 @@ Create a new muscle group.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* muscle group resource */ }

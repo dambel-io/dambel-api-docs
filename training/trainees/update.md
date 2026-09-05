@@ -1,4 +1,4 @@
-# /api/v1/training/trainees/{trainee-id}
+# PUT /api/v1/training/trainees/{trainee-id}
 
 Update a trainee record.
 

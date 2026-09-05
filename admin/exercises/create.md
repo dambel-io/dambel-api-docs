@@ -25,7 +25,7 @@ Create a new exercise.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* exercise resource */ }

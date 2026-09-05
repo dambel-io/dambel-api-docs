@@ -20,7 +20,7 @@ Update the information of a specific user.
 | `email`      | string  | No       | Email (max 255, unique)                 |
 | `phone`      | string  | No       | Phone number (unique, E.164 format). **Operator-only in practice** — there is no self-service equivalent on [`PUT /auth/me`](../auth/update-me.md), because a phone number is an authentication factor and changing it needs OTP re-verification that does not exist yet. |
 | `bank_account_number` | string | No | Bank account number (max 50 characters, nullable) |
-| `username`   | string  | No       | Username (max 255, unique)              |
+| `username`   | string  | No       | Username (max 255, unique; letters, digits, `_` and `.` only — `/^[a-zA-Z0-9_.]+$/`) |
 | `height`     | integer | No       | User's height in CM                     |
 | `birth_date` | date    | No       | User's birth date                       |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |
@@ -30,6 +30,8 @@ Update the information of a specific user.
 | `trainer_license_rejection_reason` | string\|null | No | Reason shown to the user when rejected (max 1000) |
 
 *All parameters are optional. If omitted, they will not be updated.*
+
+**`is_trainer` and `is_gym_owner` are not accepted here, and that is deliberate.** They are the user's own statement about which parts of the platform apply to them, so they are settable only on [`PUT /auth/me`](../auth/update-me.md). Sending them to this endpoint has no effect — they are silently ignored, not rejected, because they are not operator fields at all. This is the mirror image of `phone` above: each endpoint deliberately owns the fields that belong to it. Neither flag authorizes anything, so an operator has no reason to need them.
 
 ### Trainer license review
 Setting `trainer_license_approved` to a non-null value that differs from the user's current decision sends them a `TrainerLicenseReviewedNotification` (see [Notifications](../../notifications.md)). Re-sending the same decision is a no-op and notifies nobody.

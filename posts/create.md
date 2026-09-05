@@ -40,7 +40,7 @@ Creates a new post for a specified profile (gym or user).
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created post resource.
 
 ```json

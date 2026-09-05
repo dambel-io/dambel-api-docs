@@ -32,8 +32,9 @@ Represents a gym entity with all its attributes, relationships, and status infor
 | gym_license_image | string\|null       | **Restricted.** Download link for the license document, or null if none is uploaded        |
 | gym_license_approved | bool\|null      | **Restricted.** `true` approved, `false` rejected, `null` pending review                    |
 | gym_license_rejection_reason | string\|null | **Restricted.** Why the license was rejected                                       |
+| owner            | object\|absent      | **Restricted.** Nested User resource of the gym owner ([see here](../users/user_resource.md)); `phone` and `email` inside it follow the User resource's own rule (`users.view_all` or self) |
 
-> **Restricted fields.** The three `gym_license_*` fields are only present for the gym's owner (`user_id`) and for viewers holding `gyms.view_all`. For everyone else — including anonymous callers of the public [GET /api/v1/gyms](index.md) — the keys are **absent from the response entirely**, not null.
+> **Restricted fields.** The three `gym_license_*` fields and `owner` are only present for the gym's owner (`user_id`) and for viewers holding `gyms.view_all`. For everyone else — including anonymous callers of the public [GET /api/v1/gyms](index.md) — the keys are **absent from the response entirely**, not null.
 >
 > The license document is stored as a media row with `purpose=gym_license`. Such rows are excluded from the `media` array above and are **not** publicly downloadable: [GET /api/v1/media/{media}/{filename}](../media/download.md) returns `403` for them unless the caller is the gym owner or holds `gyms.view_all`.
 
@@ -98,9 +99,20 @@ Represents a gym entity with all its attributes, relationships, and status infor
     }
   ],
   "rating_count": 12,
-  "rating_average": 4.5
+  "rating_average": 4.5,
+  "owner": {
+    "id": 5,
+    "first_name": "Sara",
+    "last_name": "Ahmadi",
+    "username": "sara.ahmadi"
+  }
 }
 ```
+
+> The example shows a privileged viewer. For everyone else `owner` and the three `gym_license_*`
+> keys are absent from the object entirely. `owner` is a full User resource — the fields inside it
+> are gated in turn by the [User Resource](../users/user_resource.md)'s own rule, so a viewer with
+> `gyms.view_all` but not `users.view_all` sees the owner without `phone` or `email`.
 
 ---
 
@@ -134,3 +146,4 @@ The `crowd` field shows the current number of people checked in at the gym, calc
 - [Working Period Resource](working-periods/gym_working_period_resource.md)
 - [Marketing Boost Resource](../payments/marketing_boost_resource.md)
 - [Media Resource](../media/media_resource.md)
+- [User Resource](../users/user_resource.md)

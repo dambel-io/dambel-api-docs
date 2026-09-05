@@ -24,7 +24,7 @@ Create a new equipment item.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* equipment resource */ }

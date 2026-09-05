@@ -24,7 +24,7 @@ Create a new brand.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created brand resource.
 
 ```json

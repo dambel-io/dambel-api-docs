@@ -15,7 +15,7 @@ This endpoint does not require authentication. Rate limited to 10 requests per m
 |--------------|---------|----------|---------------------------------------------|------------------------|
 | phone        | string  | Yes      | User phone number (10–15 digits, optional leading `+`) | "+1234567890"         |
 | email        | string  | No      | User email address                          | "user@example.com"    |
-| username     | string  | Yes      | Username (max 255 characters)               | "johndoe"             |
+| username     | string  | Yes      | Username (max 255 characters; letters, digits, `_` and `.` only — `/^[a-zA-Z0-9_.]+$/`) | "johndoe"             |
 | first_name   | string  | No      | First name of the user (max 255 characters) | "John"                |
 | last_name    | string  | No      | Last name of the user (max 255 characters)  | "Doe"                 |
 | password     | string  | Yes      | User password (min 8 characters)            | "password123"         |

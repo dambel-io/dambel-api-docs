@@ -30,7 +30,7 @@ Creates a new AI thread.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created AI thread resource.
 
 #### Example

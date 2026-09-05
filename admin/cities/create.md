@@ -24,7 +24,7 @@ Create a new city in a given state.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* city resource */ }

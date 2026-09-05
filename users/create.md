@@ -19,7 +19,7 @@ Create a new user in the system.
 | `last_name`  | string  | No       | Last name (max 255)                 |
 | `email`      | string  | No       | Email (max 255, unique)             |
 | `phone`      | string  | Yes      | Phone number (unique, E.164 format) |
-| `username`   | string  | Yes      | Username (max 255, unique)          |
+| `username`   | string  | Yes      | Username (max 255, unique; letters, digits, `_` and `.` only — `/^[a-zA-Z0-9_.]+$/`) |
 | `height`     | integer | No       | User's height in CM                 |
 | `birth_date` | date    | No       | User's birth date                   |
 | `gender` | string    | No       | User's gender (`male`, `female`, `other`)                 |

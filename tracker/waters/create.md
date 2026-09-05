@@ -23,7 +23,7 @@ Record a new water intake in the tracker system.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* tracker water resource */ }

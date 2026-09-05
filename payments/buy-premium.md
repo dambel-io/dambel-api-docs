@@ -35,7 +35,7 @@ Use [`/prices`](prices.md) to get plan names and discount rates.
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created user premium subscription resource.
 
 #### Example
@@ -58,7 +58,8 @@ For a full schema, see [User Premium Subscription Resource](user_premium_subscri
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 400    | Already subscribed/Insufficient balance | N/A                                 |
+| 400    | Already subscribed         | N/A                                            |
+| 400    | Insufficient balance       | [Insufficient-balance error](../_globals/insufficient-balance-errors.md) |
 | 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
 | 404    | Plan not found             | N/A                                            |
 | 500    | Subscription failed        | N/A                                            |

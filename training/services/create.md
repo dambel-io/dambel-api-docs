@@ -27,9 +27,9 @@ Create a new training service for a user.
 |---------------|--------|----------|----------------------------------------------------------------------------------|
 | `title`       | string | Yes      | Title of the training service (max 255)                                          |
 | `description` | string | No       | Description (max 2000, optional)                                                 |
-| `price`       | int    | Yes      | Price of the training service                                                    |
+| `price`       | int    | Yes      | Price of the training service, in Tooman. Must be 0 or greater.                  |
 | `discount`    | float  | No       | Discount percentage (nullable, default 0)                                        |
-| `category`    | string | No       | Category: `diet_plan`, `workout_plan`, `other` (default: `other`)                |
+| `category`    | string | No       | Category. Values come from the `ServiceCategory` enum: `diet_plan`, `workout_plan`, `other` (default: `other`) |
 | `major_ids`   | array  | No       | Array of major IDs that this training service covers                             |
 
 ---

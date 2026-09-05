@@ -1,4 +1,4 @@
-# /api/v1/training/diet-plans/{diet-plan-id}
+# PUT /api/v1/training/diet-plans/{diet-plan-id}
 
 Update a diet plan.
 
@@ -18,7 +18,7 @@ Update a diet plan.
 | `title`      | string  | No       | Title of the diet plan (max 255)            |
 | `description`| string  | No       | Description (max 2000, optional)            |
 | `is_active`| boolean  | No       | Set as active plan (optional, default false). It changes all other plans to false if is set to true            |
-| `target_daily_water`| float  | No       | Suggest the daily water consumption in liters            |
+| `target_daily_water`| float  | No       | Suggest the daily water consumption in liters. 0–20.     |
 
 *All parameters are optional. If omitted, they will not be updated. You can set them to null if desired.*
 

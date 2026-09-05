@@ -46,9 +46,33 @@ Localized from `messages.gyms.plans.deleted_successfully` (`fa`: “پلن با�
 
 ---
 
+### 400 Bad Request — the plan has subscriptions
+A plan that anyone has ever subscribed to cannot be deleted: `gym_subscriptions.gym_plan_id` is not nullable, so the
+delete would take every subscription — and the check-ins hanging off them — with it. Set `is_active` to `false` with
+`PUT /api/v1/gyms/{gym-id}/plans/{plan-id}` instead; an inactive plan is hidden from the gym's plan list while its
+existing subscribers keep their memberships.
+
+`attached_data` reports what is blocking the delete.
+
+```json
+{
+  "error": "This plan has subscriptions and cannot be deleted. Deactivate it instead.",
+  "attached_data": {
+    "subscriptions": 3,
+    "total": 3
+  }
+}
+```
+
+Localized from `messages.gyms.plans.cannot_be_deleted_with_subscriptions`
+(`fa`: “این پلن اشتراک دارد و قابل حذف نیست. به جای آن غیرفعالش کنید.”).
+
+---
+
 ### Error Responses
-| Status | Description                | Reference                                      |
-|--------|----------------------------|------------------------------------------------|
-| 401    | Unauthorized               | [Authentication error](../../_globals/authentication-errors.md) |
-| 403    | Forbidden (no permission)  | [Permission error](../../_globals/permission-errors.md) |
-| 404    | Not found                  | [Not-found error](../../_globals/not-found-errors.md) |
+| Status | Description                       | Reference                                      |
+|--------|-----------------------------------|------------------------------------------------|
+| 400    | Plan has subscriptions            | See above                                      |
+| 401    | Unauthorized                      | [Authentication error](../../_globals/authentication-errors.md) |
+| 403    | Forbidden (no permission)         | [Permission error](../../_globals/permission-errors.md) |
+| 404    | Not found                         | [Not-found error](../../_globals/not-found-errors.md) |

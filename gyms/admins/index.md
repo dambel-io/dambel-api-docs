@@ -34,11 +34,19 @@ Returns a list of gym admin resources.
       "gym_id": 123,
       "title": "Manager",
       "user_id": 42,
-      "permissions": ["edit_gym", "view"]
+      "permissions": [17, 23],
+      "permission_names": ["gym_plans.create", "gym_subscriptions.checkin"],
+      "created_at": "2026-08-31T10:00:00.000000Z"
     }
   ]
 }
 ```
+
+`permissions` holds permission **IDs**; `permission_names` is the same set resolved to names so a client can render
+the roster without fetching the permission table. Only the names published by
+[`GET /gyms/admin-permissions`](delegatable-permissions.md) are ever consulted by a policy. This endpoint does not
+emit `gym` or `is_effective` — every row already belongs to the gym in the URL; see
+[`GET /gyms/administered`](administered.md) for the admin's own view.
 
 For a full schema, see [Gym Admin Resource](gym_admin_resource.md).
 

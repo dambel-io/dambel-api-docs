@@ -39,7 +39,7 @@ Creates a new comment on a specified resource (e.g., gym, post, or training serv
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created comment resource.
 
 #### Example

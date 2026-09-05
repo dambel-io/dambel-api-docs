@@ -1,4 +1,4 @@
-# /api/v1/training/workout-plans/{workout-plan-id}/sessions
+# POST /api/v1/training/workout-plans/{workout-plan-id}/sessions
 
 Create a new session for a specific workout plan.
 
@@ -24,7 +24,7 @@ Create a new session for a specific workout plan.
 
 ## Response
 
-### 200 OK
+### 201 Created
 ```json
 {
   "data": { /* workout plan session resource */ }

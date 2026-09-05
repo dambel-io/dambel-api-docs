@@ -51,7 +51,7 @@ Creates a new gym. This endpoint can be used by regular users to create their ow
 
 ## Response
 
-### 200 OK
+### 201 Created
 Returns the created gym resource.
 
 #### Schema

@@ -22,6 +22,8 @@ The shared tracker resource represents a shared tracker configuration between tw
 | `include_supplement` | boolean | Whether supplement data is included in the shared tracker                 |
 | `include_meal`     | boolean | Whether meal data is included in the shared tracker                       |
 | `include_workout`  | boolean | Whether workout data is included in the shared tracker                    |
+| `include_measurement` | boolean | Whether body-measurement data is included                              |
+| `include_progress_photo` | boolean | Whether progress photos are included. **Defaults to `false` on a new share**, unlike every other `include_*` flag, and governs the photo's media URL as well as the entry. |
 | `notify_wakeup`    | boolean | Whether to notify the viewer about new wakeup data                        |
 | `notify_weight`    | boolean | Whether to notify the viewer about new weight data                        |
 | `notify_water`     | boolean | Whether to notify the viewer about new water intake data                  |
@@ -29,6 +31,8 @@ The shared tracker resource represents a shared tracker configuration between tw
 | `notify_supplement` | boolean | Whether to notify the viewer about new supplement data                    |
 | `notify_meal`      | boolean | Whether to notify the viewer about new meal data                          |
 | `notify_workout`   | boolean | Whether to notify the viewer about new workout data                       |
+| `notify_measurement` | boolean | Reserved; stored but no notification is sent for this type yet.         |
+| `notify_progress_photo` | boolean | Reserved; stored but no notification is sent for this type yet.      |
 | `description`      | string  | Optional description for the shared tracker                               |
 | `created_at`       | string  | Timestamp when the shared tracker was created                             |
 | `updated_at`       | string  | Timestamp when the shared tracker was last updated                        |
@@ -54,6 +58,8 @@ The shared tracker resource represents a shared tracker configuration between tw
     "include_supplement": false,
     "include_meal": true,
     "include_workout": true,
+    "include_measurement": true,
+    "include_progress_photo": false,
     "notify_wakeup": false,
     "notify_weight": false,
     "notify_water": false,
@@ -61,6 +67,8 @@ The shared tracker resource represents a shared tracker configuration between tw
     "notify_supplement": false,
     "notify_meal": false,
     "notify_workout": false,
+    "notify_measurement": false,
+    "notify_progress_photo": false,
     "description": "January fitness tracking data",
     "created_at": "2024-01-01T00:00:00.000000Z",
     "updated_at": "2024-01-01T00:00:00.000000Z"
