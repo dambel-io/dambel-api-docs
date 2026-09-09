@@ -53,10 +53,15 @@ Returns chart data for each type of payment record.
     "income": [400, 600, 750],
     "purchase": [300, 500, 450],
     "commission": [50, 60, 80],
-    "withdrawal": [200, 150, 300]
+    "withdrawal": [200, 150, 300],
+    "store_purchase": [0, 1999000, 0]
   }
 }
 ```
+
+`store_purchase` is Premium sold through an app store's in-app billing — a separate series from
+`purchase` because the money never passed through a Dambel wallet. See
+[Store billing](../../../payments.md#store-billing-cafe-bazaar).
 
 Normal users can use this as a overall payment report for their own account, and admins can use it as the whole system cash flow report.
 

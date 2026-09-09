@@ -50,12 +50,18 @@ Returns stats for each type of payment record.
   "total_commission": 123,
   "total_deposit": 123,
   "total_withdrawal": 123,
-  "total_purchase": 123
+  "total_purchase": 123,
+  "total_store_purchase": 123
 }
 ```
 
 Normal users can use this as a overall payment report for their own account, and admins can use it as the whole system cash flow stats.
 For example the total amount of commissions, would be the total income of the application.
+
+`total_store_purchase` is Premium sold through an app store's in-app billing. It is reported apart
+from `total_purchase` because the two are different rails: a store collected that money and settles
+out of band, so it never passed through a wallet. Add them for total Premium revenue; never treat
+one as a subset of the other. See [Store billing](../../../payments.md#store-billing-cafe-bazaar).
 
 ---
 

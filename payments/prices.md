@@ -1,11 +1,27 @@
 # GET /api/v1/payments/prices
 
 Retrieves general data for premium plan prices, commission rates, boost plans and the payment
-gateway's fee. The response is the whole `config/monetization.php` array, so anything added there
-appears here. All prices are in Tooman.
+gateway's fee. The response is the `config/monetization.php` array, resolved for the caller's
+distribution channel. All prices are in Tooman.
 
 
 **No authentication required.**
+
+---
+
+## Query Parameters
+| Name    | Type   | Required | Description                                                                                                   | Example  |
+|---------|--------|----------|---------------------------------------------------------------------------------------------------------------|----------|
+| channel | string | No       | The build's distribution channel: `direct` or `bazaar`. Omitted means `direct`. An unknown value returns 422. | "bazaar" |
+
+A store build sends its own channel so it is quoted whatever that store's Premium costs; the
+website and a direct-APK build send nothing and are quoted the default. **Today the two are the
+same figure** — Dambel absorbs Cafe Bazaar's 15% cut rather than passing it on — so this parameter
+changes nothing that a client can currently observe. It exists so that if the prices are ever
+split, a store build starts quoting the right number without a client release.
+
+The internal `channels` key of `config/monetization.php` is never published here: it holds store
+SKU maps, and this endpoint is public and unauthenticated.
 
 ---
 

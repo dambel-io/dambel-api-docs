@@ -31,6 +31,13 @@ The `type` field can be one of the following:
 - `purchase`
 - `withdrawal`
 - `commission`
+- `store_purchase`
+
+`store_purchase` is Premium bought through an app store's in-app billing. It is the one type that
+**never affects the balance**: the store collected the money and settles with us out of band, so it
+never entered the wallet and must not be debited from it. Treat it as a completed purchase when
+rendering payment history, and ignore it when reconciling a balance. See
+[Store billing](../../payments.md#store-billing-cafe-bazaar).
 
 ---
 
@@ -60,6 +67,21 @@ verified (see [the gateway fee](../../payments.md#currency-and-the-gateway-fee))
   "card_number": "1234-****-****-5678",
   "paid_at": "2026-01-01T00:00:00.000Z",
   "charged_rial": 7077860
+}
+```
+
+A `store_purchase` carries the channel that settled it and the SKU that was bought, plus the VAT
+breakdown when a rate is in force:
+
+| Field      | Type   | Description                                             |
+|------------|--------|---------------------------------------------------------|
+| channel    | string | The distribution channel, e.g. `bazaar`                 |
+| product_id | string | The store SKU that was purchased                        |
+
+```json
+{
+  "channel": "bazaar",
+  "product_id": "premium_plus_1m"
 }
 ```
 
