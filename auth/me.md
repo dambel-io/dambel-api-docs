@@ -42,6 +42,12 @@ The caller is always the subject here, so the payload includes the self-only fie
 referral tree). The two are sourced differently and can briefly disagree; see
 [Referral Score](../users/user_resource.md#referral-score).
 
+The self-only fields also carry `deletion_requested_at` and `deletion_scheduled_at`. Both are `null` on a normal
+account; both are set while a self-service deletion is pending, and `deletion_scheduled_at` is the date the account
+will be disposed of. This is the endpoint a client polls to render a "your account is scheduled for deletion"
+banner, with [`DELETE /api/v1/auth/delete-account`](delete-account-cancel.md) behind its undo button. See
+[`POST /api/v1/auth/delete-account`](delete-account-request.md).
+
 ---
 
 ### Error Responses

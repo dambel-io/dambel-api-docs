@@ -30,10 +30,14 @@ Represents a user in the system.
 | `referral_score`         | number          | User's weighted referral score — a **float**, not an integer *(hidden for limited access)*. See [Referral Score](#referral-score) |
 | `referrals_count`        | integer         | How many users this user directly referred *(hidden for limited access)*    |
 | `roles`                  | array           | List of [Role Resource](../admin/roles/role_resource.md) *(hidden for limited access)* |
+| `deletion_requested_at`  | string (date)\|null | When the user asked for their own account to be deleted, or `null` *(hidden for limited access)* |
+| `deletion_scheduled_at`  | string (date)\|null | When the account is due to be disposed of, or `null` *(hidden for limited access)* |
 | `media`                  | array           | List of [Media Resource](../media/media_resource.md). Excludes purpose-bearing rows such as the trainer license |
 | `current_subscription`   | object\|null    | [User Premium Subscription Resource](../payments/user_premium_subscription_resource.md) |
 
 **Self-identification flags:** `is_trainer` and `is_gym_owner` say how the user describes themself so the clients can hide sections that do not apply. They are **not** authorization and no policy, permission or route middleware reads them — a user who sets `is_trainer` to `false` keeps every permission, training service and trainee they had. They are visible to every viewer for the same reason: they shape navigation, not access. They are settable only on [`PUT /auth/me`](../auth/update-me.md); [`PUT /users/{id}`](update.md) deliberately ignores them.
+
+**Pending deletion:** `deletion_requested_at` and `deletion_scheduled_at` are non-null only while a self-service account deletion is pending — see [`POST /api/v1/auth/delete-account`](../auth/delete-account-request.md). That an account is on its way out is the subject's own business and an operator's, which is why the pair sits behind the same gate as `email` and `phone`. Neither field is writable by any endpoint. An account in this state is also omitted from [`GET /api/v1/users`](index.md) and from [training-service search](../training/services/index.md) for every viewer without `users.view_all`, so in practice a limited-access viewer never encounters one.
 
 **Trainer license:** the document is identity PII. It is never attached to the public `media` array, and `trainer_license_link` points at the standard media download route, which refuses to serve purpose-bearing media to anyone but the subject and holders of `users.view_all`. See [Download Media](../media/download.md).
 
@@ -66,6 +70,8 @@ Represents a user in the system.
   "referral_score": 1.5,
   "referrals_count": 1,
   "roles": [<role resource>, ...],
+  "deletion_requested_at": null,
+  "deletion_scheduled_at": null,
   "media": [<media resource>, ...],
   "current_subscription": <user premium subscription resource>
 }

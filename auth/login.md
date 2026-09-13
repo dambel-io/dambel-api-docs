@@ -30,14 +30,35 @@ Authenticates a user and returns an API token for subsequent requests.
 ## Response
 
 ### 201 Created
-Returns the API token.
+Returns the API token, and the caller's pending-deletion state.
 
 #### Example
 ```json
 {
-  "token": "<the API token will be set here>"
+  "token": "<the API token will be set here>",
+  "pending_deletion": null
 }
 ```
+
+`pending_deletion` is `null` for a normal account. For an account inside its self-service deletion grace period it
+is an object:
+
+```json
+{
+  "token": "<the API token will be set here>",
+  "pending_deletion": {
+    "requested_at": "2026-09-11 10:00:00",
+    "scheduled_at": "2026-09-25 10:00:00"
+  }
+}
+```
+
+**Signing in during the grace period succeeds; it is flagged, not refused.** That is deliberate. Cancelling a
+deletion is bearer-authenticated, and requesting one revokes every token the user held — so a refusal here would
+leave the grace period uncancellable from any fresh sign-in, which is the exact situation it exists for. A non-null
+`pending_deletion` is as machine-readable as an error code: the client shows the "scheduled for deletion" screen
+and offers [`DELETE /api/v1/auth/delete-account`](delete-account-cancel.md). See
+[`POST /api/v1/auth/delete-account`](delete-account-request.md).
 
 ---
 

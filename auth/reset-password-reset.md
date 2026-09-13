@@ -47,6 +47,10 @@ Returns a success message when the password is reset successfully.
 }
 ```
 
+The reset also sets the account's `phone_verified_at`: entering the code proved control of the number just as
+registration does. It is never accepted from the request. See [`GET /api/v1/users`](../users/index.md) for the
+`phone_status` filter that reads it.
+
 ---
 
 ### Error Responses

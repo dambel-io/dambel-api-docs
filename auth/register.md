@@ -97,6 +97,7 @@ When [referral score](../users/user_resource.md#referral-score) of a user increa
 5. **Verification**: System verifies the code (checks validity and expiration - 10 minutes for registration)
 6. **Account Creation**: If code is valid, creates user account and returns API token
 7. **Cleanup**: Verification token is deleted after successful registration
+8. **Phone verification**: the account's `phone_verified_at` is set, because the code just proved the number. It is never accepted from the request — see [`GET /api/v1/users`](../users/index.md) for what the `phone_status` filter reads.
 
 ## Security Notes
 - Verification codes are hashed before storage

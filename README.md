@@ -47,6 +47,8 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - [`GET /api/v1/auth/sessions`](auth/sessions-list.md)
 - [`DELETE /api/v1/auth/sessions`](auth/sessions-revoke-others.md)
 - [`DELETE /api/v1/auth/sessions/{token}`](auth/sessions-revoke.md)
+- [`POST /api/v1/auth/delete-account`](auth/delete-account-request.md)
+- [`DELETE /api/v1/auth/delete-account`](auth/delete-account-cancel.md)
 
 ## Gyms
 - [`GET /api/v1/gyms`](gyms/index.md)

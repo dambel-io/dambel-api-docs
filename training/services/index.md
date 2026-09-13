@@ -12,7 +12,7 @@ Retrieve a list of training services.
 |------------------------------|----------------------------------------------------------------------------------------------------------|
 | `training_services.view_all` | List every service, including those whose trainer's license is not approved (admin only).                |
 
-> **Visibility:** a service is publicly listed only while its trainer's `trainer_license_approved` is `true`. Services belonging to a trainer whose license is pending (`null`) or rejected (`false`) are hidden from everyone except that trainer and admins, and they cannot be purchased — see [Create Trainee](../trainees/create.md).
+> **Visibility:** a service is publicly listed only while its trainer's `trainer_license_approved` is `true`. Services belonging to a trainer whose license is pending (`null`) or rejected (`false`) are hidden from everyone except that trainer and admins, and they cannot be purchased — see [Create Trainee](../trainees/create.md). A service whose trainer has requested their own [account deletion](../../auth/delete-account-request.md) is hidden the same way, from the moment the request lands rather than when the account is disposed of; the trainer still sees their own services, so cancelling is not a hunt.
 
 ---
 
