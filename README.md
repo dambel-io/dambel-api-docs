@@ -160,6 +160,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
 - `/api/v1/training/workout-plans/{workout-plan-id}`
     - [`PUT`](training/workout-plans/update.md)
     - [`DELETE`](training/workout-plans/delete.md)
+    - [`GET /muscle-load`](training/workout-plans/muscle-load.md)
     - [`GET /sessions`](training/workout-plans/sessions/index.md)
     - [`POST /sessions`](training/workout-plans/sessions/create.md)
     - `/sessions/{session-id}`
