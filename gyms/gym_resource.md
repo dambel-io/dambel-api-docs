@@ -59,6 +59,9 @@ Represents a gym entity with all its attributes, relationships, and status infor
   "city": {
     "id": 5,
     "name": "Tehran",
+    "translated_name": "Tehran",
+    "location_lat": 35.6944,
+    "location_lng": 51.4215,
     "state": {
       "id": 1,
       "name": "Tehran Province"

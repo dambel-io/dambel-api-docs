@@ -2,6 +2,8 @@
 
 Compare workout plan required equipment to the gym equipment list to get list of the missing equipment in that gym for that workout plan.
 
+Custom (free-text) exercises in the plan have no known equipment and are ignored.
+
 
 ---
 

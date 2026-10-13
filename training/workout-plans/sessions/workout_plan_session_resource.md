@@ -13,6 +13,7 @@ Represents a session in a workout plan.
 | `title`           | string  | Title of the session             |
 | `day`             | string  | Weekday of the session           |
 | `description`     | string  | Description                      |
+| `exercises`       | array   | **Only present when loaded** — today only in the response of [creating a plan from a template](../create.md#creating-from-a-template): the session's [plan exercises](exercises/workout_plan_exercise_resource.md). Absent everywhere else; list them with [`GET …/exercises`](exercises/index.md). |
 
 ---
 

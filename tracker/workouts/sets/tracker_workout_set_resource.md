@@ -12,7 +12,9 @@ Represents a workout set record in the tracker system.
 | `user_id`                | integer | User ID                                     |
 | `start`                  | string  | Start datetime (YYYY-MM-DD HH:MM:SS)        |
 | `workout_plan_exercise_id`| integer | Workout plan exercise ID (if applicable)    |
-| `exercise_id`            | integer | Exercise ID                                 |
+| `exercise_id`            | integer | Catalog exercise ID (`null` for a custom set) |
+| `custom_name`            | string  | Free-text movement name (`null` for a catalog set) |
+| `is_custom`              | boolean | `true` when the set logs a free-text movement instead of a catalog exercise |
 | `exercise`               | [Exercise Resource](../../../admin/exercises/exercise_resource.md) | Exercise Object (usually null)                                 |
 | `is_replacement`         | boolean | Whether this set is a replacement           |
 | `rep_count`              | integer | Number of repetitions                       |
@@ -31,6 +33,8 @@ Represents a workout set record in the tracker system.
   "workout_plan_exercise_id": 123,
   "exercise_id": 123,
   "exercise": null,
+  "custom_name": null,
+  "is_custom": false,
   "is_replacement": false,
   "rep_count": 10,
   "weight": 100,

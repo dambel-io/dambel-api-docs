@@ -16,7 +16,7 @@ Publish one logged workout set as a strength-record claim.
 ## Request Body Parameters
 | Name                     | Type    | Required | Description                                     |
 |--------------------------|---------|----------|-------------------------------------------------|
-| `tracker_workout_set_id` | integer | Yes      | A set **you** logged, carrying an exercise and a rep count |
+| `tracker_workout_set_id` | integer | Yes      | A set **you** logged, carrying a catalog exercise and a rep count (a custom, free-text set is a 422) |
 
 `user_id`, `exercise_id`, `rep_count` and `weight` are never read from the request. The last three
 are copied from the set server-side, once, and are not updated afterwards — see

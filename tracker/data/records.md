@@ -2,6 +2,8 @@
 
 Retrieve highest records of your exercises.
 
+Only sets of catalog exercises count: a custom (free-text) set has no exercise to hold a record for and is never returned.
+
 
 ---
 

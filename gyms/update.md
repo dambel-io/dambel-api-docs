@@ -27,19 +27,32 @@ Updates the information of a specific gym by its ID. All parameters are optional
 |--------------|---------|----------|-----------------------------------------------------------------------------|-------------------|
 | name         | string  | No       | Name of the gym (max 255 characters)                                        | "Iron Paradise"  |
 | address      | string  | No       | Address of the gym (max 255 characters)                                     | "123 Main St"    |
-| location_lat | float   | No       | Latitude coordinate of the gym                                              | 35.6892           |
-| location_lng | float   | No       | Longitude coordinate of the gym                                             | 51.3890           |
+| location_lat | float   | No       | Latitude of the gym pin, between -90 and 90                                 | 35.6892           |
+| location_lng | float   | No       | Longitude of the gym pin, between -180 and 180                              | 51.3890           |
 | is_active    | bool    | No       | Whether the gym is active                                                   | true              |
 | show_crowd   | bool    | No       | Whether to display crowd information                                        | false             |
 | description  | string  | No       | Description of the gym (max 2000 characters)                                | "Best gym..."    |
 | user_id      | int     | No       | User ID to assign the gym to (requires `gyms.transfer_ownership` permission)| 42                |
-| city_id      | int     | No       | ID of the city where the gym is located                                     | 5                 |
+| city_id      | int     | No       | ID of an existing city. Cannot be cleared. When omitted and the pin moves, it is re-derived (see below) | 5 |
 | major_ids    | string  | No       | Comma-separated list of major IDs. Use `0` to detach all majors.            | "1,2,3"          |
 | gym_license_image | null | No | Only `null` is accepted, which clears the license document and resets its approval to pending. To **upload** a license, use [POST /api/v1/media](../media/create.md) with `purpose=gym_license`. Any non-null value is a validation error. | null |
 | gym_license_approved | bool | No | Review outcome: `true` approved, `false` rejected, `null` pending. Requires `gyms.approve_license`. | true |
 | gym_license_rejection_reason | string | No | Why the license was rejected (max 2000 characters). Requires `gyms.approve_license`. | "Document expired." |
 
 > **License review.** `gym_license_approved` and `gym_license_rejection_reason` may only be sent by a user with `gyms.approve_license`; anyone else gets `403`. Setting `gym_license_approved` to `true` or `false` (a change from its previous value) notifies the gym owner. Clearing `gym_license_image` deletes the stored document and resets both review fields to `null`.
+
+---
+
+### How the city is updated
+
+- If `city_id` is sent, it is stored as-is (it must exist), whatever the pin says.
+- If it is omitted **and the pin moved** (a sent `location_lat` / `location_lng` differs from the stored value), the
+  city is re-derived from the new pin: the nearest city centre within 100 km, as in
+  [POST /api/v1/gyms](create.md) and [GET /api/v1/admin/cities/resolve](../admin/cities/resolve.md). If only one
+  coordinate is sent, the other is taken from the stored pin.
+- Re-sending the unchanged pin leaves the stored city alone, so saving the whole form does not replace a hand-picked city.
+- If a moved pin has no known city within 100 km, the request fails with a 422 under the `location` key, and nothing on
+  the gym is changed.
 
 ---
 
@@ -114,6 +127,6 @@ For a full schema, see [Gym Resource](gym_resource.md).
 ### Error Responses
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 422    | Validation error, including `errors.location` when a moved pin has no known city within 100 km | [Validation error](../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission, including reviewing a license without `gyms.approve_license`) | [Permission error](../_globals/permission-errors.md) |

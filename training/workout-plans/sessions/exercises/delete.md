@@ -2,6 +2,10 @@
 
 Delete an exercise from a workout plan session.
 
+If the exercise was in an [exercise group](../groups/workout_plan_exercise_group_resource.md), the group closes
+the gap; a group left with a single exercise is dissolved, and one left with a count its type no longer fits
+(a tri-set down to two) is renamed for its size.
+
 
 ---
 

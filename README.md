@@ -155,6 +155,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - `/supplements/{supplement-id}`
         - [`PUT`](training/diet-plans/supplements/update.md)
         - [`DELETE`](training/diet-plans/supplements/delete.md)
+- [`GET /api/v1/training/workout-plan-templates`](training/workout-plan-templates/index.md)
 - [`GET /api/v1/training/workout-plans`](training/workout-plans/index.md)
 - [`POST /api/v1/training/workout-plans`](training/workout-plans/create.md)
 - `/api/v1/training/workout-plans/{workout-plan-id}`
@@ -171,6 +172,10 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
         - `/exercises/{exercise-id}`
             - [`PUT`](training/workout-plans/sessions/exercises/update.md)
             - [`DELETE`](training/workout-plans/sessions/exercises/delete.md)
+        - [`POST /groups`](training/workout-plans/sessions/groups/create.md)
+        - `/groups/{group-id}`
+            - [`PUT`](training/workout-plans/sessions/groups/update.md)
+            - [`DELETE`](training/workout-plans/sessions/groups/delete.md)
 
 ## AI
 - [`POST /api/v1/ai/meal-estimations`](ai/meal-estimations.md)
@@ -348,6 +353,7 @@ Welcome to the Dambel API documentation. This guide provides a comprehensive, or
     - [`PUT`](admin/states/update.md)
     - [`DELETE`](admin/states/delete.md)
 - [`GET /api/v1/admin/cities`](admin/cities/index.md)
+- [`GET /api/v1/admin/cities/resolve`](admin/cities/resolve.md)
 - [`POST /api/v1/admin/cities/{state-id}`](admin/cities/create.md)
 - `/api/v1/admin/cities/{city-id}`
     - [`PUT`](admin/cities/update.md)

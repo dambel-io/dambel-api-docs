@@ -45,4 +45,7 @@ Localized from `messages.admin.exercises.deleted_successfully` (`fa`: “تمر�
 | 403    | Forbidden (no permission)                                                                                                             | [Permission error](../../_globals/permission-errors.md)         |
 | 404    | Not found                                                                                                                             | [Not-found error](../../_globals/not-found-errors.md)           |
 
+`attached_data` counts, per key: `equipment`, `majors`, `muscle_groups`, `workout_plan_exercises`, `tracker_workout_sets`,
+`workout_plan_template_exercises`, plus their `total`. With a valid `replacement_id` every one of those rows is re-pointed to the
+replacement, so a user's plans and logged sets and the built-in workout plan templates keep their movement.
 ---

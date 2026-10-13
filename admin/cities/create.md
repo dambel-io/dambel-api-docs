@@ -17,6 +17,12 @@ Create a new city in a given state.
 | Name     | Type    | Required | Description                        |
 |----------|---------|----------|------------------------------------|
 | `name`   | string  | Yes      | Name of the city (max 255)         |
+| `location_lat` | number\|null | With `location_lng` | Latitude of the city centre, between `-90` and `90` |
+| `location_lng` | number\|null | With `location_lat` | Longitude of the city centre, between `-180` and `180` |
+
+The coordinates are optional, but send both or neither: sending one without the other is a 422 naming the missing
+field. A city with coordinates becomes a target for [`GET /admin/cities/resolve`](resolve.md) and for deriving a
+gym's city from its map pin; a city without them is never resolved to.
 
 *The state ID is provided in the route.*
 

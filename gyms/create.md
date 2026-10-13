@@ -19,14 +19,31 @@ Creates a new gym. This endpoint can be used by regular users to create their ow
 |--------------|---------|----------|-----------------------------------------------------------------------------|-------------------|
 | name         | string  | Yes      | Name of the gym (max 255 characters)                                        | "Iron Paradise"  |
 | address      | string  | Yes      | Address of the gym (max 255 characters)                                     | "123 Main St"    |
-| location_lat | float   | Yes      | Latitude coordinate of the gym                                              | 35.6892           |
-| location_lng | float   | Yes      | Longitude coordinate of the gym                                             | 51.3890           |
+| location_lat | float   | Yes      | Latitude of the gym pin, between -90 and 90                                 | 35.6892           |
+| location_lng | float   | Yes      | Longitude of the gym pin, between -180 and 180                              | 51.3890           |
 | is_active    | bool    | No       | Whether the gym is active                                                   | true              |
 | show_crowd   | bool    | No       | Whether to display crowd information                                        | false             |
 | description  | string  | No       | Description of the gym (max 2000 characters)                                | "Best gym..."    |
 | user_id      | int     | No       | User ID to assign the gym to (requires `gyms.create_any` permission)        | 42                |
-| city_id      | int     | Yes      | ID of the city where the gym is located                                     | 5                 |
+| city_id      | int     | No       | ID of an existing city. When omitted, it is derived from the pin (see below) | 5 |
 | major_ids    | string  | No       | Comma-separated list of major IDs. Use `0` to detach all majors.            | "1,2,3"          |
+
+---
+
+### How the city is set
+
+- If `city_id` is sent, it is stored as-is (it must exist). Older app builds send it.
+- If it is omitted, the city is the one whose centre is nearest to `location_lat` / `location_lng`, within 100 km.
+  This is the same resolution [GET /api/v1/admin/cities/resolve](../admin/cities/resolve.md) previews.
+- If no city with known coordinates is within 100 km, the request fails with a 422 under the `location` key, and no
+  gym is created:
+
+```json
+{ "errors": { "location": ["We couldn't find a city near this location. Move the pin closer to a town, or choose the city manually."] } }
+```
+
+Resolution is by nearest city centre, so it is approximate near city borders (for example, parts of Tehran resolve to
+neighbouring entries such as "Tajrish").
 
 ---
 
@@ -129,6 +146,6 @@ For a full schema, see [Gym Resource](gym_resource.md).
 
 | Status | Description                | Reference                                      |
 |--------|----------------------------|------------------------------------------------|
-| 422    | Validation error           | [Validation error](../_globals/validation-errors.md) |
+| 422    | Validation error, including `errors.location` when the pin has no known city within 100 km | [Validation error](../_globals/validation-errors.md) |
 | 401    | Unauthorized               | [Authentication error](../_globals/authentication-errors.md) |
 | 403    | Forbidden (no permission)  | [Permission error](../_globals/permission-errors.md) |

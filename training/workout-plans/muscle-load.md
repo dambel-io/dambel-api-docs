@@ -35,9 +35,27 @@ There are no query parameters and no request body.
 Per prescribed exercise, per muscle-group credit:
 
 ```
-credit = set_count × rep_count × type_factor[the group's role in that exercise]
+credit = set_count × effective_reps × type_factor[the group's role in that exercise]
 planned_rep_load(group) = Σ credit over every prescribed exercise in scope
 ```
+
+### Effective reps
+
+`effective_reps` is what one prescribed set asks of the muscle, from the exercise's
+[set structure](sessions/exercises/create.md#set-types):
+
+| Set structure                         | `effective_reps` | Example |
+|---------------------------------------|------------------|---------|
+| plain `rep_count`                     | `rep_count`      | 3 × 10 → 30 |
+| rep range (`rep_count_max` set), incl. `pyramid` / `reverse_pyramid` | midpoint, `(rep_count + rep_count_max) / 2` | 3 × 8–12 → 30 |
+| `drop_set`                            | reps × (1 + `drop_count`) | 3 × 10, 2 drops → 90 |
+| `rest_pause`                          | reps × (1 + `mini_set_count`) | 2 × 8, 2 mini-sets → 48 |
+| `cluster`                             | `rep_count` (already the total per set) | 3 × 12 → 36 |
+| `amrap` / `to_failure`                | `rep_count` (the reps expected) | 2 × 10 → 20 |
+
+Each drop or mini-set is credited the reps of the top set, an approximation that errs toward the
+work done. A range's midpoint may be fractional (8–11 → 9.5). `planned_set_count` stays the prescribed
+sets — the drops and mini-sets live inside them. No set technique sends a row to `unparsed_exercise_count`.
 
 `type_factors` are returned in every response so a client never has to hard-code them:
 
@@ -64,18 +82,19 @@ Only the `normalized` 0–1 *shapes* of the two endpoints may be laid over one a
 lets "what the plan intends" and
 [what was actually trained](../../tracker/data/muscle-load.md) be drawn on the same body map.
 
-### Super-sets
+### Exercise groups
 
-Every `workout_plan_exercises` row is summed, including a super-set parent, with no de-duplication.
-A parent is not an empty container: `set_count` and `rep_count` are `NOT NULL`, every write path
-validates them `required|integer|min:1`, and the first row of a super-set group is itself a real
-prescribed exercise that its siblings point at through `super_set_id`.
+Supersets, tri-sets, giant sets and circuits ([exercise groups](sessions/groups/workout_plan_exercise_group_resource.md))
+do not change the load: grouping says how exercises are sequenced, not how much each prescribes. Every
+member is summed on its own, with no de-duplication — none is an empty container, since `set_count` and
+`rep_count` are `NOT NULL` and every write path validates them `required|integer|min:1`.
 
 ### Prescribed rows this report cannot use
 
 `set_count` and `rep_count` are `string` columns that predate the `integer|min:1` validation every
 current write path applies, so a legacy `''`, `'abc'`, `'0'` or `'-3'` is possible. An exercise
-counts only when both read as at least `1`. A row that credits no muscle group at all — its catalog
+counts only when both read as at least `1`, and — when it has a range — `rep_count_max` is not below
+`rep_count` (no write path accepts that; only a row written directly could hold it). A row that credits no muscle group at all — its catalog
 entry has no muscle-group mapping, or every mapping carries a role outside `type_factors` — cannot
 be counted either. In every one of those cases the row contributes **nothing** and is *surfaced*
 rather than silently dropped:
@@ -214,7 +233,7 @@ either would drop every other user's cached report as well.
 | `groups[].translated_title`             | string       | The title in the request's `Accept-Language` locale.                                           |
 | `groups[].planned_rep_load`             | number       | Summed credit for this group in this scope, rounded to two decimals.                           |
 | `groups[].planned_set_count`            | number       | Σ `set_count` over the exercises crediting this group, unweighted by type factor. Whole in practice; a legacy fractional count is summed as-is rather than truncated. |
-| `groups[].planned_rep_count`            | number       | Σ `set_count × rep_count` over those exercises, unweighted by type factor.                      |
+| `groups[].planned_rep_count`            | number       | Σ `set_count × effective_reps` over those exercises, unweighted by type factor.                 |
 | `groups[].unparsed_exercise_count`      | integer      | Credits to this group skipped because the exercise's counts could not be read.                  |
 | `groups[].normalized`                   | number       | `planned_rep_load` ÷ the largest group's, **in this scope**, in `[0, 1]`.                       |
 | `sessions[].workout_plan_session_id`    | integer      | `workout_plan_sessions.id`.                                                                     |
